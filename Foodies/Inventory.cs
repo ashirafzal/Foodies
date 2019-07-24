@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Foodies
 {
-    public partial class Form1 : Form
+    public partial class Inventory : Form
     {
-        public Form1()
+        public Inventory()
         {
             InitializeComponent();
         }
