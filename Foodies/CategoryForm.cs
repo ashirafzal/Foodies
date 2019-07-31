@@ -1,52 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Foodies
 {
-    public partial class ProductEntry : Form
+    public partial class SubProductManagement_System : Form
     {
-
         string imgLocation = "";
 
-        public ProductEntry()
+        public SubProductManagement_System()
         {
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void txtCategory_TextChanged(object sender, EventArgs e)
         {
-            //not in use
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //not in use
-        }
-
-        private void ProductPanel_Paint(object sender, PaintEventArgs e)
-        {
-            //just a panel 
         }
 
         private void browseimage_Click(object sender, EventArgs e)
-        {
-           //zaya   
-        }
-
-        private void CreateProduct_Click(object sender, EventArgs e)
-        {
-           //zaya
-        }
-
-        private void ProductEntry_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void browseimage_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
 
@@ -57,12 +32,11 @@ namespace Foodies
             }
         }
 
-        private void CreateProduct_Click_1(object sender, EventArgs e)
+        private void CreateProduct_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                int b = Convert.ToInt32(txtPrice.Text);
 
                 byte[] images = null;
                 FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
@@ -72,12 +46,12 @@ namespace Foodies
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                string sqlQuery = "insert into Products(ProductCategory,ProductName,ProductPrice,ProductImage) values ('" + txtCategory.Text + "','" + txtName.Text + "','" + b + "',@images)";
+                string sqlQuery = "insert into Category(CategoryName,CategoryImage) values ('" + txtCategory.Text + "',@images)";
                 cmd = new SqlCommand(sqlQuery, con);
                 cmd.Parameters.Add(new SqlParameter("@images", images));
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Product Created Successfull");
+                MessageBox.Show("Category Created Successfull");
             }
             catch (Exception)
             {
@@ -85,11 +59,14 @@ namespace Foodies
             }
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
+        private void ProductPanel_Paint(object sender, PaintEventArgs e)
         {
-            ManageProduct manageProduct = new ManageProduct();
-            manageProduct.Show();
+
+        }
+
+        private void SubProductManagement_System_Load(object sender, EventArgs e)
+        {
+
         }
     }
-    
 }

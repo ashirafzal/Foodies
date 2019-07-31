@@ -62,6 +62,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Coupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Coupon.Designer.cs">
+      <DependentUpon>Coupon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,28 +80,42 @@
     <Compile Include="InvoiceDetails.Designer.cs">
       <DependentUpon>InvoiceDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageProduct.cs">
+    <Compile Include="ManageItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageProduct.Designer.cs">
-      <DependentUpon>ManageProduct.cs</DependentUpon>
+    <Compile Include="ManageItems.Designer.cs">
+      <DependentUpon>ManageItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductEntry.cs">
+    <Compile Include="ItemsEntry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductEntry.Designer.cs">
-      <DependentUpon>ProductEntry.cs</DependentUpon>
+    <Compile Include="ItemsEntry.Designer.cs">
+      <DependentUpon>ItemsEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Coupon.resx">
+      <DependentUpon>Coupon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
@@ -106,11 +126,11 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageProduct.resx">
-      <DependentUpon>ManageProduct.cs</DependentUpon>
+    <EmbeddedResource Include="ManageItems.resx">
+      <DependentUpon>ManageItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductEntry.resx">
-      <DependentUpon>ProductEntry.cs</DependentUpon>
+    <EmbeddedResource Include="ItemsEntry.resx">
+      <DependentUpon>ItemsEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,6 +141,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CategoryDataSet.xsc">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
     </None>
@@ -131,6 +154,17 @@
     </None>
     <None Include="CategoryDataSet.xss">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemsDataSet.xsc">
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ItemsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ItemsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ItemsDataSet.xss">
+      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

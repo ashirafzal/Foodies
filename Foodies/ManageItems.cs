@@ -7,11 +7,11 @@ using System.Data;
 
 namespace Foodies
 {
-    public partial class ManageProduct : Form
+    public partial class ManageItems : Form
     {
         string imgLocation = "";
 
-        public ManageProduct()
+        public ManageItems()
         {
             InitializeComponent();
             dgv_CashierRegister();
@@ -21,6 +21,8 @@ namespace Foodies
 
         private void ManageProduct_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
 
         }
 
@@ -50,7 +52,7 @@ namespace Foodies
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //this line of code is applying padding to a specific Column of dgv1 which is Product Column
-            dgv1.Columns[2].DefaultCellStyle.Padding = new Padding(2, 2, 2, 2);
+            //dgv1.Columns[2].DefaultCellStyle.Padding = new Padding(2, 2, 2, 2);
 
             this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 

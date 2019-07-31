@@ -1,6 +1,6 @@
 ﻿namespace Foodies
 {
-    partial class ProductEntry
+    partial class ItemsEntry
     {
         /// <summary>
         /// Required designer variable.
@@ -295,7 +295,7 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // ProductEntry
+            // ItemsEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,7 +303,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 861);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "ProductEntry";
+            this.Name = "ItemsEntry";
             this.Text = "ProductEntry";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductEntry_Load);

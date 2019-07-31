@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Foodies
 {
     public partial class Cashier : Form
     {
+        int quantity = 1,a,b,c;
+        string productprice;
+        int actualprice;
+        int totalAmount = 0; int totalQuantity = 0;
+
         public Cashier()
         {
             InitializeComponent();
             dgv_1();
+            dgv_2();
         }
 
         public void dgv_1()
@@ -44,8 +46,36 @@ namespace Foodies
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //this line of code is applying padding to a specific Column of dgv1 which is Product Column
-            //dgv1.Columns[2].DefaultCellStyle.Padding = new Padding(5, 5, 5, 5);
+            //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
+        }
 
+        public void dgv_2()
+        {
+            dgv2.RowTemplate.Height = 200;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(10, 8, 0, 8);
+            this.dgv2.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 14F, FontStyle.Bold);
+            dgv2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //This Part of Code is for the styling of the Visaul Style
+            //dgv1.EnableHeadersVisualStyles = false;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv2.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv2.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //this line of code is applying padding to a specific Column of dgv1 which is Product Column
+            //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -65,8 +95,13 @@ namespace Foodies
 
         private void Cashier_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
+            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
             // TODO: This line of code loads data into the 'categoryDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.categoryDataSet.Products);
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,13 +135,257 @@ namespace Foodies
 
         private void manageSubProductsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageProduct manageProduct = new ManageProduct();
-            manageProduct.Show();
+            ItemsEntry itemsEntry = new ItemsEntry();
+            itemsEntry.Show();
         }
 
         private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void stockManagementSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv2.Rows[e.RowIndex];
+                string productname = row.Cells[1].Value.ToString();
+                productprice = row.Cells[2].Value.ToString();
+                string productcategory = row.Cells[3].Value.ToString();
+                actualprice = Convert.ToInt32(row.Cells[2].Value.ToString());
+
+                try
+                {
+                    bool Found = false;
+                    dgv3.AllowUserToAddRows = true;
+
+                    if (dgv3.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow Row in dgv3.Rows)
+                        {
+                            if (Convert.ToString(Row.Cells[0].Value) == productname)
+                            { 
+                                Found = true;
+                                dgv3.AllowUserToAddRows = false;
+                            }
+                                dgv3.AllowUserToAddRows = false;
+                        }
+                        if (!Found)
+                        {
+                                a = Convert.ToInt32(quantity);
+                                b = Convert.ToInt32(productprice);
+                                c = a * b;
+
+                                dgv3.Rows.Add(productname, a,b, c, productcategory, 1);
+                                    for (int i = 0; i < dgv3.Rows.Count; ++i)
+                                    {
+                                        totalQuantity += Convert.ToInt32(dgv3.Rows[i].Cells[1].Value);
+                                        totalAmount += Convert.ToInt32(dgv3.Rows[i].Cells[3].Value);
+                                    }
+                                totalQty.Text = totalQuantity.ToString();
+                                total_Amount.Text = totalAmount.ToString();
+                        } 
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+                
+            }
+
+
+        }
+
+        private void dgv2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+                string maincategory = row.Cells[1].Value.ToString();
+
+                if (maincategory == "pizza")
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                    con.Open();
+                    string query = "select * from Products where ProductCategory = 'pizza' ";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dgv2.DataSource = dt;
+                    con.Close();
+                }
+                else if (maincategory == "burger")
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                    con.Open();
+                    string query = "select * from Products where ProductCategory = 'burger' ";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dgv2.DataSource = dt;
+                    con.Close();
+                }
+                else if (maincategory == "Broast")
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                    con.Open();
+                    string query = "select * from Products where ProductCategory = 'Broast' ";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dgv2.DataSource = dt;
+                    con.Close();
+                }
+            }
+
+            
+        }
+
+        private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SubProductManagement_System category = new SubProductManagement_System();
+            category.Show();
+        }
+
+        private void dgv3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                totalAmount = 0; totalQuantity = 0;
+                totalQty.Text = totalQuantity.ToString();
+                total_Amount.Text = totalAmount.ToString();
+
+                var row = dgv3.CurrentRow;
+
+                if (row == null || row.Index < 0)
+                    return;
+                var unit = 1;
+                var quantity = Convert.ToInt32(row.Cells["qtty"].Value) + unit;
+                //assuming you have rate column...
+                var rate = Convert.ToInt32(row.Cells["rate"].Value);
+
+                //this line increase quantity
+                row.Cells["qtty"].Value = quantity;
+                //this line increase amount
+                row.Cells["price"].Value = Convert.ToInt32(row.Cells["price"].Value) + rate;
+
+
+                for (int i = 0; i < dgv3.Rows.Count; ++i)
+                {
+                    totalQuantity += Convert.ToInt32(dgv3.Rows[i].Cells[1].Value);
+                    totalAmount += Convert.ToInt32(dgv3.Rows[i].Cells[3].Value);
+                }
+                totalQty.Text = totalQuantity.ToString();
+                total_Amount.Text = totalAmount.ToString();
+
+            }
+            else if (e.ColumnIndex == 6)
+            {
+                totalAmount = 0; totalQuantity = 0;
+                totalQty.Text.Trim();
+                //totalQty.Text = totalQuantity.ToString();
+                total_Amount.Text = totalAmount.ToString();
+
+                var row = dgv3.CurrentRow;
+
+                if (row == null || row.Index < 0)
+                    return;
+                var unit = 1;
+                var quantity = Convert.ToInt32(row.Cells["qtty"].Value) - unit;
+                //assuming you have rate column...
+                var rate = Convert.ToInt32(row.Cells["rate"].Value);
+
+                if(quantity < 1 )
+                {
+                    this.dgv3.Rows.RemoveAt(e.RowIndex);
+
+                    for (int i = 0; i < dgv3.Rows.Count; ++i)
+                    {
+                        totalQuantity += Convert.ToInt32(dgv3.Rows[i].Cells[1].Value);
+                        totalAmount += Convert.ToInt32(dgv3.Rows[i].Cells[3].Value);
+                    }
+                    totalQty.Text = totalQuantity.ToString();
+                    total_Amount.Text = totalAmount.ToString();
+                }
+                else
+                {           
+                    //this line decrease quantity
+                    row.Cells["qtty"].Value = quantity;
+                    //this line decrease amount
+                    row.Cells["price"].Value = Convert.ToInt32(row.Cells["price"].Value) - rate;
+
+                    for (int i = 0; i < dgv3.Rows.Count; ++i)
+                    {
+                        totalAmount = 0; totalQuantity = 0;
+                        totalQuantity += Convert.ToInt32(dgv3.Rows[i].Cells[1].Value);
+                        totalAmount += Convert.ToInt32(dgv3.Rows[i].Cells[3].Value);
+                    }
+                    totalQty.Text = totalQuantity.ToString();
+                    total_Amount.Text = totalAmount.ToString();
+
+                }
+
+                
+            }
+          
+            else if (dgv3.CurrentCell.ColumnIndex == 7)
+            {
+                this.dgv3.Rows.RemoveAt(e.RowIndex);
+
+                totalAmount = 0; totalQuantity = 0;
+                totalQty.Text = totalQuantity.ToString();
+                total_Amount.Text = totalAmount.ToString();
+
+                for (int i = 0; i < dgv3.Rows.Count; ++i)
+                {
+                    totalQuantity += Convert.ToInt32(dgv3.Rows[i].Cells[1].Value);
+                    totalAmount += Convert.ToInt32(dgv3.Rows[i].Cells[3].Value);
+                }
+                totalQty.Text = totalQuantity.ToString();
+                total_Amount.Text = totalAmount.ToString();
+            }
+        }
+
+        private void dgv3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void total_Amount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageItems manageItems = new ManageItems();
+            manageItems.Show();
+        }
+
+        private void couponToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Coupon coupon = new Coupon();
+            coupon.Show();
+        }
+
+        private void dgv3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                
         }
     }
 }
