@@ -499,40 +499,118 @@ namespace Foodies
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //
+
+            string Custname = "Valuable Customer";
+            string CustContact = "***********";
+
+            string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
+            string OrderType = "Food Item";
+            string OrderCategory = "Food";
+
+            int InvocieId = 1;
+
+            /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
+             or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
+             condition me aik se sql queries ki queires ko implement kara jasakai*/
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
             con.Open();
+            SqlTransaction tran = con.BeginTransaction();
+
+            //
+            SqlCommand cmd1 = new SqlCommand("insert into Customer values ('" + Custname + "','" + CustContact + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+            cmd1.ExecuteNonQuery();
+            SqlCommand cmd2 = new SqlCommand("select top 1 CustID from Customer order by CustID DESC", con, tran);
+            cmd2.ExecuteNonQuery();
+
+            using (SqlDataReader dr = cmd2.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    CUSTID = dr["CustID"].ToString();
+                    SqlCommand cmd3 = new SqlCommand("insert into Orders values ('" + CUSTID + "','" + OrderType.ToString() + "','" + OrderCategory.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+                    cmd3.ExecuteNonQuery();
+                }
+            }
+
+            SqlCommand cmd4 = new SqlCommand("select top 1 CustID,CustName,Contact from Customer order by CustID DESC", con, tran);
+            cmd4.ExecuteNonQuery();
+            SqlCommand cmd5 = new SqlCommand("select top 1 OrderID,OrderTime,OrderDate from Orders order by OrderID DESC", con, tran);
+            cmd5.ExecuteNonQuery();
+
+            using (SqlDataReader dr = cmd4.ExecuteReader())
+            {
+                using (SqlDataReader dr1 = cmd5.ExecuteReader())
+                {
+                    string itemname;
+                    string itemqty;
+                    string itemprice;
+                    double itempricewithGST;
+                    double GST;
+                    double GStunit = 0.17;
+                    string billtotal = total_Amount.Text;
+                    string totalqty = totalQty.Text;
+                    double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
+                    double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
+
+                    while (dr.Read())
+                    {
+                        CUSTID = dr["CustID"].ToString();
+                        CUSTNAME = dr["CustName"].ToString();
+                        CUSTCONTACT = dr["Contact"].ToString();
+                        while (dr1.Read())
+                        {
+                            ORDERID = dr1["OrderID"].ToString();
+                            ORDERTIME = dr1["OrderTime"].ToString();
+                            ORDERDATE = dr1["OrderDate"].ToString();
+
+                            //
+                            SqlCommand cmd7 = new SqlCommand("insert into Sales values ('" + ORDERID + "','" + CUSTID + "','" + CUSTNAME + "','" + CUSTCONTACT + "','" + OrderType + "','" + OrderCategory + "','" + ORDERTIME + "','" + ORDERDATE + "')", con, tran);
+                            cmd7.ExecuteNonQuery();
+
+                            SqlCommand cmd6;
+                            for (int i = 0; i < dgv3.Rows.Count; i++)
+                            {
+                                itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
+                                itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
+                                itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
+                                GST = Convert.ToInt32(dgv3.Rows[i].Cells[2].Value) * GStunit;
+                                itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
+                                cmd6 = new SqlCommand("insert into Bill values ('" + InvocieId + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "')", con, tran);
+                                cmd6.ExecuteNonQuery();
+                            }
+                            MessageBox.Show("Operation Successfull");
+                        }
+                    }
+                }
+                tran.Commit();
+            }
+                //
+
+            /*
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from users", con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count == 0)
+            {
+                
+                }
+            }
+            else
+            {
+
+            }
+
+            //
             try
             {
-                string Custname = "Valuable Customer";
-                string CustContact = "***********";
-
-                string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
-                string OrderType = "Food Item";
-                string OrderCategory = "Food";
-
-                /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
-                 or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
-                 condition me aik se sql queries ki queires ko implement kara jasakai*/
-
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                con.Open();
-                SqlTransaction tran = con.BeginTransaction();
-
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from users",con);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                if (table.Rows.Count == 0)
-                {
-                    
-                }
-                else
-                {
-                    
-                }
+                
             }
             catch (Exception)
             {
                 MessageBox.Show("Transaction Failed for Unknown Error");
-            }
+            }*/
             con.Close();
         }
 
