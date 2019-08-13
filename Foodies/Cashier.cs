@@ -13,11 +13,18 @@ namespace Foodies
         int actualprice;
         int totalAmount = 0; int totalQuantity = 0;
 
+        // Connection String //
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        //
+
+        public System.Windows.Forms.DataGridViewImageCellLayout ImageLayout { get; set; }
+
         public Cashier()
         {
             InitializeComponent();
             dgv_1();
             dgv_2();
+            dgv_3();
         }
 
         public void dgv_1()
@@ -76,7 +83,39 @@ namespace Foodies
 
             //this line of code is applying padding to a specific Column of dgv1 which is Product Column
             //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
+
         }
+
+        public void dgv_3()
+        {
+            dgv3.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv3.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //This Part of Code is for the styling of the Visaul Style
+            //dgv1.EnableHeadersVisualStyles = false;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv3.RowsDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv3.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //this line of code is applying padding to a specific Column of dgv1 which is Product Column
+            //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
+
+        }
+
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
@@ -151,6 +190,7 @@ namespace Foodies
 
         private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            totalAmount = 0; totalQuantity = 0;
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dgv2.Rows[e.RowIndex];
@@ -189,6 +229,7 @@ namespace Foodies
                                     }
                                 totalQty.Text = totalQuantity.ToString();
                                 total_Amount.Text = totalAmount.ToString();
+                                act_price.Text = totalAmount.ToString();
                         } 
                     }
                 }
@@ -253,7 +294,18 @@ namespace Foodies
                 }
             }
 
-            
+            this.dgv2.Columns[0].Visible = false;
+            this.dgv2.Columns[1].Visible = false;
+            this.dgv2.Columns[2].Visible = false;
+            this.dgv2.Columns[3].Visible = false;
+
+            for (int i = 0; i < dgv2.Columns.Count; i++)
+                if (dgv2.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv2.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
+
         }
 
         private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
@@ -292,6 +344,7 @@ namespace Foodies
                 }
                 totalQty.Text = totalQuantity.ToString();
                 total_Amount.Text = totalAmount.ToString();
+                act_price.Text = totalAmount.ToString();
 
             }
             else if (e.ColumnIndex == 6)
@@ -321,6 +374,11 @@ namespace Foodies
                     }
                     totalQty.Text = totalQuantity.ToString();
                     total_Amount.Text = totalAmount.ToString();
+                    act_price.Text = totalAmount.ToString();
+                    //
+                    per_discount.Text = "0";
+                    DiscountPercent.Text = "";
+                    DiscountPKR.Text = "";
                 }
                 else
                 {           
@@ -337,7 +395,11 @@ namespace Foodies
                     }
                     totalQty.Text = totalQuantity.ToString();
                     total_Amount.Text = totalAmount.ToString();
-
+                    act_price.Text = totalAmount.ToString();
+                    //
+                    per_discount.Text = "0";
+                    DiscountPercent.Text = "";
+                    DiscountPKR.Text = "";
                 }
 
                 
@@ -358,6 +420,10 @@ namespace Foodies
                 }
                 totalQty.Text = totalQuantity.ToString();
                 total_Amount.Text = totalAmount.ToString();
+                //
+                per_discount.Text = "0";
+                DiscountPercent.Text = "";
+                DiscountPKR.Text = "";
             }
         }
 
@@ -369,6 +435,105 @@ namespace Foodies
         private void total_Amount_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+           if(DiscountPKR.Text != "")
+            {
+                
+            }
+            else
+            {
+              
+            }
+        }
+
+        private void DiscountPercent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiscountPKR_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void per_discount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgv3.Rows.Clear();
+            dgv3.Refresh();
+            dgv2.DataSource = null;
+            DiscountPKR.Text = "";
+            DiscountPercent.Text = "";
+            per_discount.Text = "0";
+            act_price.Text = "0";
+            totalQty.Text = "0";
+            total_Amount.Text = "0";
+        }
+
+        private void dgv3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv3_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dgv3_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dgv3_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            try
+            {
+                string Custname = "Valuable Customer";
+                string CustContact = "***********";
+
+                string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
+                string OrderType = "Food Item";
+                string OrderCategory = "Food";
+
+                /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
+                 or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
+                 condition me aik se sql queries ki queires ko implement kara jasakai*/
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from users",con);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count == 0)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Transaction Failed for Unknown Error");
+            }
+            con.Close();
         }
 
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -385,7 +550,7 @@ namespace Foodies
 
         private void dgv3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                
+            
         }
     }
 }
