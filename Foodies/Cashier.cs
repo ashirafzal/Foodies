@@ -514,7 +514,7 @@ namespace Foodies
              or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
              condition me aik se sql queries ki queires ko implement kara jasakai*/
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -553,6 +553,8 @@ namespace Foodies
                     string totalqty = totalQty.Text;
                     double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
                     double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
+                    double discount = Convert.ToDouble(per_discount.Text);
+                    double singleitemcollectiveamount;
 
                     while (dr.Read())
                     {
@@ -575,9 +577,10 @@ namespace Foodies
                                 itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
                                 itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
                                 itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
-                                GST = Convert.ToInt32(dgv3.Rows[i].Cells[2].Value) * GStunit;
+                                singleitemcollectiveamount = Convert.ToDouble(dgv3.Rows[i].Cells[3].Value);
+                                GST = Convert.ToInt32(dgv3.Rows[i].Cells[3].Value) * GStunit;
                                 itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
-                                cmd6 = new SqlCommand("insert into Bill values ('" + InvocieId + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "')", con, tran);
+                                cmd6 = new SqlCommand("insert into Bill values ('" + InvocieId + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() +"','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + act_price.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() +"')", con, tran);
                                 cmd6.ExecuteNonQuery();
                             }
                             MessageBox.Show("Operation Successfull");
