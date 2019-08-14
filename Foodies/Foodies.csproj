@@ -68,11 +68,22 @@
     <Compile Include="Coupon.Designer.cs">
       <DependentUpon>Coupon.cs</DependentUpon>
     </Compile>
+    <Compile Include="CancelInvioce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelInvioce.Designer.cs">
+      <DependentUpon>CancelInvioce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="InvoiceDetails.cs">
       <SubType>Form</SubType>
@@ -117,6 +128,9 @@
     <EmbeddedResource Include="Coupon.resx">
       <DependentUpon>Coupon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CancelInvioce.resx">
+      <DependentUpon>CancelInvioce.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +168,17 @@
     </None>
     <None Include="CategoryDataSet.xss">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvoiceDataSet.xsc">
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvoiceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoiceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvoiceDataSet.xss">
+      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
     </None>
     <None Include="ItemsDataSet.xsc">
       <DependentUpon>ItemsDataSet.xsd</DependentUpon>
