@@ -63,59 +63,59 @@ namespace Foodies
                 DiscounInPercent;
 
             //
-            int txt_invoiceid = Convert.ToInt32(InvoiceNumber.Text);
-
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-            con.Open();
-            string query = "select * from Bill where InvioceID  = '" + txt_invoiceid + "' ";
-            SqlCommand cmd = new SqlCommand(query, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgv1.DataSource = dt;
-
-
-            SqlTransaction tran = con.BeginTransaction();
-
-            for (int i = 0; i < dgv1.Rows.Count; i++)
-            {
-                Invoiceid = Convert.ToString(dgv1.Rows[i].Cells[0].Value);
-                CustID = Convert.ToString(dgv1.Rows[i].Cells[1].Value);
-                OrderID = Convert.ToString(dgv1.Rows[i].Cells[2].Value);
-                CustName = Convert.ToString(dgv1.Rows[i].Cells[3].Value);
-                ProductName = Convert.ToString(dgv1.Rows[i].Cells[4].Value);
-                ProductQuantity = Convert.ToString(dgv1.Rows[i].Cells[5].Value);
-                ProductRate = Convert.ToString(dgv1.Rows[i].Cells[6].Value);
-                ProductAmount = Convert.ToString(dgv1.Rows[i].Cells[7].Value);
-                ProductAmountWithGST = Convert.ToString(dgv1.Rows[i].Cells[8].Value);
-                OrderTime = Convert.ToString(dgv1.Rows[i].Cells[9].Value);
-                OrderDate = Convert.ToString(dgv1.Rows[i].Cells[10].Value);
-                TotalQty = Convert.ToString(dgv1.Rows[i].Cells[11].Value);
-                ActualAmount = Convert.ToString(dgv1.Rows[i].Cells[12].Value);
-                TotalAmount = Convert.ToString(dgv1.Rows[i].Cells[13].Value);
-                TotalAmountWithGST = Convert.ToString(dgv1.Rows[i].Cells[14].Value);
-                DiscounInPercent = Convert.ToString(dgv1.Rows[i].Cells[15].Value);
-
-                SqlCommand cmd1 = new SqlCommand
-                ("insert into DeletedBill values ('" + Invoiceid + "' , '" + CustID + "' , '" + OrderID + "' , '" + CustName + "' , '" + ProductName + "' , '" + ProductQuantity + "' , '" + ProductRate + "' , '" + ProductAmount + "' , '" + ProductAmountWithGST + "' , '" + OrderTime + "' , '" + OrderDate + "' , '" + TotalQty + "' , '" + ActualAmount + "' , '" + TotalAmount + "' , '" + TotalAmountWithGST + "' , '" + DiscounInPercent + "') ", con, tran);
-                cmd1.ExecuteNonQuery();
-            }
-
-            SqlCommand cmd2 = new SqlCommand("Delete from Bill where InvioceID  = '" + txt_invoiceid + "' ", con, tran);
-            cmd2.ExecuteNonQuery();
-
-            tran.Commit();
-            con.Close();
-
-            InvoiceNumber.Text = "";
-            InvoiceNumber.Focus();
-
-            this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
-            MessageBox.Show("Operation Successfull");
+            
             //
             try
             {
-                
+                int txt_invoiceid = Convert.ToInt32(InvoiceNumber.Text);
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Bill where InvioceID  = '" + txt_invoiceid + "' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+
+
+                SqlTransaction tran = con.BeginTransaction();
+
+                for (int i = 0; i < dgv1.Rows.Count; i++)
+                {
+                    Invoiceid = Convert.ToString(dgv1.Rows[i].Cells[0].Value);
+                    CustID = Convert.ToString(dgv1.Rows[i].Cells[1].Value);
+                    OrderID = Convert.ToString(dgv1.Rows[i].Cells[2].Value);
+                    CustName = Convert.ToString(dgv1.Rows[i].Cells[3].Value);
+                    ProductName = Convert.ToString(dgv1.Rows[i].Cells[4].Value);
+                    ProductQuantity = Convert.ToString(dgv1.Rows[i].Cells[5].Value);
+                    ProductRate = Convert.ToString(dgv1.Rows[i].Cells[6].Value);
+                    ProductAmount = Convert.ToString(dgv1.Rows[i].Cells[7].Value);
+                    ProductAmountWithGST = Convert.ToString(dgv1.Rows[i].Cells[8].Value);
+                    OrderTime = Convert.ToString(dgv1.Rows[i].Cells[9].Value);
+                    OrderDate = Convert.ToString(dgv1.Rows[i].Cells[10].Value);
+                    TotalQty = Convert.ToString(dgv1.Rows[i].Cells[11].Value);
+                    ActualAmount = Convert.ToString(dgv1.Rows[i].Cells[12].Value);
+                    TotalAmount = Convert.ToString(dgv1.Rows[i].Cells[13].Value);
+                    TotalAmountWithGST = Convert.ToString(dgv1.Rows[i].Cells[14].Value);
+                    DiscounInPercent = Convert.ToString(dgv1.Rows[i].Cells[15].Value);
+
+                    SqlCommand cmd1 = new SqlCommand
+                    ("insert into DeletedBill values ('" + Invoiceid + "' , '" + CustID + "' , '" + OrderID + "' , '" + CustName + "' , '" + ProductName + "' , '" + ProductQuantity + "' , '" + ProductRate + "' , '" + ProductAmount + "' , '" + ProductAmountWithGST + "' , '" + OrderTime + "' , '" + OrderDate + "' , '" + TotalQty + "' , '" + ActualAmount + "' , '" + TotalAmount + "' , '" + TotalAmountWithGST + "' , '" + DiscounInPercent + "') ", con, tran);
+                    cmd1.ExecuteNonQuery();
+                }
+
+                SqlCommand cmd2 = new SqlCommand("Delete from Bill where InvioceID  = '" + txt_invoiceid + "' ", con, tran);
+                cmd2.ExecuteNonQuery();
+
+                tran.Commit();
+                con.Close();
+
+                InvoiceNumber.Text = "";
+                InvoiceNumber.Focus();
+
+                this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
+                MessageBox.Show("Operation Successfull");
             }
             catch (Exception)
             {
