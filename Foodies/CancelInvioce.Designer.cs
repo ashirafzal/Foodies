@@ -53,17 +53,12 @@
             this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceDataSet = new Foodies.InvoiceDataSet();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.totalprice = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.totalquantity = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -299,10 +294,6 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Controls.Add(this.totalprice, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.totalquantity, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 744);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -311,54 +302,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1602, 120);
             this.tableLayoutPanel3.TabIndex = 2;
-            // 
-            // totalprice
-            // 
-            this.totalprice.AutoSize = true;
-            this.totalprice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalprice.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalprice.Location = new System.Drawing.Point(1203, 0);
-            this.totalprice.Name = "totalprice";
-            this.totalprice.Size = new System.Drawing.Size(396, 120);
-            this.totalprice.TabIndex = 3;
-            this.totalprice.Text = "0";
-            this.totalprice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(803, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(394, 120);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Total Price";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // totalquantity
-            // 
-            this.totalquantity.AutoSize = true;
-            this.totalquantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalquantity.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalquantity.Location = new System.Drawing.Point(403, 0);
-            this.totalquantity.Name = "totalquantity";
-            this.totalquantity.Size = new System.Drawing.Size(394, 120);
-            this.totalquantity.TabIndex = 1;
-            this.totalquantity.Text = "0";
-            this.totalquantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 120);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Total Quantity";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // billTableAdapter
             // 
@@ -381,8 +324,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,10 +336,6 @@
         private System.Windows.Forms.Button DeleteInvoice;
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label totalprice;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label totalquantity;
-        private System.Windows.Forms.Label label1;
         private InvoiceDataSet invoiceDataSet;
         private System.Windows.Forms.BindingSource billBindingSource;
         private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
