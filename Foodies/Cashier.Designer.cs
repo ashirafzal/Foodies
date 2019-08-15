@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -233,7 +233,7 @@
             // 
             this.editInvoiceToolStripMenuItem.Name = "editInvoiceToolStripMenuItem";
             this.editInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editInvoiceToolStripMenuItem.Text = "Cancelt Invoice";
+            this.editInvoiceToolStripMenuItem.Text = "Cancel Invoice";
             this.editInvoiceToolStripMenuItem.Click += new System.EventHandler(this.editInvoiceToolStripMenuItem_Click);
             // 
             // totalInvoiceDataToolStripMenuItem
@@ -303,25 +303,25 @@
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.dailySalesToolStripMenuItem.Text = "Daily Sales";
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.weeklySalesToolStripMenuItem.Text = "Weekly Sales";
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.monthlySalesToolStripMenuItem.Text = "Monthly Sales";
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.annualSaleslToolStripMenuItem.Text = "Annual Salesl ";
             // 
             // exportToolStripMenuItem
@@ -336,13 +336,13 @@
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.exportToExcelToolStripMenuItem.Text = "Export to excel";
             // 
             // exportToAccessToolStripMenuItem
             // 
             this.exportToAccessToolStripMenuItem.Name = "exportToAccessToolStripMenuItem";
-            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.exportToAccessToolStripMenuItem.Text = "Export to access";
             // 
             // othersToolStripMenuItem
@@ -358,19 +358,19 @@
             // viewSummaryToolStripMenuItem
             // 
             this.viewSummaryToolStripMenuItem.Name = "viewSummaryToolStripMenuItem";
-            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.viewSummaryToolStripMenuItem.Text = "View Summary";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // couponToolStripMenuItem
             // 
             this.couponToolStripMenuItem.Name = "couponToolStripMenuItem";
-            this.couponToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.couponToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.couponToolStripMenuItem.Text = "Coupon";
             this.couponToolStripMenuItem.Click += new System.EventHandler(this.couponToolStripMenuItem_Click);
             // 
@@ -479,12 +479,12 @@
             // 
             // addbtn
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Green;
-            this.addbtn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            this.addbtn.DefaultCellStyle = dataGridViewCellStyle1;
             this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addbtn.HeaderText = "ADD";
             this.addbtn.Name = "addbtn";
@@ -495,12 +495,12 @@
             // 
             // minusbtn
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle2;
             this.minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusbtn.HeaderText = "MINUS";
             this.minusbtn.Name = "minusbtn";
@@ -510,12 +510,12 @@
             // 
             // btnDelete
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Navy;
-            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
+            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.HeaderText = "DELETE";
             this.btnDelete.Name = "btnDelete";

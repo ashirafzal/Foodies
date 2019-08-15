@@ -62,9 +62,6 @@ namespace Foodies
                 OrderTime, OrderDate, TotalQty, ActualAmount, TotalAmount, TotalAmountWithGST,
                 DiscounInPercent;
 
-            //
-            
-            //
             try
             {
                 int txt_invoiceid = Convert.ToInt32(InvoiceNumber.Text);
@@ -113,14 +110,21 @@ namespace Foodies
 
                 InvoiceNumber.Text = "";
                 InvoiceNumber.Focus();
-
-                this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
-                MessageBox.Show("Operation Successfull");
             }
             catch (Exception)
             {
                 MessageBox.Show("InvoiceID cannot be blank");
             }
+
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            conn.Open();
+            string query1 = "select * from Bill";
+            SqlCommand cmd3 = new SqlCommand(query1, conn);
+            DataTable dt1 = new DataTable();
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd3);
+            da1.Fill(dt1);
+            dgv1.DataSource = dt1;
+            conn.Close();
         }
     }
 }
