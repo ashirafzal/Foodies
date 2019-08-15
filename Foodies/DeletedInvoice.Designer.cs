@@ -39,9 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.totalquantity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.invoiceDataSet = new Foodies.InvoiceDataSet();
-            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
+            this.deletedInvoiceDataSet = new Foodies.DeletedInvoiceDataSet();
+            this.deletedBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deletedBillTableAdapter = new Foodies.DeletedInvoiceDataSetTableAdapters.DeletedBillTableAdapter();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +62,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletedInvoiceDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletedBillBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -127,6 +127,7 @@
             this.SearchInvoice.TabIndex = 1;
             this.SearchInvoice.Text = "Search Invoice";
             this.SearchInvoice.UseVisualStyleBackColor = false;
+            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click);
             // 
             // dgv1
             // 
@@ -157,7 +158,7 @@
             this.totalAmountDataGridViewTextBoxColumn,
             this.totalAmountWithGSTDataGridViewTextBoxColumn,
             this.discountInPercentDataGridViewTextBoxColumn});
-            this.dgv1.DataSource = this.billBindingSource;
+            this.dgv1.DataSource = this.deletedBillBindingSource;
             this.dgv1.Location = new System.Drawing.Point(13, 117);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
@@ -232,19 +233,19 @@
             this.label1.Text = "Total Quantity";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // invoiceDataSet
+            // deletedInvoiceDataSet
             // 
-            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
-            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.deletedInvoiceDataSet.DataSetName = "DeletedInvoiceDataSet";
+            this.deletedInvoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // billBindingSource
+            // deletedBillBindingSource
             // 
-            this.billBindingSource.DataMember = "Bill";
-            this.billBindingSource.DataSource = this.invoiceDataSet;
+            this.deletedBillBindingSource.DataMember = "DeletedBill";
+            this.deletedBillBindingSource.DataSource = this.deletedInvoiceDataSet;
             // 
-            // billTableAdapter
+            // deletedBillTableAdapter
             // 
-            this.billTableAdapter.ClearBeforeFill = true;
+            this.deletedBillTableAdapter.ClearBeforeFill = true;
             // 
             // invioceIDDataGridViewTextBoxColumn
             // 
@@ -371,7 +372,7 @@
             this.ClientSize = new System.Drawing.Size(1604, 865);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DeletedInvoice";
-            this.Text = "DeletedInvoice";
+            this.Text = "Deleted Invoice";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DeletedInvoice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -380,8 +381,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletedInvoiceDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deletedBillBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,9 +399,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label totalquantity;
         private System.Windows.Forms.Label label1;
-        private InvoiceDataSet invoiceDataSet;
-        private System.Windows.Forms.BindingSource billBindingSource;
-        private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
+        private DeletedInvoiceDataSet deletedInvoiceDataSet;
+        private System.Windows.Forms.BindingSource deletedBillBindingSource;
+        private DeletedInvoiceDataSetTableAdapters.DeletedBillTableAdapter deletedBillTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn invioceIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn custIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;

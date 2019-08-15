@@ -80,6 +80,11 @@
     <Compile Include="DeletedInvoice.Designer.cs">
       <DependentUpon>DeletedInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeletedInvoiceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +182,17 @@
     </None>
     <None Include="CategoryDataSet.xss">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DeletedInvoiceDataSet.xsc">
+      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DeletedInvoiceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DeletedInvoiceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DeletedInvoiceDataSet.xss">
+      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
     </None>
     <None Include="InvoiceDataSet.xsc">
       <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
