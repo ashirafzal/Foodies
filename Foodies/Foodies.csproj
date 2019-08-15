@@ -74,6 +74,12 @@
     <Compile Include="CancelInvioce.Designer.cs">
       <DependentUpon>CancelInvioce.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeletedInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedInvoice.Designer.cs">
+      <DependentUpon>DeletedInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CancelInvioce.resx">
       <DependentUpon>CancelInvioce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletedInvoice.resx">
+      <DependentUpon>DeletedInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
