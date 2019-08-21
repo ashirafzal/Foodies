@@ -723,6 +723,12 @@ namespace Foodies
             cancelInvioce.Show();
         }
 
+        private void deletedInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeletedInvoice deletedInvoice = new DeletedInvoice();
+            deletedInvoice.Show();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();

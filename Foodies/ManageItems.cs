@@ -114,7 +114,8 @@ namespace Foodies
                 ProductName.Text = string.Empty;
                 ProductCategory.Text = string.Empty;
                 ProductPrice.Text = string.Empty;
-                MessageBox.Show("Product updated Successfully");
+                MessageBox.Show("Product updated");
+                this.productsTableAdapter.Fill(this.itemsDataSet.Products);
             }
             catch (Exception)
             {
@@ -144,7 +145,8 @@ namespace Foodies
                 ProductCategory.Text = string.Empty;
                 ProductName.Text = string.Empty;
                 ProductPrice.Text = string.Empty;
-                MessageBox.Show("Product Deleted Successfully");
+                MessageBox.Show("Product Deleted");
+                this.productsTableAdapter.Fill(this.itemsDataSet.Products);
             }
             catch (Exception)
             {

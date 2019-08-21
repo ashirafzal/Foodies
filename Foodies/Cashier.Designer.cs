@@ -123,6 +123,7 @@
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deletedInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -217,7 +218,8 @@
             this.invoiceDetailsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchInvoiceToolStripMenuItem,
             this.editInvoiceToolStripMenuItem,
-            this.totalInvoiceDataToolStripMenuItem});
+            this.totalInvoiceDataToolStripMenuItem,
+            this.deletedInvoiceToolStripMenuItem});
             this.invoiceDetailsToolStripMenuItem.Name = "invoiceDetailsToolStripMenuItem";
             this.invoiceDetailsToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.invoiceDetailsToolStripMenuItem.Text = "Invoice Details";
@@ -258,35 +260,35 @@
             // productPriceToolStripMenuItem
             // 
             this.productPriceToolStripMenuItem.Name = "productPriceToolStripMenuItem";
-            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.productPriceToolStripMenuItem.Text = "Product Price";
+            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productPriceToolStripMenuItem.Text = "Product Prices";
             // 
             // createProductToolStripMenuItem
             // 
             this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
-            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.createProductToolStripMenuItem.Text = "Create Product";
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createProductToolStripMenuItem.Text = "Create Category";
             this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
             // 
             // manageProductToolStripMenuItem
             // 
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.manageProductToolStripMenuItem.Text = "Manage Product Category";
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageProductToolStripMenuItem.Text = "Manage Category";
             this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
             // 
             // manageSubProductsToolStripMenuItem
             // 
             this.manageSubProductsToolStripMenuItem.Name = "manageSubProductsToolStripMenuItem";
-            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.manageSubProductsToolStripMenuItem.Text = "Create items";
+            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageSubProductsToolStripMenuItem.Text = "Create Products";
             this.manageSubProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSubProductsToolStripMenuItem_Click);
             // 
             // manageItemsToolStripMenuItem
             // 
             this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
-            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.manageItemsToolStripMenuItem.Text = "Manage items";
+            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageItemsToolStripMenuItem.Text = "Manage Products";
             this.manageItemsToolStripMenuItem.Click += new System.EventHandler(this.manageItemsToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
@@ -303,26 +305,26 @@
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dailySalesToolStripMenuItem.Text = "Daily Sales";
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.weeklySalesToolStripMenuItem.Text = "Weekly Sales";
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.monthlySalesToolStripMenuItem.Text = "Monthly Sales";
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.annualSaleslToolStripMenuItem.Text = "Annual Salesl ";
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.annualSaleslToolStripMenuItem.Text = "Annual Sales";
             // 
             // exportToolStripMenuItem
             // 
@@ -336,14 +338,14 @@
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.exportToExcelToolStripMenuItem.Text = "Export to excel";
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Text = "Export to Excel";
             // 
             // exportToAccessToolStripMenuItem
             // 
             this.exportToAccessToolStripMenuItem.Name = "exportToAccessToolStripMenuItem";
-            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.exportToAccessToolStripMenuItem.Text = "Export to access";
+            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToAccessToolStripMenuItem.Text = "Export to Access";
             // 
             // othersToolStripMenuItem
             // 
@@ -358,19 +360,19 @@
             // viewSummaryToolStripMenuItem
             // 
             this.viewSummaryToolStripMenuItem.Name = "viewSummaryToolStripMenuItem";
-            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewSummaryToolStripMenuItem.Text = "View Summary";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // couponToolStripMenuItem
             // 
             this.couponToolStripMenuItem.Name = "couponToolStripMenuItem";
-            this.couponToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.couponToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.couponToolStripMenuItem.Text = "Coupon";
             this.couponToolStripMenuItem.Click += new System.EventHandler(this.couponToolStripMenuItem_Click);
             // 
@@ -591,7 +593,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SeaGreen;
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(212, 10);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 10, 10, 10);
@@ -609,7 +611,7 @@
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
             this.btnLogin.FlatAppearance.BorderSize = 2;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(10, 10);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(10, 10, 5, 10);
@@ -639,7 +641,7 @@
             // 
             this.total_Amount.AutoSize = true;
             this.total_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.total_Amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_Amount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total_Amount.Location = new System.Drawing.Point(210, 0);
             this.total_Amount.Name = "total_Amount";
             this.total_Amount.Size = new System.Drawing.Size(202, 110);
@@ -652,12 +654,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(201, 110);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Total Amount";
+            this.label4.Text = "TOTAL AMOUNT";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel9
@@ -719,7 +721,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(479, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 70);
@@ -744,12 +746,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 70);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Discount";
+            this.label6.Text = "DISCOUNT";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel12
@@ -786,7 +788,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(164, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 70);
@@ -817,7 +819,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(219, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 70);
@@ -829,7 +831,7 @@
             // 
             this.per_discount.AutoSize = true;
             this.per_discount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.per_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.per_discount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.per_discount.Location = new System.Drawing.Point(155, 0);
             this.per_discount.Name = "per_discount";
             this.per_discount.Size = new System.Drawing.Size(58, 70);
@@ -842,12 +844,12 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 70);
             this.label9.TabIndex = 5;
-            this.label9.Text = "Discount Given";
+            this.label9.Text = "GIVEN DISCOUNT";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel14
@@ -888,7 +890,7 @@
             this.btnDiscount.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.btnDiscount.FlatAppearance.BorderSize = 2;
             this.btnDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscount.ForeColor = System.Drawing.Color.White;
             this.btnDiscount.Location = new System.Drawing.Point(10, 5);
             this.btnDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
@@ -922,7 +924,7 @@
             // 
             this.act_price.AutoSize = true;
             this.act_price.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.act_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.act_price.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.act_price.Location = new System.Drawing.Point(141, 0);
             this.act_price.Name = "act_price";
             this.act_price.Size = new System.Drawing.Size(85, 70);
@@ -934,12 +936,12 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 70);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Actual Price";
+            this.label12.Text = "ACTUAL AMOUNT";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel16
@@ -979,7 +981,7 @@
             // 
             this.totalQty.AutoSize = true;
             this.totalQty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalQty.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalQty.Location = new System.Drawing.Point(182, 0);
             this.totalQty.Name = "totalQty";
             this.totalQty.Size = new System.Drawing.Size(81, 70);
@@ -991,12 +993,12 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(173, 70);
             this.label14.TabIndex = 2;
-            this.label14.Text = "Total Quantity";
+            this.label14.Text = "TOTAL QUANTITY";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRefresh
@@ -1197,6 +1199,13 @@
             this.qty.HeaderText = "QUANTITY";
             this.qty.Name = "qty";
             // 
+            // deletedInvoiceToolStripMenuItem
+            // 
+            this.deletedInvoiceToolStripMenuItem.Name = "deletedInvoiceToolStripMenuItem";
+            this.deletedInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletedInvoiceToolStripMenuItem.Text = "Deleted Invoice";
+            this.deletedInvoiceToolStripMenuItem.Click += new System.EventHandler(this.deletedInvoiceToolStripMenuItem_Click);
+            // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1205,6 +1214,7 @@
             this.ClientSize = new System.Drawing.Size(1604, 865);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Cashier";
             this.Text = "Cashier";
@@ -1343,5 +1353,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn addbtn;
         private System.Windows.Forms.DataGridViewButtonColumn minusbtn;
         private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
+        private System.Windows.Forms.ToolStripMenuItem deletedInvoiceToolStripMenuItem;
     }
 }

@@ -62,7 +62,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.132948F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.86705F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 865);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 865);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ProductPanel
@@ -74,7 +74,7 @@
             this.ProductPanel.Location = new System.Drawing.Point(0, 79);
             this.ProductPanel.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(1604, 785);
+            this.ProductPanel.Size = new System.Drawing.Size(1600, 785);
             this.ProductPanel.TabIndex = 2;
             this.ProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ProductPanel_Paint);
             // 
@@ -99,7 +99,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtCategory, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(291, 288);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(289, 288);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -115,14 +115,14 @@
             this.CreateProduct.BackColor = System.Drawing.Color.RoyalBlue;
             this.CreateProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateProduct.ForeColor = System.Drawing.Color.White;
             this.CreateProduct.Location = new System.Drawing.Point(291, 103);
             this.CreateProduct.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.CreateProduct.Name = "CreateProduct";
             this.CreateProduct.Size = new System.Drawing.Size(291, 50);
             this.CreateProduct.TabIndex = 17;
-            this.CreateProduct.Text = "Create Product";
+            this.CreateProduct.Text = "CREATE CATEGORY";
             this.CreateProduct.UseVisualStyleBackColor = false;
             this.CreateProduct.Click += new System.EventHandler(this.CreateProduct_Click);
             // 
@@ -131,14 +131,14 @@
             this.browseimage.BackColor = System.Drawing.Color.RoyalBlue;
             this.browseimage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.browseimage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.browseimage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseimage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseimage.ForeColor = System.Drawing.Color.White;
             this.browseimage.Location = new System.Drawing.Point(291, 52);
             this.browseimage.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.browseimage.Name = "browseimage";
             this.browseimage.Size = new System.Drawing.Size(291, 49);
             this.browseimage.TabIndex = 16;
-            this.browseimage.Text = "Browse Image";
+            this.browseimage.Text = "BROWSE IMAGE";
             this.browseimage.UseVisualStyleBackColor = false;
             this.browseimage.Click += new System.EventHandler(this.browseimage_Click);
             // 
@@ -146,24 +146,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 51);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Product Category";
+            this.label1.Text = "PRODUCT CATEGORY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(285, 51);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Product Image";
+            this.label5.Text = "PRODUCT IMAGE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCategory
@@ -171,11 +171,11 @@
             this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(291, 3);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.txtCategory.Location = new System.Drawing.Point(291, 5);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(291, 47);
+            this.txtCategory.Size = new System.Drawing.Size(291, 41);
             this.txtCategory.TabIndex = 0;
             this.txtCategory.TextChanged += new System.EventHandler(this.txtCategory_TextChanged);
             // 
@@ -199,13 +199,13 @@
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1345, 78);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Category Entry Form";
+            this.label4.Text = "CATEGORY ENTRY FORM";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
@@ -229,14 +229,14 @@
             this.button4.BackColor = System.Drawing.Color.RoyalBlue;
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(1, 2);
             this.button4.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(248, 74);
             this.button4.TabIndex = 11;
-            this.button4.Text = "Alter Category";
+            this.button4.Text = "ALTER CATEGORY";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // SubProductManagement_System
@@ -246,8 +246,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1604, 865);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SubProductManagement_System";
             this.Text = "Category Form";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SubProductManagement_System_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ProductPanel.ResumeLayout(false);

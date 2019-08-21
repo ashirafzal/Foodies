@@ -47,8 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ProductID = new System.Windows.Forms.TextBox();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.itemsDataSet = new Foodies.ItemsDataSet();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemsDataSet = new Foodies.ItemsDataSet();
             this.productsTableAdapter = new Foodies.ItemsDataSetTableAdapters.ProductsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // EditProduct
@@ -72,7 +72,7 @@
             this.EditProduct.Location = new System.Drawing.Point(0, 0);
             this.EditProduct.Margin = new System.Windows.Forms.Padding(0);
             this.EditProduct.Name = "EditProduct";
-            this.EditProduct.Size = new System.Drawing.Size(1604, 865);
+            this.EditProduct.Size = new System.Drawing.Size(1600, 865);
             this.EditProduct.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -90,7 +90,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1604, 865);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1600, 865);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -101,20 +101,20 @@
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1145, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1142, 1);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.77707F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.22293F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(458, 863);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(457, 863);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 535);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 535);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(388, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +139,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.ProductID, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(30, 96);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(29, 96);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 6;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -156,14 +156,14 @@
             this.button5.BackColor = System.Drawing.Color.RoyalBlue;
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(179, 231);
             this.button5.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(219, 49);
             this.button5.TabIndex = 12;
-            this.button5.Text = "Update Product";
+            this.button5.Text = "UPDATE PRODUCT";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -172,14 +172,14 @@
             this.button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 231);
             this.button2.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(179, 49);
             this.button2.TabIndex = 11;
-            this.button2.Text = "Delete Product";
+            this.button2.Text = "DELETE PRODUCT";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -188,119 +188,119 @@
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(179, 185);
             this.button1.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(219, 44);
             this.button1.TabIndex = 10;
-            this.button1.Text = "Browse";
+            this.button1.Text = "BROWSE";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ProductPrice
             // 
             this.ProductPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductPrice.Location = new System.Drawing.Point(179, 139);
-            this.ProductPrice.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.ProductPrice.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPrice.Location = new System.Drawing.Point(179, 143);
+            this.ProductPrice.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.ProductPrice.Multiline = true;
             this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.Size = new System.Drawing.Size(219, 44);
+            this.ProductPrice.Size = new System.Drawing.Size(219, 36);
             this.ProductPrice.TabIndex = 9;
             // 
             // ProductName
             // 
             this.ProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductName.Location = new System.Drawing.Point(179, 93);
-            this.ProductName.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.ProductName.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductName.Location = new System.Drawing.Point(179, 97);
+            this.ProductName.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.ProductName.Multiline = true;
             this.ProductName.Name = "ProductName";
-            this.ProductName.Size = new System.Drawing.Size(219, 44);
+            this.ProductName.Size = new System.Drawing.Size(219, 36);
             this.ProductName.TabIndex = 8;
             // 
             // ProductCategory
             // 
             this.ProductCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductCategory.Location = new System.Drawing.Point(179, 47);
-            this.ProductCategory.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.ProductCategory.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCategory.Location = new System.Drawing.Point(179, 51);
+            this.ProductCategory.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.ProductCategory.Multiline = true;
             this.ProductCategory.Name = "ProductCategory";
-            this.ProductCategory.Size = new System.Drawing.Size(219, 44);
+            this.ProductCategory.Size = new System.Drawing.Size(219, 36);
             this.ProductCategory.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 46);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Product ID";
+            this.label1.Text = "PRODUCT ID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 46);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Product Name";
+            this.label3.Text = "PRODUCT NAME";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(173, 46);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Product Price";
+            this.label5.Text = "PRODUCT PRICE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 46);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Product Category";
+            this.label2.Text = "PRODUCT CATEGORY";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 184);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(173, 46);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Price Image";
+            this.label6.Text = "PRODUCT IMAGE";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProductID
             // 
             this.ProductID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductID.Location = new System.Drawing.Point(179, 1);
-            this.ProductID.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
+            this.ProductID.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductID.Location = new System.Drawing.Point(179, 5);
+            this.ProductID.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.ProductID.Multiline = true;
             this.ProductID.Name = "ProductID";
-            this.ProductID.Size = new System.Drawing.Size(219, 44);
+            this.ProductID.Size = new System.Drawing.Size(219, 36);
             this.ProductID.TabIndex = 6;
             // 
             // dgv1
@@ -334,20 +334,20 @@
             this.dgv1.ShowCellToolTips = false;
             this.dgv1.ShowEditingIcon = false;
             this.dgv1.ShowRowErrors = false;
-            this.dgv1.Size = new System.Drawing.Size(1143, 863);
+            this.dgv1.Size = new System.Drawing.Size(1140, 863);
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
-            // 
-            // itemsDataSet
-            // 
-            this.itemsDataSet.DataSetName = "ItemsDataSet";
-            this.itemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "Products";
             this.productsBindingSource.DataSource = this.itemsDataSet;
+            // 
+            // itemsDataSet
+            // 
+            this.itemsDataSet.DataSetName = "ItemsDataSet";
+            this.itemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productsTableAdapter
             // 
@@ -356,35 +356,36 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ProductId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PRODUCT ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PRODUCT NAME";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ProductPrice";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ProductPrice";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PRODUCT PRICE";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ProductCategory";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ProductCategory";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PRODUCT CATEGORY";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "ProductImage";
-            this.dataGridViewImageColumn1.HeaderText = "ProductImage";
+            this.dataGridViewImageColumn1.HeaderText = "PRODUCT IMAGE";
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
@@ -395,6 +396,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1604, 865);
             this.Controls.Add(this.EditProduct);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ManageItems";
             this.Text = "ManageProduct";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -406,8 +408,8 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

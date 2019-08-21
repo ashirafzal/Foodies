@@ -16,7 +16,7 @@ namespace Foodies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DeletedInvoice());
+            Application.Run(new Login());
         }
     }
 }
