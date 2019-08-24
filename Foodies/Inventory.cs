@@ -71,5 +71,10 @@ namespace Foodies
         {
             label5.BackColor = Color.White;
         }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
