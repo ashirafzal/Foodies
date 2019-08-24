@@ -737,8 +737,7 @@ namespace Foodies
 
         private void couponToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Coupon coupon = new Coupon();
-            coupon.Show();
+           
         }
 
         private void dgv3_CellContentClick(object sender, DataGridViewCellEventArgs e)

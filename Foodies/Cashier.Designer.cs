@@ -61,7 +61,6 @@
             this.othersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.couponToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv3 = new System.Windows.Forms.DataGridView();
@@ -163,7 +162,7 @@
             this.othersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1604, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1600, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -351,8 +350,7 @@
             // 
             this.othersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewSummaryToolStripMenuItem,
-            this.reportToolStripMenuItem,
-            this.couponToolStripMenuItem});
+            this.reportToolStripMenuItem});
             this.othersToolStripMenuItem.Name = "othersToolStripMenuItem";
             this.othersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.othersToolStripMenuItem.Text = "Others";
@@ -368,13 +366,6 @@
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reportToolStripMenuItem.Text = "Report";
-            // 
-            // couponToolStripMenuItem
-            // 
-            this.couponToolStripMenuItem.Name = "couponToolStripMenuItem";
-            this.couponToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.couponToolStripMenuItem.Text = "Coupon";
-            this.couponToolStripMenuItem.Click += new System.EventHandler(this.couponToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -393,7 +384,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 841);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 841);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -405,14 +396,14 @@
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(386, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(385, 1);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(832, 839);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(829, 839);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // dgv3
@@ -439,7 +430,7 @@
             this.dgv3.Name = "dgv3";
             this.dgv3.ReadOnly = true;
             this.dgv3.RowHeadersVisible = false;
-            this.dgv3.Size = new System.Drawing.Size(824, 495);
+            this.dgv3.Size = new System.Drawing.Size(821, 495);
             this.dgv3.TabIndex = 1;
             this.dgv3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellClick);
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
@@ -532,7 +523,7 @@
             this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(824, 83);
+            this.label1.Size = new System.Drawing.Size(821, 83);
             this.label1.TabIndex = 2;
             this.label1.Text = "ORDER LIST";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -551,7 +542,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.4F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.6F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(830, 251);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(827, 251);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // tableLayoutPanel6
@@ -567,7 +558,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(830, 110);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(827, 110);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -578,12 +569,12 @@
             this.tableLayoutPanel8.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.btnLogin, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(415, 0);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(413, 0);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(415, 110);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(414, 110);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // button1
@@ -598,7 +589,7 @@
             this.button1.Location = new System.Drawing.Point(212, 10);
             this.button1.Margin = new System.Windows.Forms.Padding(5, 10, 10, 10);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 90);
+            this.button1.Size = new System.Drawing.Size(192, 90);
             this.button1.TabIndex = 7;
             this.button1.Text = "DONE TRANSACTION";
             this.button1.UseVisualStyleBackColor = false;
@@ -634,7 +625,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(415, 110);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(413, 110);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // total_Amount
@@ -642,9 +633,9 @@
             this.total_Amount.AutoSize = true;
             this.total_Amount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.total_Amount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_Amount.Location = new System.Drawing.Point(210, 0);
+            this.total_Amount.Location = new System.Drawing.Point(209, 0);
             this.total_Amount.Name = "total_Amount";
-            this.total_Amount.Size = new System.Drawing.Size(202, 110);
+            this.total_Amount.Size = new System.Drawing.Size(201, 110);
             this.total_Amount.TabIndex = 1;
             this.total_Amount.Text = "0";
             this.total_Amount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -657,7 +648,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(201, 110);
+            this.label4.Size = new System.Drawing.Size(200, 110);
             this.label4.TabIndex = 0;
             this.label4.Text = "TOTAL AMOUNT";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -676,7 +667,7 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(830, 141);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(827, 141);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // tableLayoutPanel10
@@ -692,7 +683,7 @@
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(830, 70);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(827, 70);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // tableLayoutPanel11
@@ -713,7 +704,7 @@
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(555, 70);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(553, 70);
             this.tableLayoutPanel11.TabIndex = 0;
             this.tableLayoutPanel11.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel11_Paint);
             // 
@@ -722,9 +713,9 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(479, 0);
+            this.label8.Location = new System.Drawing.Point(478, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 70);
+            this.label8.Size = new System.Drawing.Size(72, 70);
             this.label8.TabIndex = 4;
             this.label8.Text = "%";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -737,7 +728,7 @@
             this.DiscountPercent.Margin = new System.Windows.Forms.Padding(0);
             this.DiscountPercent.Multiline = true;
             this.DiscountPercent.Name = "DiscountPercent";
-            this.DiscountPercent.Size = new System.Drawing.Size(159, 37);
+            this.DiscountPercent.Size = new System.Drawing.Size(158, 37);
             this.DiscountPercent.TabIndex = 3;
             this.DiscountPercent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DiscountPercent.TextChanged += new System.EventHandler(this.DiscountPercent_TextChanged);
@@ -806,13 +797,13 @@
             this.tableLayoutPanel13.Controls.Add(this.per_discount, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(555, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(553, 0);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(275, 70);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(274, 70);
             this.tableLayoutPanel13.TabIndex = 1;
             // 
             // label11
@@ -820,9 +811,9 @@
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(219, 0);
+            this.label11.Location = new System.Drawing.Point(217, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 70);
+            this.label11.Size = new System.Drawing.Size(54, 70);
             this.label11.TabIndex = 7;
             this.label11.Text = "%";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -832,9 +823,9 @@
             this.per_discount.AutoSize = true;
             this.per_discount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.per_discount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.per_discount.Location = new System.Drawing.Point(155, 0);
+            this.per_discount.Location = new System.Drawing.Point(154, 0);
             this.per_discount.Name = "per_discount";
-            this.per_discount.Size = new System.Drawing.Size(58, 70);
+            this.per_discount.Size = new System.Drawing.Size(57, 70);
             this.per_discount.TabIndex = 6;
             this.per_discount.Text = "0";
             this.per_discount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -847,7 +838,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 70);
+            this.label9.Size = new System.Drawing.Size(145, 70);
             this.label9.TabIndex = 5;
             this.label9.Text = "GIVEN DISCOUNT";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -865,7 +856,7 @@
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(830, 71);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(827, 71);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // tableLayoutPanel15
@@ -880,7 +871,7 @@
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(441, 70);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(440, 70);
             this.tableLayoutPanel15.TabIndex = 2;
             // 
             // btnDiscount
@@ -917,7 +908,7 @@
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(229, 70);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(228, 70);
             this.tableLayoutPanel17.TabIndex = 1;
             // 
             // act_price
@@ -927,7 +918,7 @@
             this.act_price.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.act_price.Location = new System.Drawing.Point(141, 0);
             this.act_price.Name = "act_price";
-            this.act_price.Size = new System.Drawing.Size(85, 70);
+            this.act_price.Size = new System.Drawing.Size(84, 70);
             this.act_price.TabIndex = 2;
             this.act_price.Text = "0";
             this.act_price.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -952,13 +943,13 @@
             this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel18, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.btnRefresh, 1, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(442, 0);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(440, 0);
             this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(388, 71);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(387, 71);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
             // tableLayoutPanel18
@@ -1013,7 +1004,7 @@
             this.btnRefresh.Location = new System.Drawing.Point(286, 5);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(20, 5, 20, 5);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(82, 61);
+            this.btnRefresh.Size = new System.Drawing.Size(81, 61);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -1027,7 +1018,7 @@
             this.tableLayoutPanel3.Controls.Add(this.dgv1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1219, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1215, 1);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -1130,7 +1121,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(384, 839);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(383, 839);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // dgv2
@@ -1154,7 +1145,7 @@
             this.dgv2.ShowCellToolTips = false;
             this.dgv2.ShowEditingIcon = false;
             this.dgv2.ShowRowErrors = false;
-            this.dgv2.Size = new System.Drawing.Size(382, 753);
+            this.dgv2.Size = new System.Drawing.Size(381, 753);
             this.dgv2.TabIndex = 3;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
             this.dgv2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentDoubleClick);
@@ -1166,7 +1157,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(4, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(376, 83);
+            this.label3.Size = new System.Drawing.Size(375, 83);
             this.label3.TabIndex = 4;
             this.label3.Text = "ITEMS";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1211,7 +1202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 865);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1289,7 +1280,6 @@
         private System.Windows.Forms.ToolStripMenuItem othersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewSummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem couponToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgv3;
