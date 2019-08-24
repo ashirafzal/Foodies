@@ -68,6 +68,11 @@
     <Compile Include="CancelInvioce.Designer.cs">
       <DependentUpon>CancelInvioce.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryYDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeletedInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +187,17 @@
     </None>
     <None Include="CategoryDataSet.xss">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CategoryYDataSet2.xsc">
+      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CategoryYDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CategoryYDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CategoryYDataSet2.xss">
+      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </None>
     <None Include="DeletedInvoiceDataSet.xsc">
       <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>

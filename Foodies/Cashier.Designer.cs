@@ -44,6 +44,7 @@
             this.searchInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalInvoiceDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletedInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,7 +123,6 @@
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deletedInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -226,23 +226,30 @@
             // searchInvoiceToolStripMenuItem
             // 
             this.searchInvoiceToolStripMenuItem.Name = "searchInvoiceToolStripMenuItem";
-            this.searchInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.searchInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.searchInvoiceToolStripMenuItem.Text = "Search Invoice";
             this.searchInvoiceToolStripMenuItem.Click += new System.EventHandler(this.searchInvoiceToolStripMenuItem_Click);
             // 
             // editInvoiceToolStripMenuItem
             // 
             this.editInvoiceToolStripMenuItem.Name = "editInvoiceToolStripMenuItem";
-            this.editInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.editInvoiceToolStripMenuItem.Text = "Cancel Invoice";
             this.editInvoiceToolStripMenuItem.Click += new System.EventHandler(this.editInvoiceToolStripMenuItem_Click);
             // 
             // totalInvoiceDataToolStripMenuItem
             // 
             this.totalInvoiceDataToolStripMenuItem.Name = "totalInvoiceDataToolStripMenuItem";
-            this.totalInvoiceDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.totalInvoiceDataToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.totalInvoiceDataToolStripMenuItem.Text = "Edit Invoice";
             this.totalInvoiceDataToolStripMenuItem.Click += new System.EventHandler(this.totalInvoiceDataToolStripMenuItem_Click);
+            // 
+            // deletedInvoiceToolStripMenuItem
+            // 
+            this.deletedInvoiceToolStripMenuItem.Name = "deletedInvoiceToolStripMenuItem";
+            this.deletedInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.deletedInvoiceToolStripMenuItem.Text = "Deleted Invoice";
+            this.deletedInvoiceToolStripMenuItem.Click += new System.EventHandler(this.deletedInvoiceToolStripMenuItem_Click);
             // 
             // productSearchToolStripMenuItem
             // 
@@ -259,34 +266,34 @@
             // productPriceToolStripMenuItem
             // 
             this.productPriceToolStripMenuItem.Name = "productPriceToolStripMenuItem";
-            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.productPriceToolStripMenuItem.Text = "Product Prices";
             // 
             // createProductToolStripMenuItem
             // 
             this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
-            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.createProductToolStripMenuItem.Text = "Create Category";
             this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
             // 
             // manageProductToolStripMenuItem
             // 
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.manageProductToolStripMenuItem.Text = "Manage Category";
             this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
             // 
             // manageSubProductsToolStripMenuItem
             // 
             this.manageSubProductsToolStripMenuItem.Name = "manageSubProductsToolStripMenuItem";
-            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.manageSubProductsToolStripMenuItem.Text = "Create Products";
             this.manageSubProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSubProductsToolStripMenuItem_Click);
             // 
             // manageItemsToolStripMenuItem
             // 
             this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
-            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.manageItemsToolStripMenuItem.Text = "Manage Products";
             this.manageItemsToolStripMenuItem.Click += new System.EventHandler(this.manageItemsToolStripMenuItem_Click);
             // 
@@ -304,25 +311,25 @@
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.dailySalesToolStripMenuItem.Text = "Daily Sales";
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.weeklySalesToolStripMenuItem.Text = "Weekly Sales";
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.monthlySalesToolStripMenuItem.Text = "Monthly Sales";
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.annualSaleslToolStripMenuItem.Text = "Annual Sales";
             // 
             // exportToolStripMenuItem
@@ -337,13 +344,13 @@
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exportToExcelToolStripMenuItem.Text = "Export to Excel";
             // 
             // exportToAccessToolStripMenuItem
             // 
             this.exportToAccessToolStripMenuItem.Name = "exportToAccessToolStripMenuItem";
-            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.exportToAccessToolStripMenuItem.Text = "Export to Access";
             // 
             // othersToolStripMenuItem
@@ -358,13 +365,13 @@
             // viewSummaryToolStripMenuItem
             // 
             this.viewSummaryToolStripMenuItem.Name = "viewSummaryToolStripMenuItem";
-            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.viewSummaryToolStripMenuItem.Text = "View Summary";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.reportToolStripMenuItem.Text = "Report";
             // 
             // tableLayoutPanel1
@@ -1190,13 +1197,6 @@
             this.qty.HeaderText = "QUANTITY";
             this.qty.Name = "qty";
             // 
-            // deletedInvoiceToolStripMenuItem
-            // 
-            this.deletedInvoiceToolStripMenuItem.Name = "deletedInvoiceToolStripMenuItem";
-            this.deletedInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deletedInvoiceToolStripMenuItem.Text = "Deleted Invoice";
-            this.deletedInvoiceToolStripMenuItem.Click += new System.EventHandler(this.deletedInvoiceToolStripMenuItem_Click);
-            // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1210,6 +1210,7 @@
             this.Name = "Cashier";
             this.Text = "Cashier";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Cashier_FormClosed);
             this.Load += new System.EventHandler(this.Cashier_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

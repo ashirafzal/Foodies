@@ -729,6 +729,11 @@ namespace Foodies
             deletedInvoice.Show();
         }
 
+        private void Cashier_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();
