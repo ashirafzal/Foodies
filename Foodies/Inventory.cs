@@ -89,15 +89,18 @@ namespace Foodies
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
             dgv_1();
             // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
             this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
-            Category.Visible = false;
+            //Category.Visible = false;
+            //Products.Visible = false;
         }
 
         public void dgv_1()
         {
-            dgv1.RowTemplate.Height = 200;
+            dgv1.RowTemplate.Height = 180;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -127,8 +130,18 @@ namespace Foodies
 
         private void label4_Click(object sender, EventArgs e)
         {
+            //Products Panel
+            Products.Visible = false;
             //Categories Panel
             Category.Visible = true;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //Categories Panel
+            Category.Visible = false;
+            //Products Panel
+            Products.Visible = true;
         }
     }
 }
