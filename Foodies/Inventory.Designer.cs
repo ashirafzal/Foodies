@@ -67,24 +67,33 @@
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.Category = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtSearchCategory = new System.Windows.Forms.TextBox();
-            this.SearchCategory = new System.Windows.Forms.Button();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.categoryYDataSet2 = new Foodies.CategoryYDataSet2();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryTableAdapter = new Foodies.CategoryYDataSet2TableAdapters.CategoryTableAdapter();
+            this.WelcomePanel = new System.Windows.Forms.Panel();
+            this.Category = new System.Windows.Forms.Panel();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Products = new System.Windows.Forms.Panel();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.SearchProduct = new System.Windows.Forms.Button();
-            this.txtSeacrhProduct = new System.Windows.Forms.TextBox();
+            this.SearchCategory = new System.Windows.Forms.Button();
+            this.txtSearchCategory = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ProductPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
+            this.txtSeacrhProduct = new System.Windows.Forms.TextBox();
+            this.SearchProduct = new System.Windows.Forms.Button();
+            this.dgv2_Product = new System.Windows.Forms.DataGridView();
+            this.productsDataSet = new Foodies.ProductsDataSet();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -109,14 +118,17 @@
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
-            this.Category.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryYDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            this.Products.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
+            this.WelcomePanel.SuspendLayout();
+            this.Category.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.ProductPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -288,7 +300,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.Category, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.WelcomePanel, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -672,20 +684,111 @@
             this.label13.Text = "TOTAL SALES";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // categoryYDataSet2
+            // 
+            this.categoryYDataSet2.DataSetName = "CategoryYDataSet2";
+            this.categoryYDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "Category";
+            this.categoryBindingSource.DataSource = this.categoryYDataSet2;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // WelcomePanel
+            // 
+            this.WelcomePanel.Controls.Add(this.Category);
+            this.WelcomePanel.Location = new System.Drawing.Point(0, 182);
+            this.WelcomePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.WelcomePanel.Name = "WelcomePanel";
+            this.WelcomePanel.Size = new System.Drawing.Size(1332, 679);
+            this.WelcomePanel.TabIndex = 1;
+            // 
             // Category
             // 
             this.Category.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Category.Controls.Add(this.Products);
+            this.Category.Controls.Add(this.ProductPanel);
             this.Category.Controls.Add(this.dgv1);
             this.Category.Controls.Add(this.SearchCategory);
             this.Category.Controls.Add(this.txtSearchCategory);
             this.Category.Controls.Add(this.panel1);
-            this.Category.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Category.Location = new System.Drawing.Point(0, 182);
+            this.Category.Location = new System.Drawing.Point(0, 8);
             this.Category.Margin = new System.Windows.Forms.Padding(0);
             this.Category.Name = "Category";
-            this.Category.Size = new System.Drawing.Size(1332, 679);
-            this.Category.TabIndex = 1;
+            this.Category.Size = new System.Drawing.Size(1334, 679);
+            this.Category.TabIndex = 2;
+            // 
+            // dgv1
+            // 
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.AllowUserToResizeColumns = false;
+            this.dgv1.AllowUserToResizeRows = false;
+            this.dgv1.AutoGenerateColumns = false;
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.BackgroundColor = System.Drawing.Color.White;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.categoryIdDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn,
+            this.categoryImageDataGridViewImageColumn});
+            this.dgv1.DataSource = this.categoryBindingSource;
+            this.dgv1.GridColor = System.Drawing.Color.Black;
+            this.dgv1.Location = new System.Drawing.Point(22, 107);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.ReadOnly = true;
+            this.dgv1.Size = new System.Drawing.Size(1293, 543);
+            this.dgv1.TabIndex = 5;
+            // 
+            // categoryIdDataGridViewTextBoxColumn
+            // 
+            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
+            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CATEGORY ID";
+            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
+            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryNameDataGridViewTextBoxColumn
+            // 
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CATEGORY NAME";
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryImageDataGridViewImageColumn
+            // 
+            this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
+            this.categoryImageDataGridViewImageColumn.HeaderText = "CATEGORY IMAGE";
+            this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
+            this.categoryImageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // SearchCategory
+            // 
+            this.SearchCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchCategory.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SearchCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchCategory.ForeColor = System.Drawing.Color.White;
+            this.SearchCategory.Location = new System.Drawing.Point(1064, 53);
+            this.SearchCategory.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchCategory.Name = "SearchCategory";
+            this.SearchCategory.Size = new System.Drawing.Size(254, 39);
+            this.SearchCategory.TabIndex = 4;
+            this.SearchCategory.Text = "SEARCH CATEGORY";
+            this.SearchCategory.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchCategory
+            // 
+            this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Location = new System.Drawing.Point(22, 54);
+            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSearchCategory.Name = "txtSearchCategory";
+            this.txtSearchCategory.Size = new System.Drawing.Size(1031, 38);
+            this.txtSearchCategory.TabIndex = 3;
+            this.txtSearchCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel1
             // 
@@ -712,154 +815,27 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "CATEGORIES";
             // 
-            // txtSearchCategory
+            // ProductPanel
             // 
-            this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategory.Location = new System.Drawing.Point(22, 54);
-            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
-            this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Size = new System.Drawing.Size(1031, 38);
-            this.txtSearchCategory.TabIndex = 3;
-            this.txtSearchCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // SearchCategory
-            // 
-            this.SearchCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchCategory.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchCategory.ForeColor = System.Drawing.Color.White;
-            this.SearchCategory.Location = new System.Drawing.Point(1063, 53);
-            this.SearchCategory.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchCategory.Name = "SearchCategory";
-            this.SearchCategory.Size = new System.Drawing.Size(254, 39);
-            this.SearchCategory.TabIndex = 4;
-            this.SearchCategory.Text = "SEARCH CATEGORY";
-            this.SearchCategory.UseVisualStyleBackColor = false;
-            // 
-            // dgv1
-            // 
-            this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
-            this.dgv1.AllowUserToResizeColumns = false;
-            this.dgv1.AllowUserToResizeRows = false;
-            this.dgv1.AutoGenerateColumns = false;
-            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv1.BackgroundColor = System.Drawing.Color.White;
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn,
-            this.categoryImageDataGridViewImageColumn});
-            this.dgv1.DataSource = this.categoryBindingSource;
-            this.dgv1.GridColor = System.Drawing.Color.Black;
-            this.dgv1.Location = new System.Drawing.Point(22, 107);
-            this.dgv1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(1293, 543);
-            this.dgv1.TabIndex = 5;
-            // 
-            // categoryYDataSet2
-            // 
-            this.categoryYDataSet2.DataSetName = "CategoryYDataSet2";
-            this.categoryYDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.categoryYDataSet2;
-            // 
-            // categoryTableAdapter
-            // 
-            this.categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CATEGORY ID";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryNameDataGridViewTextBoxColumn
-            // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CATEGORY NAME";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
-            this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryImageDataGridViewImageColumn
-            // 
-            this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
-            this.categoryImageDataGridViewImageColumn.HeaderText = "CATEGORY IMAGE";
-            this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
-            this.categoryImageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // Products
-            // 
-            this.Products.BackColor = System.Drawing.Color.White;
-            this.Products.Controls.Add(this.dgv2);
-            this.Products.Controls.Add(this.SearchProduct);
-            this.Products.Controls.Add(this.txtSeacrhProduct);
-            this.Products.Controls.Add(this.panel2);
-            this.Products.Location = new System.Drawing.Point(0, -1);
-            this.Products.Margin = new System.Windows.Forms.Padding(0);
-            this.Products.Name = "Products";
-            this.Products.Size = new System.Drawing.Size(1330, 677);
-            this.Products.TabIndex = 6;
-            // 
-            // dgv2
-            // 
-            this.dgv2.AllowUserToAddRows = false;
-            this.dgv2.AllowUserToDeleteRows = false;
-            this.dgv2.AllowUserToResizeColumns = false;
-            this.dgv2.AllowUserToResizeRows = false;
-            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv2.BackgroundColor = System.Drawing.Color.White;
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.GridColor = System.Drawing.Color.Black;
-            this.dgv2.Location = new System.Drawing.Point(10, 114);
-            this.dgv2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.ReadOnly = true;
-            this.dgv2.Size = new System.Drawing.Size(1293, 543);
-            this.dgv2.TabIndex = 7;
-            // 
-            // SearchProduct
-            // 
-            this.SearchProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchProduct.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchProduct.ForeColor = System.Drawing.Color.White;
-            this.SearchProduct.Location = new System.Drawing.Point(1052, 55);
-            this.SearchProduct.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchProduct.Name = "SearchProduct";
-            this.SearchProduct.Size = new System.Drawing.Size(254, 39);
-            this.SearchProduct.TabIndex = 6;
-            this.SearchProduct.Text = "SEARCH PRODUCTS";
-            this.SearchProduct.UseVisualStyleBackColor = false;
-            // 
-            // txtSeacrhProduct
-            // 
-            this.txtSeacrhProduct.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeacrhProduct.Location = new System.Drawing.Point(10, 56);
-            this.txtSeacrhProduct.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
-            this.txtSeacrhProduct.Name = "txtSeacrhProduct";
-            this.txtSeacrhProduct.Size = new System.Drawing.Size(1031, 38);
-            this.txtSeacrhProduct.TabIndex = 5;
-            this.txtSeacrhProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProductPanel.Controls.Add(this.dgv2_Product);
+            this.ProductPanel.Controls.Add(this.SearchProduct);
+            this.ProductPanel.Controls.Add(this.txtSeacrhProduct);
+            this.ProductPanel.Controls.Add(this.panel2);
+            this.ProductPanel.Location = new System.Drawing.Point(-2, -2);
+            this.ProductPanel.Name = "ProductPanel";
+            this.ProductPanel.Size = new System.Drawing.Size(1334, 671);
+            this.ProductPanel.TabIndex = 6;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1328, 39);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(1332, 39);
+            this.panel2.TabIndex = 2;
             // 
             // label15
             // 
@@ -874,6 +850,106 @@
             this.label15.Size = new System.Drawing.Size(128, 28);
             this.label15.TabIndex = 2;
             this.label15.Text = "PRODUCTS";
+            // 
+            // txtSeacrhProduct
+            // 
+            this.txtSeacrhProduct.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeacrhProduct.Location = new System.Drawing.Point(14, 58);
+            this.txtSeacrhProduct.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSeacrhProduct.Name = "txtSeacrhProduct";
+            this.txtSeacrhProduct.Size = new System.Drawing.Size(1031, 38);
+            this.txtSeacrhProduct.TabIndex = 6;
+            this.txtSeacrhProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // SearchProduct
+            // 
+            this.SearchProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchProduct.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SearchProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchProduct.ForeColor = System.Drawing.Color.White;
+            this.SearchProduct.Location = new System.Drawing.Point(1063, 57);
+            this.SearchProduct.Margin = new System.Windows.Forms.Padding(0);
+            this.SearchProduct.Name = "SearchProduct";
+            this.SearchProduct.Size = new System.Drawing.Size(254, 39);
+            this.SearchProduct.TabIndex = 7;
+            this.SearchProduct.Text = "SEARCH PRODUCTS";
+            this.SearchProduct.UseVisualStyleBackColor = false;
+            // 
+            // dgv2_Product
+            // 
+            this.dgv2_Product.AllowUserToAddRows = false;
+            this.dgv2_Product.AllowUserToDeleteRows = false;
+            this.dgv2_Product.AllowUserToResizeColumns = false;
+            this.dgv2_Product.AllowUserToResizeRows = false;
+            this.dgv2_Product.AutoGenerateColumns = false;
+            this.dgv2_Product.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv2_Product.BackgroundColor = System.Drawing.Color.White;
+            this.dgv2_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2_Product.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIdDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.productPriceDataGridViewTextBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn,
+            this.productImageDataGridViewImageColumn});
+            this.dgv2_Product.DataSource = this.productsBindingSource;
+            this.dgv2_Product.GridColor = System.Drawing.Color.Black;
+            this.dgv2_Product.Location = new System.Drawing.Point(14, 114);
+            this.dgv2_Product.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv2_Product.Name = "dgv2_Product";
+            this.dgv2_Product.ReadOnly = true;
+            this.dgv2_Product.RowTemplate.Height = 180;
+            this.dgv2_Product.Size = new System.Drawing.Size(1301, 543);
+            this.dgv2_Product.TabIndex = 8;
+            // 
+            // productsDataSet
+            // 
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.productsDataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "PRODUCT NAME";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productImageDataGridViewImageColumn
+            // 
+            this.productImageDataGridViewImageColumn.DataPropertyName = "ProductImage";
+            this.productImageDataGridViewImageColumn.HeaderText = "PRODUCT IMAGE";
+            this.productImageDataGridViewImageColumn.Name = "productImageDataGridViewImageColumn";
+            this.productImageDataGridViewImageColumn.ReadOnly = true;
             // 
             // Inventory
             // 
@@ -915,18 +991,21 @@
             this.tableLayoutPanel16.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
             this.tableLayoutPanel17.PerformLayout();
-            this.Category.ResumeLayout(false);
-            this.Category.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryYDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            this.Products.ResumeLayout(false);
-            this.Products.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
+            this.WelcomePanel.ResumeLayout(false);
+            this.Category.ResumeLayout(false);
+            this.Category.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ProductPanel.ResumeLayout(false);
+            this.ProductPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -970,23 +1049,32 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel Category;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtSearchCategory;
-        private System.Windows.Forms.Button SearchCategory;
-        private System.Windows.Forms.DataGridView dgv1;
         private CategoryYDataSet2 categoryYDataSet2;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private CategoryYDataSet2TableAdapters.CategoryTableAdapter categoryTableAdapter;
+        private System.Windows.Forms.Panel WelcomePanel;
+        private System.Windows.Forms.Panel Category;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn categoryImageDataGridViewImageColumn;
-        private System.Windows.Forms.Panel Products;
-        private System.Windows.Forms.DataGridView dgv2;
-        private System.Windows.Forms.Button SearchProduct;
-        private System.Windows.Forms.TextBox txtSeacrhProduct;
+        private System.Windows.Forms.Button SearchCategory;
+        private System.Windows.Forms.TextBox txtSearchCategory;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel ProductPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtSeacrhProduct;
+        private System.Windows.Forms.Button SearchProduct;
+        private System.Windows.Forms.DataGridView dgv2_Product;
+        private ProductsDataSet productsDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private ProductsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
     }
 }

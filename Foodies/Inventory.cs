@@ -87,17 +87,6 @@ namespace Foodies
 
         }
 
-        private void Inventory_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
-            dgv_1();
-            // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
-            //Category.Visible = false;
-            //Products.Visible = false;
-        }
-
         public void dgv_1()
         {
             dgv1.RowTemplate.Height = 180;
@@ -128,20 +117,59 @@ namespace Foodies
 
         }
 
+        public void dgv_2()
+        {
+            dgv2_Product.RowTemplate.Height = 180;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv2_Product.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv2_Product.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+            dgv2_Product.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //This Part of Code is for the styling of the Visaul Style
+            //dgv1.EnableHeadersVisualStyles = false;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv2_Product.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv2_Product.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv2_Product.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv2_Product.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //this line of code is applying padding to a specific Column of dgv1 which is Product Column
+            //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
+
+        }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.productsDataSet.Products);
+            // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
+            // DataGridView 1
+            dgv_1();
+            // DataGridView 2
+            dgv_2();
+            // TODO: This line of code loads data into the 'categoryYDataSet2.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryYDataSet2.Category);
+        }
+
         private void label4_Click(object sender, EventArgs e)
         {
-            //Products Panel
-            Products.Visible = false;
-            //Categories Panel
-            Category.Visible = true;
+         
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            //Categories Panel
-            Category.Visible = false;
-            //Products Panel
-            Products.Visible = true;
+          
         }
+
     }
 }
