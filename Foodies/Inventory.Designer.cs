@@ -673,7 +673,6 @@
             this.ProductPanel.Name = "ProductPanel";
             this.ProductPanel.Size = new System.Drawing.Size(636, 342);
             this.ProductPanel.TabIndex = 1;
-            this.ProductPanel.Visible = false;
             // 
             // label1
             // 
@@ -694,7 +693,6 @@
             this.CategoryPanel.Name = "CategoryPanel";
             this.CategoryPanel.Size = new System.Drawing.Size(634, 340);
             this.CategoryPanel.TabIndex = 2;
-            this.CategoryPanel.Visible = false;
             // 
             // label2
             // 
@@ -736,7 +734,6 @@
             this.StockPanel.Name = "StockPanel";
             this.StockPanel.Size = new System.Drawing.Size(633, 340);
             this.StockPanel.TabIndex = 4;
-            this.StockPanel.Visible = false;
             // 
             // label4
             // 
@@ -757,7 +754,6 @@
             this.ReportPanel.Name = "ReportPanel";
             this.ReportPanel.Size = new System.Drawing.Size(634, 340);
             this.ReportPanel.TabIndex = 4;
-            this.ReportPanel.Visible = false;
             // 
             // label5
             // 

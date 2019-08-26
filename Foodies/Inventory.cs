@@ -149,8 +149,7 @@ namespace Foodies
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            hidePanels();
-            DashboardPanel.Visible = true;
+
         }
 
         private void label_Product_Click(object sender, EventArgs e)
@@ -192,14 +191,30 @@ namespace Foodies
 
         private void label_Stock_Click(object sender, EventArgs e)
         {
-            hidePanels();
-            StockPanel.Visible = true;
+            //DashboardPanel.Width = 0;
+            //DashboardPanel.Height = 0;
+            //ProductPanel.Width = 0;
+            //ProductPanel.Height = 0;
+            //CategoryPanel.Width = 0;
+            //CategoryPanel.Height = 0;
+            //ReportPanel.Width = 0;
+            //ReportPanel.Height = 0;
+            //StockPanel.Width = 634;
+            //StockPanel.Height = 340;
+            DashboardPanel.SendToBack();
+            ProductPanel.SendToBack();
+            CategoryPanel.SendToBack();
+            ReportPanel.SendToBack();
+            StockPanel.BringToFront();
         }
 
         private void label_Report_Click(object sender, EventArgs e)
         {
-            hidePanels();
-            ReportPanel.Visible = true;
+            StockPanel.SendToBack(); ;
+            DashboardPanel.SendToBack();
+            ProductPanel.SendToBack();
+            CategoryPanel.SendToBack();
+            ReportPanel.BringToFront();
         }
     }
 }
