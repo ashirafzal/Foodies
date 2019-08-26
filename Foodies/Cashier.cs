@@ -734,6 +734,12 @@ namespace Foodies
             Application.Exit();
         }
 
+        private void productPriceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductPrice productPrice = new ProductPrice();
+            productPrice.Show();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();
