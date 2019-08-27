@@ -255,7 +255,6 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
-            this.dgv1.RowHeadersVisible = false;
             this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv1.ShowCellErrors = false;
             this.dgv1.ShowCellToolTips = false;
@@ -263,6 +262,7 @@
             this.dgv1.ShowRowErrors = false;
             this.dgv1.Size = new System.Drawing.Size(1143, 867);
             this.dgv1.TabIndex = 1;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // categoryDataSet
             // 
