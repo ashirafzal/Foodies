@@ -96,7 +96,7 @@ namespace Foodies
             this.dgv3.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
             //This Part of Code is for the styling of the Grid Columns
-            dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+            dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
             dgv3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //This Part of Code is for the styling of the Visaul Style
@@ -107,7 +107,7 @@ namespace Foodies
             this.dgv3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             //This Part of Code is for the styling of the Grid Rows
-            dgv3.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dgv3.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv3.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -122,7 +122,7 @@ namespace Foodies
             this.dgv4.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
             //This Part of Code is for the styling of the Grid Columns
-            dgv4.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+            dgv4.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
             dgv4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // This Part of Code is for the styling of the Grid Border
@@ -130,7 +130,7 @@ namespace Foodies
             this.dgv4.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             //This Part of Code is for the styling of the Grid Rows
-            dgv4.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+            dgv4.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv4.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
