@@ -100,5 +100,16 @@ namespace Foodies
                 MessageBox.Show("Please fill all required fields");
             }
         }
+
+        private void BtnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pictureBox1.ImageLocation = imgLocation;
+            }
+        }
     }
 }

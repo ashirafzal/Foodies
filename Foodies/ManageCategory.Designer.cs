@@ -174,6 +174,7 @@
             this.BtnBrowse.TabIndex = 10;
             this.BtnBrowse.Text = "BROWSE IMAGE";
             this.BtnBrowse.UseVisualStyleBackColor = false;
+            this.BtnBrowse.Click += new System.EventHandler(this.BtnBrowse_Click);
             // 
             // CategoryName
             // 
@@ -298,6 +299,7 @@
             // 
             this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
             this.categoryImageDataGridViewImageColumn.HeaderText = "CATEGORY IMAGE";
+            this.categoryImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
             this.categoryImageDataGridViewImageColumn.ReadOnly = true;
             // 
