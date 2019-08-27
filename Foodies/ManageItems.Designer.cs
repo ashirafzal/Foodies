@@ -321,7 +321,6 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewImageColumn1});
             this.dgv1.DataSource = this.productsBindingSource;
-            this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv1.GridColor = System.Drawing.Color.Black;
             this.dgv1.Location = new System.Drawing.Point(1, 1);

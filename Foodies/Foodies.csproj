@@ -112,6 +112,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCategory.Designer.cs">
+      <DependentUpon>ManageCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCategory.resx">
+      <DependentUpon>ManageCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageItems.resx">
       <DependentUpon>ManageItems.cs</DependentUpon>
