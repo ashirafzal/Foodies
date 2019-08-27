@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Foodies
 {
     public partial class ManageCategory : Form
     {
+        string imgLocation = "";
+
         public ManageCategory()
         {
             InitializeComponent();
@@ -57,6 +60,45 @@ namespace Foodies
             CategoryID.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
             CategoryName.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
             
+        }
+
+        private void dgv1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            dgv1.Rows[e.RowIndex].ErrorText = "Concisely describe the error and how to fix it";
+            e.Cancel = true;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] images = null;
+                FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(Stream);
+                images = brs.ReadBytes((int)Stream.Length);
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                int a1 = Convert.ToInt16(CategoryID.Text);
+                string sqlQuery = "update Category set CategoryName = @CategoryName, CategoryImage = @images where CategoryId = '" + a1 + "'  ";
+                cmd = new SqlCommand(sqlQuery, con);
+                cmd.Parameters.Add(new SqlParameter("@CategoryName", CategoryName.Text));
+                cmd.Parameters.Add(new SqlParameter("@images", images));
+                var N = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                CategoryID.Text = string.Empty;
+                CategoryName.Text = string.Empty;
+                MessageBox.Show("Category updated");
+                // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+                this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill all required fields");
+            }
         }
     }
 }

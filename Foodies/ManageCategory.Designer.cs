@@ -143,6 +143,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "UPDATE CATEGORY";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -263,6 +264,7 @@
             this.dgv1.Size = new System.Drawing.Size(1143, 867);
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
             // 
             // categoryDataSet
             // 
