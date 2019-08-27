@@ -925,6 +925,7 @@
             this.dgv3.ReadOnly = true;
             this.dgv3.Size = new System.Drawing.Size(1291, 516);
             this.dgv3.TabIndex = 7;
+            this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
             // 
             // productIdDataGridViewTextBoxColumn
             // 
@@ -1058,6 +1059,7 @@
             this.dgv4.ReadOnly = true;
             this.dgv4.Size = new System.Drawing.Size(1291, 500);
             this.dgv4.TabIndex = 11;
+            this.dgv4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv4_CellContentClick);
             // 
             // categoryIdDataGridViewTextBoxColumn
             // 

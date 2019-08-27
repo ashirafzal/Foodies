@@ -241,5 +241,25 @@ namespace Foodies
                 MessageBox.Show("Enter category to search");
             }
         }
+
+        private void dgv3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv3.Rows[e.RowIndex];
+
+                txtSearchProduct.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void dgv4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv4.Rows[e.RowIndex];
+
+                txtSearchCategory.Text = row.Cells[1].Value.ToString();
+            }
+        }
     }
 }
