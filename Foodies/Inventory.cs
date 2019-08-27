@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -99,9 +100,6 @@ namespace Foodies
             dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
             dgv3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //This Part of Code is for the styling of the Visaul Style
-            //dgv1.EnableHeadersVisualStyles = false;
-
             // This Part of Code is for the styling of the Grid Border
             this.dgv3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             this.dgv3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -195,14 +193,53 @@ namespace Foodies
 
         }
 
-        private void SearchCategory_Click(object sender, EventArgs e)
+        private void label14_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void SearchProduct_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Products where ProductName = '" + txtSearchProduct.Text + "' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv3.DataSource = dt;
+                con.Close();
+                txtSearchProduct.Text = string.Empty;
+                txtSearchProduct.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Enter product name to search");
+            }
+        }
 
+        private void btnSearchCategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Category where CategoryName = '" + txtSearchCategory.Text + "' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv4.DataSource = dt;
+                con.Close();
+                txtSearchCategory.Text = string.Empty;
+                txtSearchCategory.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Enter category to search");
+            }
         }
     }
 }

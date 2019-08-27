@@ -834,15 +834,15 @@
             this.btnSerachProduct.TabIndex = 6;
             this.btnSerachProduct.Text = "SEARCH PRODUCTS";
             this.btnSerachProduct.UseVisualStyleBackColor = false;
-            this.btnSerachProduct.Click += new System.EventHandler(this.SearchCategory_Click);
+            this.btnSerachProduct.Click += new System.EventHandler(this.SearchProduct_Click);
             // 
             // txtSearchProduct
             // 
-            this.txtSearchProduct.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.Location = new System.Drawing.Point(20, 54);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchProduct.Size = new System.Drawing.Size(1027, 35);
             this.txtSearchProduct.TabIndex = 5;
             this.txtSearchProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -922,14 +922,15 @@
             this.btnSearchCategory.TabIndex = 10;
             this.btnSearchCategory.Text = "SEARCH CATEGORY";
             this.btnSearchCategory.UseVisualStyleBackColor = false;
+            this.btnSearchCategory.Click += new System.EventHandler(this.btnSearchCategory_Click);
             // 
             // txtSearchCategory
             // 
-            this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchCategory.Location = new System.Drawing.Point(20, 57);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchCategory.Size = new System.Drawing.Size(1027, 35);
             this.txtSearchCategory.TabIndex = 9;
             this.txtSearchCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -992,11 +993,11 @@
             // 
             // txtSearchStock
             // 
-            this.txtSearchStock.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchStock.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchStock.Location = new System.Drawing.Point(20, 54);
             this.txtSearchStock.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchStock.Name = "txtSearchStock";
-            this.txtSearchStock.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchStock.Size = new System.Drawing.Size(1027, 35);
             this.txtSearchStock.TabIndex = 9;
             this.txtSearchStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1059,11 +1060,11 @@
             // 
             // txtSeacrhInventory
             // 
-            this.txtSeacrhInventory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeacrhInventory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeacrhInventory.Location = new System.Drawing.Point(24, 54);
             this.txtSeacrhInventory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSeacrhInventory.Name = "txtSeacrhInventory";
-            this.txtSeacrhInventory.Size = new System.Drawing.Size(1027, 38);
+            this.txtSeacrhInventory.Size = new System.Drawing.Size(1027, 35);
             this.txtSeacrhInventory.TabIndex = 9;
             this.txtSeacrhInventory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
