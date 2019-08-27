@@ -164,6 +164,7 @@
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "DELETE USER";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -179,6 +180,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "UPDATE USER";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 

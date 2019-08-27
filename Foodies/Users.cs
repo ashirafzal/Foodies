@@ -88,8 +88,54 @@ namespace Foodies
                 Username.Text = row.Cells[1].Value.ToString();
                 Password.Text = row.Cells[2].Value.ToString();
                 category.Text = row.Cells[3].Value.ToString();
+            }
+        }
 
-                MessageBox.Show(" "+UserID);
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update users set username = '" + Username.Text + "' , password = '" + Password.Text + "', category = '" + category.Text + "' where Id = '" + UserID + "'  ";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("User updated successfully");
+                Username.Text = string.Empty;
+                Password.Text = string.Empty;
+                category.Text = string.Empty;
+                // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
+                this.usersTableAdapter.Fill(this.usersDataSet.users);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill all required fields");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from users where Id ='" + UserID + "'";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("User deleted successfully");
+                Username.Text = string.Empty;
+                Password.Text = string.Empty;
+                category.Text = string.Empty;
+                // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
+                this.usersTableAdapter.Fill(this.usersDataSet.users);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill all required fields");
             }
         }
     }
