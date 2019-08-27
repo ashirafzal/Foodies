@@ -746,6 +746,16 @@ namespace Foodies
             users.Show();
         }
 
+        private void btnRefresh_MouseEnter(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.DodgerBlue;
+        }
+
+        private void btnRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            btnRefresh.BackColor = Color.RoyalBlue;
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();

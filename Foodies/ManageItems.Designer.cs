@@ -47,14 +47,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.ProductID = new System.Windows.Forms.TextBox();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemsDataSet = new Foodies.ItemsDataSet();
-            this.productsTableAdapter = new Foodies.ItemsDataSetTableAdapters.ProductsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemsDataSet = new Foodies.ItemsDataSet();
+            this.productsTableAdapter = new Foodies.ItemsDataSetTableAdapters.ProductsTableAdapter();
             this.EditProduct.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -323,7 +323,7 @@
             this.dgv1.DataSource = this.productsBindingSource;
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv1.GridColor = System.Drawing.Color.White;
+            this.dgv1.GridColor = System.Drawing.Color.Black;
             this.dgv1.Location = new System.Drawing.Point(1, 1);
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
             this.dgv1.Name = "dgv1";
@@ -338,20 +338,6 @@
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.itemsDataSet;
-            // 
-            // itemsDataSet
-            // 
-            this.itemsDataSet.DataSetName = "ItemsDataSet";
-            this.itemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -389,12 +375,26 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.itemsDataSet;
+            // 
+            // itemsDataSet
+            // 
+            this.itemsDataSet.DataSetName = "ItemsDataSet";
+            this.itemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // ManageItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 865);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.EditProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ManageItems";
