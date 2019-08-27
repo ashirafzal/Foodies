@@ -144,6 +144,15 @@ namespace Foodies
             this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
             dgv_3();
             dgv_4();
+            FoucsTextBoxes();
+        }
+
+        public void FoucsTextBoxes()
+        {
+            txtSeacrhInventory.Focus();
+            txtSearchCategory.Focus();
+            txtSearchProduct.Focus();
+            txtSearchStock.Focus();
         }
 
         private void label_Product_Click(object sender, EventArgs e)
