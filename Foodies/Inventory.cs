@@ -154,12 +154,12 @@ namespace Foodies
 
         private void label_Product_Click(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab = tabPage3;
         }
 
         private void label_Category_Click(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab = tabPage4;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -174,17 +174,17 @@ namespace Foodies
 
         private void label_Dashboard_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectedTab = tabPage1;
         }
 
         private void label_Stock_Click(object sender, EventArgs e)
         {
-          
+            tabControl1.SelectedTab = tabPage2;
         }
 
         private void label_Report_Click(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab = tabPage5;
         }
     }
 }
