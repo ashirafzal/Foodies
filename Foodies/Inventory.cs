@@ -277,5 +277,21 @@ namespace Foodies
             txtSearchCategory.Text = string.Empty;
             txtSearchCategory.Focus();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dgv3.Refresh();
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            con.Open();
+            string query = "select * from Products";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv3.DataSource = dt;
+            con.Close();
+            txtSearchProduct.Text = string.Empty;
+            txtSearchProduct.Focus();
+        }
     }
 }

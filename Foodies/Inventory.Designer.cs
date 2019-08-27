@@ -110,6 +110,7 @@
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -889,6 +890,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.dgv3);
             this.tabPage3.Controls.Add(this.btnSerachProduct);
             this.tabPage3.Controls.Add(this.txtSearchProduct);
@@ -980,10 +982,10 @@
             this.btnSerachProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSerachProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSerachProduct.ForeColor = System.Drawing.Color.White;
-            this.btnSerachProduct.Location = new System.Drawing.Point(1057, 53);
+            this.btnSerachProduct.Location = new System.Drawing.Point(995, 53);
             this.btnSerachProduct.Margin = new System.Windows.Forms.Padding(0);
             this.btnSerachProduct.Name = "btnSerachProduct";
-            this.btnSerachProduct.Size = new System.Drawing.Size(254, 39);
+            this.btnSerachProduct.Size = new System.Drawing.Size(232, 41);
             this.btnSerachProduct.TabIndex = 6;
             this.btnSerachProduct.Text = "SEARCH PRODUCTS";
             this.btnSerachProduct.UseVisualStyleBackColor = false;
@@ -995,7 +997,7 @@
             this.txtSearchProduct.Location = new System.Drawing.Point(20, 54);
             this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.Size = new System.Drawing.Size(1027, 35);
+            this.txtSearchProduct.Size = new System.Drawing.Size(965, 35);
             this.txtSearchProduct.TabIndex = 5;
             this.txtSearchProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1204,6 +1206,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1237, 54);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(74, 39);
+            this.button2.TabIndex = 13;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1359,5 +1378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
