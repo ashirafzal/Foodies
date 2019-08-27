@@ -107,7 +107,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(266, 27);
+            this.label2.Location = new System.Drawing.Point(286, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 24);
             this.label2.TabIndex = 1;
@@ -256,6 +256,7 @@
             this.dgv1.Location = new System.Drawing.Point(52, 314);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
+            this.dgv1.RowTemplate.Height = 32;
             this.dgv1.Size = new System.Drawing.Size(708, 308);
             this.dgv1.TabIndex = 3;
             // 
@@ -312,7 +313,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "Users";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";

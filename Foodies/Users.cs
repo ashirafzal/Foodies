@@ -26,14 +26,14 @@ namespace Foodies
 
         public void dgv_1()
         {
-            //dgv1.RowTemplate.Height = 32;
+            //dgv1.RowTemplate.Height = 62;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
             this.dgv1.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
             //This Part of Code is for the styling of the Grid Columns
-            dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
             dgv1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             //This Part of Code is for the styling of the Visaul Style
@@ -44,7 +44,7 @@ namespace Foodies
             this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             //This Part of Code is for the styling of the Grid Rows
-            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
