@@ -109,6 +109,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -1025,6 +1026,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button1);
             this.tabPage4.Controls.Add(this.dgv4);
             this.tabPage4.Controls.Add(this.btnSearchCategory);
             this.tabPage4.Controls.Add(this.txtSearchCategory);
@@ -1099,10 +1101,10 @@
             this.btnSearchCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchCategory.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCategory.Location = new System.Drawing.Point(1057, 56);
+            this.btnSearchCategory.Location = new System.Drawing.Point(985, 58);
             this.btnSearchCategory.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearchCategory.Name = "btnSearchCategory";
-            this.btnSearchCategory.Size = new System.Drawing.Size(254, 39);
+            this.btnSearchCategory.Size = new System.Drawing.Size(243, 41);
             this.btnSearchCategory.TabIndex = 10;
             this.btnSearchCategory.Text = "SEARCH CATEGORY";
             this.btnSearchCategory.UseVisualStyleBackColor = false;
@@ -1111,10 +1113,10 @@
             // txtSearchCategory
             // 
             this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategory.Location = new System.Drawing.Point(20, 57);
+            this.txtSearchCategory.Location = new System.Drawing.Point(20, 62);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Size = new System.Drawing.Size(1027, 35);
+            this.txtSearchCategory.Size = new System.Drawing.Size(955, 35);
             this.txtSearchCategory.TabIndex = 9;
             this.txtSearchCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1184,6 +1186,23 @@
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1237, 58);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 39);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Inventory
             // 
@@ -1339,5 +1358,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
