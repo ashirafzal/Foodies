@@ -138,6 +138,10 @@ namespace Foodies
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.productsDataSet.Products);
+            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
             dgv_3();
             dgv_4();
         }
