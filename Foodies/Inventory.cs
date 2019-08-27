@@ -87,69 +87,59 @@ namespace Foodies
 
         }
 
-        //public void dgv_1()
-        //{
-        //    dgv1.RowTemplate.Height = 180;
+        public void dgv_3()
+        {
+            dgv3.RowTemplate.Height = 180;
 
-        //    //This Part of Code is for the styling of the Grid Padding
-        //    Padding newPadding = new Padding(0, 10, 0, 10);
-        //    this.dgv1.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv3.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
-        //    //This Part of Code is for the styling of the Grid Columns
-        //    dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
-        //    dgv1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //This Part of Code is for the styling of the Grid Columns
+            dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+            dgv3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-        //    //This Part of Code is for the styling of the Visaul Style
-        //    //dgv1.EnableHeadersVisualStyles = false;
+            //This Part of Code is for the styling of the Visaul Style
+            //dgv1.EnableHeadersVisualStyles = false;
 
-        //    // This Part of Code is for the styling of the Grid Border
-        //    this.dgv1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-        //    this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
-        //    //This Part of Code is for the styling of the Grid Rows
-        //    dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
+            //This Part of Code is for the styling of the Grid Rows
+            dgv3.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
 
-        //    //this Line of Code made the dgv1 Text Middle Center
-        //    dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv3.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
 
-        //    //this line of code is applying padding to a specific Column of dgv1 which is Product Column
-        //    //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
+        public void dgv_4()
+        {
+            dgv4.RowTemplate.Height = 180;
 
-        //}
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv4.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
-        //public void dgv_2()
-        //{
-        //    dgv2_Product.RowTemplate.Height = 180;
+            //This Part of Code is for the styling of the Grid Columns
+            dgv4.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
+            dgv4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-        //    //This Part of Code is for the styling of the Grid Padding
-        //    Padding newPadding = new Padding(0, 10, 0, 10);
-        //    this.dgv2_Product.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv4.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv4.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
-        //    //This Part of Code is for the styling of the Grid Columns
-        //    dgv2_Product.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Bold);
-        //    dgv2_Product.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //This Part of Code is for the styling of the Grid Rows
+            dgv4.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
 
-        //    //This Part of Code is for the styling of the Visaul Style
-        //    //dgv1.EnableHeadersVisualStyles = false;
-
-        //    // This Part of Code is for the styling of the Grid Border
-        //    this.dgv2_Product.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-        //    this.dgv2_Product.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-
-        //    //This Part of Code is for the styling of the Grid Rows
-        //    dgv2_Product.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
-
-        //    //this Line of Code made the dgv1 Text Middle Center
-        //    dgv2_Product.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-        //    //this line of code is applying padding to a specific Column of dgv1 which is Product Column
-        //    //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
-
-        //}
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv4.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-
+            dgv_3();
+            dgv_4();
         }
 
         private void label_Product_Click(object sender, EventArgs e)
@@ -185,6 +175,21 @@ namespace Foodies
         private void label_Report_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabPage5;
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

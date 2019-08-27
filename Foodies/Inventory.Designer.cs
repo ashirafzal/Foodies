@@ -72,6 +72,28 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnSerachProduct = new System.Windows.Forms.Button();
+            this.txtSearchProduct = new System.Windows.Forms.TextBox();
+            this.dgv3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv4 = new System.Windows.Forms.DataGridView();
+            this.btnSearchCategory = new System.Windows.Forms.Button();
+            this.txtSearchCategory = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.btnSearchStock = new System.Windows.Forms.Button();
+            this.txtSearchStock = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.btnSeacrhInventory = new System.Windows.Forms.Button();
+            this.txtSeacrhInventory = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,6 +119,20 @@
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -662,63 +698,377 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 182);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(0, 0);
+            this.tabControl1.Padding = new System.Drawing.Point(6, 6);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1332, 679);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Controls.Add(this.dgv1);
+            this.tabPage1.Controls.Add(this.btnSeacrhInventory);
+            this.tabPage1.Controls.Add(this.txtSeacrhInventory);
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1324, 653);
+            this.tabPage1.Size = new System.Drawing.Size(1324, 645);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DASHBOARD";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Controls.Add(this.dgv2);
+            this.tabPage2.Controls.Add(this.btnSearchStock);
+            this.tabPage2.Controls.Add(this.txtSearchStock);
+            this.tabPage2.Controls.Add(this.panel3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1324, 653);
+            this.tabPage2.Size = new System.Drawing.Size(1324, 645);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "STOCKS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Controls.Add(this.dgv3);
+            this.tabPage3.Controls.Add(this.btnSerachProduct);
+            this.tabPage3.Controls.Add(this.txtSearchProduct);
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1324, 653);
+            this.tabPage3.Size = new System.Drawing.Size(1324, 645);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "PRODUCTS";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Controls.Add(this.dgv4);
+            this.tabPage4.Controls.Add(this.btnSearchCategory);
+            this.tabPage4.Controls.Add(this.txtSearchCategory);
+            this.tabPage4.Controls.Add(this.panel2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1324, 653);
+            this.tabPage4.Size = new System.Drawing.Size(1324, 645);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "CATEGORIES";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Controls.Add(this.panel5);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1324, 653);
+            this.tabPage5.Size = new System.Drawing.Size(1324, 645);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "REPORTS";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1324, 45);
+            this.panel1.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label14.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label14.Size = new System.Drawing.Size(116, 31);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "PRODUCTS";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // btnSerachProduct
+            // 
+            this.btnSerachProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSerachProduct.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSerachProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSerachProduct.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSerachProduct.ForeColor = System.Drawing.Color.White;
+            this.btnSerachProduct.Location = new System.Drawing.Point(1057, 53);
+            this.btnSerachProduct.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSerachProduct.Name = "btnSerachProduct";
+            this.btnSerachProduct.Size = new System.Drawing.Size(254, 39);
+            this.btnSerachProduct.TabIndex = 6;
+            this.btnSerachProduct.Text = "SEARCH PRODUCTS";
+            this.btnSerachProduct.UseVisualStyleBackColor = false;
+            this.btnSerachProduct.Click += new System.EventHandler(this.SearchCategory_Click);
+            // 
+            // txtSearchProduct
+            // 
+            this.txtSearchProduct.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchProduct.Location = new System.Drawing.Point(20, 54);
+            this.txtSearchProduct.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchProduct.TabIndex = 5;
+            this.txtSearchProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // dgv3
+            // 
+            this.dgv3.AllowUserToAddRows = false;
+            this.dgv3.AllowUserToDeleteRows = false;
+            this.dgv3.AllowUserToResizeColumns = false;
+            this.dgv3.AllowUserToResizeRows = false;
+            this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv3.BackgroundColor = System.Drawing.Color.White;
+            this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv3.GridColor = System.Drawing.Color.Black;
+            this.dgv3.Location = new System.Drawing.Point(20, 106);
+            this.dgv3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv3.Name = "dgv3";
+            this.dgv3.ReadOnly = true;
+            this.dgv3.Size = new System.Drawing.Size(1291, 523);
+            this.dgv3.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label1.Size = new System.Drawing.Size(133, 31);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "CATEGORIES";
+            // 
+            // dgv4
+            // 
+            this.dgv4.AllowUserToAddRows = false;
+            this.dgv4.AllowUserToDeleteRows = false;
+            this.dgv4.AllowUserToResizeColumns = false;
+            this.dgv4.AllowUserToResizeRows = false;
+            this.dgv4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv4.BackgroundColor = System.Drawing.Color.White;
+            this.dgv4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv4.GridColor = System.Drawing.Color.Black;
+            this.dgv4.Location = new System.Drawing.Point(20, 114);
+            this.dgv4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv4.Name = "dgv4";
+            this.dgv4.ReadOnly = true;
+            this.dgv4.Size = new System.Drawing.Size(1291, 515);
+            this.dgv4.TabIndex = 11;
+            // 
+            // btnSearchCategory
+            // 
+            this.btnSearchCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchCategory.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearchCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCategory.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCategory.Location = new System.Drawing.Point(1057, 61);
+            this.btnSearchCategory.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearchCategory.Name = "btnSearchCategory";
+            this.btnSearchCategory.Size = new System.Drawing.Size(254, 39);
+            this.btnSearchCategory.TabIndex = 10;
+            this.btnSearchCategory.Text = "SEARCH CATEGORY";
+            this.btnSearchCategory.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchCategory
+            // 
+            this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchCategory.Location = new System.Drawing.Point(20, 62);
+            this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSearchCategory.Name = "txtSearchCategory";
+            this.txtSearchCategory.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchCategory.TabIndex = 9;
+            this.txtSearchCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(0, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1324, 45);
+            this.panel2.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label2.Size = new System.Drawing.Size(90, 31);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "STOCKS";
+            // 
+            // dgv2
+            // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            this.dgv2.AllowUserToResizeColumns = false;
+            this.dgv2.AllowUserToResizeRows = false;
+            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv2.BackgroundColor = System.Drawing.Color.White;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.GridColor = System.Drawing.Color.Black;
+            this.dgv2.Location = new System.Drawing.Point(20, 106);
+            this.dgv2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.ReadOnly = true;
+            this.dgv2.Size = new System.Drawing.Size(1291, 523);
+            this.dgv2.TabIndex = 11;
+            // 
+            // btnSearchStock
+            // 
+            this.btnSearchStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchStock.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearchStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchStock.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchStock.ForeColor = System.Drawing.Color.White;
+            this.btnSearchStock.Location = new System.Drawing.Point(1057, 53);
+            this.btnSearchStock.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSearchStock.Name = "btnSearchStock";
+            this.btnSearchStock.Size = new System.Drawing.Size(254, 39);
+            this.btnSearchStock.TabIndex = 10;
+            this.btnSearchStock.Text = "SEARCH STOCK";
+            this.btnSearchStock.UseVisualStyleBackColor = false;
+            // 
+            // txtSearchStock
+            // 
+            this.txtSearchStock.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchStock.Location = new System.Drawing.Point(20, 54);
+            this.txtSearchStock.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSearchStock.Name = "txtSearchStock";
+            this.txtSearchStock.Size = new System.Drawing.Size(1027, 38);
+            this.txtSearchStock.TabIndex = 9;
+            this.txtSearchStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1324, 45);
+            this.panel3.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label3.Size = new System.Drawing.Size(121, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "INVENTORY";
+            // 
+            // dgv1
+            // 
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.AllowUserToResizeColumns = false;
+            this.dgv1.AllowUserToResizeRows = false;
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.BackgroundColor = System.Drawing.Color.White;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.GridColor = System.Drawing.Color.Black;
+            this.dgv1.Location = new System.Drawing.Point(24, 106);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.ReadOnly = true;
+            this.dgv1.Size = new System.Drawing.Size(1291, 523);
+            this.dgv1.TabIndex = 11;
+            // 
+            // btnSeacrhInventory
+            // 
+            this.btnSeacrhInventory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSeacrhInventory.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSeacrhInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeacrhInventory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeacrhInventory.ForeColor = System.Drawing.Color.White;
+            this.btnSeacrhInventory.Location = new System.Drawing.Point(1061, 53);
+            this.btnSeacrhInventory.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSeacrhInventory.Name = "btnSeacrhInventory";
+            this.btnSeacrhInventory.Size = new System.Drawing.Size(254, 39);
+            this.btnSeacrhInventory.TabIndex = 10;
+            this.btnSeacrhInventory.Text = "SEARCH INVENTORY";
+            this.btnSeacrhInventory.UseVisualStyleBackColor = false;
+            // 
+            // txtSeacrhInventory
+            // 
+            this.txtSeacrhInventory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeacrhInventory.Location = new System.Drawing.Point(24, 54);
+            this.txtSeacrhInventory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
+            this.txtSeacrhInventory.Name = "txtSeacrhInventory";
+            this.txtSeacrhInventory.Size = new System.Drawing.Size(1027, 38);
+            this.txtSeacrhInventory.TabIndex = 9;
+            this.txtSeacrhInventory.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1328, 45);
+            this.panel4.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1324, 45);
+            this.panel5.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.label4.Size = new System.Drawing.Size(102, 31);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "REPORTS";
             // 
             // Inventory
             // 
@@ -761,6 +1111,29 @@
             this.tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -810,5 +1183,27 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnSerachProduct;
+        private System.Windows.Forms.TextBox txtSearchProduct;
+        private System.Windows.Forms.DataGridView dgv3;
+        private System.Windows.Forms.DataGridView dgv4;
+        private System.Windows.Forms.Button btnSearchCategory;
+        private System.Windows.Forms.TextBox txtSearchCategory;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Button btnSeacrhInventory;
+        private System.Windows.Forms.TextBox txtSeacrhInventory;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.Button btnSearchStock;
+        private System.Windows.Forms.TextBox txtSearchStock;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label4;
     }
 }
