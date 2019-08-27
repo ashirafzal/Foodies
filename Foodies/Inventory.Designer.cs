@@ -868,7 +868,7 @@
             this.dgv3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv3.Name = "dgv3";
             this.dgv3.ReadOnly = true;
-            this.dgv3.Size = new System.Drawing.Size(1291, 523);
+            this.dgv3.Size = new System.Drawing.Size(1291, 516);
             this.dgv3.TabIndex = 7;
             // 
             // label1
@@ -905,7 +905,7 @@
             this.dgv4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv4.Name = "dgv4";
             this.dgv4.ReadOnly = true;
-            this.dgv4.Size = new System.Drawing.Size(1291, 515);
+            this.dgv4.Size = new System.Drawing.Size(1291, 500);
             this.dgv4.TabIndex = 11;
             // 
             // btnSearchCategory
@@ -915,7 +915,7 @@
             this.btnSearchCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchCategory.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchCategory.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCategory.Location = new System.Drawing.Point(1057, 61);
+            this.btnSearchCategory.Location = new System.Drawing.Point(1057, 56);
             this.btnSearchCategory.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearchCategory.Name = "btnSearchCategory";
             this.btnSearchCategory.Size = new System.Drawing.Size(254, 39);
@@ -926,7 +926,7 @@
             // txtSearchCategory
             // 
             this.txtSearchCategory.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchCategory.Location = new System.Drawing.Point(20, 62);
+            this.txtSearchCategory.Location = new System.Drawing.Point(20, 57);
             this.txtSearchCategory.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchCategory.Name = "txtSearchCategory";
             this.txtSearchCategory.Size = new System.Drawing.Size(1027, 38);
@@ -1155,7 +1155,7 @@
             // productIdDataGridViewTextBoxColumn
             // 
             this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT iD";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
             this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
             this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
