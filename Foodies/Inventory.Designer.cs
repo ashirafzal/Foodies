@@ -66,16 +66,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ProductPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CategoryPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DashboardPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.StockPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ReportPanel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -100,11 +90,6 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.ProductPanel.SuspendLayout();
-            this.CategoryPanel.SuspendLayout();
-            this.DashboardPanel.SuspendLayout();
-            this.StockPanel.SuspendLayout();
-            this.ReportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -279,7 +264,6 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.ProductPanel, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -663,108 +647,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // ProductPanel
-            // 
-            this.ProductPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ProductPanel.Controls.Add(this.CategoryPanel);
-            this.ProductPanel.Controls.Add(this.label1);
-            this.ProductPanel.Location = new System.Drawing.Point(0, 182);
-            this.ProductPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(636, 342);
-            this.ProductPanel.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(265, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Product";
-            // 
-            // CategoryPanel
-            // 
-            this.CategoryPanel.Controls.Add(this.DashboardPanel);
-            this.CategoryPanel.Controls.Add(this.label2);
-            this.CategoryPanel.Location = new System.Drawing.Point(-2, -2);
-            this.CategoryPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.CategoryPanel.Name = "CategoryPanel";
-            this.CategoryPanel.Size = new System.Drawing.Size(634, 340);
-            this.CategoryPanel.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(258, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 32);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Category";
-            // 
-            // DashboardPanel
-            // 
-            this.DashboardPanel.Controls.Add(this.StockPanel);
-            this.DashboardPanel.Controls.Add(this.label3);
-            this.DashboardPanel.Location = new System.Drawing.Point(2, 3);
-            this.DashboardPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.DashboardPanel.Name = "DashboardPanel";
-            this.DashboardPanel.Size = new System.Drawing.Size(632, 334);
-            this.DashboardPanel.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(250, 139);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Dashboard";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // StockPanel
-            // 
-            this.StockPanel.Controls.Add(this.ReportPanel);
-            this.StockPanel.Controls.Add(this.label4);
-            this.StockPanel.Location = new System.Drawing.Point(-1, -3);
-            this.StockPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.StockPanel.Name = "StockPanel";
-            this.StockPanel.Size = new System.Drawing.Size(633, 340);
-            this.StockPanel.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(296, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Stock";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // ReportPanel
-            // 
-            this.ReportPanel.Controls.Add(this.label5);
-            this.ReportPanel.Location = new System.Drawing.Point(-1, 0);
-            this.ReportPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.ReportPanel.Name = "ReportPanel";
-            this.ReportPanel.Size = new System.Drawing.Size(634, 340);
-            this.ReportPanel.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(267, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 32);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Report";
-            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,16 +687,6 @@
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ProductPanel.ResumeLayout(false);
-            this.ProductPanel.PerformLayout();
-            this.CategoryPanel.ResumeLayout(false);
-            this.CategoryPanel.PerformLayout();
-            this.DashboardPanel.ResumeLayout(false);
-            this.DashboardPanel.PerformLayout();
-            this.StockPanel.ResumeLayout(false);
-            this.StockPanel.PerformLayout();
-            this.ReportPanel.ResumeLayout(false);
-            this.ReportPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -858,15 +730,5 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel ProductPanel;
-        private System.Windows.Forms.Panel CategoryPanel;
-        private System.Windows.Forms.Panel DashboardPanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel StockPanel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel ReportPanel;
-        private System.Windows.Forms.Label label5;
     }
 }

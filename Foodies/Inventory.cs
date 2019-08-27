@@ -154,7 +154,7 @@ namespace Foodies
 
         private void label_Product_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void label_Category_Click(object sender, EventArgs e)
@@ -174,17 +174,7 @@ namespace Foodies
 
         private void label_Dashboard_Click(object sender, EventArgs e)
         {
-            hidePanels();
-            DashboardPanel.Visible = true;
-        }
 
-        public void hidePanels()
-        {
-            DashboardPanel.Visible = false;
-            StockPanel.Visible = false;
-            ProductPanel.Visible = false;
-            CategoryPanel.Visible = false;
-            ReportPanel.Visible = false;
         }
 
         private void label_Stock_Click(object sender, EventArgs e)
