@@ -77,6 +77,9 @@ namespace Foodies
                 cmd.Parameters.Add(new SqlParameter("@images", images));
                 cmd.ExecuteNonQuery();
                 con.Close();
+                txtCategory.Text = string.Empty;
+                txtName.Text = string.Empty;
+                txtPrice.Text = string.Empty;
                 MessageBox.Show("Product Created Successfull");
             }
             catch (Exception)
