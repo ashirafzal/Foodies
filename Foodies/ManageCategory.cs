@@ -119,26 +119,33 @@ namespace Foodies
             SqlDataAdapter adapter = new SqlDataAdapter("select * from Products where ProductCategory = '" + CategoryName.Text + "'  ", con);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            MessageBox.Show("There are "+ table.Rows.Count.ToString() + " products in this category. These Products will also be deleted with this category. Are you sure you want to continue this ?");
 
-            //SqlCommand cmd = con.CreateCommand();
-            //cmd.CommandType = CommandType.Text;
-            //cmd.CommandText = "delete from Category where CategoryName ='" + CategoryName.Text + "'";
-            //cmd.ExecuteNonQuery();
+            DialogResult result = MessageBox.Show("There are "+ table.Rows.Count.ToString() + " products in this category.These Products will also be deleted with this category.Are you sure you want to continue this ? ", "Warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
 
-            //SqlCommand cmd1 = con.CreateCommand();
-            //cmd1.CommandType = CommandType.Text;
-            //cmd1.CommandText = "delete from Products where ProductCategory ='" + CategoryName.Text + "'";
-            //cmd1.ExecuteNonQuery();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from Category where CategoryName ='" + CategoryName.Text + "'";
+                cmd.ExecuteNonQuery();
 
-            //CategoryID.Text = string.Empty;
-            //CategoryName.Text = string.Empty;
+                SqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "delete from Products where ProductCategory ='" + CategoryName.Text + "'";
+                cmd1.ExecuteNonQuery();
 
-            //// TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            //this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+                CategoryID.Text = string.Empty;
+                CategoryName.Text = string.Empty;
 
-            //MessageBox.Show("Category and products under this category deleted successfully");
+                // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+                this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
 
+                MessageBox.Show("Category and products under this category deleted successfully");
+            }
+            else if (result == DialogResult.No)
+            {
+                //Do nothing
+            }
             con.Close();
         }
     }
