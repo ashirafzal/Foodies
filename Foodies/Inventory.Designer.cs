@@ -52,7 +52,7 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.fastfoodtotal = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -486,7 +486,7 @@
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Controls.Add(this.label10, 0, 1);
+            this.tableLayoutPanel14.Controls.Add(this.fastfoodtotal, 0, 1);
             this.tableLayoutPanel14.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(0);
@@ -497,18 +497,18 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(190, 124);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
-            // label10
+            // fastfoodtotal
             // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 62);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 62);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "38";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.fastfoodtotal.AutoSize = true;
+            this.fastfoodtotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fastfoodtotal.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fastfoodtotal.ForeColor = System.Drawing.Color.White;
+            this.fastfoodtotal.Location = new System.Drawing.Point(3, 62);
+            this.fastfoodtotal.Name = "fastfoodtotal";
+            this.fastfoodtotal.Size = new System.Drawing.Size(184, 62);
+            this.fastfoodtotal.TabIndex = 1;
+            this.fastfoodtotal.Text = "0";
+            this.fastfoodtotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -1332,7 +1332,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label fastfoodtotal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TabControl tabControl1;
