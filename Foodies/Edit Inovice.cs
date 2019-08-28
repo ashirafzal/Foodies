@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,6 +49,30 @@ namespace Foodies
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void SearchInvoice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int invoiceid = Convert.ToInt32(InvoiceNumber.Text);
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Bill where InvioceID  = '" + invoiceid + "' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                con.Close();
+                InvoiceNumber.Text = "";
+                InvoiceNumber.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("InvoiceID cannot be blank");
+            }
         }
     }
 }

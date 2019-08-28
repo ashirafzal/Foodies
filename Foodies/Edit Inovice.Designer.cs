@@ -123,6 +123,7 @@
             this.SearchInvoice.TabIndex = 1;
             this.SearchInvoice.Text = "SEARCH INVOICE";
             this.SearchInvoice.UseVisualStyleBackColor = false;
+            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click);
             // 
             // dgv1
             // 
