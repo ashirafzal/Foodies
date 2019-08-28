@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Menu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -697,7 +698,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(184, 62);
             this.label6.TabIndex = 0;
-            this.label6.Text = "TOTAL STOCKS";
+            this.label6.Text = "TOTAL STOCK ITEMS";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
@@ -927,6 +928,9 @@
             this.dgv3.AllowUserToDeleteRows = false;
             this.dgv3.AllowUserToResizeColumns = false;
             this.dgv3.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgv3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv3.AutoGenerateColumns = false;
             this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv3.BackgroundColor = System.Drawing.Color.White;
