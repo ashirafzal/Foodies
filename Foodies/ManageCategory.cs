@@ -111,5 +111,17 @@ namespace Foodies
                 pictureBox1.ImageLocation = imgLocation;
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(" select * from Products where ProductCategory = '" + CategoryName.Text + "'  ", con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            MessageBox.Show("There are "+ table.Rows.Count.ToString() + " products in this category. These Products will also be deleted with this category. Are you sure you want to continue this ?");
+
+            //con.Close();
+        }
     }
 }

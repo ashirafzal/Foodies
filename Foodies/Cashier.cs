@@ -169,7 +169,8 @@ namespace Foodies
 
         private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageCategory manageCategory = new ManageCategory();
+            manageCategory.Show();
         }
 
         private void manageSubProductsToolStripMenuItem_Click(object sender, EventArgs e)
