@@ -213,7 +213,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SubProductManagement_System";
-            this.Text = "Category Form";
+            this.Text = "CATEGORY FORM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SubProductManagement_System_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

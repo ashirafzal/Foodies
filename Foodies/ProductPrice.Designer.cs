@@ -32,24 +32,24 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearchPrice = new System.Windows.Forms.TextBox();
-            this.SearchPrice = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.productsDataSet = new Foodies.ProductsDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsDataSet = new Foodies.ProductsDataSet();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.SearchPrice = new System.Windows.Forms.Button();
+            this.txtSearchPrice = new System.Windows.Forms.TextBox();
+            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -100,50 +100,6 @@
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.10474F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.89526F));
-            this.tableLayoutPanel3.Controls.Add(this.SearchPrice, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtSearchPrice, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1600, 54);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // txtSearchPrice
-            // 
-            this.txtSearchPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearchPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPrice.Location = new System.Drawing.Point(28, 6);
-            this.txtSearchPrice.Margin = new System.Windows.Forms.Padding(20, 5, 0, 5);
-            this.txtSearchPrice.Multiline = true;
-            this.txtSearchPrice.Name = "txtSearchPrice";
-            this.txtSearchPrice.Size = new System.Drawing.Size(1293, 42);
-            this.txtSearchPrice.TabIndex = 1;
-            this.txtSearchPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // SearchPrice
-            // 
-            this.SearchPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchPrice.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchPrice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchPrice.ForeColor = System.Drawing.Color.White;
-            this.SearchPrice.Location = new System.Drawing.Point(1337, 3);
-            this.SearchPrice.Name = "SearchPrice";
-            this.SearchPrice.Size = new System.Drawing.Size(254, 48);
-            this.SearchPrice.TabIndex = 2;
-            this.SearchPrice.Text = "SEARCH PRICE";
-            this.SearchPrice.UseVisualStyleBackColor = false;
-            this.SearchPrice.Click += new System.EventHandler(this.SearchPrice_Click);
-            // 
             // dgv1
             // 
             this.dgv1.AllowUserToAddRows = false;
@@ -168,20 +124,6 @@
             this.dgv1.ReadOnly = true;
             this.dgv1.Size = new System.Drawing.Size(1541, 639);
             this.dgv1.TabIndex = 2;
-            // 
-            // productsDataSet
-            // 
-            this.productsDataSet.DataSetName = "ProductsDataSet";
-            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.productsDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // productIdDataGridViewTextBoxColumn
             // 
@@ -220,6 +162,64 @@
             this.productImageDataGridViewImageColumn.ReadOnly = true;
             this.productImageDataGridViewImageColumn.Visible = false;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.productsDataSet;
+            // 
+            // productsDataSet
+            // 
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.10474F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.89526F));
+            this.tableLayoutPanel3.Controls.Add(this.SearchPrice, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtSearchPrice, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1600, 54);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // SearchPrice
+            // 
+            this.SearchPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchPrice.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SearchPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchPrice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchPrice.ForeColor = System.Drawing.Color.White;
+            this.SearchPrice.Location = new System.Drawing.Point(1337, 3);
+            this.SearchPrice.Name = "SearchPrice";
+            this.SearchPrice.Size = new System.Drawing.Size(254, 48);
+            this.SearchPrice.TabIndex = 2;
+            this.SearchPrice.Text = "SEARCH PRICE";
+            this.SearchPrice.UseVisualStyleBackColor = false;
+            this.SearchPrice.Click += new System.EventHandler(this.SearchPrice_Click);
+            // 
+            // txtSearchPrice
+            // 
+            this.txtSearchPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSearchPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchPrice.Location = new System.Drawing.Point(28, 6);
+            this.txtSearchPrice.Margin = new System.Windows.Forms.Padding(20, 5, 0, 5);
+            this.txtSearchPrice.Multiline = true;
+            this.txtSearchPrice.Name = "txtSearchPrice";
+            this.txtSearchPrice.Size = new System.Drawing.Size(1293, 42);
+            this.txtSearchPrice.TabIndex = 1;
+            this.txtSearchPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // ProductPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,17 +229,17 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ProductPrice";
-            this.Text = "Product Price";
+            this.Text = "PRODUCT PRICES";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductPrice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

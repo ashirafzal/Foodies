@@ -396,7 +396,7 @@
             this.Controls.Add(this.EditProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ManageItems";
-            this.Text = "ManageProduct";
+            this.Text = "MANAGE PRODUCT";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManageProduct_Load);
             this.EditProduct.ResumeLayout(false);

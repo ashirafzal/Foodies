@@ -312,7 +312,7 @@
             this.Controls.Add(this.tableLayoutPanel5);
             this.Name = "ManageCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-            this.Text = "ManageCategory";
+            this.Text = "MANAGE CATEGORY";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManageCategory_Load);
             this.tableLayoutPanel5.ResumeLayout(false);

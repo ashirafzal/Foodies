@@ -269,7 +269,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ItemsEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductEntry";
+            this.Text = "PRODUCT ENTRY";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductEntry_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
