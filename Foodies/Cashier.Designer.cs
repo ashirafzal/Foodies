@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,42 +175,42 @@
             this.clockOutToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.fileToolStripMenuItem.Text = "FILE";
             // 
             // inventoryManagementSystemToolStripMenuItem
             // 
             this.inventoryManagementSystemToolStripMenuItem.Name = "inventoryManagementSystemToolStripMenuItem";
-            this.inventoryManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.inventoryManagementSystemToolStripMenuItem.Text = "Inventory Management System";
+            this.inventoryManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.inventoryManagementSystemToolStripMenuItem.Text = "INVENTORY MANAGEMENT SYSTEM";
             this.inventoryManagementSystemToolStripMenuItem.Click += new System.EventHandler(this.inventoryManagementSystemToolStripMenuItem_Click);
             // 
             // stockManagementSystemToolStripMenuItem
             // 
             this.stockManagementSystemToolStripMenuItem.Name = "stockManagementSystemToolStripMenuItem";
-            this.stockManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.stockManagementSystemToolStripMenuItem.Text = "Stock Management System";
+            this.stockManagementSystemToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.stockManagementSystemToolStripMenuItem.Text = "STOCK MANAGEMENT SYSTEM";
             this.stockManagementSystemToolStripMenuItem.Click += new System.EventHandler(this.stockManagementSystemToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.usersToolStripMenuItem.Text = "USERS";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // clockOutToolStripMenuItem
             // 
             this.clockOutToolStripMenuItem.Name = "clockOutToolStripMenuItem";
-            this.clockOutToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.clockOutToolStripMenuItem.Text = "Clock Out";
+            this.clockOutToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.clockOutToolStripMenuItem.Text = "CLOCK OUT /  LOGOUT";
             this.clockOutToolStripMenuItem.Click += new System.EventHandler(this.clockOutToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.closeToolStripMenuItem.Text = "CLOSE APPLICATION";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // invoiceDetailsToolStripMenuItem
@@ -221,35 +221,35 @@
             this.totalInvoiceDataToolStripMenuItem,
             this.deletedInvoiceToolStripMenuItem});
             this.invoiceDetailsToolStripMenuItem.Name = "invoiceDetailsToolStripMenuItem";
-            this.invoiceDetailsToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.invoiceDetailsToolStripMenuItem.Text = "Invoice Details";
+            this.invoiceDetailsToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.invoiceDetailsToolStripMenuItem.Text = "INVOICE";
             // 
             // searchInvoiceToolStripMenuItem
             // 
             this.searchInvoiceToolStripMenuItem.Name = "searchInvoiceToolStripMenuItem";
-            this.searchInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.searchInvoiceToolStripMenuItem.Text = "Search Invoice";
+            this.searchInvoiceToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.searchInvoiceToolStripMenuItem.Text = "SEARCH INVOICES";
             this.searchInvoiceToolStripMenuItem.Click += new System.EventHandler(this.searchInvoiceToolStripMenuItem_Click);
             // 
             // editInvoiceToolStripMenuItem
             // 
             this.editInvoiceToolStripMenuItem.Name = "editInvoiceToolStripMenuItem";
-            this.editInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.editInvoiceToolStripMenuItem.Text = "Cancel Invoice";
+            this.editInvoiceToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.editInvoiceToolStripMenuItem.Text = "CANCEL INVOICES";
             this.editInvoiceToolStripMenuItem.Click += new System.EventHandler(this.editInvoiceToolStripMenuItem_Click);
             // 
             // totalInvoiceDataToolStripMenuItem
             // 
             this.totalInvoiceDataToolStripMenuItem.Name = "totalInvoiceDataToolStripMenuItem";
-            this.totalInvoiceDataToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.totalInvoiceDataToolStripMenuItem.Text = "Edit Invoice";
+            this.totalInvoiceDataToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.totalInvoiceDataToolStripMenuItem.Text = "EDIT INVOICE";
             this.totalInvoiceDataToolStripMenuItem.Click += new System.EventHandler(this.totalInvoiceDataToolStripMenuItem_Click);
             // 
             // deletedInvoiceToolStripMenuItem
             // 
             this.deletedInvoiceToolStripMenuItem.Name = "deletedInvoiceToolStripMenuItem";
-            this.deletedInvoiceToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.deletedInvoiceToolStripMenuItem.Text = "Deleted Invoice";
+            this.deletedInvoiceToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.deletedInvoiceToolStripMenuItem.Text = "DELETED INVOICES DATA";
             this.deletedInvoiceToolStripMenuItem.Click += new System.EventHandler(this.deletedInvoiceToolStripMenuItem_Click);
             // 
             // productSearchToolStripMenuItem
@@ -261,42 +261,42 @@
             this.manageSubProductsToolStripMenuItem,
             this.manageItemsToolStripMenuItem});
             this.productSearchToolStripMenuItem.Name = "productSearchToolStripMenuItem";
-            this.productSearchToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.productSearchToolStripMenuItem.Text = "Product Search";
+            this.productSearchToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
+            this.productSearchToolStripMenuItem.Text = "PRODUCTS AND CATEGORIES";
             // 
             // productPriceToolStripMenuItem
             // 
             this.productPriceToolStripMenuItem.Name = "productPriceToolStripMenuItem";
-            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.productPriceToolStripMenuItem.Text = "Product Prices";
+            this.productPriceToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.productPriceToolStripMenuItem.Text = "PRODUCT PRICES";
             this.productPriceToolStripMenuItem.Click += new System.EventHandler(this.productPriceToolStripMenuItem_Click);
             // 
             // createProductToolStripMenuItem
             // 
             this.createProductToolStripMenuItem.Name = "createProductToolStripMenuItem";
-            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.createProductToolStripMenuItem.Text = "Create Category";
+            this.createProductToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.createProductToolStripMenuItem.Text = "CREATE CATEGORIES";
             this.createProductToolStripMenuItem.Click += new System.EventHandler(this.createProductToolStripMenuItem_Click);
             // 
             // manageProductToolStripMenuItem
             // 
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.manageProductToolStripMenuItem.Text = "Manage Category";
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.manageProductToolStripMenuItem.Text = "MANAGE CATEGORIES";
             this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
             // 
             // manageSubProductsToolStripMenuItem
             // 
             this.manageSubProductsToolStripMenuItem.Name = "manageSubProductsToolStripMenuItem";
-            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.manageSubProductsToolStripMenuItem.Text = "Create Products";
+            this.manageSubProductsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.manageSubProductsToolStripMenuItem.Text = "CREATE PRODUCTS ";
             this.manageSubProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSubProductsToolStripMenuItem_Click);
             // 
             // manageItemsToolStripMenuItem
             // 
             this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
-            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.manageItemsToolStripMenuItem.Text = "Manage Products";
+            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.manageItemsToolStripMenuItem.Text = "MANAGE PRODUCTS";
             this.manageItemsToolStripMenuItem.Click += new System.EventHandler(this.manageItemsToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
@@ -307,32 +307,32 @@
             this.monthlySalesToolStripMenuItem,
             this.annualSaleslToolStripMenuItem});
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
-            this.salesToolStripMenuItem.Text = "Sales";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.salesToolStripMenuItem.Text = "SALES";
             // 
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.dailySalesToolStripMenuItem.Text = "Daily Sales";
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dailySalesToolStripMenuItem.Text = "DAILY SALES";
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.weeklySalesToolStripMenuItem.Text = "Weekly Sales";
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weeklySalesToolStripMenuItem.Text = "WEEKLY SALES";
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.monthlySalesToolStripMenuItem.Text = "Monthly Sales";
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monthlySalesToolStripMenuItem.Text = "MONTHLY SALES";
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.annualSaleslToolStripMenuItem.Text = "Annual Sales";
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.annualSaleslToolStripMenuItem.Text = "ANNUAL SALES";
             // 
             // exportToolStripMenuItem
             // 
@@ -340,20 +340,20 @@
             this.exportToExcelToolStripMenuItem,
             this.exportToAccessToolStripMenuItem});
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.exportToolStripMenuItem.Text = "EXPORT";
             // 
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.exportToExcelToolStripMenuItem.Text = "Export to Excel";
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Text = "EXPORT TO EXCEL";
             // 
             // exportToAccessToolStripMenuItem
             // 
             this.exportToAccessToolStripMenuItem.Name = "exportToAccessToolStripMenuItem";
-            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.exportToAccessToolStripMenuItem.Text = "Export to Access";
+            this.exportToAccessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToAccessToolStripMenuItem.Text = "EXPORT TO ACCESS";
             // 
             // othersToolStripMenuItem
             // 
@@ -361,20 +361,20 @@
             this.viewSummaryToolStripMenuItem,
             this.reportToolStripMenuItem});
             this.othersToolStripMenuItem.Name = "othersToolStripMenuItem";
-            this.othersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.othersToolStripMenuItem.Text = "Others";
+            this.othersToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.othersToolStripMenuItem.Text = "OTHERS";
             // 
             // viewSummaryToolStripMenuItem
             // 
             this.viewSummaryToolStripMenuItem.Name = "viewSummaryToolStripMenuItem";
-            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.viewSummaryToolStripMenuItem.Text = "View Summary";
+            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewSummaryToolStripMenuItem.Text = "VIEW SUMMARY";
             // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportToolStripMenuItem.Text = "REPORT";
             // 
             // tableLayoutPanel1
             // 
@@ -481,12 +481,12 @@
             // 
             // addbtn
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Green;
-            this.addbtn.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            this.addbtn.DefaultCellStyle = dataGridViewCellStyle1;
             this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addbtn.HeaderText = "ADD";
             this.addbtn.Name = "addbtn";
@@ -497,12 +497,12 @@
             // 
             // minusbtn
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle2;
             this.minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusbtn.HeaderText = "MINUS";
             this.minusbtn.Name = "minusbtn";
@@ -512,12 +512,12 @@
             // 
             // btnDelete
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Navy;
-            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
+            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.HeaderText = "DELETE";
             this.btnDelete.Name = "btnDelete";
@@ -712,7 +712,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(553, 68);
             this.tableLayoutPanel11.TabIndex = 0;
             this.tableLayoutPanel11.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel11_Paint);
@@ -767,7 +767,7 @@
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(213, 68);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
@@ -811,7 +811,7 @@
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(274, 68);
             this.tableLayoutPanel13.TabIndex = 1;
             // 
@@ -916,7 +916,7 @@
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel17.Size = new System.Drawing.Size(228, 69);
             this.tableLayoutPanel17.TabIndex = 1;
             // 
@@ -957,7 +957,7 @@
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel16.Size = new System.Drawing.Size(387, 69);
             this.tableLayoutPanel16.TabIndex = 3;
             // 
@@ -973,7 +973,7 @@
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.tableLayoutPanel18.Size = new System.Drawing.Size(266, 69);
             this.tableLayoutPanel18.TabIndex = 2;
             // 
