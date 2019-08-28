@@ -11,6 +11,7 @@ namespace Foodies
         public Login()
         {
             InitializeComponent();
+            username.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,6 +72,11 @@ namespace Foodies
                     "User Mishandling", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             con.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
