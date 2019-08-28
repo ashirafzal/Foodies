@@ -186,7 +186,8 @@ namespace Foodies
 
         private void stockManagementSystemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Stocks stocks = new Stocks();
+            stocks.Show();
         }
 
         private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)

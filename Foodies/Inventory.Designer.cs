@@ -171,7 +171,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 865);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 841);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Menu
@@ -183,7 +183,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Margin = new System.Windows.Forms.Padding(0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(268, 865);
+            this.Menu.Size = new System.Drawing.Size(268, 841);
             this.Menu.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -200,7 +200,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.39884F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.60116F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 861);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(264, 837);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -213,7 +213,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label_Product, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label_Stock, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label_Dashboard, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 335);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 329);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -305,7 +305,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(220, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,7 +320,7 @@
             this.InventoryMain.Location = new System.Drawing.Point(268, 0);
             this.InventoryMain.Margin = new System.Windows.Forms.Padding(0);
             this.InventoryMain.Name = "InventoryMain";
-            this.InventoryMain.Size = new System.Drawing.Size(1336, 865);
+            this.InventoryMain.Size = new System.Drawing.Size(1336, 841);
             this.InventoryMain.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -757,7 +757,7 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(1291, 523);
+            this.dgv1.Size = new System.Drawing.Size(1291, 499);
             this.dgv1.TabIndex = 11;
             // 
             // btnSeacrhInventory
@@ -837,7 +837,7 @@
             this.dgv2.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv2.Name = "dgv2";
             this.dgv2.ReadOnly = true;
-            this.dgv2.Size = new System.Drawing.Size(1291, 523);
+            this.dgv2.Size = new System.Drawing.Size(1291, 499);
             this.dgv2.TabIndex = 11;
             // 
             // btnSearchStock
@@ -947,7 +947,7 @@
             this.dgv3.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv3.Name = "dgv3";
             this.dgv3.ReadOnly = true;
-            this.dgv3.Size = new System.Drawing.Size(1291, 516);
+            this.dgv3.Size = new System.Drawing.Size(1291, 499);
             this.dgv3.TabIndex = 7;
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
             // 
@@ -1099,7 +1099,7 @@
             this.dgv4.Margin = new System.Windows.Forms.Padding(10, 10, 10, 20);
             this.dgv4.Name = "dgv4";
             this.dgv4.ReadOnly = true;
-            this.dgv4.Size = new System.Drawing.Size(1291, 500);
+            this.dgv4.Size = new System.Drawing.Size(1291, 491);
             this.dgv4.TabIndex = 11;
             this.dgv4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv4_CellContentClick);
             // 
@@ -1232,12 +1232,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 865);
+            this.ClientSize = new System.Drawing.Size(1604, 841);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.Name = "Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INVENTORY MANAGEMENT SYSTEM";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inventory_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Menu.ResumeLayout(false);

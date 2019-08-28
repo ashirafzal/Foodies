@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnPrint = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.InvoiceNumber = new System.Windows.Forms.TextBox();
             this.SearchInvoice = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.BtnPrint = new System.Windows.Forms.Button();
-            this.invoiceDataSet = new Foodies.InvoiceDataSet();
-            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +51,14 @@
             this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalAmountWithGSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountInPercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceDataSet = new Foodies.InvoiceDataSet();
+            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -78,8 +78,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.29459F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.1542F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 869);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1604, 841);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // BtnPrint
+            // 
+            this.BtnPrint.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BtnPrint.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BtnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPrint.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrint.ForeColor = System.Drawing.Color.White;
+            this.BtnPrint.Location = new System.Drawing.Point(1362, 739);
+            this.BtnPrint.Margin = new System.Windows.Forms.Padding(0, 0, 15, 30);
+            this.BtnPrint.Name = "BtnPrint";
+            this.BtnPrint.Size = new System.Drawing.Size(227, 53);
+            this.BtnPrint.TabIndex = 3;
+            this.BtnPrint.Text = "PRINT EDITED INVOICE";
+            this.BtnPrint.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -94,14 +109,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1604, 83);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1604, 81);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // InvoiceNumber
             // 
             this.InvoiceNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InvoiceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvoiceNumber.Location = new System.Drawing.Point(15, 31);
+            this.InvoiceNumber.Location = new System.Drawing.Point(15, 30);
             this.InvoiceNumber.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.InvoiceNumber.Multiline = true;
             this.InvoiceNumber.Name = "InvoiceNumber";
@@ -116,7 +131,7 @@
             this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(1346, 25);
+            this.SearchInvoice.Location = new System.Drawing.Point(1346, 24);
             this.SearchInvoice.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.SearchInvoice.Name = "SearchInvoice";
             this.SearchInvoice.Size = new System.Drawing.Size(242, 53);
@@ -156,7 +171,7 @@
             this.dgv1.DataSource = this.billBindingSource;
             this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv1.GridColor = System.Drawing.Color.Black;
-            this.dgv1.Location = new System.Drawing.Point(13, 103);
+            this.dgv1.Location = new System.Drawing.Point(13, 90);
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -166,35 +181,6 @@
             this.dgv1.ShowRowErrors = false;
             this.dgv1.Size = new System.Drawing.Size(1577, 622);
             this.dgv1.TabIndex = 2;
-            // 
-            // BtnPrint
-            // 
-            this.BtnPrint.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BtnPrint.BackColor = System.Drawing.Color.RoyalBlue;
-            this.BtnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPrint.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrint.ForeColor = System.Drawing.Color.White;
-            this.BtnPrint.Location = new System.Drawing.Point(1362, 765);
-            this.BtnPrint.Margin = new System.Windows.Forms.Padding(0, 0, 15, 30);
-            this.BtnPrint.Name = "BtnPrint";
-            this.BtnPrint.Size = new System.Drawing.Size(227, 53);
-            this.BtnPrint.TabIndex = 3;
-            this.BtnPrint.Text = "PRINT EDITED INVOICE";
-            this.BtnPrint.UseVisualStyleBackColor = false;
-            // 
-            // invoiceDataSet
-            // 
-            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
-            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // billBindingSource
-            // 
-            this.billBindingSource.DataMember = "Bill";
-            this.billBindingSource.DataSource = this.invoiceDataSet;
-            // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
             // 
             // invioceIDDataGridViewTextBoxColumn
             // 
@@ -325,24 +311,38 @@
             this.discountInPercentDataGridViewTextBoxColumn.ReadOnly = true;
             this.discountInPercentDataGridViewTextBoxColumn.Width = 142;
             // 
+            // billBindingSource
+            // 
+            this.billBindingSource.DataMember = "Bill";
+            this.billBindingSource.DataSource = this.invoiceDataSet;
+            // 
+            // invoiceDataSet
+            // 
+            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
+            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // billTableAdapter
+            // 
+            this.billTableAdapter.ClearBeforeFill = true;
+            // 
             // Edit_Inovice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 869);
+            this.ClientSize = new System.Drawing.Size(1604, 841);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.Name = "Edit_Inovice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDIT INVOICE";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Edit_Inovice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

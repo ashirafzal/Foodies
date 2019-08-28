@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.90909F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 869);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 837);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -77,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1600, 78);
+            this.label1.Size = new System.Drawing.Size(1600, 76);
             this.label1.TabIndex = 0;
             this.label1.Text = "PRODUCT PRICES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,13 +90,13 @@
             this.tableLayoutPanel2.Controls.Add(this.dgv1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 78);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 76);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.953224F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.04678F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 791);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 761);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -119,7 +119,7 @@
             this.productCategoryDataGridViewTextBoxColumn,
             this.productImageDataGridViewImageColumn});
             this.dgv1.DataSource = this.productsBindingSource;
-            this.dgv1.Location = new System.Drawing.Point(29, 103);
+            this.dgv1.Location = new System.Drawing.Point(29, 87);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
             this.dgv1.Size = new System.Drawing.Size(1541, 639);
@@ -186,7 +186,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1600, 54);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1600, 52);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // SearchPrice
@@ -198,7 +198,7 @@
             this.SearchPrice.ForeColor = System.Drawing.Color.White;
             this.SearchPrice.Location = new System.Drawing.Point(1337, 3);
             this.SearchPrice.Name = "SearchPrice";
-            this.SearchPrice.Size = new System.Drawing.Size(254, 48);
+            this.SearchPrice.Size = new System.Drawing.Size(254, 46);
             this.SearchPrice.TabIndex = 2;
             this.SearchPrice.Text = "SEARCH PRICE";
             this.SearchPrice.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@
             // 
             this.txtSearchPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSearchPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPrice.Location = new System.Drawing.Point(28, 6);
+            this.txtSearchPrice.Location = new System.Drawing.Point(28, 5);
             this.txtSearchPrice.Margin = new System.Windows.Forms.Padding(20, 5, 0, 5);
             this.txtSearchPrice.Multiline = true;
             this.txtSearchPrice.Name = "txtSearchPrice";
@@ -225,12 +225,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 869);
+            this.ClientSize = new System.Drawing.Size(1600, 837);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "ProductPrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PRODUCT PRICES";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ProductPrice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -72,7 +72,7 @@
             this.EditProduct.Location = new System.Drawing.Point(0, 0);
             this.EditProduct.Margin = new System.Windows.Forms.Padding(0);
             this.EditProduct.Name = "EditProduct";
-            this.EditProduct.Size = new System.Drawing.Size(1600, 865);
+            this.EditProduct.Size = new System.Drawing.Size(1600, 837);
             this.EditProduct.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -90,7 +90,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1600, 865);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1600, 837);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -107,14 +107,14 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.77707F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.22293F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(457, 863);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(457, 835);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 535);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 513);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(388, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +139,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel6.Controls.Add(this.ProductID, 1, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(29, 96);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(29, 88);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 6;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -332,7 +332,7 @@
             this.dgv1.ShowCellToolTips = false;
             this.dgv1.ShowEditingIcon = false;
             this.dgv1.ShowRowErrors = false;
-            this.dgv1.Size = new System.Drawing.Size(1140, 863);
+            this.dgv1.Size = new System.Drawing.Size(1140, 835);
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
@@ -392,12 +392,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.ClientSize = new System.Drawing.Size(1600, 837);
             this.Controls.Add(this.EditProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "ManageItems";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MANAGE PRODUCT";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManageProduct_Load);
             this.EditProduct.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);

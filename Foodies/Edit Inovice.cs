@@ -35,7 +35,7 @@ namespace Foodies
             this.dgv1.ColumnHeadersDefaultCellStyle.Padding = newPadding;
 
             //This Part of Code is for the styling of the Grid Columns
-            dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+            dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
             dgv1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             // This Part of Code is for the styling of the Grid Border
@@ -43,7 +43,7 @@ namespace Foodies
             this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             //This Part of Code is for the styling of the Grid Rows
-            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
 
             Padding newPadding2 = new Padding(10, 0, 10, 0);
             dgv1.RowsDefaultCellStyle.Padding = newPadding2;

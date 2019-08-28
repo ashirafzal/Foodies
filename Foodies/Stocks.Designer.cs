@@ -50,10 +50,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.StockName = new System.Windows.Forms.TextBox();
+            this.StockWeight = new System.Windows.Forms.TextBox();
+            this.StockCompany = new System.Windows.Forms.TextBox();
+            this.StockCategory = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.SearchInvoice = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -163,14 +163,14 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox4, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.textBox3, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.StockCategory, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.StockCompany, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.StockWeight, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.StockName, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -247,7 +247,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label1.Size = new System.Drawing.Size(177, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "STOCK NAME";
@@ -261,10 +261,10 @@
             this.label2.Location = new System.Drawing.Point(0, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label2.Size = new System.Drawing.Size(177, 46);
             this.label2.TabIndex = 1;
-            this.label2.Text = "STOCK WEIGHT";
+            this.label2.Text = "STOCK WEIGHT (In grams)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -276,7 +276,7 @@
             this.label3.Location = new System.Drawing.Point(0, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label3.Size = new System.Drawing.Size(177, 46);
             this.label3.TabIndex = 2;
             this.label3.Text = "STOCK COMPANY";
@@ -291,47 +291,47 @@
             this.label4.Location = new System.Drawing.Point(0, 138);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.label4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label4.Size = new System.Drawing.Size(177, 48);
             this.label4.TabIndex = 3;
             this.label4.Text = "STOCK CATEGORY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // StockName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 5);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 35);
-            this.textBox1.TabIndex = 4;
+            this.StockName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockName.Location = new System.Drawing.Point(177, 5);
+            this.StockName.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockName.Name = "StockName";
+            this.StockName.Size = new System.Drawing.Size(264, 35);
+            this.StockName.TabIndex = 4;
             // 
-            // textBox2
+            // StockWeight
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(177, 51);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(264, 35);
-            this.textBox2.TabIndex = 5;
+            this.StockWeight.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockWeight.Location = new System.Drawing.Point(177, 51);
+            this.StockWeight.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockWeight.Name = "StockWeight";
+            this.StockWeight.Size = new System.Drawing.Size(264, 35);
+            this.StockWeight.TabIndex = 5;
             // 
-            // textBox3
+            // StockCompany
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(177, 97);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(264, 35);
-            this.textBox3.TabIndex = 6;
+            this.StockCompany.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockCompany.Location = new System.Drawing.Point(177, 97);
+            this.StockCompany.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockCompany.Name = "StockCompany";
+            this.StockCompany.Size = new System.Drawing.Size(264, 35);
+            this.StockCompany.TabIndex = 6;
             // 
-            // textBox4
+            // StockCategory
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(177, 143);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 35);
-            this.textBox4.TabIndex = 7;
+            this.StockCategory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockCategory.Location = new System.Drawing.Point(177, 143);
+            this.StockCategory.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockCategory.Name = "StockCategory";
+            this.StockCategory.Size = new System.Drawing.Size(264, 35);
+            this.StockCategory.TabIndex = 7;
             // 
             // tableLayoutPanel5
             // 
@@ -406,6 +406,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
+            this.MaximizeBox = false;
             this.Name = "Stocks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "STOCK MANAGEMENT SYSTEM";
@@ -445,11 +446,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox StockCategory;
+        private System.Windows.Forms.TextBox StockCompany;
+        private System.Windows.Forms.TextBox StockWeight;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox StockName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button SearchInvoice;

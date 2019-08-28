@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.132948F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.86705F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 865);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 837);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ProductPanel
@@ -68,10 +68,10 @@
             this.ProductPanel.Controls.Add(this.pictureBox1);
             this.ProductPanel.Controls.Add(this.tableLayoutPanel3);
             this.ProductPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductPanel.Location = new System.Drawing.Point(0, 79);
+            this.ProductPanel.Location = new System.Drawing.Point(0, 77);
             this.ProductPanel.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(1600, 785);
+            this.ProductPanel.Size = new System.Drawing.Size(1600, 759);
             this.ProductPanel.TabIndex = 2;
             this.ProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ProductPanel_Paint);
             // 
@@ -96,7 +96,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtCategory, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(289, 288);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(289, 275);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -187,7 +187,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1595, 78);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1595, 76);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label4
@@ -199,7 +199,7 @@
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1595, 78);
+            this.label4.Size = new System.Drawing.Size(1595, 76);
             this.label4.TabIndex = 2;
             this.label4.Text = "CATEGORY ENTRY FORM";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,12 +209,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.ClientSize = new System.Drawing.Size(1600, 837);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "SubProductManagement_System";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CATEGORY FORM";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SubProductManagement_System_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ProductPanel.ResumeLayout(false);

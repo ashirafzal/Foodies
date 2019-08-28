@@ -72,7 +72,7 @@
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1604, 869);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1604, 841);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -89,14 +89,14 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.77707F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.22293F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(458, 867);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(458, 839);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 538);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 516);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(388, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(30, 141);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(30, 133);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -263,7 +263,7 @@
             this.dgv1.ShowCellToolTips = false;
             this.dgv1.ShowEditingIcon = false;
             this.dgv1.ShowRowErrors = false;
-            this.dgv1.Size = new System.Drawing.Size(1143, 867);
+            this.dgv1.Size = new System.Drawing.Size(1143, 839);
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
@@ -309,12 +309,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1604, 869);
+            this.ClientSize = new System.Drawing.Size(1604, 841);
             this.Controls.Add(this.tableLayoutPanel5);
+            this.MinimizeBox = false;
             this.Name = "ManageCategory";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MANAGE CATEGORY";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManageCategory_Load);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);

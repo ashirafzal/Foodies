@@ -76,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.06711F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.93288F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 865);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 837);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -92,14 +92,14 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 79);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 76);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // InvoiceNumber
             // 
             this.InvoiceNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InvoiceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvoiceNumber.Location = new System.Drawing.Point(12, 26);
+            this.InvoiceNumber.Location = new System.Drawing.Point(12, 24);
             this.InvoiceNumber.Margin = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.InvoiceNumber.Multiline = true;
             this.InvoiceNumber.Name = "InvoiceNumber";
@@ -114,7 +114,7 @@
             this.DeleteInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteInvoice.ForeColor = System.Drawing.Color.White;
-            this.DeleteInvoice.Location = new System.Drawing.Point(1358, 16);
+            this.DeleteInvoice.Location = new System.Drawing.Point(1358, 15);
             this.DeleteInvoice.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.DeleteInvoice.Name = "DeleteInvoice";
             this.DeleteInvoice.Size = new System.Drawing.Size(232, 56);
@@ -153,10 +153,10 @@
             this.totalAmountWithGSTDataGridViewTextBoxColumn,
             this.discountInPercentDataGridViewTextBoxColumn});
             this.dgv1.DataSource = this.billBindingSource;
-            this.dgv1.Location = new System.Drawing.Point(11, 92);
+            this.dgv1.Location = new System.Drawing.Point(11, 79);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(1577, 682);
+            this.dgv1.Size = new System.Drawing.Size(1577, 677);
             this.dgv1.TabIndex = 1;
             // 
             // invioceIDDataGridViewTextBoxColumn
@@ -294,7 +294,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 787);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 759);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -311,12 +311,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1600, 865);
+            this.ClientSize = new System.Drawing.Size(1600, 837);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "CancelInvioce";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CANCEL INVOICES";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DeleteInvioce_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
