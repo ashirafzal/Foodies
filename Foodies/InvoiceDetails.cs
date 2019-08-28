@@ -47,7 +47,6 @@ namespace Foodies
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
