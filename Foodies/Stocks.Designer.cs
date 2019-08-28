@@ -33,12 +33,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.stockDataSet = new Foodies.StockDataSet();
-            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
+            this.StockCategory = new System.Windows.Forms.TextBox();
+            this.StockCompany = new System.Windows.Forms.TextBox();
+            this.StockWeight = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.StockName = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SearchInvoice = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockweigthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,27 +55,18 @@
             this.stockcategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocktimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.StockName = new System.Windows.Forms.TextBox();
-            this.StockWeight = new System.Windows.Forms.TextBox();
-            this.StockCompany = new System.Windows.Forms.TextBox();
-            this.StockCategory = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.SearchInvoice = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDataSet = new Foodies.StockDataSet();
+            this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 283F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 257F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 257);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -114,33 +114,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // dgv1
-            // 
-            this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
-            this.dgv1.AllowUserToResizeColumns = false;
-            this.dgv1.AllowUserToResizeRows = false;
-            this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv1.AutoGenerateColumns = false;
-            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv1.BackgroundColor = System.Drawing.Color.White;
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stockidDataGridViewTextBoxColumn,
-            this.stocknameDataGridViewTextBoxColumn,
-            this.stockweigthDataGridViewTextBoxColumn,
-            this.stockcompanyDataGridViewTextBoxColumn,
-            this.stockcategoryDataGridViewTextBoxColumn,
-            this.stockdateDataGridViewTextBoxColumn,
-            this.stocktimeDataGridViewTextBoxColumn});
-            this.dgv1.DataSource = this.stockBindingSource;
-            this.dgv1.GridColor = System.Drawing.Color.Black;
-            this.dgv1.Location = new System.Drawing.Point(22, 281);
-            this.dgv1.Margin = new System.Windows.Forms.Padding(0);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(1555, 532);
-            this.dgv1.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -182,62 +155,32 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(444, 186);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // stockDataSet
+            // StockCategory
             // 
-            this.stockDataSet.DataSetName = "StockDataSet";
-            this.stockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.StockCategory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockCategory.Location = new System.Drawing.Point(177, 143);
+            this.StockCategory.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockCategory.Name = "StockCategory";
+            this.StockCategory.Size = new System.Drawing.Size(264, 35);
+            this.StockCategory.TabIndex = 7;
             // 
-            // stockBindingSource
+            // StockCompany
             // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.stockDataSet;
+            this.StockCompany.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockCompany.Location = new System.Drawing.Point(177, 97);
+            this.StockCompany.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockCompany.Name = "StockCompany";
+            this.StockCompany.Size = new System.Drawing.Size(264, 35);
+            this.StockCompany.TabIndex = 6;
             // 
-            // stockTableAdapter
+            // StockWeight
             // 
-            this.stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // stockidDataGridViewTextBoxColumn
-            // 
-            this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stockid";
-            this.stockidDataGridViewTextBoxColumn.HeaderText = "STOCK ID";
-            this.stockidDataGridViewTextBoxColumn.Name = "stockidDataGridViewTextBoxColumn";
-            this.stockidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stocknameDataGridViewTextBoxColumn
-            // 
-            this.stocknameDataGridViewTextBoxColumn.DataPropertyName = "stockname";
-            this.stocknameDataGridViewTextBoxColumn.HeaderText = "STOCK NAME";
-            this.stocknameDataGridViewTextBoxColumn.Name = "stocknameDataGridViewTextBoxColumn";
-            // 
-            // stockweigthDataGridViewTextBoxColumn
-            // 
-            this.stockweigthDataGridViewTextBoxColumn.DataPropertyName = "stockweigth";
-            this.stockweigthDataGridViewTextBoxColumn.HeaderText = "STOCK WEIGHT";
-            this.stockweigthDataGridViewTextBoxColumn.Name = "stockweigthDataGridViewTextBoxColumn";
-            // 
-            // stockcompanyDataGridViewTextBoxColumn
-            // 
-            this.stockcompanyDataGridViewTextBoxColumn.DataPropertyName = "stockcompany";
-            this.stockcompanyDataGridViewTextBoxColumn.HeaderText = "STOCK COMPANY";
-            this.stockcompanyDataGridViewTextBoxColumn.Name = "stockcompanyDataGridViewTextBoxColumn";
-            // 
-            // stockcategoryDataGridViewTextBoxColumn
-            // 
-            this.stockcategoryDataGridViewTextBoxColumn.DataPropertyName = "stockcategory";
-            this.stockcategoryDataGridViewTextBoxColumn.HeaderText = "STOCK CATEGORY";
-            this.stockcategoryDataGridViewTextBoxColumn.Name = "stockcategoryDataGridViewTextBoxColumn";
-            // 
-            // stockdateDataGridViewTextBoxColumn
-            // 
-            this.stockdateDataGridViewTextBoxColumn.DataPropertyName = "stockdate";
-            this.stockdateDataGridViewTextBoxColumn.HeaderText = "STOCK DATE";
-            this.stockdateDataGridViewTextBoxColumn.Name = "stockdateDataGridViewTextBoxColumn";
-            // 
-            // stocktimeDataGridViewTextBoxColumn
-            // 
-            this.stocktimeDataGridViewTextBoxColumn.DataPropertyName = "stocktime";
-            this.stocktimeDataGridViewTextBoxColumn.HeaderText = "STOCK TIME";
-            this.stocktimeDataGridViewTextBoxColumn.Name = "stocktimeDataGridViewTextBoxColumn";
+            this.StockWeight.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockWeight.Location = new System.Drawing.Point(177, 51);
+            this.StockWeight.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.StockWeight.Name = "StockWeight";
+            this.StockWeight.Size = new System.Drawing.Size(264, 35);
+            this.StockWeight.TabIndex = 5;
             // 
             // label1
             // 
@@ -306,33 +249,6 @@
             this.StockName.Size = new System.Drawing.Size(264, 35);
             this.StockName.TabIndex = 4;
             // 
-            // StockWeight
-            // 
-            this.StockWeight.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockWeight.Location = new System.Drawing.Point(177, 51);
-            this.StockWeight.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.StockWeight.Name = "StockWeight";
-            this.StockWeight.Size = new System.Drawing.Size(264, 35);
-            this.StockWeight.TabIndex = 5;
-            // 
-            // StockCompany
-            // 
-            this.StockCompany.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockCompany.Location = new System.Drawing.Point(177, 97);
-            this.StockCompany.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.StockCompany.Name = "StockCompany";
-            this.StockCompany.Size = new System.Drawing.Size(264, 35);
-            this.StockCompany.TabIndex = 6;
-            // 
-            // StockCategory
-            // 
-            this.StockCategory.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockCategory.Location = new System.Drawing.Point(177, 143);
-            this.StockCategory.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.StockCategory.Name = "StockCategory";
-            this.StockCategory.Size = new System.Drawing.Size(264, 35);
-            this.StockCategory.TabIndex = 7;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
@@ -352,6 +268,21 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(298, 186);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(17, 133);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(263, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "DELETE STOCK";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // SearchInvoice
             // 
             this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -359,7 +290,7 @@
             this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(17, 8);
+            this.SearchInvoice.Location = new System.Drawing.Point(17, 9);
             this.SearchInvoice.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.SearchInvoice.Name = "SearchInvoice";
             this.SearchInvoice.Size = new System.Drawing.Size(263, 44);
@@ -374,7 +305,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(17, 68);
+            this.button1.Location = new System.Drawing.Point(17, 69);
             this.button1.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(263, 47);
@@ -382,20 +313,89 @@
             this.button1.Text = "UPDATE STOCK";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // dgv1
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(17, 132);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "DELETE STOCK";
-            this.button2.UseVisualStyleBackColor = false;
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.AllowUserToResizeColumns = false;
+            this.dgv1.AllowUserToResizeRows = false;
+            this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv1.AutoGenerateColumns = false;
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.BackgroundColor = System.Drawing.Color.White;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stockidDataGridViewTextBoxColumn,
+            this.stocknameDataGridViewTextBoxColumn,
+            this.stockweigthDataGridViewTextBoxColumn,
+            this.stockcompanyDataGridViewTextBoxColumn,
+            this.stockcategoryDataGridViewTextBoxColumn,
+            this.stockdateDataGridViewTextBoxColumn,
+            this.stocktimeDataGridViewTextBoxColumn});
+            this.dgv1.DataSource = this.stockBindingSource;
+            this.dgv1.GridColor = System.Drawing.Color.Black;
+            this.dgv1.Location = new System.Drawing.Point(22, 281);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(0);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(1555, 532);
+            this.dgv1.TabIndex = 1;
+            // 
+            // stockidDataGridViewTextBoxColumn
+            // 
+            this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stockid";
+            this.stockidDataGridViewTextBoxColumn.HeaderText = "STOCK ID";
+            this.stockidDataGridViewTextBoxColumn.Name = "stockidDataGridViewTextBoxColumn";
+            this.stockidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stocknameDataGridViewTextBoxColumn
+            // 
+            this.stocknameDataGridViewTextBoxColumn.DataPropertyName = "stockname";
+            this.stocknameDataGridViewTextBoxColumn.HeaderText = "STOCK NAME";
+            this.stocknameDataGridViewTextBoxColumn.Name = "stocknameDataGridViewTextBoxColumn";
+            // 
+            // stockweigthDataGridViewTextBoxColumn
+            // 
+            this.stockweigthDataGridViewTextBoxColumn.DataPropertyName = "stockweigth";
+            this.stockweigthDataGridViewTextBoxColumn.HeaderText = "STOCK WEIGHT";
+            this.stockweigthDataGridViewTextBoxColumn.Name = "stockweigthDataGridViewTextBoxColumn";
+            // 
+            // stockcompanyDataGridViewTextBoxColumn
+            // 
+            this.stockcompanyDataGridViewTextBoxColumn.DataPropertyName = "stockcompany";
+            this.stockcompanyDataGridViewTextBoxColumn.HeaderText = "STOCK COMPANY";
+            this.stockcompanyDataGridViewTextBoxColumn.Name = "stockcompanyDataGridViewTextBoxColumn";
+            // 
+            // stockcategoryDataGridViewTextBoxColumn
+            // 
+            this.stockcategoryDataGridViewTextBoxColumn.DataPropertyName = "stockcategory";
+            this.stockcategoryDataGridViewTextBoxColumn.HeaderText = "STOCK CATEGORY";
+            this.stockcategoryDataGridViewTextBoxColumn.Name = "stockcategoryDataGridViewTextBoxColumn";
+            // 
+            // stockdateDataGridViewTextBoxColumn
+            // 
+            this.stockdateDataGridViewTextBoxColumn.DataPropertyName = "stockdate";
+            this.stockdateDataGridViewTextBoxColumn.HeaderText = "STOCK DATE";
+            this.stockdateDataGridViewTextBoxColumn.Name = "stockdateDataGridViewTextBoxColumn";
+            // 
+            // stocktimeDataGridViewTextBoxColumn
+            // 
+            this.stocktimeDataGridViewTextBoxColumn.DataPropertyName = "stocktime";
+            this.stocktimeDataGridViewTextBoxColumn.HeaderText = "STOCK TIME";
+            this.stocktimeDataGridViewTextBoxColumn.Name = "stocktimeDataGridViewTextBoxColumn";
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.stockDataSet;
+            // 
+            // stockDataSet
+            // 
+            this.stockDataSet.DataSetName = "StockDataSet";
+            this.stockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stockTableAdapter
+            // 
+            this.stockTableAdapter.ClearBeforeFill = true;
             // 
             // Stocks
             // 
@@ -408,19 +408,19 @@
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "Stocks";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STOCK MANAGEMENT SYSTEM";
             this.Load += new System.EventHandler(this.Stocks_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
