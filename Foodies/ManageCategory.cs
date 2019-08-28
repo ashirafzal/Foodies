@@ -116,12 +116,30 @@ namespace Foodies
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
             con.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(" select * from Products where ProductCategory = '" + CategoryName.Text + "'  ", con);
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from Products where ProductCategory = '" + CategoryName.Text + "'  ", con);
             DataTable table = new DataTable();
             adapter.Fill(table);
             MessageBox.Show("There are "+ table.Rows.Count.ToString() + " products in this category. These Products will also be deleted with this category. Are you sure you want to continue this ?");
 
-            //con.Close();
+            //SqlCommand cmd = con.CreateCommand();
+            //cmd.CommandType = CommandType.Text;
+            //cmd.CommandText = "delete from Category where CategoryName ='" + CategoryName.Text + "'";
+            //cmd.ExecuteNonQuery();
+
+            //SqlCommand cmd1 = con.CreateCommand();
+            //cmd1.CommandType = CommandType.Text;
+            //cmd1.CommandText = "delete from Products where ProductCategory ='" + CategoryName.Text + "'";
+            //cmd1.ExecuteNonQuery();
+
+            //CategoryID.Text = string.Empty;
+            //CategoryName.Text = string.Empty;
+
+            //// TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+            //this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+
+            //MessageBox.Show("Category and products under this category deleted successfully");
+
+            con.Close();
         }
     }
 }

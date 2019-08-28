@@ -477,6 +477,8 @@ namespace Foodies
             act_price.Text = "0";
             totalQty.Text = "0";
             total_Amount.Text = "0";
+            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
         }
 
         private void dgv3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
