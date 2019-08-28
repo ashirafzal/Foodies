@@ -46,7 +46,7 @@
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.total_sales = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -398,7 +398,7 @@
             this.tableLayoutPanel17.ColumnCount = 1;
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel17.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel17.Controls.Add(this.total_sales, 0, 1);
             this.tableLayoutPanel17.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel17.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(0);
@@ -409,18 +409,18 @@
             this.tableLayoutPanel17.Size = new System.Drawing.Size(190, 124);
             this.tableLayoutPanel17.TabIndex = 0;
             // 
-            // label12
+            // total_sales
             // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 62);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(184, 62);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "24500";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.total_sales.AutoSize = true;
+            this.total_sales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.total_sales.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_sales.ForeColor = System.Drawing.Color.White;
+            this.total_sales.Location = new System.Drawing.Point(3, 62);
+            this.total_sales.Name = "total_sales";
+            this.total_sales.Size = new System.Drawing.Size(184, 62);
+            this.total_sales.TabIndex = 1;
+            this.total_sales.Text = "0";
+            this.total_sales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -501,7 +501,7 @@
             // 
             this.fastfoodtotal.AutoSize = true;
             this.fastfoodtotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fastfoodtotal.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fastfoodtotal.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fastfoodtotal.ForeColor = System.Drawing.Color.White;
             this.fastfoodtotal.Location = new System.Drawing.Point(3, 62);
             this.fastfoodtotal.Name = "fastfoodtotal";
@@ -589,7 +589,7 @@
             // 
             this.categorytotal.AutoSize = true;
             this.categorytotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categorytotal.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorytotal.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorytotal.ForeColor = System.Drawing.Color.White;
             this.categorytotal.Location = new System.Drawing.Point(3, 62);
             this.categorytotal.Name = "categorytotal";
@@ -678,7 +678,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 62);
             this.label7.Name = "label7";
@@ -1326,7 +1326,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label total_sales;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;

@@ -14,6 +14,7 @@ namespace Foodies
     public partial class Inventory : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        int TotalSales;
 
         public Inventory()
         {
@@ -190,6 +191,32 @@ namespace Foodies
             else
             {
                 fastfoodtotal.Text = "0";
+            }
+
+            SqlDataAdapter adapter3 = new SqlDataAdapter("SELECT * from Bill", con);
+            DataTable table3 = new DataTable();
+            adapter3.Fill(table3);
+            if (table3.Rows.Count > 0)
+            {
+                string query = "select * from Bill";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+
+                for (int i = 0; i < dgv1.Rows.Count; ++i)
+                {
+                    TotalSales += Convert.ToInt32(dgv1.Rows[i].Cells[7].Value);
+                }
+
+                total_sales.Text = TotalSales.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                total_sales.Text = "0";
             }
         }
 
