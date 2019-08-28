@@ -58,7 +58,7 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.categorytotal = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -574,7 +574,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Controls.Add(this.label8, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.categorytotal, 0, 1);
             this.tableLayoutPanel11.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
@@ -585,18 +585,18 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(190, 124);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
-            // label8
+            // categorytotal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 62);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(184, 62);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "12";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.categorytotal.AutoSize = true;
+            this.categorytotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categorytotal.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorytotal.ForeColor = System.Drawing.Color.White;
+            this.categorytotal.Location = new System.Drawing.Point(3, 62);
+            this.categorytotal.Name = "categorytotal";
+            this.categorytotal.Size = new System.Drawing.Size(184, 62);
+            this.categorytotal.TabIndex = 1;
+            this.categorytotal.Text = "0";
+            this.categorytotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -1320,7 +1320,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label categorytotal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;

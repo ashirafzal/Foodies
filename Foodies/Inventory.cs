@@ -13,9 +13,13 @@ namespace Foodies
 {
     public partial class Inventory : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        int Categorytotal = 0;
+
         public Inventory()
         {
             InitializeComponent();
+            InventoryHeaderInfo();
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
@@ -143,6 +147,34 @@ namespace Foodies
             dgv_3();
             dgv_4();
             FoucsTextBoxes();
+        }
+
+        public void InventoryHeaderInfo()
+        {
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from Category", con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                string query = "select * from Category";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                for (int i = 0; i < dgv1.Rows.Count; ++i)
+                {
+                    Categorytotal += Convert.ToInt32(dgv1.Rows[i].Cells[0].Value);
+                }
+                categorytotal.Text = Categorytotal.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                categorytotal.Text = "0";
+            }
         }
 
         public void FoucsTextBoxes()
