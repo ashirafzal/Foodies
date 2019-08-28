@@ -16,7 +16,7 @@ namespace Foodies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Edit_Inovice());
+            Application.Run(new Cashier());
         }
     }
 }

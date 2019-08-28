@@ -128,7 +128,6 @@
             // dgv1
             // 
             this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
             this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -155,11 +154,16 @@
             this.totalAmountWithGSTDataGridViewTextBoxColumn,
             this.discountInPercentDataGridViewTextBoxColumn});
             this.dgv1.DataSource = this.billBindingSource;
+            this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv1.GridColor = System.Drawing.Color.Black;
             this.dgv1.Location = new System.Drawing.Point(13, 103);
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
             this.dgv1.Name = "dgv1";
-            this.dgv1.ReadOnly = true;
+            this.dgv1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv1.ShowCellErrors = false;
+            this.dgv1.ShowCellToolTips = false;
+            this.dgv1.ShowEditingIcon = false;
+            this.dgv1.ShowRowErrors = false;
             this.dgv1.Size = new System.Drawing.Size(1577, 622);
             this.dgv1.TabIndex = 2;
             // 
@@ -349,7 +353,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox InvoiceNumber;
         private System.Windows.Forms.Button SearchInvoice;
-        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button BtnPrint;
         private InvoiceDataSet invoiceDataSet;
         private System.Windows.Forms.BindingSource billBindingSource;
@@ -370,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountWithGSTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountInPercentDataGridViewTextBoxColumn;
+        protected System.Windows.Forms.DataGridView dgv1;
     }
 }

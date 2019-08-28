@@ -16,6 +16,7 @@ namespace Foodies
         public Edit_Inovice()
         {
             InitializeComponent();
+            InvoiceNumber.Focus();
         }
 
         private void Edit_Inovice_Load(object sender, EventArgs e)
@@ -67,7 +68,6 @@ namespace Foodies
                 dgv1.DataSource = dt;
                 con.Close();
                 InvoiceNumber.Text = "";
-                InvoiceNumber.Focus();
             }
             catch (Exception)
             {
