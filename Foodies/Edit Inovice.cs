@@ -26,7 +26,7 @@ namespace Foodies
 
         public void dgv_1()
         {
-            dgv1.RowTemplate.Height = 32;
+            dgv1.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);

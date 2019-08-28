@@ -83,10 +83,9 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.28928F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.71072F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.91771F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.08229F));
             this.tableLayoutPanel2.Controls.Add(this.InvoiceNumber, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.SearchInvoice, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -102,11 +101,11 @@
             // 
             this.InvoiceNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.InvoiceNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvoiceNumber.Location = new System.Drawing.Point(69, 21);
-            this.InvoiceNumber.Margin = new System.Windows.Forms.Padding(0);
+            this.InvoiceNumber.Location = new System.Drawing.Point(15, 31);
+            this.InvoiceNumber.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.InvoiceNumber.Multiline = true;
             this.InvoiceNumber.Name = "InvoiceNumber";
-            this.InvoiceNumber.Size = new System.Drawing.Size(1213, 41);
+            this.InvoiceNumber.Size = new System.Drawing.Size(1315, 41);
             this.InvoiceNumber.TabIndex = 0;
             this.InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -117,9 +116,10 @@
             this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(1363, 15);
+            this.SearchInvoice.Location = new System.Drawing.Point(1346, 25);
+            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.SearchInvoice.Name = "SearchInvoice";
-            this.SearchInvoice.Size = new System.Drawing.Size(227, 53);
+            this.SearchInvoice.Size = new System.Drawing.Size(242, 53);
             this.SearchInvoice.TabIndex = 1;
             this.SearchInvoice.Text = "SEARCH INVOICE";
             this.SearchInvoice.UseVisualStyleBackColor = false;

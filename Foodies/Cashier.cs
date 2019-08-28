@@ -697,7 +697,6 @@ namespace Foodies
                     tran.Commit();
                     con.Close();
                 }
-                //
             }
 
             //
@@ -714,7 +713,8 @@ namespace Foodies
 
         private void totalInvoiceDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Edit_Inovice edit_Inovice = new Edit_Inovice();
+            edit_Inovice.Show();
         }
 
         private void editInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
