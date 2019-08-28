@@ -38,9 +38,6 @@ namespace Foodies
             dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
             dgv1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            //This Part of Code is for the styling of the Visaul Style
-            //dgv1.EnableHeadersVisualStyles = false;
-
             // This Part of Code is for the styling of the Grid Border
             this.dgv1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -50,9 +47,6 @@ namespace Foodies
 
             //this Line of Code made the dgv1 Text Middle Center
             dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //this line of code is applying padding to a specific Column of dgv1 which is Product Column
-            //dgv2.Columns[4].DefaultCellStyle.Padding = new Padding(3, 3, 3, 3);
 
         }
 

@@ -495,7 +495,7 @@ namespace Foodies
 
         private void dgv3_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -754,6 +754,11 @@ namespace Foodies
         private void btnRefresh_MouseLeave(object sender, EventArgs e)
         {
             btnRefresh.BackColor = Color.RoyalBlue;
+        }
+
+        private void dgv3_MouseEnter(object sender, EventArgs e)
+        {
+            
         }
 
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
