@@ -92,9 +92,32 @@ namespace Foodies
 
         }
 
+        public void dgv_2()
+        {
+            dgv2.RowTemplate.Height = 42;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv2.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv2.RowsDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv2.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
         public void dgv_3()
         {
-            dgv3.RowTemplate.Height = 180;
+            dgv3.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -117,7 +140,7 @@ namespace Foodies
 
         public void dgv_4()
         {
-            dgv4.RowTemplate.Height = 180;
+            dgv4.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -140,10 +163,13 @@ namespace Foodies
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
             // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.productsDataSet.Products);
             // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
             this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            dgv_2();
             dgv_3();
             dgv_4();
             FoucsTextBoxes();
