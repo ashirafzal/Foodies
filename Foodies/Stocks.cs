@@ -121,7 +121,49 @@ namespace Foodies
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            con.Open();
 
+            try
+            {
+
+                if (StockName.Text == string.Empty)
+                {
+                    MessageBox.Show("Stock name is required");
+                }
+                else if (StockWeight.Text == string.Empty)
+                {
+                    MessageBox.Show("Stock weight is required");
+                }
+                else if (StockCategory.Text == string.Empty)
+                {
+                    MessageBox.Show("Stock category is required");
+                }
+                else if (StockCompany.Text == string.Empty)
+                {
+                    MessageBox.Show("Stock company is required");
+                }
+                else
+                {
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update Stock set stockname = '" + StockName.Text + "' , stockweigth = '" + StockWeight.Text + "', stockcompany = '" + StockCompany.Text + "', stockcategory = '" + StockCategory .Text + "', stockdate = '" + DateTime.Now.Date + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockid = '" + StockID + "'  ";
+                    cmd.ExecuteNonQuery();
+                    StockCompany.Text = string.Empty;
+                    StockCategory.Text = string.Empty;
+                    StockName.Text = string.Empty;
+                    StockWeight.Text = string.Empty;
+                    // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                    this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                    MessageBox.Show("Stock updated");
+                }
+
+                con.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill all required fields");
+            }
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
