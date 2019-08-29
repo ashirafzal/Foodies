@@ -44,9 +44,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.StockName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SearchInvoice = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -254,9 +254,9 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.SearchInvoice, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.btnDelete, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.btnCreate, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnUpdate, 0, 1);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(444, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -268,50 +268,51 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(298, 186);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(17, 133);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(263, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "DELETE STOCK";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(17, 133);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(263, 44);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "DELETE STOCK";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // SearchInvoice
+            // btnCreate
             // 
-            this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchInvoice.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(17, 9);
-            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.SearchInvoice.Name = "SearchInvoice";
-            this.SearchInvoice.Size = new System.Drawing.Size(263, 44);
-            this.SearchInvoice.TabIndex = 2;
-            this.SearchInvoice.Text = "CREATE STOCK";
-            this.SearchInvoice.UseVisualStyleBackColor = false;
+            this.btnCreate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(17, 9);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(263, 44);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "CREATE STOCK";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(17, 69);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(263, 47);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "UPDATE STOCK";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(17, 69);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(263, 47);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "UPDATE STOCK";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // dgv1
             // 
@@ -452,8 +453,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox StockName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button SearchInvoice;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
