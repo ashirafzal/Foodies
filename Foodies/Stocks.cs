@@ -193,5 +193,31 @@ namespace Foodies
                 StockCategory.Text = row.Cells[4].Value.ToString();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from Stock where stockid ='" + StockID + "'";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                StockCompany.Text = string.Empty;
+                StockCategory.Text = string.Empty;
+                StockName.Text = string.Empty;
+                StockWeight.Text = string.Empty;
+                // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                MessageBox.Show("Stock deleted");
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill all required fields");
+            }
+        }
     }
 }
