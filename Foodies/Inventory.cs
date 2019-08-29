@@ -244,6 +244,28 @@ namespace Foodies
             {
                 total_sales.Text = "0";
             }
+
+            SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
+            DataTable table4 = new DataTable();
+            adapter4.Fill(table4);
+            if (table4.Rows.Count > 0)
+            {
+                string query = "select * from Stock";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                StockTotal.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                StockTotal.Text = "0";
+            }
+
+
         }
 
         public void FoucsTextBoxes()
