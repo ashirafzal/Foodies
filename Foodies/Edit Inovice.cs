@@ -43,7 +43,7 @@ namespace Foodies
             this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
             //This Part of Code is for the styling of the Grid Rows
-            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
 
             Padding newPadding2 = new Padding(10, 0, 10, 0);
             dgv1.RowsDefaultCellStyle.Padding = newPadding2;
@@ -68,10 +68,30 @@ namespace Foodies
                 dgv1.DataSource = dt;
                 con.Close();
                 InvoiceNumber.Text = "";
+                dgv1.Focus();
             }
             catch (Exception)
             {
                 MessageBox.Show("InvoiceID cannot be blank");
+            }
+        }
+
+        private void dgv1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int qty;
+            int rate;
+            int amount;
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+
+                this.dgv1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+                qty = Convert.ToInt32(row.Cells[5].Value);
+                rate = Convert.ToInt32(row.Cells[6].Value);
+                amount = qty * rate;
+                row.Cells[7].Value = amount;
             }
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsEntry));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ProductPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -267,6 +268,7 @@
             this.ClientSize = new System.Drawing.Size(1600, 837);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ItemsEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

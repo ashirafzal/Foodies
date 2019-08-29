@@ -126,4 +126,29 @@
   <metadata name="usersTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>298, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMMOAADDDgAAAAAAAAAA
+        AAD//////////////////////////////////////////////////////fn1//37+f//////////////
+        /////////////////////////////////////////////////////v3/+u3h/+nCnf/crX//9+3j////
+        ///////////////////////////////////////////////////99/L/9NzE/+7GoP/isH7/wm8e/96y
+        hv////////////////////////////////////////////79/P/56tz/782s/+zCmf/tw5r/47GA/8Jv
+        Hv/crH3///////////////////////////////////////z28P/z2sD/7cWd/+zBmP/qu43/7MKZ/+Ox
+        gP/Cbx//3Kx+/////////////////////////////v37//jo2P/vy6n/7MKZ/+u9kf/io2X/3pdR/+zA
+        lf/jsYH/wm8f/9ysfv///////////////////////fjz//PXvf/txJz/7MGY/+eyfv/dk0v/2IMw/9+Z
+        Vf/swpr/47GA/8JvH//crH7///////////////////////jq3P/sw5r/6ryP/+KhY//aiTn/2YY1/+Ws
+        dP/24s7/78qm/+OwgP/Cbx//3Kx+///////////////////////46dr/5q96/92RSP/ZhTP/2Ig5/8+B
+        Nv/Xn2n/8t/M/+/Lp//jsYD/wm8e/9ysfv//////////////////////+/Ts/+exfP/Zhzb/2YQy/9eK
+        P//IeSz/wGwZ/8h9NP/dpnD/4a59/8JwH//crH7////////////////////////////9+fb/8M6t/96W
+        T//ZhDH/2Ig5/86ANP/DcB//wm8f/8qAOP/BbRv/3Kx+////////////////////////////////////
+        ///5693/57F9/9qJOf/ZhjT/1IY6/8h4K//BbRv/wGoX/9ysfv//////////////////////////////
+        //////////////77+P/x07X/35lU/9mEMv/Yhzn/z4E0/8NvHv/crH3/////////////////////////
+        //////////////////////////////ru4v/otoX/24o7/9mFM//UgzX/47qR////////////////////
+        /////////////////////////////////////////vz6//PXvP/hoGD/6LWD//rw5v//////////////
+        /////////////////////////////////////////////////////////PXu//769///////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

@@ -13,6 +13,8 @@ namespace Foodies
         int actualprice;
         int totalAmount = 0; int totalQuantity = 0;
         int INVOICEID; /* For Invoice Reading through Sql reader*/
+        int actualamount = 0;
+        int amountremainafterdiscountcalculate = 0;
 
         // Connection String //
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
@@ -442,14 +444,24 @@ namespace Foodies
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-           if(DiscountPKR.Text != "")
-            {
-                
-            }
-            else
-            {
-              
-            }
+            per_discount.Text = DiscountPercent.Text;
+            actualamount = Convert.ToInt32(act_price.Text);
+            int actualamount2 = Convert.ToInt32(act_price.Text);
+            int discount = Convert.ToInt32(DiscountPercent.Text);
+            int valueOfDiscount = discount / 100;
+            amountremainafterdiscountcalculate =  valueOfDiscount * actualamount;
+            MessageBox.Show(amountremainafterdiscountcalculate.ToString());
+            //int lastamount =  actualamount2 - amountremainafterdiscountcalculate ;
+            //total_Amount.Text = lastamount.ToString();
+            //MessageBox.Show(lastamount.ToString());
+            //if(DiscountPKR.Text == "")
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
         }
 
         private void DiscountPercent_TextChanged(object sender, EventArgs e)
