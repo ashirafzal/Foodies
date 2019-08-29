@@ -13,6 +13,9 @@ namespace Foodies
 {
     public partial class Stocks : Form
     {
+
+        int StockID;
+
         public Stocks()
         {
             InitializeComponent();
@@ -113,6 +116,39 @@ namespace Foodies
             catch (Exception)
             {
                 MessageBox.Show("Please fill all required fields");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+
+                StockID = Convert.ToInt32(row.Cells[0].Value);
+                StockName.Text = row.Cells[1].Value.ToString();
+                StockWeight.Text = row.Cells[2].Value.ToString();
+                StockCompany.Text = row.Cells[3].Value.ToString();
+                StockCategory.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+
+                StockID = Convert.ToInt32(row.Cells[0].Value);
+                StockName.Text = row.Cells[1].Value.ToString();
+                StockWeight.Text = row.Cells[2].Value.ToString();
+                StockCompany.Text = row.Cells[3].Value.ToString();
+                StockCategory.Text = row.Cells[4].Value.ToString();
             }
         }
     }

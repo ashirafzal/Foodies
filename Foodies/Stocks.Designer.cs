@@ -313,6 +313,7 @@
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "UPDATE STOCK";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgv1
             // 
@@ -340,6 +341,8 @@
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(1555, 532);
             this.dgv1.TabIndex = 1;
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // stockidDataGridViewTextBoxColumn
             // 
