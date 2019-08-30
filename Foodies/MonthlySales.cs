@@ -13,6 +13,8 @@ namespace Foodies
 {
     public partial class MonthlySales : Form
     {
+        DateTime date;
+
         public MonthlySales()
         {
             InitializeComponent();
@@ -20,12 +22,17 @@ namespace Foodies
 
         private void MonthlySales_Load(object sender, EventArgs e)
         {
-            var currentyear = DateTime.Now.Year;
             LoadChart();
         }
 
         public void LoadChart()
         {
+            
+            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+            MessageBox.Show(firstDayOfMonth.ToString()+"  "+lastDayOfMonth.ToString());
+
             var firstdayofmonth = DateTime.Now.AddDays(-29);
             var currentdate = DateTime.Now.Date;
 
