@@ -783,6 +783,24 @@ namespace Foodies
             dailySales.Show();
         }
 
+        private void weeklySalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Weekly weekly = new Weekly();
+            weekly.Show();
+        }
+
+        private void monthlySalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MonthlySales monthlySales = new MonthlySales();
+            monthlySales.Show();
+        }
+
+        private void annualSaleslToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnnualSales annualSales = new AnnualSales();
+            annualSales.Show();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();

@@ -20,6 +20,7 @@ namespace Foodies
 
         private void MonthlySales_Load(object sender, EventArgs e)
         {
+            var currentyear = DateTime.Now.Year;
             LoadChart();
         }
 
