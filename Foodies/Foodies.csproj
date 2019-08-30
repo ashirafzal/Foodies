@@ -189,6 +189,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Weekly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Weekly.Designer.cs">
+      <DependentUpon>Weekly.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cashier.resx">
       <DependentUpon>Cashier.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Weekly.resx">
+      <DependentUpon>Weekly.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CategoryDataSet.xsc">
       <DependentUpon>CategoryDataSet.xsd</DependentUpon>
