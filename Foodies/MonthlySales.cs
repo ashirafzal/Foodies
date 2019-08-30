@@ -31,8 +31,6 @@ namespace Foodies
             var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
             var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-            MessageBox.Show(firstDayOfMonth.ToString()+"  "+lastDayOfMonth.ToString());
-
             var firstdayofmonth = DateTime.Now.AddDays(-29);
             var currentdate = DateTime.Now.Date;
 

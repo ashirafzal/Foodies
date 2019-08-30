@@ -296,6 +296,18 @@ namespace Foodies
                     dgv2.DataSource = dt;
                     con.Close();
                 }
+                else if (maincategory == "fries")
+                {
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                    con.Open();
+                    string query = "select * from Products where ProductCategory = 'fries' ";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dgv2.DataSource = dt;
+                    con.Close();
+                }
             }
 
             this.dgv2.Columns[0].Visible = false;
