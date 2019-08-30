@@ -36,9 +36,6 @@
             this.InvoiceNumber = new System.Windows.Forms.TextBox();
             this.SearchInvoice = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceDataSet = new Foodies.InvoiceDataSet();
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +52,9 @@
             this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalAmountWithGSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountInPercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceDataSet = new Foodies.InvoiceDataSet();
+            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -181,21 +181,9 @@
             this.dgv1.ShowRowErrors = false;
             this.dgv1.Size = new System.Drawing.Size(1577, 622);
             this.dgv1.TabIndex = 2;
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellEnter);
-            // 
-            // billBindingSource
-            // 
-            this.billBindingSource.DataMember = "Bill";
-            this.billBindingSource.DataSource = this.invoiceDataSet;
-            // 
-            // invoiceDataSet
-            // 
-            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
-            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
             // 
             // invioceIDDataGridViewTextBoxColumn
             // 
@@ -313,6 +301,20 @@
             this.discountInPercentDataGridViewTextBoxColumn.Name = "discountInPercentDataGridViewTextBoxColumn";
             this.discountInPercentDataGridViewTextBoxColumn.ReadOnly = true;
             this.discountInPercentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // billBindingSource
+            // 
+            this.billBindingSource.DataMember = "Bill";
+            this.billBindingSource.DataSource = this.invoiceDataSet;
+            // 
+            // invoiceDataSet
+            // 
+            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
+            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // billTableAdapter
+            // 
+            this.billTableAdapter.ClearBeforeFill = true;
             // 
             // Edit_Inovice
             // 

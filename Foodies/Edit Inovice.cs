@@ -68,7 +68,7 @@ namespace Foodies
                 dgv1.DataSource = dt;
                 con.Close();
                 InvoiceNumber.Text = "";
-                dgv1.Focus();
+                InvoiceNumber.Focus();
             }
             catch (Exception)
             {
@@ -92,6 +92,21 @@ namespace Foodies
                 rate = Convert.ToInt32(row.Cells[6].Value);
                 amount = qty * rate;
                 row.Cells[7].Value = amount;
+            }
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+
+                InvoiceNumber.Text = row.Cells[0].Value.ToString();
             }
         }
     }

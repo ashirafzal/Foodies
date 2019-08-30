@@ -166,6 +166,7 @@
             this.dgv1.ReadOnly = true;
             this.dgv1.Size = new System.Drawing.Size(1577, 659);
             this.dgv1.TabIndex = 1;
+            this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // invioceIDDataGridViewTextBoxColumn

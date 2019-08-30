@@ -93,5 +93,15 @@ namespace Foodies
                 MessageBox.Show("InvoiceID cannot be blank");
             }
         }
+
+        private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
+
+                InvoiceNumber.Text = row.Cells[0].Value.ToString();
+            }
+        }
     }
 }
