@@ -156,11 +156,11 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesDemo.cs">
+    <Compile Include="DailySales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesDemo.Designer.cs">
-      <DependentUpon>SalesDemo.cs</DependentUpon>
+    <Compile Include="DailySales.Designer.cs">
+      <DependentUpon>DailySales.cs</DependentUpon>
     </Compile>
     <Compile Include="StockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesDemo.resx">
-      <DependentUpon>SalesDemo.cs</DependentUpon>
+    <EmbeddedResource Include="DailySales.resx">
+      <DependentUpon>DailySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>

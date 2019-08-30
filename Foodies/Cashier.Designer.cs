@@ -313,25 +313,26 @@
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dailySalesToolStripMenuItem.Text = "DAILY SALES";
+            this.dailySalesToolStripMenuItem.Click += new System.EventHandler(this.dailySalesToolStripMenuItem_Click);
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.weeklySalesToolStripMenuItem.Text = "WEEKLY SALES";
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.monthlySalesToolStripMenuItem.Text = "MONTHLY SALES";
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.annualSaleslToolStripMenuItem.Text = "ANNUAL SALES";
             // 
             // exportToolStripMenuItem

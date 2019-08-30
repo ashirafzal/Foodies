@@ -777,6 +777,12 @@ namespace Foodies
             
         }
 
+        private void dailySalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DailySales dailySales = new DailySales();
+            dailySales.Show();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();
