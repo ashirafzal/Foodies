@@ -137,6 +137,12 @@
     <Compile Include="ItemsEntry.Designer.cs">
       <DependentUpon>ItemsEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonthlySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthlySales.Designer.cs">
+      <DependentUpon>MonthlySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductPrice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemsEntry.resx">
       <DependentUpon>ItemsEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthlySales.resx">
+      <DependentUpon>MonthlySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductPrice.resx">
       <DependentUpon>ProductPrice.cs</DependentUpon>
