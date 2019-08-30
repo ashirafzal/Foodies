@@ -444,24 +444,36 @@ namespace Foodies
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-            per_discount.Text = DiscountPercent.Text;
-            actualamount = Convert.ToInt32(act_price.Text);
-            int actualamount2 = Convert.ToInt32(act_price.Text);
-            int discount = Convert.ToInt32(DiscountPercent.Text);
-            int valueOfDiscount = discount / 100;
-            amountremainafterdiscountcalculate =  valueOfDiscount * actualamount;
-            MessageBox.Show(amountremainafterdiscountcalculate.ToString());
-            //int lastamount =  actualamount2 - amountremainafterdiscountcalculate ;
-            //total_Amount.Text = lastamount.ToString();
-            //MessageBox.Show(lastamount.ToString());
-            //if(DiscountPKR.Text == "")
-            //{
-
-            //}
-            //else
-            //{
-
-            //}
+            try
+            {
+                if (DiscountPKR.Text == "")
+                {
+                    per_discount.Text = DiscountPercent.Text;
+                    decimal labelActualAmount = Convert.ToInt32(act_price.Text);
+                    decimal discountvalue = Convert.ToInt32(DiscountPercent.Text);
+                    decimal discoutPercentage = discountvalue / 100;
+                    decimal remainAmount = discoutPercentage * labelActualAmount;
+                    decimal ActualAmount = totalAmount - remainAmount;
+                    total_Amount.Text = ActualAmount.ToString();
+                }
+                else if (DiscountPercent.Text == "")
+                {
+                    decimal discountAmountinPKR = Convert.ToInt32(DiscountPKR.Text);
+                    decimal labelActualAmount = Convert.ToInt32(act_price.Text);
+                    decimal ActualAmount = labelActualAmount - discountAmountinPKR;
+                    total_Amount.Text = ActualAmount.ToString();
+                    decimal percentageForAmount = discountAmountinPKR / labelActualAmount * 100;
+                    per_discount.Text = percentageForAmount.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Either insert discount in rupees or in percentage");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Discount feild cannot be empty");
+            }
         }
 
         private void DiscountPercent_TextChanged(object sender, EventArgs e)
