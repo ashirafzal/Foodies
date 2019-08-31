@@ -69,7 +69,6 @@
             // 
             // ProductPanel
             // 
-            this.ProductPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ProductPanel.Controls.Add(this.pictureBox1);
             this.ProductPanel.Controls.Add(this.tableLayoutPanel3);
             this.ProductPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -104,7 +103,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.browseimage, 1, 3);
             this.tableLayoutPanel3.Controls.Add(this.CreateProduct, 1, 4);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(284, 230);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(286, 232);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));

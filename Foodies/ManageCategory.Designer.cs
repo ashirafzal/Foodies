@@ -78,7 +78,6 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.pictureBox1, 0, 1);
@@ -97,7 +96,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 516);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 517);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(388, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -245,7 +244,7 @@
             this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
-            this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.categoryIdDataGridViewTextBoxColumn,
@@ -254,7 +253,7 @@
             this.dgv1.DataSource = this.categoryBindingSource;
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv1.GridColor = System.Drawing.Color.Black;
+            this.dgv1.GridColor = System.Drawing.Color.DarkGray;
             this.dgv1.Location = new System.Drawing.Point(1, 1);
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
             this.dgv1.Name = "dgv1";

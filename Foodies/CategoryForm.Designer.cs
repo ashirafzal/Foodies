@@ -53,26 +53,24 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.ProductPanel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.132948F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.86705F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 837);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1591, 837);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ProductPanel
             // 
-            this.ProductPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ProductPanel.Controls.Add(this.pictureBox1);
             this.ProductPanel.Controls.Add(this.tableLayoutPanel3);
             this.ProductPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProductPanel.Location = new System.Drawing.Point(0, 77);
             this.ProductPanel.Margin = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(1600, 759);
+            this.ProductPanel.Size = new System.Drawing.Size(1591, 759);
             this.ProductPanel.TabIndex = 2;
             this.ProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ProductPanel_Paint);
             // 
@@ -97,7 +95,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtCategory, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(289, 275);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(286, 277);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -183,24 +181,24 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1595, 76);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1591, 76);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1595, 76);
+            this.label4.Size = new System.Drawing.Size(1591, 76);
             this.label4.TabIndex = 2;
             this.label4.Text = "CATEGORY ENTRY FORM";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
