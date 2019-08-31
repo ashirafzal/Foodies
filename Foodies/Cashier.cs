@@ -825,6 +825,12 @@ namespace Foodies
             annualSales.Show();
         }
 
+        private void exportToExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportToExcel exportToExcel = new ExportToExcel();
+            exportToExcel.Show();
+        }
+
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageItems manageItems = new ManageItems();
