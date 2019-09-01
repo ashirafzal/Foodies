@@ -349,6 +349,15 @@ namespace Foodies
 
         private void ExportToExcel_Load(object sender, EventArgs e)
         {
+            //DataGridVeiwDesignLoad
+            dgv_1();
+            dgv_2();
+            dgv_3();
+            dgv_4();
+            dgv_5();
+            dgv_6();
+            dgv_7();
+
             // TODO: This line of code loads data into the 'stocksDataSet.Stock' table. You can move, or remove it, as needed.
             this.stockTableAdapter.Fill(this.stocksDataSet.Stock);
             // TODO: This line of code loads data into the 'salesDataSet.Sales' table. You can move, or remove it, as needed.
@@ -365,5 +374,167 @@ namespace Foodies
             this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
 
         }
+
+        public void dgv_1()
+        {
+            dgv1.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv1.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv1.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv1.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_2()
+        {
+            dgv2.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv2.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv2.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv2.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_3()
+        {
+            dgv3.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv3.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv3.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv3.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv3.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv3.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv3.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_4()
+        {
+            dgv4.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv4.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv4.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv4.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv4.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv4.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv4.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_5()
+        {
+            dgv5.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv5.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv5.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv5.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv5.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv5.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv5.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv5.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_6()
+        {
+            dgv6.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv6.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv6.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv6.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv6.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv6.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv6.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv6.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        public void dgv_7()
+        {
+            dgv7.RowTemplate.Height = 32;
+
+            //This Part of Code is for the styling of the Grid Padding
+            Padding newPadding = new Padding(0, 10, 0, 10);
+            this.dgv7.ColumnHeadersDefaultCellStyle.Padding = newPadding;
+
+            //This Part of Code is for the styling of the Grid Columns
+            dgv7.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10F, FontStyle.Regular);
+            dgv7.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // This Part of Code is for the styling of the Grid Border
+            this.dgv7.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.dgv7.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            //This Part of Code is for the styling of the Grid Rows
+            dgv7.RowsDefaultCellStyle.Font = new Font("Arial", 11F, FontStyle.Regular);
+
+            //this Line of Code made the dgv1 Text Middle Center
+            dgv7.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
     }
 }
