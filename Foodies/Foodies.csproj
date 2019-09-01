@@ -80,6 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CutomerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeletedInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +160,11 @@
     <Compile Include="MonthlySales.Designer.cs">
       <DependentUpon>MonthlySales.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProductPrice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +189,11 @@
     </Compile>
     <Compile Include="DailySales.Designer.cs">
       <DependentUpon>DailySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -301,6 +316,17 @@
     <None Include="CategoryYDataSet2.xss">
       <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </None>
+    <None Include="CutomerDataSet.xsc">
+      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CutomerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CutomerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CutomerDataSet.xss">
+      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DeletedInvoiceDataSet.xsc">
       <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
     </None>
@@ -334,6 +360,17 @@
     <None Include="ItemsDataSet.xss">
       <DependentUpon>ItemsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="OrderDataSet.xsc">
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrderDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrderDataSet.xss">
+      <DependentUpon>OrderDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ProductsDataSet.xsc">
       <DependentUpon>ProductsDataSet.xsd</DependentUpon>
     </None>
@@ -354,6 +391,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SalesDataSet.xsc">
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SalesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SalesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SalesDataSet.xss">
+      <DependentUpon>SalesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="StockDataSet.xsc">
       <DependentUpon>StockDataSet.xsd</DependentUpon>
     </None>

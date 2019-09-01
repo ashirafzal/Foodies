@@ -346,5 +346,24 @@ namespace Foodies
         {
             tabControl1.SelectedTab = tabPage7;
         }
+
+        private void ExportToExcel_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'stocksDataSet.Stock' table. You can move, or remove it, as needed.
+            this.stockTableAdapter.Fill(this.stocksDataSet.Stock);
+            // TODO: This line of code loads data into the 'salesDataSet.Sales' table. You can move, or remove it, as needed.
+            this.salesTableAdapter.Fill(this.salesDataSet.Sales);
+            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.productsDataSet.Products);
+            // TODO: This line of code loads data into the 'orderDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.orderDataSet.Orders);
+            // TODO: This line of code loads data into the 'cutomerDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.cutomerDataSet.Customer);
+            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            // TODO: This line of code loads data into the 'invoiceDataSet.Bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
+
+        }
     }
 }
