@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace Foodies
 {
@@ -532,39 +536,61 @@ namespace Foodies
 
         private void StockToExcel_Click(object sender, EventArgs e)
         {
-            // creating Excel Application  
-            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-            // creating new WorkBook within Excel application  
-            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-            // creating new Excelsheet in workbook  
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            // see the excel sheet behind the program  
-            app.Visible = true;
-            // get the reference of first sheet. By default its name is Sheet1.  
-            // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
-            // changing the name of active sheet  
-            worksheet.Name = "Exported from gridview";
-            //something
-            worksheet.EnableSelection = Microsoft.Office.Interop.Excel.XlEnableSelection.xlNoSelection;
-            // storing header part in Excel  
-            for (int i = 1; i < dgv1.Columns.Count + 1; i++)
+            //Creating DataTable.
+            DataTable dt = new DataTable();
+
+            //Adding the Columns.
+            foreach (DataGridViewColumn column in dgv1.Columns)
             {
-                worksheet.Cells[1, i] = dgv1.Columns[i - 1].HeaderText;
+                dt.Columns.Add(column.HeaderText, column.ValueType);
             }
-            // storing Each row and column value to excel sheet  
-            for (int i = 0; i < dgv1.Rows.Count - 1; i++)
+
+            //Adding the Rows.
+            foreach (DataGridViewRow row in dgv1.Rows)
             {
-                for (int j = 0; j < dgv1.Columns.Count; j++)
+                dt.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    worksheet.Cells[i + 2, j + 1] = dgv1.Rows[i].Cells[j].Value.ToString();
+                    dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
                 }
             }
-            // save the application  
-            workbook.SaveAs("C:\\BillInformation.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-            // Exit from the application  
-            app.Quit();
+
+            //Exporting to Excel.
+            string folderPath = "C:\\Foodies\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "Customers");
+
+                //Set the color of Header Row.
+                //A resembles First Column while C resembles Third column.
+                wb.Worksheet(1).Cells("A1:C1").Style.Fill.BackgroundColor = XLColor.DarkGreen;
+                for (int i = 1; i <= dt.Rows.Count; i++)
+                {
+                    //A resembles First Column while C resembles Third column.
+                    //Header row is at Position 1 and hence First row starts from Index 2.
+                    string cellRange = string.Format("A{0}:C{0}", i + 1);
+                    if (i % 2 != 0)
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.GreenYellow;
+                    }
+                    else
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.Yellow;
+                    }
+
+                }
+                //Adjust widths of Columns.
+                wb.Worksheet(1).Columns().AdjustToContents();
+
+                //Save the Excel file.
+                wb.SaveAs(folderPath + "Bill Records.xlsx");
+            }
+
         }
+        
     }
 }
