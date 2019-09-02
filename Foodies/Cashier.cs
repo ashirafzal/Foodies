@@ -16,6 +16,11 @@ namespace Foodies
         int actualamount = 0;
         int amountremainafterdiscountcalculate = 0;
 
+        string drInvoiceid, CustID, OrderID, CustName, Product_Name,
+               ProductQuantity, ProductRate, ProductAmount, ProductAmountWithGST,
+               OrderTime, OrderDate, TotalQty, ActualAmount, TotalAmount, TotalAmountWithGST,
+               DiscounInPercent;
+
         // Connection String //
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
 
@@ -826,6 +831,69 @@ namespace Foodies
         {
             ExportToExcel exportToExcel = new ExportToExcel();
             exportToExcel.Show();
+        }
+
+        private void btnDeleteTransaction_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to cancel the last transaction ?", "Delete Last Transaction ?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+
+                SqlCommand cmd1 = new SqlCommand("select top 1 InvioceID from Bill order by InvioceID DESC", con, tran);
+                cmd1.ExecuteNonQuery();
+
+                using (SqlDataReader dr = cmd1.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        INVOICEID = Convert.ToInt32(dr["InvioceID"]);
+
+                        SqlCommand cmd3 = new SqlCommand("select InvioceID,CustID,OrderID,CustName,ProductName,ProductQuantity" +
+                                                            ",ProductRate,ProductAmount,ProductAmountWithGST,OrderTime," +
+                                                            "OrderDate,Totalqty,ActualAmount,TotalAmount,TotalAmountWithGST," +
+                                                            "DiscountInPercent from Bill where InvioceID = '" + INVOICEID + "' ", con, tran);
+                        cmd3.ExecuteNonQuery();
+
+                        using (SqlDataReader dr2 = cmd3.ExecuteReader())
+                        {
+                            while (dr2.Read())
+                            {
+                                drInvoiceid = Convert.ToString(dr2["InvioceID"]);
+                                CustID = Convert.ToString(dr2["CustID"]);
+                                OrderID = Convert.ToString(dr2["OrderID"]);
+                                CustName = Convert.ToString(dr2["CustName"]);
+                                Product_Name = Convert.ToString(dr2["ProductName"]);
+                                ProductQuantity = Convert.ToString(dr2["ProductQuantity"]);
+                                ProductRate = Convert.ToString(dr2["ProductRate"]);
+                                ProductAmount = Convert.ToString(dr2["ProductAmount"]);
+                                ProductAmountWithGST = Convert.ToString(dr2["ProductAmountWithGST"]);
+                                OrderTime = Convert.ToString(dr2["OrderTime"]);
+                                OrderDate = Convert.ToString(dr2["OrderDate"]);
+                                TotalQty = Convert.ToString(dr2["Totalqty"]);
+                                ActualAmount = Convert.ToString(dr2["ActualAmount"]);
+                                TotalAmount = Convert.ToString(dr2["TotalAmount"]);
+                                TotalAmountWithGST = Convert.ToString(dr2["TotalAmountWithGST"]);
+                                DiscounInPercent = Convert.ToString(dr2["DiscountInPercent"]);
+
+                                SqlCommand cmd4 = new SqlCommand("insert into DeletedBill values ('" + drInvoiceid + "' , '" + CustID + "' , '" + OrderID + "' , '" + CustName + "' , '" + Product_Name + "' , '" + ProductQuantity + "' , '" + ProductRate + "' , '" + ProductAmount + "' , '" + ProductAmountWithGST + "' , '" + OrderTime + "' , '" + OrderDate + "' , '" + TotalQty + "' , '" + ActualAmount + "' , '" + TotalAmount + "' , '" + TotalAmountWithGST + "' , '" + DiscounInPercent + "') ", con, tran);
+                                cmd4.ExecuteNonQuery();
+                            }
+                        }
+                        SqlCommand cmd2 = new SqlCommand("delete from Bill where InvioceID = '" + INVOICEID + "' ", con, tran);
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Transaction deleted");
+                    }
+                    tran.Commit();
+                    con.Close();
+                }
+            }
+            else if (result == DialogResult.No)
+            {
+                MessageBox.Show("Transaction exist");
+            }
         }
 
         private void manageItemsToolStripMenuItem_Click(object sender, EventArgs e)
