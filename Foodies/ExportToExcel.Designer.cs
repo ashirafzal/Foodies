@@ -108,7 +108,7 @@
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsDataSet = new Foodies.ProductsDataSet();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
+            this.SalesToExcel = new System.Windows.Forms.Button();
             this.dgv6 = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1134,7 +1134,7 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.button5);
+            this.tabPage6.Controls.Add(this.SalesToExcel);
             this.tabPage6.Controls.Add(this.dgv6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
@@ -1144,20 +1144,21 @@
             this.tabPage6.Text = "SALES";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // SalesToExcel
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1202, 729);
-            this.button5.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 56);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "STOCK TO EXCEL";
-            this.button5.UseVisualStyleBackColor = false;
+            this.SalesToExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SalesToExcel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SalesToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesToExcel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesToExcel.ForeColor = System.Drawing.Color.White;
+            this.SalesToExcel.Location = new System.Drawing.Point(1202, 729);
+            this.SalesToExcel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.SalesToExcel.Name = "SalesToExcel";
+            this.SalesToExcel.Size = new System.Drawing.Size(228, 56);
+            this.SalesToExcel.TabIndex = 7;
+            this.SalesToExcel.Text = "SALES TO EXCEL";
+            this.SalesToExcel.UseVisualStyleBackColor = false;
+            this.SalesToExcel.Click += new System.EventHandler(this.SalesToExcel_Click);
             // 
             // dgv6
             // 
@@ -1553,7 +1554,7 @@
         private System.Windows.Forms.DataGridView dgv4;
         private System.Windows.Forms.Button ProductsToExcel;
         private System.Windows.Forms.DataGridView dgv5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button SalesToExcel;
         private System.Windows.Forms.DataGridView dgv6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dgv7;
