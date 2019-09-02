@@ -58,45 +58,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.StockToExcel = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.invoiceDataSet = new Foodies.InvoiceDataSet();
-            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgv3 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dgv4 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dgv5 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dgv6 = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
-            this.dgv7 = new System.Windows.Forms.DataGridView();
-            this.categoryDataSet = new Foodies.CategoryDataSet();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
-            this.cutomerDataSet = new Foodies.CutomerDataSet();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerTableAdapter = new Foodies.CutomerDataSetTableAdapters.CustomerTableAdapter();
-            this.orderDataSet = new Foodies.OrderDataSet();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new Foodies.OrderDataSetTableAdapters.OrdersTableAdapter();
-            this.productsDataSet = new Foodies.ProductsDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
-            this.salesDataSet = new Foodies.SalesDataSet();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesTableAdapter = new Foodies.SalesDataSetTableAdapters.SalesTableAdapter();
-            this.stocksDataSet = new Foodies.StocksDataSet();
-            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockTableAdapter = new Foodies.StocksDataSetTableAdapters.StockTableAdapter();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,17 +74,47 @@
             this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalAmountWithGSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountInPercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoiceDataSet = new Foodies.InvoiceDataSet();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.categorytoExcel = new System.Windows.Forms.Button();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryDataSet = new Foodies.CategoryDataSet();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dgv3 = new System.Windows.Forms.DataGridView();
             this.custIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTimeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cutomerDataSet = new Foodies.CutomerDataSet();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dgv4 = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordertimeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderDataSet = new Foodies.OrderDataSet();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dgv5 = new System.Windows.Forms.DataGridView();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsDataSet = new Foodies.ProductsDataSet();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dgv6 = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,6 +123,11 @@
             this.orderCategoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTimeDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesDataSet = new Foodies.SalesDataSet();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dgv7 = new System.Windows.Forms.DataGridView();
             this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockweigthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,14 +135,17 @@
             this.stockcategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocktimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksDataSet = new Foodies.StocksDataSet();
+            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
+            this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
+            this.customerTableAdapter = new Foodies.CutomerDataSetTableAdapters.CustomerTableAdapter();
+            this.ordersTableAdapter = new Foodies.OrderDataSetTableAdapters.OrdersTableAdapter();
+            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
+            this.salesTableAdapter = new Foodies.SalesDataSetTableAdapters.SalesTableAdapter();
+            this.stockTableAdapter = new Foodies.StocksDataSetTableAdapters.StockTableAdapter();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Stocks.SuspendLayout();
@@ -167,32 +166,32 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cutomerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cutomerDataSet)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesDataSet)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -680,420 +679,6 @@
             this.dgv1.Size = new System.Drawing.Size(1401, 688);
             this.dgv1.TabIndex = 2;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.dgv2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "CATEGORY";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.dgv3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "CUSTOMERS";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.dgv4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "ORDERS";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.button4);
-            this.tabPage5.Controls.Add(this.dgv5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "PRODUCTS";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.button5);
-            this.tabPage6.Controls.Add(this.dgv6);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "SALES";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.button6);
-            this.tabPage7.Controls.Add(this.dgv7);
-            this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1459, 812);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "STOCKS";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // invoiceDataSet
-            // 
-            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
-            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // billBindingSource
-            // 
-            this.billBindingSource.DataMember = "Bill";
-            this.billBindingSource.DataSource = this.invoiceDataSet;
-            // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1202, 729);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 56);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "STOCK TO EXCEL";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dgv2
-            // 
-            this.dgv2.AllowUserToAddRows = false;
-            this.dgv2.AllowUserToDeleteRows = false;
-            this.dgv2.AllowUserToResizeColumns = false;
-            this.dgv2.AllowUserToResizeRows = false;
-            this.dgv2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv2.AutoGenerateColumns = false;
-            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv2.BackgroundColor = System.Drawing.Color.White;
-            this.dgv2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn,
-            this.categoryImageDataGridViewImageColumn});
-            this.dgv2.DataSource = this.categoryBindingSource;
-            this.dgv2.Location = new System.Drawing.Point(29, 28);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.ReadOnly = true;
-            this.dgv2.Size = new System.Drawing.Size(1401, 688);
-            this.dgv2.TabIndex = 4;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1202, 729);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 56);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "STOCK TO EXCEL";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // dgv3
-            // 
-            this.dgv3.AllowUserToAddRows = false;
-            this.dgv3.AllowUserToDeleteRows = false;
-            this.dgv3.AllowUserToResizeColumns = false;
-            this.dgv3.AllowUserToResizeRows = false;
-            this.dgv3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv3.AutoGenerateColumns = false;
-            this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv3.BackgroundColor = System.Drawing.Color.White;
-            this.dgv3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.custIDDataGridViewTextBoxColumn1,
-            this.custNameDataGridViewTextBoxColumn1,
-            this.contactDataGridViewTextBoxColumn,
-            this.orderTimeDataGridViewTextBoxColumn1,
-            this.orderDateDataGridViewTextBoxColumn1});
-            this.dgv3.DataSource = this.customerBindingSource;
-            this.dgv3.Location = new System.Drawing.Point(29, 28);
-            this.dgv3.Name = "dgv3";
-            this.dgv3.ReadOnly = true;
-            this.dgv3.Size = new System.Drawing.Size(1401, 688);
-            this.dgv3.TabIndex = 6;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1202, 729);
-            this.button3.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(228, 56);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "STOCK TO EXCEL";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // dgv4
-            // 
-            this.dgv4.AllowUserToAddRows = false;
-            this.dgv4.AllowUserToDeleteRows = false;
-            this.dgv4.AllowUserToResizeColumns = false;
-            this.dgv4.AllowUserToResizeRows = false;
-            this.dgv4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv4.AutoGenerateColumns = false;
-            this.dgv4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv4.BackgroundColor = System.Drawing.Color.White;
-            this.dgv4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn1,
-            this.custIDDataGridViewTextBoxColumn2,
-            this.orderTypeDataGridViewTextBoxColumn,
-            this.orderCategoryDataGridViewTextBoxColumn,
-            this.ordertimeDataGridViewTextBoxColumn2,
-            this.orderDateDataGridViewTextBoxColumn2});
-            this.dgv4.DataSource = this.ordersBindingSource;
-            this.dgv4.Location = new System.Drawing.Point(29, 28);
-            this.dgv4.Name = "dgv4";
-            this.dgv4.ReadOnly = true;
-            this.dgv4.Size = new System.Drawing.Size(1401, 688);
-            this.dgv4.TabIndex = 6;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1202, 729);
-            this.button4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(228, 56);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "STOCK TO EXCEL";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dgv5
-            // 
-            this.dgv5.AllowUserToAddRows = false;
-            this.dgv5.AllowUserToDeleteRows = false;
-            this.dgv5.AllowUserToResizeColumns = false;
-            this.dgv5.AllowUserToResizeRows = false;
-            this.dgv5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv5.AutoGenerateColumns = false;
-            this.dgv5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv5.BackgroundColor = System.Drawing.Color.White;
-            this.dgv5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIdDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn1,
-            this.productPriceDataGridViewTextBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn,
-            this.productImageDataGridViewImageColumn});
-            this.dgv5.DataSource = this.productsBindingSource;
-            this.dgv5.Location = new System.Drawing.Point(29, 28);
-            this.dgv5.Name = "dgv5";
-            this.dgv5.ReadOnly = true;
-            this.dgv5.Size = new System.Drawing.Size(1401, 688);
-            this.dgv5.TabIndex = 6;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1202, 729);
-            this.button5.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 56);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "STOCK TO EXCEL";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // dgv6
-            // 
-            this.dgv6.AllowUserToAddRows = false;
-            this.dgv6.AllowUserToDeleteRows = false;
-            this.dgv6.AllowUserToResizeColumns = false;
-            this.dgv6.AllowUserToResizeRows = false;
-            this.dgv6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv6.AutoGenerateColumns = false;
-            this.dgv6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv6.BackgroundColor = System.Drawing.Color.White;
-            this.dgv6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn2,
-            this.custIDDataGridViewTextBoxColumn3,
-            this.custNameDataGridViewTextBoxColumn2,
-            this.contactDataGridViewTextBoxColumn1,
-            this.orderTypeDataGridViewTextBoxColumn1,
-            this.orderCategoryDataGridViewTextBoxColumn1,
-            this.orderTimeDataGridViewTextBoxColumn3,
-            this.orderDateDataGridViewTextBoxColumn3});
-            this.dgv6.DataSource = this.salesBindingSource;
-            this.dgv6.Location = new System.Drawing.Point(29, 28);
-            this.dgv6.Name = "dgv6";
-            this.dgv6.ReadOnly = true;
-            this.dgv6.Size = new System.Drawing.Size(1401, 688);
-            this.dgv6.TabIndex = 6;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1202, 729);
-            this.button6.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(228, 56);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "STOCK TO EXCEL";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // dgv7
-            // 
-            this.dgv7.AllowUserToAddRows = false;
-            this.dgv7.AllowUserToDeleteRows = false;
-            this.dgv7.AllowUserToResizeColumns = false;
-            this.dgv7.AllowUserToResizeRows = false;
-            this.dgv7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv7.AutoGenerateColumns = false;
-            this.dgv7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv7.BackgroundColor = System.Drawing.Color.White;
-            this.dgv7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stockidDataGridViewTextBoxColumn,
-            this.stocknameDataGridViewTextBoxColumn,
-            this.stockweigthDataGridViewTextBoxColumn,
-            this.stockcompanyDataGridViewTextBoxColumn,
-            this.stockcategoryDataGridViewTextBoxColumn,
-            this.stockdateDataGridViewTextBoxColumn,
-            this.stocktimeDataGridViewTextBoxColumn});
-            this.dgv7.DataSource = this.stockBindingSource;
-            this.dgv7.Location = new System.Drawing.Point(29, 28);
-            this.dgv7.Name = "dgv7";
-            this.dgv7.ReadOnly = true;
-            this.dgv7.Size = new System.Drawing.Size(1401, 688);
-            this.dgv7.TabIndex = 6;
-            // 
-            // categoryDataSet
-            // 
-            this.categoryDataSet.DataSetName = "CategoryDataSet";
-            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.categoryDataSet;
-            // 
-            // categoryTableAdapter
-            // 
-            this.categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // cutomerDataSet
-            // 
-            this.cutomerDataSet.DataSetName = "CutomerDataSet";
-            this.cutomerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.cutomerDataSet;
-            // 
-            // customerTableAdapter
-            // 
-            this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // orderDataSet
-            // 
-            this.orderDataSet.DataSetName = "OrderDataSet";
-            this.orderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.orderDataSet;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
-            // productsDataSet
-            // 
-            this.productsDataSet.DataSetName = "ProductsDataSet";
-            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.productsDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // salesDataSet
-            // 
-            this.salesDataSet.DataSetName = "SalesDataSet";
-            this.salesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataMember = "Sales";
-            this.salesBindingSource.DataSource = this.salesDataSet;
-            // 
-            // salesTableAdapter
-            // 
-            this.salesTableAdapter.ClearBeforeFill = true;
-            // 
-            // stocksDataSet
-            // 
-            this.stocksDataSet.DataSetName = "StocksDataSet";
-            this.stocksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockBindingSource
-            // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.stocksDataSet;
-            // 
-            // stockTableAdapter
-            // 
-            this.stockTableAdapter.ClearBeforeFill = true;
-            // 
             // invioceIDDataGridViewTextBoxColumn
             // 
             this.invioceIDDataGridViewTextBoxColumn.DataPropertyName = "InvioceID";
@@ -1212,6 +797,128 @@
             this.discountInPercentDataGridViewTextBoxColumn.ReadOnly = true;
             this.discountInPercentDataGridViewTextBoxColumn.Visible = false;
             // 
+            // billBindingSource
+            // 
+            this.billBindingSource.DataMember = "Bill";
+            this.billBindingSource.DataSource = this.invoiceDataSet;
+            // 
+            // invoiceDataSet
+            // 
+            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
+            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.categorytoExcel);
+            this.tabPage2.Controls.Add(this.dgv2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "CATEGORY";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // categorytoExcel
+            // 
+            this.categorytoExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.categorytoExcel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.categorytoExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.categorytoExcel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorytoExcel.ForeColor = System.Drawing.Color.White;
+            this.categorytoExcel.Location = new System.Drawing.Point(1202, 729);
+            this.categorytoExcel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.categorytoExcel.Name = "categorytoExcel";
+            this.categorytoExcel.Size = new System.Drawing.Size(228, 56);
+            this.categorytoExcel.TabIndex = 5;
+            this.categorytoExcel.Text = "CATEGORY TO EXCEL";
+            this.categorytoExcel.UseVisualStyleBackColor = false;
+            this.categorytoExcel.Click += new System.EventHandler(this.categorytoExcel_Click);
+            // 
+            // dgv2
+            // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            this.dgv2.AllowUserToResizeColumns = false;
+            this.dgv2.AllowUserToResizeRows = false;
+            this.dgv2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv2.AutoGenerateColumns = false;
+            this.dgv2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv2.BackgroundColor = System.Drawing.Color.White;
+            this.dgv2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.categoryIdDataGridViewTextBoxColumn,
+            this.categoryNameDataGridViewTextBoxColumn});
+            this.dgv2.DataSource = this.categoryBindingSource;
+            this.dgv2.Location = new System.Drawing.Point(29, 28);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.ReadOnly = true;
+            this.dgv2.Size = new System.Drawing.Size(1401, 688);
+            this.dgv2.TabIndex = 4;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "Category";
+            this.categoryBindingSource.DataSource = this.categoryDataSet;
+            // 
+            // categoryDataSet
+            // 
+            this.categoryDataSet.DataSetName = "CategoryDataSet";
+            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.dgv3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "CUSTOMERS";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1202, 729);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 56);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "STOCK TO EXCEL";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // dgv3
+            // 
+            this.dgv3.AllowUserToAddRows = false;
+            this.dgv3.AllowUserToDeleteRows = false;
+            this.dgv3.AllowUserToResizeColumns = false;
+            this.dgv3.AllowUserToResizeRows = false;
+            this.dgv3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv3.AutoGenerateColumns = false;
+            this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv3.BackgroundColor = System.Drawing.Color.White;
+            this.dgv3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.custIDDataGridViewTextBoxColumn1,
+            this.custNameDataGridViewTextBoxColumn1,
+            this.contactDataGridViewTextBoxColumn,
+            this.orderTimeDataGridViewTextBoxColumn1,
+            this.orderDateDataGridViewTextBoxColumn1});
+            this.dgv3.DataSource = this.customerBindingSource;
+            this.dgv3.Location = new System.Drawing.Point(29, 28);
+            this.dgv3.Name = "dgv3";
+            this.dgv3.ReadOnly = true;
+            this.dgv3.Size = new System.Drawing.Size(1401, 688);
+            this.dgv3.TabIndex = 6;
+            // 
             // custIDDataGridViewTextBoxColumn1
             // 
             this.custIDDataGridViewTextBoxColumn1.DataPropertyName = "CustID";
@@ -1246,6 +953,69 @@
             this.orderDateDataGridViewTextBoxColumn1.HeaderText = "ORDER DATE";
             this.orderDateDataGridViewTextBoxColumn1.Name = "orderDateDataGridViewTextBoxColumn1";
             this.orderDateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.cutomerDataSet;
+            // 
+            // cutomerDataSet
+            // 
+            this.cutomerDataSet.DataSetName = "CutomerDataSet";
+            this.cutomerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.dgv4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "ORDERS";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1202, 729);
+            this.button3.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(228, 56);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "STOCK TO EXCEL";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // dgv4
+            // 
+            this.dgv4.AllowUserToAddRows = false;
+            this.dgv4.AllowUserToDeleteRows = false;
+            this.dgv4.AllowUserToResizeColumns = false;
+            this.dgv4.AllowUserToResizeRows = false;
+            this.dgv4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv4.AutoGenerateColumns = false;
+            this.dgv4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv4.BackgroundColor = System.Drawing.Color.White;
+            this.dgv4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn1,
+            this.custIDDataGridViewTextBoxColumn2,
+            this.orderTypeDataGridViewTextBoxColumn,
+            this.orderCategoryDataGridViewTextBoxColumn,
+            this.ordertimeDataGridViewTextBoxColumn2,
+            this.orderDateDataGridViewTextBoxColumn2});
+            this.dgv4.DataSource = this.ordersBindingSource;
+            this.dgv4.Location = new System.Drawing.Point(29, 28);
+            this.dgv4.Name = "dgv4";
+            this.dgv4.ReadOnly = true;
+            this.dgv4.Size = new System.Drawing.Size(1401, 688);
+            this.dgv4.TabIndex = 6;
             // 
             // orderIDDataGridViewTextBoxColumn1
             // 
@@ -1288,6 +1058,169 @@
             this.orderDateDataGridViewTextBoxColumn2.HeaderText = "ORDER DATE";
             this.orderDateDataGridViewTextBoxColumn2.Name = "orderDateDataGridViewTextBoxColumn2";
             this.orderDateDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.orderDataSet;
+            // 
+            // orderDataSet
+            // 
+            this.orderDataSet.DataSetName = "OrderDataSet";
+            this.orderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button4);
+            this.tabPage5.Controls.Add(this.dgv5);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "PRODUCTS";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1202, 729);
+            this.button4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(228, 56);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "STOCK TO EXCEL";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // dgv5
+            // 
+            this.dgv5.AllowUserToAddRows = false;
+            this.dgv5.AllowUserToDeleteRows = false;
+            this.dgv5.AllowUserToResizeColumns = false;
+            this.dgv5.AllowUserToResizeRows = false;
+            this.dgv5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv5.AutoGenerateColumns = false;
+            this.dgv5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv5.BackgroundColor = System.Drawing.Color.White;
+            this.dgv5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIdDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn1,
+            this.productPriceDataGridViewTextBoxColumn,
+            this.productCategoryDataGridViewTextBoxColumn,
+            this.productImageDataGridViewImageColumn});
+            this.dgv5.DataSource = this.productsBindingSource;
+            this.dgv5.Location = new System.Drawing.Point(29, 28);
+            this.dgv5.Name = "dgv5";
+            this.dgv5.ReadOnly = true;
+            this.dgv5.Size = new System.Drawing.Size(1401, 688);
+            this.dgv5.TabIndex = 6;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn1
+            // 
+            this.productNameDataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn1.HeaderText = "PRODUCT NAME";
+            this.productNameDataGridViewTextBoxColumn1.Name = "productNameDataGridViewTextBoxColumn1";
+            this.productNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productImageDataGridViewImageColumn
+            // 
+            this.productImageDataGridViewImageColumn.DataPropertyName = "ProductImage";
+            this.productImageDataGridViewImageColumn.HeaderText = "PRODUCT IMAGE";
+            this.productImageDataGridViewImageColumn.Name = "productImageDataGridViewImageColumn";
+            this.productImageDataGridViewImageColumn.ReadOnly = true;
+            this.productImageDataGridViewImageColumn.Visible = false;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.productsDataSet;
+            // 
+            // productsDataSet
+            // 
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button5);
+            this.tabPage6.Controls.Add(this.dgv6);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "SALES";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(1202, 729);
+            this.button5.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(228, 56);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "STOCK TO EXCEL";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // dgv6
+            // 
+            this.dgv6.AllowUserToAddRows = false;
+            this.dgv6.AllowUserToDeleteRows = false;
+            this.dgv6.AllowUserToResizeColumns = false;
+            this.dgv6.AllowUserToResizeRows = false;
+            this.dgv6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv6.AutoGenerateColumns = false;
+            this.dgv6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv6.BackgroundColor = System.Drawing.Color.White;
+            this.dgv6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn2,
+            this.custIDDataGridViewTextBoxColumn3,
+            this.custNameDataGridViewTextBoxColumn2,
+            this.contactDataGridViewTextBoxColumn1,
+            this.orderTypeDataGridViewTextBoxColumn1,
+            this.orderCategoryDataGridViewTextBoxColumn1,
+            this.orderTimeDataGridViewTextBoxColumn3,
+            this.orderDateDataGridViewTextBoxColumn3});
+            this.dgv6.DataSource = this.salesBindingSource;
+            this.dgv6.Location = new System.Drawing.Point(29, 28);
+            this.dgv6.Name = "dgv6";
+            this.dgv6.ReadOnly = true;
+            this.dgv6.Size = new System.Drawing.Size(1401, 688);
+            this.dgv6.TabIndex = 6;
             // 
             // orderIDDataGridViewTextBoxColumn2
             // 
@@ -1345,6 +1278,70 @@
             this.orderDateDataGridViewTextBoxColumn3.Name = "orderDateDataGridViewTextBoxColumn3";
             this.orderDateDataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.salesDataSet;
+            // 
+            // salesDataSet
+            // 
+            this.salesDataSet.DataSetName = "SalesDataSet";
+            this.salesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.button6);
+            this.tabPage7.Controls.Add(this.dgv7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1459, 812);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "STOCKS";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(1202, 729);
+            this.button6.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(228, 56);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "STOCK TO EXCEL";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // dgv7
+            // 
+            this.dgv7.AllowUserToAddRows = false;
+            this.dgv7.AllowUserToDeleteRows = false;
+            this.dgv7.AllowUserToResizeColumns = false;
+            this.dgv7.AllowUserToResizeRows = false;
+            this.dgv7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv7.AutoGenerateColumns = false;
+            this.dgv7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv7.BackgroundColor = System.Drawing.Color.White;
+            this.dgv7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stockidDataGridViewTextBoxColumn,
+            this.stocknameDataGridViewTextBoxColumn,
+            this.stockweigthDataGridViewTextBoxColumn,
+            this.stockcompanyDataGridViewTextBoxColumn,
+            this.stockcategoryDataGridViewTextBoxColumn,
+            this.stockdateDataGridViewTextBoxColumn,
+            this.stocktimeDataGridViewTextBoxColumn});
+            this.dgv7.DataSource = this.stockBindingSource;
+            this.dgv7.Location = new System.Drawing.Point(29, 28);
+            this.dgv7.Name = "dgv7";
+            this.dgv7.ReadOnly = true;
+            this.dgv7.Size = new System.Drawing.Size(1401, 688);
+            this.dgv7.TabIndex = 6;
+            // 
             // stockidDataGridViewTextBoxColumn
             // 
             this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stockid";
@@ -1394,6 +1391,44 @@
             this.stocktimeDataGridViewTextBoxColumn.Name = "stocktimeDataGridViewTextBoxColumn";
             this.stocktimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.stocksDataSet;
+            // 
+            // stocksDataSet
+            // 
+            this.stocksDataSet.DataSetName = "StocksDataSet";
+            this.stocksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // billTableAdapter
+            // 
+            this.billTableAdapter.ClearBeforeFill = true;
+            // 
+            // categoryTableAdapter
+            // 
+            this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
+            // 
+            // stockTableAdapter
+            // 
+            this.stockTableAdapter.ClearBeforeFill = true;
+            // 
             // categoryIdDataGridViewTextBoxColumn
             // 
             this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
@@ -1407,50 +1442,6 @@
             this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CATEGORY NAME";
             this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
             this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryImageDataGridViewImageColumn
-            // 
-            this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
-            this.categoryImageDataGridViewImageColumn.HeaderText = "CATGEORY IMAGE";
-            this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
-            this.categoryImageDataGridViewImageColumn.ReadOnly = true;
-            this.categoryImageDataGridViewImageColumn.Visible = false;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn1
-            // 
-            this.productNameDataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn1.HeaderText = "PRODUCT NAME";
-            this.productNameDataGridViewTextBoxColumn1.Name = "productNameDataGridViewTextBoxColumn1";
-            this.productNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // productPriceDataGridViewTextBoxColumn
-            // 
-            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
-            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
-            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
-            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
-            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productImageDataGridViewImageColumn
-            // 
-            this.productImageDataGridViewImageColumn.DataPropertyName = "ProductImage";
-            this.productImageDataGridViewImageColumn.HeaderText = "PRODUCT IMAGE";
-            this.productImageDataGridViewImageColumn.Name = "productImageDataGridViewImageColumn";
-            this.productImageDataGridViewImageColumn.ReadOnly = true;
-            this.productImageDataGridViewImageColumn.Visible = false;
             // 
             // ExportToExcel
             // 
@@ -1492,32 +1483,32 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cutomerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cutomerDataSet)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDataSet)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesDataSet)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1561,7 +1552,7 @@
         private InvoiceDataSet invoiceDataSet;
         private System.Windows.Forms.BindingSource billBindingSource;
         private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button categorytoExcel;
         private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgv3;
@@ -1633,13 +1624,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockcategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stocktimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn categoryImageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
     }
 }
