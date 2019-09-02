@@ -33,7 +33,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.InvoiceNumber = new System.Windows.Forms.TextBox();
-            this.SearchInvoice = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,18 +52,23 @@
             this.discountInPercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceDataSet = new Foodies.InvoiceDataSet();
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnPrint = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TotalQty = new System.Windows.Forms.Label();
             this.ActualAmount = new System.Windows.Forms.Label();
             this.TotalAmount = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.BtnDiscount = new System.Windows.Forms.Button();
+            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.SearchInvoice = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -72,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -97,10 +103,10 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.91771F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.08229F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.04738F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.95262F));
             this.tableLayoutPanel2.Controls.Add(this.InvoiceNumber, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.SearchInvoice, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -118,25 +124,9 @@
             this.InvoiceNumber.Margin = new System.Windows.Forms.Padding(15, 20, 0, 0);
             this.InvoiceNumber.Multiline = true;
             this.InvoiceNumber.Name = "InvoiceNumber";
-            this.InvoiceNumber.Size = new System.Drawing.Size(1315, 41);
+            this.InvoiceNumber.Size = new System.Drawing.Size(1283, 41);
             this.InvoiceNumber.TabIndex = 0;
             this.InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // SearchInvoice
-            // 
-            this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchInvoice.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(1346, 24);
-            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.SearchInvoice.Name = "SearchInvoice";
-            this.SearchInvoice.Size = new System.Drawing.Size(242, 53);
-            this.SearchInvoice.TabIndex = 1;
-            this.SearchInvoice.Text = "SEARCH INVOICE";
-            this.SearchInvoice.UseVisualStyleBackColor = false;
-            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click);
             // 
             // dgv1
             // 
@@ -180,6 +170,7 @@
             this.dgv1.TabIndex = 2;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
+            this.dgv1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellEndEdit);
             this.dgv1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellEnter);
             // 
             // invioceIDDataGridViewTextBoxColumn
@@ -309,10 +300,6 @@
             this.invoiceDataSet.DataSetName = "InvoiceDataSet";
             this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -344,6 +331,7 @@
             this.BtnPrint.TabIndex = 4;
             this.BtnPrint.Text = "PRINT EDITED INVOICE";
             this.BtnPrint.UseVisualStyleBackColor = false;
+            this.BtnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -358,8 +346,8 @@
             this.tableLayoutPanel4.Controls.Add(this.TotalQty, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.ActualAmount, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.TotalAmount, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtDiscount, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnDiscount, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -367,20 +355,20 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.16667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.83333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1327, 120);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1326, 120);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 47);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TOTAL QUANTITY";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(665, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(325, 47);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "TOTAL AMOUNT";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -394,17 +382,17 @@
             this.label2.Text = "ACTUAL AMOUNT";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(665, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(325, 47);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "TOTAL AMOUNT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 47);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TOTAL QUANTITY";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TotalQty
             // 
@@ -445,17 +433,6 @@
             this.TotalAmount.Text = "0";
             this.TotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDiscount.Location = new System.Drawing.Point(1003, 5);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 0);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(314, 35);
-            this.txtDiscount.TabIndex = 6;
-            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // BtnDiscount
             // 
             this.BtnDiscount.BackColor = System.Drawing.Color.RoyalBlue;
@@ -466,10 +443,104 @@
             this.BtnDiscount.Location = new System.Drawing.Point(1003, 52);
             this.BtnDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.BtnDiscount.Name = "BtnDiscount";
-            this.BtnDiscount.Size = new System.Drawing.Size(314, 45);
+            this.BtnDiscount.Size = new System.Drawing.Size(213, 45);
             this.BtnDiscount.TabIndex = 7;
             this.BtnDiscount.Text = "DISCOUNT";
             this.BtnDiscount.UseVisualStyleBackColor = false;
+            this.BtnDiscount.Click += new System.EventHandler(this.BtnDiscount_Click);
+            // 
+            // billTableAdapter
+            // 
+            this.billTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.96997F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.03003F));
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtDiscount, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(993, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(333, 47);
+            this.tableLayoutPanel5.TabIndex = 8;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.ForeColor = System.Drawing.Color.Black;
+            this.txtDiscount.Location = new System.Drawing.Point(10, 5);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 0);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(213, 35);
+            this.txtDiscount.TabIndex = 7;
+            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(236, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 47);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "PKR";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.45255F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.54745F));
+            this.tableLayoutPanel6.Controls.Add(this.SearchInvoice, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnRefresh, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(1299, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(305, 81);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // SearchInvoice
+            // 
+            this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchInvoice.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchInvoice.ForeColor = System.Drawing.Color.White;
+            this.SearchInvoice.Location = new System.Drawing.Point(5, 24);
+            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(5, 20, 5, 0);
+            this.SearchInvoice.Name = "SearchInvoice";
+            this.SearchInvoice.Size = new System.Drawing.Size(217, 53);
+            this.SearchInvoice.TabIndex = 2;
+            this.SearchInvoice.Text = "SEARCH INVOICE";
+            this.SearchInvoice.UseVisualStyleBackColor = false;
+            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click_1);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(227, 24);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0, 20, 5, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(66, 53);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Edit_Inovice
             // 
@@ -493,6 +564,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -502,7 +576,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox InvoiceNumber;
-        private System.Windows.Forms.Button SearchInvoice;
         private InvoiceDataSet invoiceDataSet;
         private System.Windows.Forms.BindingSource billBindingSource;
         private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
@@ -532,7 +605,12 @@
         private System.Windows.Forms.Label TotalQty;
         private System.Windows.Forms.Label ActualAmount;
         private System.Windows.Forms.Label TotalAmount;
-        private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.Button BtnDiscount;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button SearchInvoice;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
