@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Menu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -122,6 +122,7 @@
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -823,6 +824,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.dgv2);
             this.tabPage2.Controls.Add(this.btnSearchStock);
             this.tabPage2.Controls.Add(this.txtSearchStock);
@@ -861,6 +863,7 @@
             this.dgv2.ReadOnly = true;
             this.dgv2.Size = new System.Drawing.Size(1291, 499);
             this.dgv2.TabIndex = 11;
+            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
             // 
             // stockidDataGridViewTextBoxColumn
             // 
@@ -928,13 +931,14 @@
             this.btnSearchStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchStock.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchStock.ForeColor = System.Drawing.Color.White;
-            this.btnSearchStock.Location = new System.Drawing.Point(1057, 53);
+            this.btnSearchStock.Location = new System.Drawing.Point(999, 54);
             this.btnSearchStock.Margin = new System.Windows.Forms.Padding(0);
             this.btnSearchStock.Name = "btnSearchStock";
-            this.btnSearchStock.Size = new System.Drawing.Size(254, 39);
+            this.btnSearchStock.Size = new System.Drawing.Size(229, 39);
             this.btnSearchStock.TabIndex = 10;
             this.btnSearchStock.Text = "SEARCH STOCK";
             this.btnSearchStock.UseVisualStyleBackColor = false;
+            this.btnSearchStock.Click += new System.EventHandler(this.btnSearchStock_Click);
             // 
             // txtSearchStock
             // 
@@ -942,7 +946,7 @@
             this.txtSearchStock.Location = new System.Drawing.Point(20, 54);
             this.txtSearchStock.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.txtSearchStock.Name = "txtSearchStock";
-            this.txtSearchStock.Size = new System.Drawing.Size(1027, 35);
+            this.txtSearchStock.Size = new System.Drawing.Size(969, 35);
             this.txtSearchStock.TabIndex = 9;
             this.txtSearchStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1009,9 +1013,9 @@
             this.dgv3.AllowUserToDeleteRows = false;
             this.dgv3.AllowUserToResizeColumns = false;
             this.dgv3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgv3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dgv3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv3.AutoGenerateColumns = false;
             this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv3.BackgroundColor = System.Drawing.Color.White;
@@ -1030,6 +1034,7 @@
             this.dgv3.ReadOnly = true;
             this.dgv3.Size = new System.Drawing.Size(1291, 499);
             this.dgv3.TabIndex = 7;
+            this.dgv3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellClick);
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
             // 
             // productIdDataGridViewTextBoxColumn
@@ -1314,6 +1319,23 @@
             // 
             this.stockTableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1237, 54);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 39);
+            this.button3.TabIndex = 14;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1484,5 +1506,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockcategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stocktimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
     }
 }

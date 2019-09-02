@@ -416,5 +416,63 @@ namespace Foodies
             txtSearchProduct.Text = string.Empty;
             txtSearchProduct.Focus();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dgv2.Refresh();
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            con.Open();
+            string query = "select * from Stock";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv2.DataSource = dt;
+            con.Close();
+            txtSearchStock.Text = string.Empty;
+            txtSearchStock.Focus();
+        }
+
+        private void btnSearchStock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Stock where stockname = '" + txtSearchStock.Text + "' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv2.DataSource = dt;
+                con.Close();
+                txtSearchStock.Text = string.Empty;
+                txtSearchStock.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Enter stock name to search");
+            }
+        }
+
+        private void dgv3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv3.Rows[e.RowIndex];
+
+                txtSearchProduct.Text = row.Cells[1].Value.ToString();
+            }
+        }
+
+        private void dgv2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dgv2.Rows[e.RowIndex];
+
+                txtSearchStock.Text = row.Cells[1].Value.ToString();
+            }
+        }
     }
 }
