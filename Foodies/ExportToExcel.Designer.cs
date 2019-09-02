@@ -642,6 +642,7 @@
             this.StockToExcel.TabIndex = 3;
             this.StockToExcel.Text = "STOCK TO EXCEL";
             this.StockToExcel.UseVisualStyleBackColor = false;
+            this.StockToExcel.Click += new System.EventHandler(this.StockToExcel_Click);
             // 
             // dgv1
             // 
