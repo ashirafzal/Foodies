@@ -638,7 +638,7 @@
             this.StockToExcel.Name = "StockToExcel";
             this.StockToExcel.Size = new System.Drawing.Size(228, 56);
             this.StockToExcel.TabIndex = 3;
-            this.StockToExcel.Text = "STOCK TO EXCEL";
+            this.StockToExcel.Text = "BILL RECORDS TO EXCEL";
             this.StockToExcel.UseVisualStyleBackColor = false;
             this.StockToExcel.Click += new System.EventHandler(this.StockToExcel_Click);
             // 
@@ -1280,6 +1280,7 @@
             this.button6.TabIndex = 7;
             this.button6.Text = "STOCK TO EXCEL";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dgv7
             // 
