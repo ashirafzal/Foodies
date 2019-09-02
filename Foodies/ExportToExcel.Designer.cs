@@ -82,7 +82,7 @@
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryDataSet = new Foodies.CategoryDataSet();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.customerToExcel = new System.Windows.Forms.Button();
             this.dgv3 = new System.Windows.Forms.DataGridView();
             this.custIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,13 +103,8 @@
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderDataSet = new Foodies.OrderDataSet();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ProductsToExcel = new System.Windows.Forms.Button();
             this.dgv5 = new System.Windows.Forms.DataGridView();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsDataSet = new Foodies.ProductsDataSet();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -146,6 +141,10 @@
             this.stockTableAdapter = new Foodies.StocksDataSetTableAdapters.StockTableAdapter();
             this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Stocks.SuspendLayout();
@@ -869,7 +868,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.customerToExcel);
             this.tabPage3.Controls.Add(this.dgv3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -879,20 +878,21 @@
             this.tabPage3.Text = "CUSTOMERS";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // customerToExcel
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1202, 729);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 56);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "STOCK TO EXCEL";
-            this.button2.UseVisualStyleBackColor = false;
+            this.customerToExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.customerToExcel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.customerToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customerToExcel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerToExcel.ForeColor = System.Drawing.Color.White;
+            this.customerToExcel.Location = new System.Drawing.Point(1202, 729);
+            this.customerToExcel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.customerToExcel.Name = "customerToExcel";
+            this.customerToExcel.Size = new System.Drawing.Size(228, 56);
+            this.customerToExcel.TabIndex = 7;
+            this.customerToExcel.Text = "CUSTOMER TO EXCEL";
+            this.customerToExcel.UseVisualStyleBackColor = false;
+            this.customerToExcel.Click += new System.EventHandler(this.customerToExcel_Click);
             // 
             // dgv3
             // 
@@ -988,8 +988,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(228, 56);
             this.button3.TabIndex = 7;
-            this.button3.Text = "STOCK TO EXCEL";
+            this.button3.Text = "ORDERS TO EXCEL";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dgv4
             // 
@@ -1071,7 +1072,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button4);
+            this.tabPage5.Controls.Add(this.ProductsToExcel);
             this.tabPage5.Controls.Add(this.dgv5);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
@@ -1081,20 +1082,21 @@
             this.tabPage5.Text = "PRODUCTS";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // ProductsToExcel
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1202, 729);
-            this.button4.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(228, 56);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "STOCK TO EXCEL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.ProductsToExcel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductsToExcel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ProductsToExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductsToExcel.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductsToExcel.ForeColor = System.Drawing.Color.White;
+            this.ProductsToExcel.Location = new System.Drawing.Point(1202, 729);
+            this.ProductsToExcel.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.ProductsToExcel.Name = "ProductsToExcel";
+            this.ProductsToExcel.Size = new System.Drawing.Size(228, 56);
+            this.ProductsToExcel.TabIndex = 7;
+            this.ProductsToExcel.Text = "PRODUCTS TO EXCEL";
+            this.ProductsToExcel.UseVisualStyleBackColor = false;
+            this.ProductsToExcel.Click += new System.EventHandler(this.ProductsToExcel_Click);
             // 
             // dgv5
             // 
@@ -1112,50 +1114,13 @@
             this.productIdDataGridViewTextBoxColumn,
             this.productNameDataGridViewTextBoxColumn1,
             this.productPriceDataGridViewTextBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn,
-            this.productImageDataGridViewImageColumn});
+            this.productCategoryDataGridViewTextBoxColumn});
             this.dgv5.DataSource = this.productsBindingSource;
             this.dgv5.Location = new System.Drawing.Point(29, 28);
             this.dgv5.Name = "dgv5";
             this.dgv5.ReadOnly = true;
             this.dgv5.Size = new System.Drawing.Size(1401, 688);
             this.dgv5.TabIndex = 6;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn1
-            // 
-            this.productNameDataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn1.HeaderText = "PRODUCT NAME";
-            this.productNameDataGridViewTextBoxColumn1.Name = "productNameDataGridViewTextBoxColumn1";
-            this.productNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // productPriceDataGridViewTextBoxColumn
-            // 
-            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
-            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
-            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
-            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
-            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productImageDataGridViewImageColumn
-            // 
-            this.productImageDataGridViewImageColumn.DataPropertyName = "ProductImage";
-            this.productImageDataGridViewImageColumn.HeaderText = "PRODUCT IMAGE";
-            this.productImageDataGridViewImageColumn.Name = "productImageDataGridViewImageColumn";
-            this.productImageDataGridViewImageColumn.ReadOnly = true;
-            this.productImageDataGridViewImageColumn.Visible = false;
             // 
             // productsBindingSource
             // 
@@ -1443,6 +1408,34 @@
             this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
             this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn1
+            // 
+            this.productNameDataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn1.HeaderText = "PRODUCT NAME";
+            this.productNameDataGridViewTextBoxColumn1.Name = "productNameDataGridViewTextBoxColumn1";
+            this.productNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productCategoryDataGridViewTextBoxColumn
+            // 
+            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
+            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
+            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
+            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ExportToExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1554,11 +1547,11 @@
         private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
         private System.Windows.Forms.Button categorytoExcel;
         private System.Windows.Forms.DataGridView dgv2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button customerToExcel;
         private System.Windows.Forms.DataGridView dgv3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgv4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ProductsToExcel;
         private System.Windows.Forms.DataGridView dgv5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dgv6;
@@ -1624,12 +1617,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockcategoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stocktimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
     }
 }

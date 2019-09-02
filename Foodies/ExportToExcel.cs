@@ -645,8 +645,127 @@ namespace Foodies
                 wb.Worksheet(1).Columns().AdjustToContents();
 
                 //Save the Excel file.
-                wb.SaveAs(folderPath + "Category.xlsx");
+                wb.SaveAs(folderPath + "Category Records.xlsx");
             }
+        }
+
+        private void customerToExcel_Click(object sender, EventArgs e)
+        {
+            //Creating DataTable.
+            DataTable dt = new DataTable();
+
+            //Adding the Columns.
+            foreach (DataGridViewColumn column in dgv3.Columns)
+            {
+                dt.Columns.Add(column.HeaderText, column.ValueType);
+            }
+
+            //Adding the Rows.
+            foreach (DataGridViewRow row in dgv3.Rows)
+            {
+                dt.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                }
+            }
+
+            //Exporting to Excel.
+            string folderPath = "C:\\Foodies\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "Customers");
+
+                //Set the color of Header Row.
+                //A resembles First Column while C resembles Third column.
+                wb.Worksheet(1).Cells("A1:C1").Style.Fill.BackgroundColor = XLColor.DarkGreen;
+                for (int i = 1; i <= dt.Rows.Count; i++)
+                {
+                    //A resembles First Column while C resembles Third column.
+                    //Header row is at Position 1 and hence First row starts from Index 2.
+                    string cellRange = string.Format("A{0}:C{0}", i + 1);
+                    if (i % 2 != 0)
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.GreenYellow;
+                    }
+                    else
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.Yellow;
+                    }
+
+                }
+                //Adjust widths of Columns.
+                wb.Worksheet(1).Columns().AdjustToContents();
+
+                //Save the Excel file.
+                wb.SaveAs(folderPath + "Customer Records.xlsx");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Creating DataTable.
+            DataTable dt = new DataTable();
+
+            //Adding the Columns.
+            foreach (DataGridViewColumn column in dgv4.Columns)
+            {
+                dt.Columns.Add(column.HeaderText, column.ValueType);
+            }
+
+            //Adding the Rows.
+            foreach (DataGridViewRow row in dgv4.Rows)
+            {
+                dt.Rows.Add();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dt.Rows[dt.Rows.Count - 1][cell.ColumnIndex] = cell.Value.ToString();
+                }
+            }
+
+            //Exporting to Excel.
+            string folderPath = "C:\\Foodies\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "Customers");
+
+                //Set the color of Header Row.
+                //A resembles First Column while C resembles Third column.
+                wb.Worksheet(1).Cells("A1:C1").Style.Fill.BackgroundColor = XLColor.DarkGreen;
+                for (int i = 1; i <= dt.Rows.Count; i++)
+                {
+                    //A resembles First Column while C resembles Third column.
+                    //Header row is at Position 1 and hence First row starts from Index 2.
+                    string cellRange = string.Format("A{0}:C{0}", i + 1);
+                    if (i % 2 != 0)
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.GreenYellow;
+                    }
+                    else
+                    {
+                        wb.Worksheet(1).Cells(cellRange).Style.Fill.BackgroundColor = XLColor.Yellow;
+                    }
+
+                }
+                //Adjust widths of Columns.
+                wb.Worksheet(1).Columns().AdjustToContents();
+
+                //Save the Excel file.
+                wb.SaveAs(folderPath + "Order Records.xlsx");
+            }
+        }
+
+        private void ProductsToExcel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
