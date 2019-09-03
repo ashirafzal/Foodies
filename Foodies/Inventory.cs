@@ -14,7 +14,7 @@ namespace Foodies
     public partial class Inventory : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-        int TotalSales;
+        int TotalSales; DateTime date;
 
         public Inventory()
         {
@@ -169,6 +169,10 @@ namespace Foodies
             this.productsTableAdapter.Fill(this.productsDataSet.Products);
             // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
             this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            LoadChart2();
+            LoadChart3();
+            LoadChart4();
+            LoadChart5();
             dgv_2();
             dgv_3();
             dgv_4();
@@ -474,5 +478,106 @@ namespace Foodies
                 txtSearchStock.Text = row.Cells[1].Value.ToString();
             }
         }
+
+        public void LoadChart2()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            DataSet ds;
+
+            cmd = new SqlCommand("Select * from Bill where OrderDate = '" + DateTime.Now.Date + "' ", con);
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            DataView source = new DataView(ds.Tables[0]);
+            chart2.DataSource = source;
+            chart2.Series[0].XValueMember = "InvioceID";
+            chart2.Series[0].YValueMembers = "TotalQty";
+            chart2.Series[1].XValueMember = "InvioceID";
+            chart2.Series[1].YValueMembers = "TotalAmount";
+            this.chart2.Titles.Add("TOTAL SALE PER CUSTOMER DATA");
+            chart2.DataBind();
+        }
+
+        public void LoadChart4()
+        {
+            var firstdayofweek = DateTime.Now.AddDays(-6);
+            var currentdate = DateTime.Now.Date;
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            DataSet ds;
+
+            cmd = new SqlCommand("Select * from Bill where OrderDate between '" + firstdayofweek + "' and '" + currentdate + "' ", con);
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            DataView source = new DataView(ds.Tables[0]);
+            chart4.DataSource = source;
+            chart4.Series[0].XValueMember = "InvioceID";
+            chart4.Series[0].YValueMembers = "TotalQty";
+            chart4.Series[1].XValueMember = "InvioceID";
+            chart4.Series[1].YValueMembers = "TotalAmount";
+            this.chart4.Titles.Add("TOTAL SALE PER CUSTOMER DATA");
+            chart4.DataBind();
+        }
+
+        public void LoadChart3()
+        {
+            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+
+            var firstdayofmonth = DateTime.Now.AddDays(-29);
+            var currentdate = DateTime.Now.Date;
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            DataSet ds;
+
+            cmd = new SqlCommand("Select * from Bill where OrderDate between '" + firstdayofmonth + "' and '" + currentdate + "' ", con);
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            DataView source = new DataView(ds.Tables[0]);
+            chart3.DataSource = source;
+            chart3.Series[0].XValueMember = "InvioceID";
+            chart3.Series[0].YValueMembers = "TotalQty";
+            chart3.Series[1].XValueMember = "InvioceID";
+            chart3.Series[1].YValueMembers = "TotalAmount";
+            this.chart3.Titles.Add("TOTAL SALE PER CUSTOMER DATA");
+            chart3.DataBind();
+        }
+
+        public void LoadChart5()
+        {
+            var firstdayofyear = DateTime.Now.Year;
+            var currentdate = DateTime.Now.Date;
+
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            DataSet ds;
+
+            cmd = new SqlCommand("Select * from Bill where OrderDate between '" + firstdayofyear + "' and '" + currentdate + "' ", con);
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            DataView source = new DataView(ds.Tables[0]);
+            chart5.DataSource = source;
+            chart5.Series[0].XValueMember = "InvioceID";
+            chart5.Series[0].YValueMembers = "TotalQty";
+            chart5.Series[1].XValueMember = "InvioceID";
+            chart5.Series[1].YValueMembers = "TotalAmount";
+            this.chart5.Titles.Add("TOTAL SALE PER CUSTOMER DATA");
+            chart5.DataBind();
+        }
+
     }
 }

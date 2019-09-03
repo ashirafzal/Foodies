@@ -30,7 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Menu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,6 +95,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,7 +142,16 @@
             this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.Menu.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -168,6 +197,12 @@
             this.panel2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -247,7 +282,7 @@
             this.label_Report.Name = "label_Report";
             this.label_Report.Size = new System.Drawing.Size(258, 52);
             this.label_Report.TabIndex = 4;
-            this.label_Report.Text = "REPORT SUMMARY";
+            this.label_Report.Text = "SALES REPORT";
             this.label_Report.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Report.Click += new System.EventHandler(this.label_Report_Click);
             this.label_Report.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -837,6 +872,23 @@
             this.tabPage2.Text = "STOCKS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(1237, 54);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(74, 39);
+            this.button3.TabIndex = 14;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // dgv2
             // 
             this.dgv2.AllowUserToAddRows = false;
@@ -1013,9 +1065,9 @@
             this.dgv3.AllowUserToDeleteRows = false;
             this.dgv3.AllowUserToResizeColumns = false;
             this.dgv3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgv3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgv3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv3.AutoGenerateColumns = false;
             this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv3.BackgroundColor = System.Drawing.Color.White;
@@ -1274,6 +1326,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.panel6);
+            this.tabPage5.Controls.Add(this.chart1);
             this.tabPage5.Controls.Add(this.panel5);
             this.tabPage5.Location = new System.Drawing.Point(4, 30);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(0);
@@ -1303,9 +1357,9 @@
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(5, 12, 0, 0);
-            this.label4.Size = new System.Drawing.Size(102, 33);
+            this.label4.Size = new System.Drawing.Size(155, 33);
             this.label4.TabIndex = 2;
-            this.label4.Text = "REPORTS";
+            this.label4.Text = "SALES REPORT";
             // 
             // categoryTableAdapter
             // 
@@ -1319,22 +1373,173 @@
             // 
             this.stockTableAdapter.ClearBeforeFill = true;
             // 
-            // button3
+            // chart1
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1237, 54);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(74, 39);
-            this.button3.TabIndex = 14;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
+            this.chart1.Location = new System.Drawing.Point(-299, -262);
+            this.chart1.Name = "chart1";
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 10;
+            this.chart1.Text = "chart1";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.chart5);
+            this.panel6.Controls.Add(this.chart4);
+            this.panel6.Controls.Add(this.chart3);
+            this.panel6.Controls.Add(this.chart2);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Location = new System.Drawing.Point(4, 48);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1320, 577);
+            this.panel6.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(280, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "DAILY SALES";
+            // 
+            // chart2
+            // 
+            this.chart2.BorderlineColor = System.Drawing.Color.Black;
+            this.chart2.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
+            this.chart2.Location = new System.Drawing.Point(72, 43);
+            this.chart2.Name = "chart2";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.LegendText = "QUANTITY";
+            series7.Name = "TotalQty";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.LegendText = "AMOUNT";
+            series8.Name = "TotalAmount";
+            this.chart2.Series.Add(series7);
+            this.chart2.Series.Add(series8);
+            this.chart2.Size = new System.Drawing.Size(556, 218);
+            this.chart2.TabIndex = 9;
+            this.chart2.Text = "chart2";
+            // 
+            // chart3
+            // 
+            this.chart3.BorderlineColor = System.Drawing.Color.Black;
+            this.chart3.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea3.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart3.Legends.Add(legend3);
+            this.chart3.Location = new System.Drawing.Point(72, 308);
+            this.chart3.Name = "chart3";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.LegendText = "QUANTITY";
+            series5.Name = "TotalQty";
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.LegendText = "AMOUNT";
+            series6.Name = "TotalAmount";
+            this.chart3.Series.Add(series5);
+            this.chart3.Series.Add(series6);
+            this.chart3.Size = new System.Drawing.Size(556, 218);
+            this.chart3.TabIndex = 10;
+            this.chart3.Text = "chart3";
+            // 
+            // chart4
+            // 
+            this.chart4.BorderlineColor = System.Drawing.Color.Black;
+            this.chart4.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea2.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart4.Legends.Add(legend2);
+            this.chart4.Location = new System.Drawing.Point(670, 43);
+            this.chart4.Name = "chart4";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.LegendText = "QUANTITY";
+            series3.Name = "TotalQty";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.LegendText = "AMOUNT";
+            series4.Name = "TotalAmount";
+            this.chart4.Series.Add(series3);
+            this.chart4.Series.Add(series4);
+            this.chart4.Size = new System.Drawing.Size(556, 218);
+            this.chart4.TabIndex = 11;
+            this.chart4.Text = "chart4";
+            // 
+            // chart5
+            // 
+            this.chart5.BorderlineColor = System.Drawing.Color.Black;
+            this.chart5.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart5.Legends.Add(legend1);
+            this.chart5.Location = new System.Drawing.Point(664, 308);
+            this.chart5.Name = "chart5";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.LegendText = "QUANTITY";
+            series1.Name = "TotalQty";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.LegendText = "AMOUNT";
+            series2.Name = "TotalAmount";
+            this.chart5.Series.Add(series1);
+            this.chart5.Series.Add(series2);
+            this.chart5.Size = new System.Drawing.Size(556, 218);
+            this.chart5.TabIndex = 12;
+            this.chart5.Text = "chart5";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(873, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "WEEKLY SALES";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(266, 279);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 16);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "MONTHLY SALES";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(887, 279);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 16);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "ANNUAL SALES";
             // 
             // Inventory
             // 
@@ -1409,6 +1614,13 @@
             this.tabPage5.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1507,5 +1719,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stocktimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
