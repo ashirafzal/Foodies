@@ -78,5 +78,15 @@ namespace Foodies
         {
 
         }
+
+        private void password_Enter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

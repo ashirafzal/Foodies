@@ -194,12 +194,14 @@ namespace Foodies
                 da.Fill(dt);
                 dgv1.DataSource = dt;
                 categorytotal.Text = dgv1.Rows.Count.ToString();
+                categorytotal2.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
             }
             else
             {
                 categorytotal.Text = "0";
+                categorytotal2.Text = "0";
             }
 
 
@@ -215,12 +217,14 @@ namespace Foodies
                 da.Fill(dt);
                 dgv1.DataSource = dt;
                 fastfoodtotal.Text = dgv1.Rows.Count.ToString();
+                fastfoodtotal2.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
             }
             else
             {
                 fastfoodtotal.Text = "0";
+                fastfoodtotal2.Text = "0";
             }
 
             SqlDataAdapter adapter3 = new SqlDataAdapter("SELECT * from Bill", con);
@@ -241,12 +245,14 @@ namespace Foodies
                 }
 
                 total_sales.Text = TotalSales.ToString();
+                totalInvoices.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
             }
             else
             {
                 total_sales.Text = "0";
+                totalInvoices.Text = "0";
             }
 
             SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
@@ -269,12 +275,110 @@ namespace Foodies
                 StockTotal.Text = "0";
             }
 
+            SqlDataAdapter adapter5 = new SqlDataAdapter("SELECT * from Sales", con);
+            DataTable table5 = new DataTable();
+            adapter5.Fill(table5);
+            if (table5.Rows.Count > 0)
+            {
+                string query = "select * from Sales";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                totalSales2.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                totalSales2.Text = "0";
+            }
+
+            SqlDataAdapter adapter6 = new SqlDataAdapter("SELECT * from Orders", con);
+            DataTable table6 = new DataTable();
+            adapter6.Fill(table6);
+            if (table6.Rows.Count > 0)
+            {
+                string query = "select * from Orders";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                totalOrders.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                totalOrders.Text = "0";
+            }
+
+            SqlDataAdapter adapter7 = new SqlDataAdapter("SELECT * from users", con);
+            DataTable table7 = new DataTable();
+            adapter7.Fill(table7);
+            if (table7.Rows.Count > 0)
+            {
+                string query = "select * from users";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                totalAppUsers.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                totalAppUsers.Text = "0";
+            }
+
+            SqlDataAdapter adapter8 = new SqlDataAdapter("SELECT * from Customer", con);
+            DataTable table8 = new DataTable();
+            adapter8.Fill(table8);
+            if (table8.Rows.Count > 0)
+            {
+                string query = "select * from Customer";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                totalCustomers.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                totalCustomers.Text = "0";
+            }
+
+            SqlDataAdapter adapter9 = new SqlDataAdapter("SELECT * from DeletedBill", con);
+            DataTable table9 = new DataTable();
+            adapter9.Fill(table9);
+            if (table9.Rows.Count > 0)
+            {
+                string query = "select * from DeletedBill";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                totalDeletedInvoices.Text = dgv1.Rows.Count.ToString();
+                dgv1.Refresh();
+                dgv1.DataSource = null;
+            }
+            else
+            {
+                totalDeletedInvoices.Text = "0";
+            }
 
         }
 
         public void FoucsTextBoxes()
         {
-            txtSeacrhInventory.Focus();
             txtSearchCategory.Focus();
             txtSearchProduct.Focus();
             txtSearchStock.Focus();

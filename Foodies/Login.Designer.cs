@@ -81,6 +81,8 @@
             this.password.Size = new System.Drawing.Size(305, 36);
             this.password.TabIndex = 4;
             this.password.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.password.Enter += new System.EventHandler(this.password_Enter);
+            this.password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_KeyPress);
             // 
             // label2
             // 
