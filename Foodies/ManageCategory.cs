@@ -84,7 +84,7 @@ namespace Foodies
                 int a1 = Convert.ToInt16(CategoryID.Text);
                 string sqlQuery = "update Category set CategoryName = @CategoryName, CategoryImage = @images where CategoryId = '" + a1 + "'  ";
                 cmd = new SqlCommand(sqlQuery, con);
-                cmd.Parameters.Add(new SqlParameter("@CategoryName", CategoryName.Text));
+                cmd.Parameters.Add(new SqlParameter("@CategoryName", CategoryName.Text.ToLower()));
                 cmd.Parameters.Add(new SqlParameter("@images", images));
                 var N = cmd.ExecuteNonQuery();
                 cmd.ExecuteNonQuery();
@@ -116,7 +116,7 @@ namespace Foodies
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
             con.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("select * from Products where ProductCategory = '" + CategoryName.Text + "'  ", con);
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from Products where ProductCategory = '" + CategoryName.Text.ToLower() + "'  ", con);
             DataTable table = new DataTable();
             adapter.Fill(table);
 
@@ -126,12 +126,12 @@ namespace Foodies
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from Category where CategoryName ='" + CategoryName.Text + "'";
+                cmd.CommandText = "delete from Category where CategoryName ='" + CategoryName.Text.ToLower() + "'";
                 cmd.ExecuteNonQuery();
 
                 SqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "delete from Products where ProductCategory ='" + CategoryName.Text + "'";
+                cmd1.CommandText = "delete from Products where ProductCategory ='" + CategoryName.Text.ToLower() + "'";
                 cmd1.ExecuteNonQuery();
 
                 CategoryID.Text = string.Empty;

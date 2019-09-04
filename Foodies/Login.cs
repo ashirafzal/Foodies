@@ -51,7 +51,7 @@ namespace Foodies
                 }
                 else
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT username,password from Users where username = '" + username.Text + "' and password = '" + password.Text + "'", con);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT username,password from Users where username = '" + username.Text.ToLower() + "' and password = '" + password.Text.ToLower() + "'", con);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)

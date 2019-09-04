@@ -57,7 +57,7 @@ namespace Foodies
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into users (username,password,category) values ('" + Username.Text + "','" + Password.Text + "','" + category.Text + "')";
+                cmd.CommandText = "insert into users (username,password,category) values ('" + Username.Text.ToLower() + "','" + Password.Text.ToLower() + "','" + category.Text.ToLower() + "')";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Created Successfully");
                 con.Close();
@@ -99,7 +99,7 @@ namespace Foodies
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update users set username = '" + Username.Text + "' , password = '" + Password.Text + "', category = '" + category.Text + "' where Id = '" + UserID + "'  ";
+                cmd.CommandText = "update users set username = '" + Username.Text.ToLower() + "' , password = '" + Password.Text.ToLower() + "', category = '" + category.Text.ToLower() + "' where Id = '" + UserID + "'  ";
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("User updated successfully");

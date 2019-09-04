@@ -87,8 +87,8 @@ namespace Foodies
                 int b = Convert.ToInt32(ProductPrice.Text);
                 string sqlQuery = "update Products set ProductCategory = @ProductCategory , ProductName = @ProductName , ProductPrice =  @b , ProductImage = @images where ProductId = '" + a1 + "'  ";
                 cmd = new SqlCommand(sqlQuery, con);
-                cmd.Parameters.Add(new SqlParameter("@ProductCategory", ProductCategory.Text));
-                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName.Text));
+                cmd.Parameters.Add(new SqlParameter("@ProductCategory", ProductCategory.Text.ToLower()));
+                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName.Text.ToLower()));
                 cmd.Parameters.Add(new SqlParameter("@b", ProductPrice.Text));
                 cmd.Parameters.Add(new SqlParameter("@images", images));
                 var N = cmd.ExecuteNonQuery();

@@ -86,7 +86,7 @@ namespace Foodies
                     string companyname = "local company";
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text + "','" + StockWeight.Text + "','" + companyname.ToString() + "','" + StockCategory.Text + "','" + DateTime.Now.Date + "','" + DateTime.Now.ToShortTimeString() + "')";
+                    cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text.ToLower() + "','" + StockWeight.Text + "','" + companyname.ToString().ToLower() + "','" + StockCategory.Text.ToLower() + "','" + DateTime.Now.Date + "','" + DateTime.Now.ToShortTimeString() + "')";
                     cmd.ExecuteNonQuery();
                     StockCompany.Text = string.Empty;
                     StockCategory.Text = string.Empty;
@@ -100,7 +100,7 @@ namespace Foodies
                 {
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text + "','" + StockWeight.Text + "','" + StockCompany.Text + "','" + StockCategory.Text + "','" + DateTime.Now.Date + "','" + DateTime.Now.ToShortTimeString() + "')";
+                    cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text.ToLower() + "','" + StockWeight.Text + "','" + StockCompany.Text.ToLower() + "','" + StockCategory.Text.ToLower() + "','" + DateTime.Now.Date + "','" + DateTime.Now.ToShortTimeString() + "')";
                     cmd.ExecuteNonQuery();
                     StockCompany.Text = string.Empty;
                     StockCategory.Text = string.Empty;
@@ -147,7 +147,7 @@ namespace Foodies
                 {
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update Stock set stockname = '" + StockName.Text + "' , stockweigth = '" + StockWeight.Text + "', stockcompany = '" + StockCompany.Text + "', stockcategory = '" + StockCategory .Text + "', stockdate = '" + DateTime.Now.Date + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockid = '" + StockID + "'  ";
+                    cmd.CommandText = "update Stock set stockname = '" + StockName.Text.ToLower() + "' , stockweigth = '" + StockWeight.Text + "', stockcompany = '" + StockCompany.Text.ToLower() + "', stockcategory = '" + StockCategory .Text.ToLower() + "', stockdate = '" + DateTime.Now.Date + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockid = '" + StockID + "'  ";
                     cmd.ExecuteNonQuery();
                     StockCompany.Text = string.Empty;
                     StockCategory.Text = string.Empty;

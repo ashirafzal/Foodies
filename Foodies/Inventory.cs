@@ -435,7 +435,7 @@ namespace Foodies
             {
                 SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
                 con.Open();
-                string query = "select * from Products where ProductName = '" + txtSearchProduct.Text + "' ";
+                string query = "select * from Products where ProductName = '" + txtSearchProduct.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -457,7 +457,7 @@ namespace Foodies
             {
                 SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
                 con.Open();
-                string query = "select * from Category where CategoryName = '" + txtSearchCategory.Text + "' ";
+                string query = "select * from Category where CategoryName = '" + txtSearchCategory.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -547,7 +547,7 @@ namespace Foodies
             {
                 SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
                 con.Open();
-                string query = "select * from Stock where stockname = '" + txtSearchStock.Text + "' ";
+                string query = "select * from Stock where stockname = '" + txtSearchStock.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

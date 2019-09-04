@@ -46,7 +46,7 @@ namespace Foodies
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                string sqlQuery = "insert into Category(CategoryName,CategoryImage) values ('" + txtCategory.Text + "',@images)";
+                string sqlQuery = "insert into Category(CategoryName,CategoryImage) values ('" + txtCategory.Text.ToLower()  + "',@images)";
                 cmd = new SqlCommand(sqlQuery, con);
                 cmd.Parameters.Add(new SqlParameter("@images", images));
                 cmd.ExecuteNonQuery();
