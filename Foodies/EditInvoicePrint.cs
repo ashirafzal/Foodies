@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,14 +18,9 @@ namespace Foodies
             InitializeComponent();
         }
 
-        private void EditInvoicePrint_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public void LoadGridView()
         {
-
+            
         }
 
         public void PrintEditedInvoices()
@@ -32,5 +28,10 @@ namespace Foodies
 
         }
 
+        private void EditInvoicePrint_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'invoiceDataSet.Bill' table. You can move, or remove it, as needed.
+            this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
+        }
     }
 }
