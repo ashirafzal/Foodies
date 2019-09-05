@@ -260,6 +260,10 @@ namespace Foodies
                 cmd6.ExecuteNonQuery();
             }
 
+            SqlCommand cmd7;
+            cmd7 = new SqlCommand("insert into EditedBill values ('" + invoiceid2 + "')", con);
+            cmd7.ExecuteNonQuery();
+
             con.Close();
             MessageBox.Show("Invoice bill updated");
 
