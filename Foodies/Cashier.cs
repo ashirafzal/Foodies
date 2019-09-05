@@ -265,54 +265,15 @@ namespace Foodies
                 DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
                 string maincategory = row.Cells[1].Value.ToString();
 
-                if (maincategory == "pizza")
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                    con.Open();
-                    string query = "select * from Products where ProductCategory = 'pizza' ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dgv2.DataSource = dt;
-                    con.Close();
-                }
-                else if (maincategory == "burger")
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                    con.Open();
-                    string query = "select * from Products where ProductCategory = 'burger' ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dgv2.DataSource = dt;
-                    con.Close();
-                }
-                else if (maincategory == "Broast")
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                    con.Open();
-                    string query = "select * from Products where ProductCategory = 'Broast' ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dgv2.DataSource = dt;
-                    con.Close();
-                }
-                else if (maincategory == "fries")
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-                    con.Open();
-                    string query = "select * from Products where ProductCategory = 'fries' ";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dgv2.DataSource = dt;
-                    con.Close();
-                }
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                string query = "select * from Products where ProductCategory = '"+ maincategory +"' ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv2.DataSource = dt;
+                con.Close();
             }
 
             this.dgv2.Columns[0].Visible = false;

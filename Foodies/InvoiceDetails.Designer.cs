@@ -161,6 +161,7 @@
             this.totalAmountWithGSTDataGridViewTextBoxColumn,
             this.discountInPercentDataGridViewTextBoxColumn});
             this.dgv1.DataSource = this.billBindingSource;
+            this.dgv1.GridColor = System.Drawing.Color.DarkGray;
             this.dgv1.Location = new System.Drawing.Point(11, 78);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
