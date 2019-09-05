@@ -99,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ClassInvoiceDetails.cs" />
     <Compile Include="CutomerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
