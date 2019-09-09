@@ -106,6 +106,18 @@
       <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="ClassInvoiceDetails.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Current_Invoice_Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Current_Invoice_Print.Designer.cs">
+      <DependentUpon>Current_Invoice_Print.cs</DependentUpon>
+    </Compile>
     <Compile Include="CutomerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,11 +140,16 @@
     <Compile Include="Edit Inovice.Designer.cs">
       <DependentUpon>Edit Inovice.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditInvoicePrint.cs">
+    <Compile Include="EditedBillDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Invoice_Print.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditInvoicePrint.Designer.cs">
-      <DependentUpon>EditInvoicePrint.cs</DependentUpon>
+    <Compile Include="Edit_Invoice_Print.Designer.cs">
+      <DependentUpon>Edit_Invoice_Print.cs</DependentUpon>
     </Compile>
     <Compile Include="ExportToExcel.cs">
       <SubType>Form</SubType>
@@ -269,14 +286,21 @@
     <EmbeddedResource Include="CancelInvioce.resx">
       <DependentUpon>CancelInvioce.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Current_Invoice_Print.resx">
+      <DependentUpon>Current_Invoice_Print.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeletedInvoice.resx">
       <DependentUpon>DeletedInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit Inovice.resx">
       <DependentUpon>Edit Inovice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditInvoicePrint.resx">
-      <DependentUpon>EditInvoicePrint.cs</DependentUpon>
+    <EmbeddedResource Include="Edit_Invoice_Print.resx">
+      <DependentUpon>Edit_Invoice_Print.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExportToExcel.resx">
       <DependentUpon>ExportToExcel.cs</DependentUpon>
@@ -372,6 +396,17 @@
     </None>
     <None Include="DeletedInvoiceDataSet.xss">
       <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EditedBillDataSet.xsc">
+      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EditedBillDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EditedBillDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EditedBillDataSet.xss">
+      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
     </None>
     <None Include="InvoiceDataSet.xsc">
       <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
@@ -518,6 +553,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -265,8 +266,9 @@ namespace Foodies
             cmd7.ExecuteNonQuery();
 
             con.Close();
-            MessageBox.Show("Invoice bill updated");
 
+            Edit_Invoice_Print edit_Invoice_Print = new Edit_Invoice_Print();
+            edit_Invoice_Print.Show();
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)

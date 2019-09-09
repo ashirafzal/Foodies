@@ -612,6 +612,9 @@ namespace Foodies
                         con.Close();
                     }
 
+                    Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
+                    current_Invoice.Show();
+
                 }
                 else
                 {
@@ -705,6 +708,8 @@ namespace Foodies
                         tran.Commit();
                         con.Close();
                     }
+                    Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
+                    current_Invoice.Show();
                 }
             }
             catch (Exception)
