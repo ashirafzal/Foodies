@@ -391,7 +391,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 812F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1600, 813);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -1214,7 +1214,9 @@
             // 
             // DVPrintDocument
             // 
+            this.DVPrintDocument.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.DVPrintDocument_BeginPrint);
             this.DVPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.DVPrintDocument_PrintPage);
+            this.DVPrintDocument.QueryPageSettings += new System.Drawing.Printing.QueryPageSettingsEventHandler(this.DVPrintDocument_QueryPageSettings);
             // 
             // Cashier
             // 
