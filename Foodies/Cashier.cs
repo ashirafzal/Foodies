@@ -730,6 +730,7 @@ namespace Foodies
 
         private void DVPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+           
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
