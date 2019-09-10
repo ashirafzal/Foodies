@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Foodies
@@ -122,44 +116,8 @@ namespace Foodies
             CrystalReport1 bp = new CrystalReport1();
             bp.SetDataSource(ds);
             crystalReportViewer1.ReportSource = bp;
-            crystalReportViewer1.PrintReport();
-            this.Hide();
-
+            //crystalReportViewer1.PrintReport();
         }
 
-        //public void FileandFolder()
-        //{
-        //    if (!Directory.Exists(DirectoryPath))
-        //    {
-        //        Directory.CreateDirectory("C://FoodiesBill");
-
-        //        if (File.Exists(FilePath))
-        //        {
-        //            // Do nothing file already exist
-        //        }
-        //        else
-        //        {
-        //            using (var myFile = File.Create(FilePath))
-        //            {
-        //                myFile.Close();
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (File.Exists(FilePath))
-        //        {
-        //            // Do nothing file already exist
-        //        }
-        //        else
-        //        {
-        //            using (var myFile = File.Create(FilePath))
-        //            {
-        //                myFile.Close();
-        //            }
-        //        }
-        //    }
-        //    //File.Create("C://FoodiesBill/Bill.xml");
-        //}
     }
 }
