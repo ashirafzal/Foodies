@@ -734,7 +734,9 @@ namespace Foodies
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
-            SqlCommand cmd10 = new SqlCommand("select top 1 InvioceID from Bill order by InvioceID DESC", con, tran);
+            SqlCommand cmd10 = new SqlCommand("select top 1 InvioceID,Totalqty," +
+                "TotalAmount,TotalAmountWithGST,ActualAmount," +
+                "DiscountInPercent from Bill order by InvioceID DESC", con, tran);
             cmd10.ExecuteNonQuery();
 
             using (SqlDataReader dr = cmd10.ExecuteReader())
@@ -744,8 +746,8 @@ namespace Foodies
                     INVOICEID = Convert.ToInt32(dr["InvioceID"]);
                     Total_Qty = Convert.ToString(dr["Totalqty"]);
                     Total_Amount = Convert.ToString(dr["TotalAmount"]);
-                    _TotalWithGST = Convert.ToString(dr["ActualAmount"]);
-                    Actual_Amount = Convert.ToString(dr["InvioceID"]);
+                    _TotalWithGST = Convert.ToString(dr["TotalAmountWithGST"]);
+                    Actual_Amount = Convert.ToString(dr["ActualAmount"]);
                     _Discount = Convert.ToString(dr["DiscountInPercent"]);
                 }
             }
@@ -787,11 +789,15 @@ namespace Foodies
             }
 
             e.Graphics.DrawString("Actual Amount", new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(80, position + 40));
-            e.Graphics.DrawString(ActualAmount.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 40));
+            e.Graphics.DrawString(Actual_Amount.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 40));
             e.Graphics.DrawString("Total Quantity", new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(80, position + 60));
+            e.Graphics.DrawString(Total_Qty.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 60));
             e.Graphics.DrawString("Total Amount", new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(80, position + 80));
+            e.Graphics.DrawString(Total_Amount.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 80));
             e.Graphics.DrawString("Total Amount(GST included)", new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(80, position + 100));
+            e.Graphics.DrawString(_TotalWithGST.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 100));
             e.Graphics.DrawString("Discount", new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(80, position + 120));
+            e.Graphics.DrawString(_Discount.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Blue, new Point(520, position + 120));
 
         }
 
