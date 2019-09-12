@@ -31,7 +31,7 @@ namespace Foodies
 
         public void dgv_1()
         {
-            dgv1.RowTemplate.Height = 32;
+            dgv1.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -64,11 +64,10 @@ namespace Foodies
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-            con.Open();
-
             try
             {
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
 
                 if (StockName.Text == string.Empty)
                 {
@@ -90,7 +89,7 @@ namespace Foodies
                     if (table.Rows.Count > 0)
                     {
                         DialogResult result = MessageBox.Show("Stock already present do you want to add more?\nPress Yes for adding more stock\nPress No to create new stock record." +
-                            "By creating a new record your previous stock data will be deleted and new record will be created.", "Stock Already Exist",MessageBoxButtons.YesNo);
+                            "By creating a new record your previous stock data will be deleted and new record will be created.", "Stock Already Exist", MessageBoxButtons.YesNo);
 
                         if (result == DialogResult.Yes)
                         {
@@ -103,27 +102,26 @@ namespace Foodies
                             {
                                 while (dr.Read())
                                 {
-                                   stockname = Convert.ToString(dr["stockname"]);
-                                   stockweigth = Convert.ToInt32(dr["stockweigth"]);
-                                   stockcategory = Convert.ToString(dr["stockcategory"]);
-                                   stockcompany = Convert.ToString(dr["stockcompany"]);
+                                    stockname = Convert.ToString(dr["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr["stockweigth"]);
+                                    stockcategory = Convert.ToString(dr["stockcategory"]);
+                                    stockcompany = Convert.ToString(dr["stockcompany"]);
 
-                                   stockweigth = stockweigth + Convert.ToInt32(StockWeight.Text);
-
-                                    SqlCommand cmd2 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + stockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + DateTime.Now.ToShortDateString() + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockname = '" + StockName.Text + "' and stockcategory = '" + StockCategory.Text + "'  ", con, tran);
-                                    cmd2.ExecuteNonQuery();
-
-                                    StockCompany.Text = string.Empty;
-                                    StockCategory.Text = string.Empty;
-                                    StockName.Text = string.Empty;
-                                    StockWeight.Text = string.Empty;
-                                    // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                                    this.stockTableAdapter.Fill(this.stockDataSet.Stock);
-                                    MessageBox.Show("Stock updated successfully");
-
+                                    stockweigth = stockweigth + Convert.ToInt32(StockWeight.Text);
                                 }
                             }
+
+                            SqlCommand cmd2 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + stockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + DateTime.Now.ToShortDateString() + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockname = '" + StockName.Text + "' and stockcategory = '" + StockCategory.Text + "'  ", con, tran);
+                            cmd2.ExecuteNonQuery();
+
+                            StockCompany.Text = string.Empty;
+                            StockCategory.Text = string.Empty;
+                            StockName.Text = string.Empty;
+                            StockWeight.Text = string.Empty;
+                            MessageBox.Show("Stock updated successfully");
                             tran.Commit();
+                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
                         }
                         else if (result == DialogResult.No)
                         {
@@ -163,19 +161,80 @@ namespace Foodies
                 }
                 else
                 {
-                    //SqlCommand cmd = con.CreateCommand();
-                    //cmd.CommandType = CommandType.Text;
-                    //cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text.ToLower() + "','" + StockWeight.Text + "','" + StockCompany.Text.ToLower() + "','" + StockCategory.Text.ToLower() + "','" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortTimeString() + "')";
-                    //cmd.ExecuteNonQuery();
-                    //StockCompany.Text = string.Empty;
-                    //StockCategory.Text = string.Empty;
-                    //StockName.Text = string.Empty;
-                    //StockWeight.Text = string.Empty;
-                    //// TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                    //this.stockTableAdapter.Fill(this.stockDataSet.Stock);
-                    //MessageBox.Show("Stock Created Successfully");
-                }
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT stockname,stockcategory from Stock where stockname = '" + StockName.Text.ToLower() + "' and stockcategory = '" + StockCategory.Text.ToLower() + "' ", con);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
+                    {
+                        DialogResult result = MessageBox.Show("Stock already present do you want to add more?\nPress Yes for adding more stock\nPress No to create new stock record." +
+                            "By creating a new record your previous stock data will be deleted and new record will be created.", "Stock Already Exist", MessageBoxButtons.YesNo);
 
+                        if (result == DialogResult.Yes)
+                        {
+                            SqlTransaction tran = con.BeginTransaction();
+
+                            SqlCommand cmd1 = new SqlCommand("select * from Stock where stockname = '" + StockName.Text.ToLower() + "' and stockcategory = '" + StockCategory.Text.ToLower() + "' ", con, tran);
+                            cmd1.ExecuteNonQuery();
+
+                            using (SqlDataReader dr = cmd1.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    stockname = Convert.ToString(dr["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr["stockweigth"]);
+                                    stockcategory = Convert.ToString(dr["stockcategory"]);
+                                    stockcompany = Convert.ToString(dr["stockcompany"]);
+
+                                    stockweigth = stockweigth + Convert.ToInt32(StockWeight.Text);
+                                }
+                            }
+
+                            SqlCommand cmd2 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + stockweigth + "', stockcompany = '" + StockCompany.Text + "', stockcategory = '" + stockcategory + "', stockdate = '" + DateTime.Now.ToShortDateString() + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockname = '" + StockName.Text + "' and stockcategory = '" + StockCategory.Text + "'  ", con, tran);
+                            cmd2.ExecuteNonQuery();
+
+                            StockCompany.Text = string.Empty;
+                            StockCategory.Text = string.Empty;
+                            StockName.Text = string.Empty;
+                            StockWeight.Text = string.Empty;
+                            MessageBox.Show("Stock updated successfully");
+                            tran.Commit();
+                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                        }
+                        else if (result == DialogResult.No)
+                        {
+                            SqlCommand cmd = con.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "Delete from Stock where stockname = '" + StockName.Text.ToLower() + "' and stockcategory = '" + StockCategory.Text.ToLower() + "' ";
+                            cmd.ExecuteNonQuery();
+                            SqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text.ToLower() + "','" + StockWeight.Text + "','" + StockCompany.Text.ToLower() + "','" + StockCategory.Text.ToLower() + "','" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortTimeString() + "')";
+                            cmd2.ExecuteNonQuery();
+                            StockCompany.Text = string.Empty;
+                            StockCategory.Text = string.Empty;
+                            StockName.Text = string.Empty;
+                            StockWeight.Text = string.Empty;
+                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                            MessageBox.Show("Stock created successfully");
+                        }
+                    }
+                    else if (table.Rows.Count == 0)
+                    {
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "insert into Stock (stockname,stockweigth,stockcompany,stockcategory,stockdate,stocktime) values ('" + StockName.Text.ToLower() + "','" + StockWeight.Text + "','" + StockCompany.Text.ToLower() + "','" + StockCategory.Text.ToLower() + "','" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortTimeString() + "')";
+                        cmd.ExecuteNonQuery();
+                        StockCompany.Text = string.Empty;
+                        StockCategory.Text = string.Empty;
+                        StockName.Text = string.Empty;
+                        StockWeight.Text = string.Empty;
+                        // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                        this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                        MessageBox.Show("Stock Created Successfully");
+                    }
+                }
                 con.Close();
             }
             catch (Exception)
