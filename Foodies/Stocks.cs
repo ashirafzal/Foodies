@@ -14,7 +14,8 @@ namespace Foodies
     public partial class Stocks : Form
     {
 
-        int StockID;
+        int StockID;int stockweigth;
+        string stockname, stockcompany, stockcategory;
 
         public Stocks()
         {
@@ -90,6 +91,7 @@ namespace Foodies
                     {
                         DialogResult result = MessageBox.Show("Stock already present do you want to add more?\nPress Yes for adding more stock\nPress No to create new stock record." +
                             "By creating a new record your previous stock data will be deleted and new record will be created.", "Stock Already Exist",MessageBoxButtons.YesNo);
+
                         if (result == DialogResult.Yes)
                         {
                             SqlTransaction tran = con.BeginTransaction();
@@ -101,7 +103,24 @@ namespace Foodies
                             {
                                 while (dr.Read())
                                 {
-                                    
+                                   stockname = Convert.ToString(dr["stockname"]);
+                                   stockweigth = Convert.ToInt32(dr["stockweigth"]);
+                                   stockcategory = Convert.ToString(dr["stockcategory"]);
+                                   stockcompany = Convert.ToString(dr["stockcompany"]);
+
+                                   stockweigth = stockweigth + Convert.ToInt32(StockWeight.Text);
+
+                                    SqlCommand cmd2 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + stockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + DateTime.Now.ToShortDateString() + "', stocktime = '" + DateTime.Now.ToShortTimeString() + "' where stockname = '" + StockName.Text + "' and stockcategory = '" + StockCategory.Text + "'  ", con, tran);
+                                    cmd2.ExecuteNonQuery();
+
+                                    StockCompany.Text = string.Empty;
+                                    StockCategory.Text = string.Empty;
+                                    StockName.Text = string.Empty;
+                                    StockWeight.Text = string.Empty;
+                                    // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
+                                    this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                                    MessageBox.Show("Stock updated successfully");
+
                                 }
                             }
                             tran.Commit();
@@ -123,7 +142,7 @@ namespace Foodies
                             StockWeight.Text = string.Empty;
                             // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
                             this.stockTableAdapter.Fill(this.stockDataSet.Stock);
-                            MessageBox.Show("Stock Created Successfully");
+                            MessageBox.Show("Stock created successfully");
                         }
                     }
                     else if (table.Rows.Count == 0)
@@ -139,7 +158,7 @@ namespace Foodies
                         StockWeight.Text = string.Empty;
                         // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
                         this.stockTableAdapter.Fill(this.stockDataSet.Stock);
-                        MessageBox.Show("Stock Created Successfully");
+                        MessageBox.Show("Stock created successfully");
                     }
                 }
                 else
