@@ -20,6 +20,9 @@ namespace Foodies
         string CUSTID, CUSTNAME, CUSTCONTACT, ORDERID;
         decimal discountpercentageForAmount;
 
+        // For Bill variables
+        string INVOICEID_1, INVOICEID_2,Total_Qty, Actual_Amount, Total_Amount, _TotalWithGST, _Discount;
+
         public Edit_Inovice()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace Foodies
             ActualAmount.Text = "0";
             TotalQty.Text = "0";
             TotalAmount.Text = "0";
+            txtDiscount.Visible = false;
         }
 
         public void dgv_1()
@@ -103,6 +107,7 @@ namespace Foodies
                 actualAmount += Convert.ToDouble(dgv1.Rows[i].Cells[7].Value);
             }
 
+            txtDiscount.Visible = true;
             ActualAmount.Text = actualAmount.ToString();
             TotalQty.Text = totalQuantity.ToString();
             TotalAmount.Text = actualAmount.ToString();
@@ -131,7 +136,94 @@ namespace Foodies
 
         private void DVPrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            con.Open();
+            SqlTransaction tran = con.BeginTransaction();
 
+            SqlCommand cmd1 = new SqlCommand("select top 1 InvioceID2 from EditedBill order by InvioceID2 DESC", con, tran);
+            cmd1.ExecuteNonQuery();
+
+            using (SqlDataReader dr = cmd1.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    //INVOICEID_1 = Convert.ToString(dr["InvioceID2"]);
+                    INVOICEID_1 = Convert.ToString(dgv1.Rows[0].Cells[0].Value);
+                    MessageBox.Show(INVOICEID_1.ToString());
+
+                    SqlCommand cmd2 = new SqlCommand("select InvioceID,Totalqty," +
+                "TotalAmount,TotalAmountWithGST,ActualAmount," +
+                "DiscountInPercent from Bill where InvioceID = '" + INVOICEID_1 + "' ", con, tran);
+                    cmd2.ExecuteNonQuery();
+
+                    using (SqlDataReader dr2 = cmd2.ExecuteReader())
+                    {
+                        while (dr2.Read())
+                        {
+                            INVOICEID_2 = Convert.ToString(dr2["InvioceID"]);
+                            Total_Qty = Convert.ToString(dr2["Totalqty"]);
+                            Total_Amount = Convert.ToString(dr2["TotalAmount"]);
+                            _TotalWithGST = Convert.ToString(dr2["TotalAmountWithGST"]);
+                            Actual_Amount = Convert.ToString(dr2["ActualAmount"]);
+                            _Discount = Convert.ToString(dr2["DiscountInPercent"]);
+                        }
+                    }
+                }
+            }
+
+            tran.Commit();
+            con.Close();
+
+            e.Graphics.DrawString("FOODIES FASTFOOD", new Font("Arial", 15, FontStyle.Bold), Brushes.Blue, new Point(100, 30));
+            e.Graphics.DrawString("GST# 222-333-123456", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(130, 70));
+            e.Graphics.DrawString("Invoice ID :", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, 100));
+            e.Graphics.DrawString(INVOICEID_2.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(90, 100));
+            e.Graphics.DrawString("Transaction Date :", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, 120));
+            e.Graphics.DrawString(DateTime.Now.Date.ToShortDateString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(130, 120));
+            e.Graphics.DrawString("Transaction Time :", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, 140));
+            e.Graphics.DrawString(DateTime.Now.ToShortTimeString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(130, 140));
+            //
+            e.Graphics.DrawString("------------------------------------------------------------------------------",
+               new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, 160));
+            e.Graphics.DrawString("SALES ITEMS", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(150, 180));
+            e.Graphics.DrawString("------------------------------------------------------------------------------",
+            new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, 200));
+            //
+            e.Graphics.DrawString("PRODUCT NAME", new Font("Arial", 9, FontStyle.Regular), Brushes.Blue, new Point(10, 240));
+            e.Graphics.DrawString("QUANTITY", new Font("Arial", 9, FontStyle.Regular), Brushes.Blue, new Point(160, 240));
+            e.Graphics.DrawString("RATE", new Font("Arial", 9, FontStyle.Regular), Brushes.Blue, new Point(240, 240));
+            e.Graphics.DrawString("AMOUNT", new Font("Arial", 9, FontStyle.Regular), Brushes.Blue, new Point(310, 240));
+
+            int position = 260;
+
+            for (int i = 0; i < dgv1.Rows.Count; i++)
+            {
+                position = position + 20;
+                e.Graphics.DrawString(Convert.ToString(dgv1.Rows[i].Cells[4].Value), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position));
+                e.Graphics.DrawString(Convert.ToString(dgv1.Rows[i].Cells[5].Value) + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(170, position));
+                e.Graphics.DrawString(Convert.ToString(dgv1.Rows[i].Cells[6].Value) + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(240, position));
+                e.Graphics.DrawString(Convert.ToString(dgv1.Rows[i].Cells[7].Value) + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position));
+            }
+            //
+            e.Graphics.DrawString("------------------------------------------------------------------------------",
+           new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 20));
+            //
+            e.Graphics.DrawString("Actual Amount", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 40));
+            e.Graphics.DrawString(Actual_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position + 40));
+            e.Graphics.DrawString("Total Quantity", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 60));
+            e.Graphics.DrawString(Total_Qty.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position + 60));
+            e.Graphics.DrawString("Total Amount", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 80));
+            e.Graphics.DrawString(Total_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position + 80));
+            e.Graphics.DrawString("Total Amount(GST Included)", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 100));
+            e.Graphics.DrawString(_TotalWithGST.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position + 100));
+            e.Graphics.DrawString("Discount", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 120));
+            e.Graphics.DrawString(_Discount.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(310, position + 120));
+            //
+            e.Graphics.DrawString("------------------------------------------------------------------------------",
+           new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(10, position + 140));
+            //
+            e.Graphics.DrawString("FOR ANY QUERIES AND COMPLAINS", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(80, position + 160));
+            e.Graphics.DrawString(" SMS / WHATSAPP : 03423351437", new Font("Arial", 10, FontStyle.Regular), Brushes.Blue, new Point(90, position + 180));
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -156,6 +248,7 @@ namespace Foodies
             TotalAmount.Text = "0";
             txtDiscount.Text = string.Empty;
             txtDiscount.Visible = true;
+            InvoiceNumber.Text = string.Empty;
             InvoiceNumber.Focus();
         }
 
