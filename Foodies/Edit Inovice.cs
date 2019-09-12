@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -128,6 +129,11 @@ namespace Foodies
             }
         }
 
+        private void DVPrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+        }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             dgv1.Refresh();
@@ -214,61 +220,198 @@ namespace Foodies
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
-            int invoiceid3 = invoiceid2;
-            string itemname;
-            string itemqty;
-            string itemprice;
-            double itempricewithGST;
-            double GST;
-            double GStunit = 0.17;
-            string billtotal = TotalAmount.Text;
-            string totalqty = TotalQty.Text;
-            double totalGSTcalcualtion = Convert.ToDouble(TotalAmount.Text) * GStunit;
-            double totalAmountwithGST = Convert.ToDouble(TotalAmount.Text) + totalGSTcalcualtion;
-            double discount = Convert.ToDouble(discountpercentageForAmount);
-            double singleitemcollectiveamount;
+            
+            DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
+            DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-            con.Open();
-
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from Bill where InvioceID ='" + invoiceid3 + "'";
-            cmd.ExecuteNonQuery();
-
-            string Custname = "Valuable Customer";
-            string CustContact = "***********";
-            string OrderType = "Food Item";
-            string OrderCategory = "Food";
-
-            SqlCommand cmd4;
-            cmd4 = new SqlCommand("update Customer set CustName =  '" + Custname + "', Contact = '" + CustContact + "', OrderTime = '" + DateTime.Now.ToShortTimeString() + "', OrderDate = '" + DateTime.Now.Date + "' where CustID = '" + CUSTID + "' ", con);
-            cmd4.ExecuteNonQuery();
-            SqlCommand cmd5;
-            cmd5 = new SqlCommand("update Orders set CustID = '" + CUSTID + "', OrderType = '" + OrderType.ToString() + "', OrderCategory = '" + OrderCategory.ToString() + "', Ordertime = '" + DateTime.Now.ToShortTimeString() + "', OrderDate = '" + DateTime.Now.Date + "' ", con);
-            cmd5.ExecuteNonQuery();
-
-            SqlCommand cmd6;
-            for (int i = 0; i < dgv1.Rows.Count; i++)
+            if (dgv1.Rows.Count <= 2)
             {
-                itemname = Convert.ToString(dgv1.Rows[i].Cells[4].Value);
-                itemqty = Convert.ToString(dgv1.Rows[i].Cells[5].Value);
-                itemprice = Convert.ToString(dgv1.Rows[i].Cells[6].Value);
-                singleitemcollectiveamount = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value);
-                GST = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value) * GStunit;
-                itempricewithGST = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value) + GST;
-                cmd6 = new SqlCommand("insert into Bill values ('" + invoiceid2 + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "','" + totalqty.ToString() + "','" + ActualAmount.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con);
-                cmd6.ExecuteNonQuery();
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 4)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 550);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 6)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 600);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 8)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 650);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 10)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 700);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 12)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 750);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 14)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 800);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 16)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 850);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 18)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 900);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 20)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 950);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 22)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1000);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 24)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1050);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 26)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1100);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 28)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1150);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 30)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1200);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 32)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1250);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 34)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1300);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 36)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1350);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 38)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1400);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1450);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
 
-            SqlCommand cmd7;
-            cmd7 = new SqlCommand("insert into EditedBill values ('" + invoiceid2 + "')", con);
-            cmd7.ExecuteNonQuery();
+            //
+            if (dgv1.Rows.Count == 0)
+            {
+                const string message =
+                    "Transaction can't be completed because there is no item selected for sale.";
+                const string caption = "Transaction Error";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Stop);
+            }
+            else if (dgv1.Rows.Count > 40)
+            {
+                const string message =
+                    "Transaction can't be completed on more than 40 items.\n" +
+                    "Please select less than 40 items for transaction.";
+                const string caption = "Transaction Limit";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                int invoiceid3 = invoiceid2;
+                string itemname;
+                string itemqty;
+                string itemprice;
+                double itempricewithGST;
+                double GST;
+                double GStunit = 0.17;
+                string billtotal = TotalAmount.Text;
+                string totalqty = TotalQty.Text;
+                double totalGSTcalcualtion = Convert.ToDouble(TotalAmount.Text) * GStunit;
+                double totalAmountwithGST = Convert.ToDouble(TotalAmount.Text) + totalGSTcalcualtion;
+                double discount = Convert.ToDouble(discountpercentageForAmount);
+                double singleitemcollectiveamount;
 
-            con.Close();
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
 
-            Edit_Invoice_Print edit_Invoice_Print = new Edit_Invoice_Print();
-            edit_Invoice_Print.Show();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from Bill where InvioceID ='" + invoiceid3 + "'";
+                cmd.ExecuteNonQuery();
+
+                string Custname = "Valuable Customer";
+                string CustContact = "***********";
+                string OrderType = "Food Item";
+                string OrderCategory = "Food";
+
+                SqlCommand cmd4;
+                cmd4 = new SqlCommand("update Customer set CustName =  '" + Custname + "', Contact = '" + CustContact + "', OrderTime = '" + DateTime.Now.ToShortTimeString() + "', OrderDate = '" + DateTime.Now.Date + "' where CustID = '" + CUSTID + "' ", con);
+                cmd4.ExecuteNonQuery();
+                SqlCommand cmd5;
+                cmd5 = new SqlCommand("update Orders set CustID = '" + CUSTID + "', OrderType = '" + OrderType.ToString() + "', OrderCategory = '" + OrderCategory.ToString() + "', Ordertime = '" + DateTime.Now.ToShortTimeString() + "', OrderDate = '" + DateTime.Now.Date + "' ", con);
+                cmd5.ExecuteNonQuery();
+
+                SqlCommand cmd6;
+                for (int i = 0; i < dgv1.Rows.Count; i++)
+                {
+                    itemname = Convert.ToString(dgv1.Rows[i].Cells[4].Value);
+                    itemqty = Convert.ToString(dgv1.Rows[i].Cells[5].Value);
+                    itemprice = Convert.ToString(dgv1.Rows[i].Cells[6].Value);
+                    singleitemcollectiveamount = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value);
+                    GST = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value) * GStunit;
+                    itempricewithGST = Convert.ToDouble(dgv1.Rows[i].Cells[7].Value) + GST;
+                    cmd6 = new SqlCommand("insert into Bill values ('" + invoiceid2 + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "','" + totalqty.ToString() + "','" + ActualAmount.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con);
+                    cmd6.ExecuteNonQuery();
+                }
+
+                SqlCommand cmd7;
+                cmd7 = new SqlCommand("insert into EditedBill values ('" + invoiceid2 + "')", con);
+                cmd7.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+
+            if ((DVPrintPreviewDialog != null))
+            {
+                DVPrintPreviewDialog = new PrintPreviewDialog();
+            }
+
+            DVPrintPreviewDialog.Document = DVPrintDocument;
+            DVPrintPreviewDialog.Show();
+
+            //Edit_Invoice_Print edit_Invoice_Print = new Edit_Invoice_Print();
+            //edit_Invoice_Print.Show();
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)

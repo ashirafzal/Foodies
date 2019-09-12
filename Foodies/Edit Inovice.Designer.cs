@@ -33,6 +33,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.InvoiceNumber = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.SearchInvoice = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,22 +65,21 @@
             this.ActualAmount = new System.Windows.Forms.Label();
             this.TotalAmount = new System.Windows.Forms.Label();
             this.BtnDiscount = new System.Windows.Forms.Button();
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.SearchInvoice = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
+            this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.DVPrintDocument = new System.Drawing.Printing.PrintDocument();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -127,6 +129,56 @@
             this.InvoiceNumber.Size = new System.Drawing.Size(1283, 41);
             this.InvoiceNumber.TabIndex = 0;
             this.InvoiceNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.45255F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.54745F));
+            this.tableLayoutPanel6.Controls.Add(this.SearchInvoice, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnRefresh, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(1299, 0);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(305, 81);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // SearchInvoice
+            // 
+            this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SearchInvoice.BackColor = System.Drawing.Color.RoyalBlue;
+            this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchInvoice.ForeColor = System.Drawing.Color.White;
+            this.SearchInvoice.Location = new System.Drawing.Point(5, 24);
+            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(5, 20, 5, 0);
+            this.SearchInvoice.Name = "SearchInvoice";
+            this.SearchInvoice.Size = new System.Drawing.Size(217, 53);
+            this.SearchInvoice.TabIndex = 2;
+            this.SearchInvoice.Text = "SEARCH INVOICE";
+            this.SearchInvoice.UseVisualStyleBackColor = false;
+            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click_1);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(227, 24);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0, 20, 5, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(66, 53);
+            this.btnRefresh.TabIndex = 13;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dgv1
             // 
@@ -449,10 +501,6 @@
             this.BtnDiscount.UseVisualStyleBackColor = false;
             this.BtnDiscount.Click += new System.EventHandler(this.BtnDiscount_Click);
             // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
@@ -465,20 +513,9 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(333, 47);
             this.tableLayoutPanel5.TabIndex = 8;
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.ForeColor = System.Drawing.Color.Black;
-            this.txtDiscount.Location = new System.Drawing.Point(10, 5);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 0);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(213, 35);
-            this.txtDiscount.TabIndex = 7;
-            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -492,55 +529,34 @@
             this.label4.Text = "PKR";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel6
+            // txtDiscount
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.45255F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.54745F));
-            this.tableLayoutPanel6.Controls.Add(this.SearchInvoice, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.btnRefresh, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(1299, 0);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(305, 81);
-            this.tableLayoutPanel6.TabIndex = 1;
+            this.txtDiscount.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.ForeColor = System.Drawing.Color.Black;
+            this.txtDiscount.Location = new System.Drawing.Point(10, 5);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(10, 5, 10, 0);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(213, 35);
+            this.txtDiscount.TabIndex = 7;
+            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // SearchInvoice
+            // billTableAdapter
             // 
-            this.SearchInvoice.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SearchInvoice.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SearchInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchInvoice.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchInvoice.ForeColor = System.Drawing.Color.White;
-            this.SearchInvoice.Location = new System.Drawing.Point(5, 24);
-            this.SearchInvoice.Margin = new System.Windows.Forms.Padding(5, 20, 5, 0);
-            this.SearchInvoice.Name = "SearchInvoice";
-            this.SearchInvoice.Size = new System.Drawing.Size(217, 53);
-            this.SearchInvoice.TabIndex = 2;
-            this.SearchInvoice.Text = "SEARCH INVOICE";
-            this.SearchInvoice.UseVisualStyleBackColor = false;
-            this.SearchInvoice.Click += new System.EventHandler(this.SearchInvoice_Click_1);
+            this.billTableAdapter.ClearBeforeFill = true;
             // 
-            // btnRefresh
+            // DVPrintPreviewDialog
             // 
-            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(227, 24);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0, 20, 5, 0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(66, 53);
-            this.btnRefresh.TabIndex = 13;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.DVPrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.DVPrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.DVPrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.DVPrintPreviewDialog.Enabled = true;
+            this.DVPrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("DVPrintPreviewDialog.Icon")));
+            this.DVPrintPreviewDialog.Name = "DVPrintPreviewDialog";
+            this.DVPrintPreviewDialog.Visible = false;
+            // 
+            // DVPrintDocument
+            // 
+            this.DVPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.DVPrintDocument_PrintPage);
             // 
             // Edit_Inovice
             // 
@@ -558,6 +574,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
@@ -566,7 +583,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -612,5 +628,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button SearchInvoice;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.PrintPreviewDialog DVPrintPreviewDialog;
+        private System.Drawing.Printing.PrintDocument DVPrintDocument;
     }
 }

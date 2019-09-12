@@ -507,6 +507,16 @@ namespace Foodies
             
         }
 
+        private void DVPrintPreviewDialog_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void DVPrintPreviewDialog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
         private void dgv3_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
             
@@ -518,9 +528,12 @@ namespace Foodies
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {   
-            try
+        {
+                try
             {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+
                 if (dgv3.Rows.Count <=2)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
@@ -556,215 +569,319 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 800);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
-
-
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from Bill", con);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                if (table.Rows.Count > 0)
+                else if (dgv3.Rows.Count <= 16)
                 {
-                    /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
-                    or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
-                    condition me aik se sql queries ki queires ko implement kara jasakai*/
-
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
-                    con.Open();
-                    SqlTransaction tran = con.BeginTransaction();
-
-                    SqlCommand cmd10 = new SqlCommand("select top 1 InvioceID from Bill order by InvioceID DESC", con, tran);
-                    cmd10.ExecuteNonQuery();
-
-                    using (SqlDataReader dr = cmd10.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            INVOICEID = Convert.ToInt32(dr["InvioceID"]);
-                            INVOICEID = INVOICEID + 1;
-                        }
-                    }
-
-                    string Custname = "Valuable Customer";
-                    string CustContact = "***********";
-
-                    string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
-                    string OrderType = "Food Item";
-                    string OrderCategory = "Food";
-
-                    SqlCommand cmd1 = new SqlCommand("insert into Customer values ('" + Custname + "','" + CustContact + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
-                    cmd1.ExecuteNonQuery();
-                    SqlCommand cmd2 = new SqlCommand("select top 1 CustID from Customer order by CustID DESC", con, tran);
-                    cmd2.ExecuteNonQuery();
-
-                    using (SqlDataReader dr = cmd2.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            CUSTID = dr["CustID"].ToString();
-                            SqlCommand cmd3 = new SqlCommand("insert into Orders values ('" + CUSTID + "','" + OrderType.ToString() + "','" + OrderCategory.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
-                            cmd3.ExecuteNonQuery();
-                        }
-                    }
-
-                    SqlCommand cmd4 = new SqlCommand("select top 1 CustID,CustName,Contact from Customer order by CustID DESC", con, tran);
-                    cmd4.ExecuteNonQuery();
-                    SqlCommand cmd5 = new SqlCommand("select top 1 OrderID,OrderTime,OrderDate from Orders order by OrderID DESC", con, tran);
-                    cmd5.ExecuteNonQuery();
-
-                    using (SqlDataReader dr = cmd4.ExecuteReader())
-                    {
-                        using (SqlDataReader dr1 = cmd5.ExecuteReader())
-                        {
-                            string itemname;
-                            string itemqty;
-                            string itemprice;
-                            double itempricewithGST;
-                            double GST;
-                            double GStunit = 0.17;
-                            string billtotal = total_Amount.Text;
-                            string totalqty = totalQty.Text;
-                            double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
-                            double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
-                            double discount = Convert.ToDouble(per_discount.Text);
-                            double singleitemcollectiveamount;
-
-                            while (dr.Read())
-                            {
-                                CUSTID = dr["CustID"].ToString();
-                                CUSTNAME = dr["CustName"].ToString();
-                                CUSTCONTACT = dr["Contact"].ToString();
-                                while (dr1.Read())
-                                {
-                                    ORDERID = dr1["OrderID"].ToString();
-                                    ORDERTIME = dr1["OrderTime"].ToString();
-                                    ORDERDATE = dr1["OrderDate"].ToString();
-
-                                    //
-                                    SqlCommand cmd7 = new SqlCommand("insert into Sales values ('" + ORDERID + "','" + CUSTID + "','" + CUSTNAME + "','" + CUSTCONTACT + "','" + OrderType + "','" + OrderCategory + "','" + ORDERTIME + "','" + ORDERDATE + "')", con, tran);
-                                    cmd7.ExecuteNonQuery();
-
-                                    SqlCommand cmd6;
-                                    for (int i = 0; i < dgv3.Rows.Count; i++)
-                                    {
-                                        itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
-                                        itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
-                                        itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
-                                        singleitemcollectiveamount = Convert.ToDouble(dgv3.Rows[i].Cells[3].Value);
-                                        GST = Convert.ToInt32(dgv3.Rows[i].Cells[3].Value) * GStunit;
-                                        itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
-                                        cmd6 = new SqlCommand("insert into Bill values ('" + INVOICEID + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + act_price.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con, tran);
-                                        cmd6.ExecuteNonQuery();
-                                    }
-                                }
-                            }
-                        }
-                        tran.Commit();
-                        con.Close();
-                    }
-
-                    //Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
-                    //current_Invoice.Show();
-
-                    DVPrintPreviewDialog.Document = DVPrintDocument;
-                    DVPrintPreviewDialog.Show();
-
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 850);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 18)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 900);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 20)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 950);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 22)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1000);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 24)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1050);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 26)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1100);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 28)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1150);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 30)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1200);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 32)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1250);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 34)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1300);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 36)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1350);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv3.Rows.Count <= 38)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1400);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else
                 {
-                    //
-                    string Custname = "Valuable Customer";
-                    string CustContact = "***********";
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1450);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
 
-                    string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
-                    string OrderType = "Food Item";
-                    string OrderCategory = "Food";
-
-                    int InvocieId = 1;
-
-                    /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
-                     or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
-                     condition me aik se sql queries ki queires ko implement kara jasakai*/
-
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
-                    con.Open();
-                    SqlTransaction tran = con.BeginTransaction();
-
-                    //
-                    SqlCommand cmd1 = new SqlCommand("insert into Customer values ('" + Custname + "','" + CustContact + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
-                    cmd1.ExecuteNonQuery();
-                    SqlCommand cmd2 = new SqlCommand("select top 1 CustID from Customer order by CustID DESC", con, tran);
-                    cmd2.ExecuteNonQuery();
-
-                    using (SqlDataReader dr = cmd2.ExecuteReader())
+                //
+                if (dgv3.Rows.Count == 0)
+                {
+                    const string message =
+                        "Transaction can't be completed because there is no item selected for sale.";
+                    const string caption = "Transaction Error";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Stop);
+                }
+                else if (dgv3.Rows.Count > 40)
+                {
+                    const string message =
+                        "Transaction can't be completed on more than 40 items.\n" +
+                        "Please select less than 40 items for transaction.";
+                    const string caption = "Transaction Limit";
+                    var result = MessageBox.Show(message, caption,
+                                                 MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from Bill", con);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    if (table.Rows.Count > 0)
                     {
-                        while (dr.Read())
+                        /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
+                        or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
+                        condition me aik se sql queries ki queires ko implement kara jasakai*/
+
+                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        con.Open();
+                        SqlTransaction tran = con.BeginTransaction();
+
+                        SqlCommand cmd10 = new SqlCommand("select top 1 InvioceID from Bill order by InvioceID DESC", con, tran);
+                        cmd10.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd10.ExecuteReader())
                         {
-                            CUSTID = dr["CustID"].ToString();
-                            SqlCommand cmd3 = new SqlCommand("insert into Orders values ('" + CUSTID + "','" + OrderType.ToString() + "','" + OrderCategory.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
-                            cmd3.ExecuteNonQuery();
+                            while (dr.Read())
+                            {
+                                INVOICEID = Convert.ToInt32(dr["InvioceID"]);
+                                INVOICEID = INVOICEID + 1;
+                            }
                         }
-                    }
 
-                    SqlCommand cmd4 = new SqlCommand("select top 1 CustID,CustName,Contact from Customer order by CustID DESC", con, tran);
-                    cmd4.ExecuteNonQuery();
-                    SqlCommand cmd5 = new SqlCommand("select top 1 OrderID,OrderTime,OrderDate from Orders order by OrderID DESC", con, tran);
-                    cmd5.ExecuteNonQuery();
+                        string Custname = "Valuable Customer";
+                        string CustContact = "***********";
 
-                    using (SqlDataReader dr = cmd4.ExecuteReader())
-                    {
-                        using (SqlDataReader dr1 = cmd5.ExecuteReader())
+                        string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
+                        string OrderType = "Food Item";
+                        string OrderCategory = "Food";
+
+                        SqlCommand cmd1 = new SqlCommand("insert into Customer values ('" + Custname + "','" + CustContact + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+                        cmd1.ExecuteNonQuery();
+                        SqlCommand cmd2 = new SqlCommand("select top 1 CustID from Customer order by CustID DESC", con, tran);
+                        cmd2.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd2.ExecuteReader())
                         {
-                            string itemname;
-                            string itemqty;
-                            string itemprice;
-                            double itempricewithGST;
-                            double GST;
-                            double GStunit = 0.17;
-                            string billtotal = total_Amount.Text;
-                            string totalqty = totalQty.Text;
-                            double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
-                            double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
-                            double discount = Convert.ToDouble(per_discount.Text);
-                            double singleitemcollectiveamount;
-
                             while (dr.Read())
                             {
                                 CUSTID = dr["CustID"].ToString();
-                                CUSTNAME = dr["CustName"].ToString();
-                                CUSTCONTACT = dr["Contact"].ToString();
-                                while (dr1.Read())
+                                SqlCommand cmd3 = new SqlCommand("insert into Orders values ('" + CUSTID + "','" + OrderType.ToString() + "','" + OrderCategory.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+                                cmd3.ExecuteNonQuery();
+                            }
+                        }
+
+                        SqlCommand cmd4 = new SqlCommand("select top 1 CustID,CustName,Contact from Customer order by CustID DESC", con, tran);
+                        cmd4.ExecuteNonQuery();
+                        SqlCommand cmd5 = new SqlCommand("select top 1 OrderID,OrderTime,OrderDate from Orders order by OrderID DESC", con, tran);
+                        cmd5.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd4.ExecuteReader())
+                        {
+                            using (SqlDataReader dr1 = cmd5.ExecuteReader())
+                            {
+                                string itemname;
+                                string itemqty;
+                                string itemprice;
+                                double itempricewithGST;
+                                double GST;
+                                double GStunit = 0.17;
+                                string billtotal = total_Amount.Text;
+                                string totalqty = totalQty.Text;
+                                double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
+                                double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
+                                double discount = Convert.ToDouble(per_discount.Text);
+                                double singleitemcollectiveamount;
+
+                                while (dr.Read())
                                 {
-                                    ORDERID = dr1["OrderID"].ToString();
-                                    ORDERTIME = dr1["OrderTime"].ToString();
-                                    ORDERDATE = dr1["OrderDate"].ToString();
-
-                                    //
-                                    SqlCommand cmd7 = new SqlCommand("insert into Sales values ('" + ORDERID + "','" + CUSTID + "','" + CUSTNAME + "','" + CUSTCONTACT + "','" + OrderType + "','" + OrderCategory + "','" + ORDERTIME + "','" + ORDERDATE + "')", con, tran);
-                                    cmd7.ExecuteNonQuery();
-
-                                    SqlCommand cmd6;
-                                    for (int i = 0; i < dgv3.Rows.Count; i++)
+                                    CUSTID = dr["CustID"].ToString();
+                                    CUSTNAME = dr["CustName"].ToString();
+                                    CUSTCONTACT = dr["Contact"].ToString();
+                                    while (dr1.Read())
                                     {
-                                        itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
-                                        itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
-                                        itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
-                                        singleitemcollectiveamount = Convert.ToDouble(dgv3.Rows[i].Cells[3].Value);
-                                        GST = Convert.ToInt32(dgv3.Rows[i].Cells[3].Value) * GStunit;
-                                        itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
-                                        cmd6 = new SqlCommand("insert into Bill values ('" + InvocieId + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + act_price.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con, tran);
-                                        cmd6.ExecuteNonQuery();
+                                        ORDERID = dr1["OrderID"].ToString();
+                                        ORDERTIME = dr1["OrderTime"].ToString();
+                                        ORDERDATE = dr1["OrderDate"].ToString();
+
+                                        //
+                                        SqlCommand cmd7 = new SqlCommand("insert into Sales values ('" + ORDERID + "','" + CUSTID + "','" + CUSTNAME + "','" + CUSTCONTACT + "','" + OrderType + "','" + OrderCategory + "','" + ORDERTIME + "','" + ORDERDATE + "')", con, tran);
+                                        cmd7.ExecuteNonQuery();
+
+                                        SqlCommand cmd6;
+                                        for (int i = 0; i < dgv3.Rows.Count; i++)
+                                        {
+                                            itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
+                                            itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
+                                            itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
+                                            singleitemcollectiveamount = Convert.ToDouble(dgv3.Rows[i].Cells[3].Value);
+                                            GST = Convert.ToInt32(dgv3.Rows[i].Cells[3].Value) * GStunit;
+                                            itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
+                                            cmd6 = new SqlCommand("insert into Bill values ('" + INVOICEID + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + act_price.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con, tran);
+                                            cmd6.ExecuteNonQuery();
+                                        }
                                     }
                                 }
                             }
+                            tran.Commit();
+                            con.Close();
                         }
-                        tran.Commit();
-                        con.Close();
-                    }
-                    //Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
-                    //current_Invoice.Show();
 
-                    DVPrintPreviewDialog.Document = DVPrintDocument;
-                    DVPrintPreviewDialog.Show();
+                        //Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
+                        //current_Invoice.Show();
+
+                        //DVPrintPreviewDialog.Document = DVPrintDocument;
+                        //DVPrintPreviewDialog.Show();
+
+                        if ((DVPrintPreviewDialog != null))
+                        {
+                            DVPrintPreviewDialog = new PrintPreviewDialog();
+                        }
+
+                        DVPrintPreviewDialog.Document = DVPrintDocument;
+                        DVPrintPreviewDialog.Show();
+
+                    }
+                    else
+                    {
+                        //
+                        string Custname = "Valuable Customer";
+                        string CustContact = "***********";
+
+                        string CUSTID, ORDERID, CUSTNAME, ORDERTIME, ORDERDATE, CUSTCONTACT;
+                        string OrderType = "Food Item";
+                        string OrderCategory = "Food";
+
+                        int InvocieId = 1;
+
+                        /* Connection String me Integrated Security=True; ko Integrated Security=SSPI; se change karna hoga
+                         or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
+                         condition me aik se sql queries ki queires ko implement kara jasakai*/
+
+                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        con.Open();
+                        SqlTransaction tran = con.BeginTransaction();
+
+                        //
+                        SqlCommand cmd1 = new SqlCommand("insert into Customer values ('" + Custname + "','" + CustContact + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+                        cmd1.ExecuteNonQuery();
+                        SqlCommand cmd2 = new SqlCommand("select top 1 CustID from Customer order by CustID DESC", con, tran);
+                        cmd2.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd2.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                CUSTID = dr["CustID"].ToString();
+                                SqlCommand cmd3 = new SqlCommand("insert into Orders values ('" + CUSTID + "','" + OrderType.ToString() + "','" + OrderCategory.ToString() + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.Date + "')", con, tran);
+                                cmd3.ExecuteNonQuery();
+                            }
+                        }
+
+                        SqlCommand cmd4 = new SqlCommand("select top 1 CustID,CustName,Contact from Customer order by CustID DESC", con, tran);
+                        cmd4.ExecuteNonQuery();
+                        SqlCommand cmd5 = new SqlCommand("select top 1 OrderID,OrderTime,OrderDate from Orders order by OrderID DESC", con, tran);
+                        cmd5.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd4.ExecuteReader())
+                        {
+                            using (SqlDataReader dr1 = cmd5.ExecuteReader())
+                            {
+                                string itemname;
+                                string itemqty;
+                                string itemprice;
+                                double itempricewithGST;
+                                double GST;
+                                double GStunit = 0.17;
+                                string billtotal = total_Amount.Text;
+                                string totalqty = totalQty.Text;
+                                double totalGSTcalcualtion = Convert.ToDouble(total_Amount.Text) * GStunit;
+                                double totalAmountwithGST = Convert.ToDouble(total_Amount.Text) + totalGSTcalcualtion;
+                                double discount = Convert.ToDouble(per_discount.Text);
+                                double singleitemcollectiveamount;
+
+                                while (dr.Read())
+                                {
+                                    CUSTID = dr["CustID"].ToString();
+                                    CUSTNAME = dr["CustName"].ToString();
+                                    CUSTCONTACT = dr["Contact"].ToString();
+                                    while (dr1.Read())
+                                    {
+                                        ORDERID = dr1["OrderID"].ToString();
+                                        ORDERTIME = dr1["OrderTime"].ToString();
+                                        ORDERDATE = dr1["OrderDate"].ToString();
+
+                                        //
+                                        SqlCommand cmd7 = new SqlCommand("insert into Sales values ('" + ORDERID + "','" + CUSTID + "','" + CUSTNAME + "','" + CUSTCONTACT + "','" + OrderType + "','" + OrderCategory + "','" + ORDERTIME + "','" + ORDERDATE + "')", con, tran);
+                                        cmd7.ExecuteNonQuery();
+
+                                        SqlCommand cmd6;
+                                        for (int i = 0; i < dgv3.Rows.Count; i++)
+                                        {
+                                            itemname = Convert.ToString(dgv3.Rows[i].Cells[0].Value);
+                                            itemqty = Convert.ToString(dgv3.Rows[i].Cells[1].Value);
+                                            itemprice = Convert.ToString(dgv3.Rows[i].Cells[2].Value);
+                                            singleitemcollectiveamount = Convert.ToDouble(dgv3.Rows[i].Cells[3].Value);
+                                            GST = Convert.ToInt32(dgv3.Rows[i].Cells[3].Value) * GStunit;
+                                            itempricewithGST = Convert.ToDouble(dgv3.Rows[i].Cells[2].Value) + GST;
+                                            cmd6 = new SqlCommand("insert into Bill values ('" + InvocieId + "','" + CUSTID + "','" + ORDERID + "','" + CUSTNAME + "','" + itemname.ToString() + "','" + itemqty.ToString() + "','" + itemprice.ToString() + "','" + singleitemcollectiveamount.ToString() + "','" + itempricewithGST.ToString() + "','" + ORDERTIME + "','" + ORDERDATE + "','" + totalqty.ToString() + "','" + act_price.Text.ToString() + "','" + billtotal.ToString() + "','" + totalAmountwithGST.ToString() + "','" + discount.ToString() + "')", con, tran);
+                                            cmd6.ExecuteNonQuery();
+                                        }
+                                    }
+                                }
+                            }
+                            tran.Commit();
+                            con.Close();
+                        }
+                        //Current_Invoice_Print current_Invoice = new Current_Invoice_Print();
+                        //current_Invoice.Show();
+
+                        //DVPrintPreviewDialog.Document = DVPrintDocument;
+                        //DVPrintPreviewDialog.Show();
+
+                        if ((DVPrintPreviewDialog != null))
+                        {
+                            DVPrintPreviewDialog = new PrintPreviewDialog();
+                        }
+
+                        DVPrintPreviewDialog.Document = DVPrintDocument;
+                        DVPrintPreviewDialog.Show();
+                    }
                 }
+                //
             }
             catch (Exception)
             {

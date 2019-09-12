@@ -1211,6 +1211,8 @@
             this.DVPrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("DVPrintPreviewDialog.Icon")));
             this.DVPrintPreviewDialog.Name = "DVPrintPreviewDialog";
             this.DVPrintPreviewDialog.Visible = false;
+            this.DVPrintPreviewDialog.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DVPrintPreviewDialog_FormClosed);
+            this.DVPrintPreviewDialog.Load += new System.EventHandler(this.DVPrintPreviewDialog_Load);
             // 
             // DVPrintDocument
             // 
