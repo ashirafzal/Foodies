@@ -245,14 +245,12 @@ namespace Foodies
                 }
 
                 total_sales.Text = TotalSales.ToString();
-                totalInvoices.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
             }
             else
             {
                 total_sales.Text = "0";
-                totalInvoices.Text = "0";
             }
 
             SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
@@ -307,12 +305,14 @@ namespace Foodies
                 da.Fill(dt);
                 dgv1.DataSource = dt;
                 totalOrders.Text = dgv1.Rows.Count.ToString();
+                totalInvoices.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
             }
             else
             {
                 totalOrders.Text = "0";
+                totalInvoices.Text = "0";
             }
 
             SqlDataAdapter adapter7 = new SqlDataAdapter("SELECT * from users", con);
