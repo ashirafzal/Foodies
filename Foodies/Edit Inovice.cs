@@ -247,7 +247,7 @@ namespace Foodies
             TotalQty.Text = "0";
             TotalAmount.Text = "0";
             txtDiscount.Text = string.Empty;
-            txtDiscount.Visible = true;
+            txtDiscount.Visible = false;
             InvoiceNumber.Text = string.Empty;
             InvoiceNumber.Focus();
         }
