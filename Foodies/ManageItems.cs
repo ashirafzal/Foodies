@@ -65,15 +65,15 @@ namespace Foodies
             pictureBox1.Image = Image.FromStream(ms);
 
             ProductID.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
-            ProductCategory.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-            ProductName.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-            ProductPrice.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+            ProductName.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+            ProductPrice.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+            ProductCategory.Text = dgv1.CurrentRow.Cells[3].Value.ToString();  
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             int a1 = Convert.ToInt16(ProductID.Text);
-            //int b = Convert.ToInt32(ProductPrice.Text);
+            int b = Convert.ToInt32(ProductPrice.Text);
 
             byte[] images = null;
             FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
@@ -84,11 +84,11 @@ namespace Foodies
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            string sqlQuery = "update Products set ProductName = @ProductName , ProductPrice =  @ProductPrice ,ProductCategory = @ProductCategory, ProductImage = @images where ProductId = '" + a1 + "'  ";
+            string sqlQuery = "update Products set ProductName = @ProductName , ProductPrice =  @b ,ProductCategory = @ProductCategory, ProductImage = @images where ProductId = '" + a1 + "'  ";
             cmd = new SqlCommand(sqlQuery, con);
             cmd.Parameters.Add(new SqlParameter("@ProductCategory", ProductCategory.Text.ToLower()));
             cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName.Text.ToLower()));
-            cmd.Parameters.Add(new SqlParameter("@b",ProductPrice.Text));
+            cmd.Parameters.Add(new SqlParameter("@b", b));
             cmd.Parameters.Add(new SqlParameter("@images", images));
             var N = cmd.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
