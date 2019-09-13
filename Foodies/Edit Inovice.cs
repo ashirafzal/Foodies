@@ -149,7 +149,6 @@ namespace Foodies
                 {
                     //INVOICEID_1 = Convert.ToString(dr["InvioceID2"]);
                     INVOICEID_1 = Convert.ToString(dgv1.Rows[0].Cells[0].Value);
-                    MessageBox.Show(INVOICEID_1.ToString());
 
                     SqlCommand cmd2 = new SqlCommand("select InvioceID,Totalqty," +
                 "TotalAmount,TotalAmountWithGST,ActualAmount," +
