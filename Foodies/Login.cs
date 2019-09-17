@@ -7,6 +7,8 @@ namespace Foodies
 {
     public partial class Login : Form
     {
+        string User_name = "ashirxyz",category = "admin";
+        string druser, drcategory;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
         public Login()
         {
@@ -36,11 +38,15 @@ namespace Foodies
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            con.Open();
             try
             {
-                con.Open();
-                if (username.Text == "user" || password.Text == "pass")
+                if (username.Text == "ashirxyz" || password.Text == "foodies-ashir")
                 {
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into LoginDetails (Loginuser,usercategory,time,date) values ('" + User_name + "','" + category + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.ToShortDateString() + "')";
+                    cmd.ExecuteNonQuery();
                     Cashier main = new Cashier();
                     this.Hide();
                     main.Show();
@@ -51,11 +57,32 @@ namespace Foodies
                 }
                 else
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT username,password from Users where username = '" + username.Text.ToLower() + "' and password = '" + password.Text.ToLower() + "'", con);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT username,password from users where username = '" + username.Text.ToLower() + "' and password = '" + password.Text.ToLower() + "' ", con);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     if (table.Rows.Count > 0)
                     {
+                        //Transaction start
+                        SqlTransaction tran = con.BeginTransaction();
+
+                        SqlCommand cmd10 = new SqlCommand("select * from users where username = '" + username.Text.ToLower() + "' and password = '" + password.Text.ToLower() + "' ", con, tran);
+                        cmd10.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd10.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                druser = Convert.ToString(dr["username"]);
+                                drcategory = Convert.ToString(dr["category"]);
+                            }
+                        }
+                        tran.Commit();
+                        // Transaction closed
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "insert into LoginDetails (Loginuser,usercategory,time,date) values ('" + druser + "','" + drcategory + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.ToShortDateString() + "')";
+                        cmd.ExecuteNonQuery();
+
                         Cashier main = new Cashier();
                         this.Hide();
                         main.Show();
@@ -68,7 +95,7 @@ namespace Foodies
             }
             catch (Exception)
             {
-                MessageBox.Show(this, "Please enter username & password or use the default username and password for login",
+                MessageBox.Show(this, "Please enter correct username & password or use the default username and password for login",
                     "User Mishandling", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             con.Close();
