@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryManagementSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,14 +63,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv3 = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addbtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.minusbtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -123,6 +115,14 @@
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.DVPrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qtty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addbtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.minusbtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -349,7 +349,7 @@
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.exportToExcelToolStripMenuItem.Text = "EXPORT TO EXCEL";
             this.exportToExcelToolStripMenuItem.Click += new System.EventHandler(this.exportToExcelToolStripMenuItem_Click);
             // 
@@ -408,7 +408,6 @@
             // dgv3
             // 
             this.dgv3.AllowUserToAddRows = false;
-            this.dgv3.AllowUserToDeleteRows = false;
             this.dgv3.AllowUserToResizeColumns = false;
             this.dgv3.AllowUserToResizeRows = false;
             this.dgv3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -428,7 +427,6 @@
             this.dgv3.GridColor = System.Drawing.Color.DarkGray;
             this.dgv3.Location = new System.Drawing.Point(3, 84);
             this.dgv3.Name = "dgv3";
-            this.dgv3.ReadOnly = true;
             this.dgv3.RowHeadersVisible = false;
             this.dgv3.Size = new System.Drawing.Size(823, 480);
             this.dgv3.TabIndex = 1;
@@ -436,86 +434,11 @@
             this.dgv3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentClick);
             this.dgv3.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellContentDoubleClick);
             this.dgv3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellDoubleClick);
+            this.dgv3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellEndEdit);
             this.dgv3.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv3_CellMouseDown);
             this.dgv3.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv3_CellMouseEnter);
             this.dgv3.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv3_CellMouseUp);
             this.dgv3.MouseEnter += new System.EventHandler(this.dgv3_MouseEnter);
-            // 
-            // name
-            // 
-            this.name.HeaderText = "NAME";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // qtty
-            // 
-            this.qtty.HeaderText = "QUANTITY";
-            this.qtty.Name = "qtty";
-            this.qtty.ReadOnly = true;
-            // 
-            // rate
-            // 
-            this.rate.HeaderText = "RATE";
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "AMOUNT";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.HeaderText = "CATEGORY";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // addbtn
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
-            this.addbtn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbtn.HeaderText = "ADD";
-            this.addbtn.Name = "addbtn";
-            this.addbtn.ReadOnly = true;
-            this.addbtn.Text = "+";
-            this.addbtn.ToolTipText = "add";
-            this.addbtn.UseColumnTextForButtonValue = true;
-            // 
-            // minusbtn
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minusbtn.HeaderText = "MINUS";
-            this.minusbtn.Name = "minusbtn";
-            this.minusbtn.ReadOnly = true;
-            this.minusbtn.Text = "-";
-            this.minusbtn.UseColumnTextForButtonValue = true;
-            // 
-            // btnDelete
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
-            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.HeaderText = "DELETE";
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "DEL";
-            this.btnDelete.UseColumnTextForButtonValue = true;
             // 
             // label1
             // 
@@ -1212,6 +1135,81 @@
             this.DVPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.DVPrintDocument_PrintPage);
             this.DVPrintDocument.QueryPageSettings += new System.Drawing.Printing.QueryPageSettingsEventHandler(this.DVPrintDocument_QueryPageSettings);
             // 
+            // name
+            // 
+            this.name.HeaderText = "NAME";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // qtty
+            // 
+            this.qtty.HeaderText = "QUANTITY";
+            this.qtty.Name = "qtty";
+            // 
+            // rate
+            // 
+            this.rate.HeaderText = "RATE";
+            this.rate.Name = "rate";
+            this.rate.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "AMOUNT";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.HeaderText = "CATEGORY";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // addbtn
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Green;
+            this.addbtn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.HeaderText = "ADD";
+            this.addbtn.Name = "addbtn";
+            this.addbtn.ReadOnly = true;
+            this.addbtn.Text = "+";
+            this.addbtn.ToolTipText = "add";
+            this.addbtn.UseColumnTextForButtonValue = true;
+            // 
+            // minusbtn
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minusbtn.HeaderText = "MINUS";
+            this.minusbtn.Name = "minusbtn";
+            this.minusbtn.ReadOnly = true;
+            this.minusbtn.Text = "-";
+            this.minusbtn.UseColumnTextForButtonValue = true;
+            // 
+            // btnDelete
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Navy;
+            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle6;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.HeaderText = "DELETE";
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Text = "DEL";
+            this.btnDelete.UseColumnTextForButtonValue = true;
+            // 
             // Cashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1351,6 +1349,9 @@
         private System.Windows.Forms.Label totalQty;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ToolStripMenuItem deletedInvoiceToolStripMenuItem;
+        private System.Windows.Forms.PrintPreviewDialog DVPrintPreviewDialog;
+        private System.Drawing.Printing.PrintDocument DVPrintDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtty;
         private System.Windows.Forms.DataGridViewTextBoxColumn rate;
@@ -1359,8 +1360,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn addbtn;
         private System.Windows.Forms.DataGridViewButtonColumn minusbtn;
         private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
-        private System.Windows.Forms.ToolStripMenuItem deletedInvoiceToolStripMenuItem;
-        private System.Windows.Forms.PrintPreviewDialog DVPrintPreviewDialog;
-        private System.Drawing.Printing.PrintDocument DVPrintDocument;
     }
 }

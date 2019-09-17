@@ -98,7 +98,6 @@ namespace Foodies
                 rate = Convert.ToInt32(row.Cells[6].Value);
                 amount = qty * rate;
                 row.Cells[7].Value = amount;
-
             }
 
             for (int i = 0; i < dgv1.Rows.Count; ++i)
@@ -497,6 +496,7 @@ namespace Foodies
             if ((DVPrintPreviewDialog != null))
             {
                 DVPrintPreviewDialog = new PrintPreviewDialog();
+                ((Form)DVPrintPreviewDialog).WindowState = FormWindowState.Maximized;
             }
 
             DVPrintPreviewDialog.Document = DVPrintDocument;
