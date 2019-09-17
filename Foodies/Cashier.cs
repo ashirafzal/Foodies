@@ -14,6 +14,36 @@ namespace Foodies
         int actualprice;
         int totalAmount = 0; int totalQuantity = 0;
         int INVOICEID; /* For Invoice Reading through Sql reader*/
+        string druser;/*Checking user status*/
+
+        public void CheckingUserStatus()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            con.Open();
+            SqlTransaction tran = con.BeginTransaction();
+
+            SqlCommand cmd20 = new SqlCommand("select top 1 usercategory from LoginDetails order by Id DESC", con, tran);
+            cmd20.ExecuteNonQuery();
+
+            using (SqlDataReader dr = cmd20.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    druser = Convert.ToString(dr["usercategory"]);
+                }
+            }
+
+            if(druser == "admin")
+            {
+                stockManagementSystemToolStripMenuItem.Visible = true;
+                usersToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                stockManagementSystemToolStripMenuItem.Visible = false;
+                usersToolStripMenuItem.Visible = false;   
+            }
+        }
 
         //For inventory operations
         // Product name to check in a string
@@ -856,6 +886,7 @@ namespace Foodies
         public Cashier()
         {
             InitializeComponent();
+            CheckingUserStatus();
             dgv_1();
             dgv_2();
             dgv_3();
@@ -975,7 +1006,7 @@ namespace Foodies
             // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.itemsDataSet.Products);
             // TODO: This line of code loads data into the 'categoryDataSet.Products' table. You can move, or remove it, as needed.
-            this.dgv3.EditMode = DataGridViewEditMode.EditOnEnter;
+            this.dgv3.EditMode = DataGridViewEditMode.EditOnEnter; 
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
