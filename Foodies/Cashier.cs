@@ -309,7 +309,7 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr11["stockdate"]);
                                     stocktime = Convert.ToString(dr11["stocktime"]);
 
-                                    double newstockweigth2 = stockweigth2 - 0.5 * quantity;
+                                    double newstockweigth2 = stockweigth2 - 1 * quantity;
 
                                     SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
                                     cmd21.ExecuteNonQuery();
@@ -473,8 +473,8 @@ namespace Foodies
                         }
                         
                     }
-                    //if start
-                    if (Convert.ToString(Row.Cells[0].Value) == beefburger)
+                    //else if start
+                    else if (Convert.ToString(Row.Cells[0].Value) == beefburger)
                     {
                         string gridname = Convert.ToString(Row.Cells[0].Value);
                         int quantity = Convert.ToInt32(Row.Cells[1].Value);
@@ -1780,7 +1780,6 @@ namespace Foodies
             {
                 MessageBox.Show("Transaction Failed for Unknown Reason");
             }
-           
         }
 
         private void DVPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

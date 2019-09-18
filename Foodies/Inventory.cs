@@ -14,12 +14,14 @@ namespace Foodies
     public partial class Inventory : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-        int TotalSales; DateTime date;
+        int TotalSales; DateTime date;int currentStockStatus;int Stock_at_the_day_of_start;
+        string dr_stockatthestartofday;
 
         public Inventory()
         {
             InitializeComponent();
             InventoryHeaderInfo();
+            EstimatingSTockAtTheStartOfDay();
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
@@ -264,6 +266,11 @@ namespace Foodies
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgv1.DataSource = dt;
+                for (int i = 0; i < dgv1.Rows.Count; ++i)
+                {
+                    currentStockStatus += Convert.ToInt32(dgv1.Rows[i].Cells[2].Value);
+                }
+                PresentCurrentStock.Text = currentStockStatus.ToString()+" gm";
                 StockTotal.Text = dgv1.Rows.Count.ToString();
                 dgv1.Refresh();
                 dgv1.DataSource = null;
@@ -271,6 +278,7 @@ namespace Foodies
             else
             {
                 StockTotal.Text = "0";
+                PresentCurrentStock.Text = "0";
             }
 
             SqlDataAdapter adapter5 = new SqlDataAdapter("SELECT * from Sales", con);
@@ -375,6 +383,107 @@ namespace Foodies
                 totalDeletedInvoices.Text = "0";
             }
 
+        }
+
+        public void EstimatingSTockAtTheStartOfDay()
+        {
+            try
+            {
+                if (DateTime.Now.ToShortDateString() == DateTime.Now.ToShortDateString())
+                {
+                    SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
+                    DataTable table4 = new DataTable();
+                    adapter4.Fill(table4);
+                    if (table4.Rows.Count > 0)
+                    {
+                        string query = "select * from Stock";
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        dgv1.DataSource = dt;
+                        SqlTransaction tran = con.BeginTransaction();
+
+                        SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
+                        cmd10.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd10.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
+                            }
+                        }
+                        StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
+                        dgv1.Refresh();
+                        dgv1.DataSource = null;
+                    }
+                    else
+                    {
+                        StockAtTheDayOfStart.Text = "0";
+                    }
+                }
+                else if (DateTime.Now.ToShortDateString() != DateTime.Now.ToShortDateString())
+                {
+                    SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
+                    DataTable table4 = new DataTable();
+                    adapter4.Fill(table4);
+                    if (table4.Rows.Count > 0)
+                    {
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "delete * from stockstatus";
+                        cmd.ExecuteNonQuery();
+
+                        string query = "select * from Stock";
+                        SqlCommand cmd2 = new SqlCommand(query, con);
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                        da.Fill(dt);
+                        dgv1.DataSource = dt;
+                        for (int i = 0; i < dgv1.Rows.Count; ++i)
+                        {
+                            Stock_at_the_day_of_start += Convert.ToInt32(dgv1.Rows[i].Cells[2].Value);
+                        }
+                        dgv1.Refresh();
+                        dgv1.DataSource = null;
+
+                        SqlCommand cmd3 = con.CreateCommand();
+                        cmd3.CommandType = CommandType.Text;
+                        cmd3.CommandText = "insert into stockstatus(stockatthestartofday,stockdate) values ('" + Stock_at_the_day_of_start + "','" + DateTime.Now.ToShortDateString() + "')";
+                        cmd3.ExecuteNonQuery();
+
+                        SqlTransaction tran = con.BeginTransaction();
+
+                        SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
+                        cmd10.ExecuteNonQuery();
+
+                        using (SqlDataReader dr = cmd10.ExecuteReader())
+                        {
+                            while (dr.Read())
+                            {
+                                dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
+                            }
+                        }
+
+                        StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
+                        tran.Commit();
+                    }
+                    else
+                    {
+                        StockAtTheDayOfStart.Text = "0";
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                const string message =
+                "Error in loading stock at the start of the day";
+                const string caption = "Error in stock estimation";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                             MessageBoxIcon.Error);
+            }
         }
 
         public void FoucsTextBoxes()
