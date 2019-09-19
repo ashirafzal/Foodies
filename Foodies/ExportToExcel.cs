@@ -563,7 +563,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Bill Records");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
@@ -621,7 +621,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Category");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
@@ -735,7 +735,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Orders");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
@@ -792,7 +792,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Products");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
@@ -849,7 +849,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Sales");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
@@ -907,7 +907,7 @@ namespace Foodies
             }
             using (XLWorkbook wb = new XLWorkbook())
             {
-                wb.Worksheets.Add(dt, "Customers");
+                wb.Worksheets.Add(dt, "Stocks");
 
                 //Set the color of Header Row.
                 //A resembles First Column while C resembles Third column.
