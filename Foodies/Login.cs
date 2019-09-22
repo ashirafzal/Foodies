@@ -47,7 +47,8 @@ namespace Foodies
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "insert into LoginDetails (Loginuser,usercategory,time,date) values ('" + User_name + "','" + category + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.ToShortDateString() + "')";
                     cmd.ExecuteNonQuery();
-                    Cashier main = new Cashier();
+                    //Cashier main = new Cashier();
+                    Cashier2 main = new Cashier2();
                     this.Hide();
                     main.Show();
                 }
@@ -83,7 +84,8 @@ namespace Foodies
                         cmd.CommandText = "insert into LoginDetails (Loginuser,usercategory,time,date) values ('" + druser + "','" + drcategory + "','" + DateTime.Now.ToShortTimeString() + "','" + DateTime.Now.ToShortDateString() + "')";
                         cmd.ExecuteNonQuery();
 
-                        Cashier main = new Cashier();
+                        //Cashier main = new Cashier();
+                        Cashier2 main = new Cashier2();
                         this.Hide();
                         main.Show();
                     }

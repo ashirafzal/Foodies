@@ -1418,7 +1418,7 @@ namespace Foodies
 
         private void button1_Click(object sender, EventArgs e)
         {
-                try
+            try
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
