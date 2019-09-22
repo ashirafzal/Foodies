@@ -628,10 +628,10 @@ namespace Foodies
             tran.Commit();
             con.Close();
 
-            e.Graphics.DrawString("FOODIES CLUB", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(100, 30));
+            e.Graphics.DrawString("FOODIES CLUB", new Font("Arial", 15, FontStyle.Bold), Brushes.Black, new Point(110, 30));
             //e.Graphics.DrawString("GST# 222-333-123456", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(130, 70));
             e.Graphics.DrawString("Invoice ID :", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, 70));
-            e.Graphics.DrawString(INVOICEID.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(90, 70));
+            e.Graphics.DrawString(INVOICEID.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(90, 70));
             e.Graphics.DrawString("Transaction Date :", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, 90));
             e.Graphics.DrawString(DateTime.Now.Date.ToShortDateString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(130, 90));
             e.Graphics.DrawString("Transaction Time :", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, 110));
@@ -639,14 +639,14 @@ namespace Foodies
             //
             e.Graphics.DrawString("------------------------------------------------------------------------------",
                new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, 130));
-            e.Graphics.DrawString("SALES ITEMS", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(150, 150));
+            e.Graphics.DrawString("SALES ITEMS", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(150, 150));
             e.Graphics.DrawString("------------------------------------------------------------------------------",
             new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, 170));
             //
-            e.Graphics.DrawString("PRODUCT NAME", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(10, 190));
-            e.Graphics.DrawString("QUANTITY", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(160, 190));
-            e.Graphics.DrawString("RATE", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(240, 190));
-            e.Graphics.DrawString("AMOUNT", new Font("Arial", 9, FontStyle.Regular), Brushes.Black, new Point(310, 190));
+            e.Graphics.DrawString("PRODUCT NAME", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(10, 190));
+            e.Graphics.DrawString("QUANTITY", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(160, 190));
+            e.Graphics.DrawString("RATE", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(240, 190));
+            e.Graphics.DrawString("AMOUNT", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, new Point(310, 190));
 
             int position = 210;
 
@@ -662,16 +662,16 @@ namespace Foodies
             e.Graphics.DrawString("------------------------------------------------------------------------------",
            new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 20));
             //
-            e.Graphics.DrawString("Actual Amount", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 40));
-            e.Graphics.DrawString(Actual_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(310, position + 40));
-            e.Graphics.DrawString("Total Quantity", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 60));
-            e.Graphics.DrawString(Total_Qty.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(310, position + 60));
-            e.Graphics.DrawString("Total Amount", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 80));
-            e.Graphics.DrawString(Total_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(310, position + 80));
+            e.Graphics.DrawString("Actual Amount", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(70, position + 40));
+            e.Graphics.DrawString(Actual_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(250, position + 40));
+            e.Graphics.DrawString("Total Quantity", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(70, position + 60));
+            e.Graphics.DrawString(Total_Qty.ToString() + ".00", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(250, position + 60));
+            e.Graphics.DrawString("Total Amount", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(70, position + 80));
+            e.Graphics.DrawString(Total_Amount.ToString() + ".00", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(250, position + 80));
             //e.Graphics.DrawString("Total Amount(GST Included)", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 100));
             //e.Graphics.DrawString(_TotalWithGST.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(310, position + 100));
-            e.Graphics.DrawString("Discount", new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 100));
-            e.Graphics.DrawString(_Discount.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(310, position + 100));
+            e.Graphics.DrawString("Discount", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(70, position + 100));
+            e.Graphics.DrawString(_Discount.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(250, position + 100));
             //
             e.Graphics.DrawString("------------------------------------------------------------------------------",
            new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new Point(10, position + 120));
@@ -1336,7 +1336,11 @@ namespace Foodies
             totalQty.Text = "0";
             total_Amount.Text = "0";
             flowLayoutPanel1.Controls.Clear();
-            Loadproducts();  
+            Loadproducts();
+            flowLayoutPanel2.Controls.Clear();
+            Loadcategory();
+
+
         }
 
         public void inventoryFunctionality()
