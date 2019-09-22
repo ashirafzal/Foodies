@@ -7,6 +7,9 @@ using System.Data;
 
 namespace Foodies
 {
+    [System.Runtime.InteropServices.ComVisible(true)]
+    [System.Serializable]
+
     public partial class ManageItems : Form
     {
         string imgLocation = "";
@@ -62,7 +65,7 @@ namespace Foodies
         {
             Byte[] img = (Byte[])dgv1.CurrentRow.Cells[4].Value;
             MemoryStream ms = new MemoryStream(img);
-            pictureBox1.Image = Image.FromStream(ms);
+            //pictureBox1.Image = Image.FromStream(ms);
 
             ProductID.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
             ProductName.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
@@ -72,41 +75,70 @@ namespace Foodies
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int a1 = Convert.ToInt16(ProductID.Text);
-            int b = Convert.ToInt32(ProductPrice.Text);
-
-            byte[] images = null;
-            FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
-            BinaryReader brs = new BinaryReader(Stream);
-            images = brs.ReadBytes((int)Stream.Length);
-
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            string sqlQuery = "update Products set ProductName = @ProductName , ProductPrice =  @b ,ProductCategory = @ProductCategory, ProductImage = @images where ProductId = '" + a1 + "'  ";
-            cmd = new SqlCommand(sqlQuery, con);
-            cmd.Parameters.Add(new SqlParameter("@ProductCategory", ProductCategory.Text.ToLower()));
-            cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName.Text.ToLower()));
-            cmd.Parameters.Add(new SqlParameter("@b", b));
-            cmd.Parameters.Add(new SqlParameter("@images", images));
-            var N = cmd.ExecuteNonQuery();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            ProductID.Text = string.Empty;
-            ProductName.Text = string.Empty;
-            ProductCategory.Text = string.Empty;
-            ProductPrice.Text = string.Empty;
-            MessageBox.Show("Product updated");
-            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
             try
             {
-              
+                int a1 = Convert.ToInt16(ProductID.Text);
+                int b = Convert.ToInt32(ProductPrice.Text);
+
+                byte[] images = null;
+                FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(Stream);
+                images = brs.ReadBytes((int)Stream.Length);
+
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                string sqlQuery = "update Products set ProductName = @ProductName , ProductPrice =  @b ,ProductCategory = @ProductCategory, ProductImage = @images where ProductId = '" + a1 + "'  ";
+                cmd = new SqlCommand(sqlQuery, con);
+                cmd.Parameters.Add(new SqlParameter("@ProductCategory", ProductCategory.Text.ToLower()));
+                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName.Text.ToLower()));
+                cmd.Parameters.Add(new SqlParameter("@b", b));
+                cmd.Parameters.Add(new SqlParameter("@images", images));
+                var N = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                ProductID.Text = string.Empty;
+                ProductName.Text = string.Empty;
+                ProductCategory.Text = string.Empty;
+                ProductPrice.Text = string.Empty;
+                MessageBox.Show("Product updated");
+                this.productsTableAdapter.Fill(this.itemsDataSet.Products);
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter numeric value in required fields");
             }
             catch (Exception)
             {
-                MessageBox.Show("Please fill all required fields");
+                if (ProductID.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill required field");
+                }
+                else if (ProductCategory.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill required field");
+                }
+                else if (ProductName.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill required field");
+                }
+                else if (ProductPrice.Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill required field");
+                }
+                else if (ProductID.Text == string.Empty || ProductCategory.Text == string.Empty
+                    || ProductName.Text == string.Empty || ProductPrice.Text == string.Empty )
+                {
+                    MessageBox.Show("Please fill all required fields");
+                }
+                else
+                {
+                    MessageBox.Show("Please select a image to update product");
+                }     
             }
+
         }
 
         private void dgv1_DataError(object sender, DataGridViewDataErrorEventArgs e)
