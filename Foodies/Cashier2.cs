@@ -235,6 +235,12 @@ namespace Foodies
         // Connection String //
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
 
+        private void sALESSUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesSummary sales = new SalesSummary();
+            sales.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -361,7 +367,7 @@ namespace Foodies
                     const string message =
                         "Transaction can't be completed on more than 40 items.\n" +
                         "Please select less than 40 items for transaction.";
-                    const string caption = "Transaction Limit";
+                    const string caption = "Paper size limit";
                     var result = MessageBox.Show(message, caption,
                                                  MessageBoxButtons.OK,
                                                  MessageBoxIcon.Exclamation);
@@ -778,8 +784,8 @@ namespace Foodies
 
                                 label3 = new Label
                                 {
-                                    Size = new System.Drawing.Size(150, 20),
-                                    Font = new Font("Arial", 12, FontStyle.Bold),
+                                    Size = new System.Drawing.Size(150, 30),
+                                    Font = new Font("Arial", 13, FontStyle.Bold),
                                     Location = new Point(30, 140),
                                     //Margin = new Padding(5, 5, 5, 5),
                                     BackColor = Color.White,
@@ -964,8 +970,8 @@ namespace Foodies
 
                                 label = new Label
                                 {
-                                    Size = new System.Drawing.Size(150, 20),
-                                    Font = new Font("Arial", 12, FontStyle.Bold),
+                                    Size = new System.Drawing.Size(150, 22),
+                                    Font = new Font("Arial", 13, FontStyle.Bold),
                                     Location = new Point(30, 140),
                                     //Margin = new Padding(5, 5, 5, 5),
                                     BackColor = Color.White,

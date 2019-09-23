@@ -528,7 +528,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(184, 62);
             this.label13.TabIndex = 0;
-            this.label13.Text = "TOTAL SALES";
+            this.label13.Text = "TOTAL ANNUAL SALES";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox5

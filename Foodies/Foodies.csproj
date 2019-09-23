@@ -245,6 +245,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SalesSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesSummary.Designer.cs">
+      <DependentUpon>SalesSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DailySales.resx">
       <DependentUpon>DailySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesSummary.resx">
+      <DependentUpon>SalesSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>

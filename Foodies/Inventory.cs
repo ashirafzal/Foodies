@@ -234,7 +234,10 @@ namespace Foodies
             adapter3.Fill(table3);
             if (table3.Rows.Count > 0)
             {
-                string query = "select * from Bill";
+                var firstdayofyear = DateTime.Now.Year;
+                var currentdate = DateTime.Now.Date;
+
+                string query = "select * from Bill where OrderDate between '" + firstdayofyear + "' and '" + currentdate + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);

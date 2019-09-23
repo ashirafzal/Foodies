@@ -100,6 +100,7 @@
             this.Clabel1 = new System.Windows.Forms.Label();
             this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.DVPrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.sALESSUMMARYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -334,6 +335,8 @@
             // 
             // oTHERSToolStripMenuItem
             // 
+            this.oTHERSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sALESSUMMARYToolStripMenuItem});
             this.oTHERSToolStripMenuItem.Name = "oTHERSToolStripMenuItem";
             this.oTHERSToolStripMenuItem.Size = new System.Drawing.Size(62, 17);
             this.oTHERSToolStripMenuItem.Text = "OTHERS";
@@ -908,6 +911,13 @@
             // 
             this.DVPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.DVPrintDocument_PrintPage);
             // 
+            // sALESSUMMARYToolStripMenuItem
+            // 
+            this.sALESSUMMARYToolStripMenuItem.Name = "sALESSUMMARYToolStripMenuItem";
+            this.sALESSUMMARYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sALESSUMMARYToolStripMenuItem.Text = "SALES SUMMARY";
+            this.sALESSUMMARYToolStripMenuItem.Click += new System.EventHandler(this.sALESSUMMARYToolStripMenuItem_Click);
+            // 
             // Cashier2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1015,5 +1025,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn add;
         private System.Windows.Forms.DataGridViewButtonColumn minus;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.ToolStripMenuItem sALESSUMMARYToolStripMenuItem;
     }
 }
