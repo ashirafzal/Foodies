@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Foodies
@@ -245,10 +240,12 @@ namespace Foodies
         {
             try
             {
-                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
-                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
-
                 if (dgv1.Rows.Count <= 2)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 450);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 3)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
@@ -258,9 +255,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 550);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 5)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 575);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 6)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 600);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 7)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 625);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 8)
@@ -268,14 +275,29 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 650);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 9)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 675);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 10)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 700);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 11)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 725);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 12)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 750);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 13)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 775);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 14)
@@ -288,9 +310,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 850);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 17)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 875);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 18)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 900);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 19)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 925);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 20)
@@ -298,9 +330,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 950);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 21)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 975);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 22)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1000);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 23)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1025);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 24)
@@ -308,9 +350,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1050);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 25)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1075);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 26)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1100);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 27)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1125);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 28)
@@ -318,9 +370,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1150);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 29)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1175);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 30)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1200);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 31)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1225);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 32)
@@ -328,9 +390,19 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1250);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 33)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1275);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 34)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1300);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 35)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1325);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
                 else if (dgv1.Rows.Count <= 36)
@@ -338,14 +410,29 @@ namespace Foodies
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1350);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
+                else if (dgv1.Rows.Count <= 37)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1375);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
                 else if (dgv1.Rows.Count <= 38)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1400);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
-                else
+                else if (dgv1.Rows.Count <= 39)
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1425);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else if (dgv1.Rows.Count <= 40)
                 {
                     DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1450);
+                    DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+                }
+                else
+                {
+                    DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, DVPrintDocument.DefaultPageSettings.PaperSize.Height);
                     DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
                 }
 
@@ -869,8 +956,8 @@ namespace Foodies
 
                                 label = new Label
                                 {
-                                    Size = new System.Drawing.Size(150, 15),
-                                    Font = new Font("Arial", 10, FontStyle.Bold),
+                                    Size = new System.Drawing.Size(150, 22),
+                                    Font = new Font("Arial", 13, FontStyle.Bold),
                                     Location = new Point(30, 140),
                                     //Margin = new Padding(5, 5, 5, 5),
                                     BackColor = Color.White,
@@ -881,9 +968,9 @@ namespace Foodies
 
                                 label2 = new Label
                                 {
-                                    Size = new System.Drawing.Size(100, 15),
-                                    Font = new Font("Arial", 10, FontStyle.Bold),
-                                    Location = new Point(55, 165),
+                                    Size = new System.Drawing.Size(100, 20),
+                                    Font = new Font("Arial", 12, FontStyle.Bold),
+                                    Location = new Point(60, 165),
                                     //Margin = new Padding(5, 5, 5, 5),
                                     BackColor = Color.White,
                                     ForeColor = Color.Black,
@@ -1386,10 +1473,27 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr["stockdate"]);
                                     stocktime = Convert.ToString(dr["stocktime"]);
 
-                                    newstockweigth = stockweigth - 125 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 125 * quantity;
 
-                                    SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd1.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+                                  
                                 }
                             }
 
@@ -1408,10 +1512,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr2["stockdate"]);
                                     stocktime = Convert.ToString(dr2["stocktime"]);
 
-                                    newstockweigth = stockweigth - 250 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 250 * quantity;
 
-                                    SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd3.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }        
                                 }
                             }
 
@@ -1430,10 +1549,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr3["stockdate"]);
                                     stocktime = Convert.ToString(dr3["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd5.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }     
                                 }
                             }
 
@@ -1452,10 +1586,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr4["stockdate"]);
                                     stocktime = Convert.ToString(dr4["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd7.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
                                 }
                             }
 
@@ -1474,10 +1623,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr5["stockdate"]);
                                     stocktime = Convert.ToString(dr5["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd9.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    } 
                                 }
                             }
 
@@ -1496,10 +1660,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr6["stockdate"]);
                                     stocktime = Convert.ToString(dr6["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd11.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1518,10 +1697,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr7["stockdate"]);
                                     stocktime = Convert.ToString(dr7["stocktime"]);
 
-                                    newstockweigth = stockweigth - 250 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 250 * quantity;
 
-                                    SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd13.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
                                 }
                             }
 
@@ -1540,10 +1734,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr8["stockdate"]);
                                     stocktime = Convert.ToString(dr8["stocktime"]);
 
-                                    newstockweigth = stockweigth - 250 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 250 * quantity;
 
-                                    SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd15.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1562,10 +1771,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr9["stockdate"]);
                                     stocktime = Convert.ToString(dr9["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd17.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                   
                                 }
                             }
 
@@ -1584,10 +1808,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr10["stockdate"]);
                                     stocktime = Convert.ToString(dr10["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd19.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1606,10 +1845,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr11["stockdate"]);
                                     stocktime = Convert.ToString(dr11["stocktime"]);
 
-                                    double newstockweigth2 = stockweigth2 - 1 * quantity;
+                                    if (stockweigth2 > 0)
+                                    {
+                                        double newstockweigth2 = stockweigth2 - 1 * quantity;
 
-                                    SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd21.ExecuteNonQuery();
+                                        if (newstockweigth2 > -1)
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
                                 }
                             }
 
@@ -1628,10 +1882,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr12["stockdate"]);
                                     stocktime = Convert.ToString(dr12["stocktime"]);
 
-                                    newstockweigth = stockweigth - 2 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd23.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd23.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd23.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1650,10 +1919,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr13["stockdate"]);
                                     stocktime = Convert.ToString(dr13["stocktime"]);
 
-                                    newstockweigth = stockweigth - 8 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 8 * quantity;
 
-                                    SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd25.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd25.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd25.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1672,10 +1956,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr14["stockdate"]);
                                     stocktime = Convert.ToString(dr14["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd27.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd27.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd27.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1694,10 +1993,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr15["stockdate"]);
                                     stocktime = Convert.ToString(dr15["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd29.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd29.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd29.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                   
                                 }
                             }
 
@@ -1716,10 +2030,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr16["stockdate"]);
                                     stocktime = Convert.ToString(dr16["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd31.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd31.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd31.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                    
                                 }
                             }
 
@@ -1738,10 +2067,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr17["stockdate"]);
                                     stocktime = Convert.ToString(dr17["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd33.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd33.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd33.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                  
                                 }
                             }
 
@@ -1760,10 +2104,25 @@ namespace Foodies
                                     stockdate = Convert.ToString(dr18["stockdate"]);
                                     stocktime = Convert.ToString(dr18["stocktime"]);
 
-                                    newstockweigth = stockweigth - 1 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd35.ExecuteNonQuery();
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }                                   
                                 }
                             }
 
@@ -1792,12 +2151,29 @@ namespace Foodies
                                     stockcompany = Convert.ToString(dr["stockcompany"]);
                                     stockcategory = Convert.ToString(dr["stockcategory"]);
                                     stockdate = Convert.ToString(dr["stockdate"]);
-                                    stocktime = Convert.ToString(dr["stocktime"]);
+                                    stocktime = Convert.ToString(dr["stocktime"]);                                                          
 
-                                    newstockweigth = stockweigth - 500 * quantity;
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 500 * quantity;
 
-                                    SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd1.ExecuteNonQuery();
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -1818,8 +2194,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd3.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
 
@@ -1840,8 +2233,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd5.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -1862,8 +2272,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd7.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -1884,8 +2311,26 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd9.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
                                 }
                             }
 
@@ -1906,8 +2351,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 4 * quantity;
 
-                                    SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd11.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
 
@@ -1928,8 +2390,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 4 * quantity;
 
-                                    SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd13.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -1950,8 +2429,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd15.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
 
@@ -1972,8 +2468,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd17.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                  
                                 }
                             }
 
@@ -1994,8 +2507,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 4 * quantity;
 
-                                    SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd19.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
 
@@ -2016,8 +2546,25 @@ namespace Foodies
 
                                     double newstockweigth2 = stockweigth2 - 4 * quantity;
 
-                                    SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd21.ExecuteNonQuery();
+                                    if (stockweigth2 > 0)
+                                    {
+                                        if (newstockweigth2 > 0)
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -2038,8 +2585,24 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 4 * quantity;
 
-                                    SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd23.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd23.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd23 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd23.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
                                 }
                             }
 
@@ -2060,8 +2623,24 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 2 * quantity;
 
-                                    SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd25.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd25.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd25 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd25.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
                                 }
                             }
 
@@ -2082,8 +2661,23 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 1 * quantity;
 
-                                    SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd27.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd27.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd27 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd27.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
                                 }
                             }
 
@@ -2104,8 +2698,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 8 * quantity;
 
-                                    SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd29.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd29.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd29 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd29.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                   
                                 }
                             }
 
@@ -2126,8 +2737,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 100 * quantity;
 
-                                    SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd31.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd31.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd31 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd31.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
 
@@ -2148,8 +2776,25 @@ namespace Foodies
 
                                     newstockweigth = stockweigth - 20 * quantity;
 
-                                    SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
-                                    cmd33.ExecuteNonQuery();
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd33.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd33 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd33.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                    
                                 }
                             }
                         }

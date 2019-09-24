@@ -28,7 +28,7 @@ namespace Foodies
 
         public void dgv_1()
         {
-            dgv1.RowTemplate.Height = 32;
+            dgv1.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -62,7 +62,7 @@ namespace Foodies
             for (int i = 0; i < dgv1.Rows.Count; ++i)
             {
                 totalQuantity += Convert.ToInt32(dgv1.Rows[i].Cells[5].Value);
-                totalAmount += Convert.ToDouble(dgv1.Rows[i].Cells[8].Value);
+                totalAmount += Convert.ToDouble(dgv1.Rows[i].Cells[7].Value);
             }
             totalquantity.Text = totalQuantity.ToString();
             totalprice.Text = totalAmount.ToString();

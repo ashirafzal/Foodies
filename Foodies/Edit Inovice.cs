@@ -315,11 +315,12 @@ namespace Foodies
 
         private void BtnPrint_Click(object sender, EventArgs e)
         {
-            
-            DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
-            DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
-
             if (dgv1.Rows.Count <= 2)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 450);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 3)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 500);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
@@ -329,9 +330,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 550);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 5)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 575);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 6)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 600);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 7)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 625);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 8)
@@ -339,14 +350,29 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 650);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 9)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 675);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 10)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 700);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 11)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 725);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 12)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 750);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 13)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 775);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 14)
@@ -359,9 +385,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 850);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 17)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 875);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 18)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 900);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 19)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 925);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 20)
@@ -369,9 +405,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 950);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 21)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 975);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 22)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1000);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 23)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1025);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 24)
@@ -379,9 +425,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1050);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 25)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1075);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 26)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1100);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 27)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1125);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 28)
@@ -389,9 +445,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1150);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 29)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1175);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 30)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1200);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 31)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1225);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 32)
@@ -399,9 +465,19 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1250);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 33)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1275);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 34)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1300);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 35)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1325);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
             else if (dgv1.Rows.Count <= 36)
@@ -409,14 +485,29 @@ namespace Foodies
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1350);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
+            else if (dgv1.Rows.Count <= 37)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1375);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
             else if (dgv1.Rows.Count <= 38)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1400);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
-            else
+            else if (dgv1.Rows.Count <= 39)
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1425);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else if (dgv1.Rows.Count <= 40)
             {
                 DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, 1450);
+                DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
+            }
+            else
+            {
+                DVPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("", 400, DVPrintDocument.DefaultPageSettings.PaperSize.Height);
                 DVPrintDocument.DefaultPageSettings.Margins = new Margins(0, 0, 0, 0);
             }
 
