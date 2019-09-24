@@ -10,6 +10,9 @@ namespace Foodies
 {
     public partial class Cashier2 : Form
     {
+        /*Timer for counting minutes*/
+        System.Windows.Forms.Timer _timer = new System.Windows.Forms.Timer();
+
         /*Declaring product and cashier string,integerandimage type variable to be read by the dr and then saved in these
          declarations*/
         string Productname;
@@ -76,6 +79,11 @@ namespace Foodies
             {
                 MessageBox.Show("Stock zero is present");
             }
+        }
+
+        public void WatchMethod()
+        {
+            
         }
 
         private void dgv1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -252,6 +260,16 @@ namespace Foodies
         private void timer1_Tick(object sender, EventArgs e)
         {
             
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void timer1_Tick_2(object sender, EventArgs e)
+        {
+            Timercheckingstock();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -800,6 +818,9 @@ namespace Foodies
         {
             InitializeComponent();
             CheckingUserStatus();
+            _timer.Interval = 1800000; // 1800000 ms = 30 minutes
+            _timer.Tick += timer1_Tick_2;
+            _timer.Start();
         }
 
         private void Cashier2_Load(object sender, EventArgs e)
