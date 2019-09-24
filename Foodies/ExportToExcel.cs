@@ -375,7 +375,7 @@ namespace Foodies
 
         public void dgv_1()
         {
-            dgv1.RowTemplate.Height = 32;
+            dgv1.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -398,7 +398,7 @@ namespace Foodies
 
         public void dgv_2()
         {
-            dgv2.RowTemplate.Height = 32;
+            dgv2.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -421,7 +421,7 @@ namespace Foodies
 
         public void dgv_3()
         {
-            dgv3.RowTemplate.Height = 32;
+            dgv3.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -444,7 +444,7 @@ namespace Foodies
 
         public void dgv_4()
         {
-            dgv4.RowTemplate.Height = 32;
+            dgv4.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -467,7 +467,7 @@ namespace Foodies
 
         public void dgv_5()
         {
-            dgv5.RowTemplate.Height = 32;
+            dgv5.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -490,7 +490,7 @@ namespace Foodies
 
         public void dgv_6()
         {
-            dgv6.RowTemplate.Height = 32;
+            dgv6.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);
@@ -513,7 +513,7 @@ namespace Foodies
 
         public void dgv_7()
         {
-            dgv7.RowTemplate.Height = 32;
+            dgv7.RowTemplate.Height = 42;
 
             //This Part of Code is for the styling of the Grid Padding
             Padding newPadding = new Padding(0, 10, 0, 10);

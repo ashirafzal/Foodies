@@ -59,6 +59,7 @@
             this.eXPORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXPORTTOEXCELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oTHERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sALESSUMMARYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -100,7 +101,6 @@
             this.Clabel1 = new System.Windows.Forms.Label();
             this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.DVPrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.sALESSUMMARYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -340,6 +340,13 @@
             this.oTHERSToolStripMenuItem.Name = "oTHERSToolStripMenuItem";
             this.oTHERSToolStripMenuItem.Size = new System.Drawing.Size(62, 17);
             this.oTHERSToolStripMenuItem.Text = "OTHERS";
+            // 
+            // sALESSUMMARYToolStripMenuItem
+            // 
+            this.sALESSUMMARYToolStripMenuItem.Name = "sALESSUMMARYToolStripMenuItem";
+            this.sALESSUMMARYToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.sALESSUMMARYToolStripMenuItem.Text = "SALES SUMMARY";
+            this.sALESSUMMARYToolStripMenuItem.Click += new System.EventHandler(this.sALESSUMMARYToolStripMenuItem_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -910,13 +917,6 @@
             // DVPrintDocument
             // 
             this.DVPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.DVPrintDocument_PrintPage);
-            // 
-            // sALESSUMMARYToolStripMenuItem
-            // 
-            this.sALESSUMMARYToolStripMenuItem.Name = "sALESSUMMARYToolStripMenuItem";
-            this.sALESSUMMARYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sALESSUMMARYToolStripMenuItem.Text = "SALES SUMMARY";
-            this.sALESSUMMARYToolStripMenuItem.Click += new System.EventHandler(this.sALESSUMMARYToolStripMenuItem_Click);
             // 
             // Cashier2
             // 

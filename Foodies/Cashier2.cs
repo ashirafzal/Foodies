@@ -65,6 +65,19 @@ namespace Foodies
         // Boolean to check whether porudct is present in datagridview or not
         bool exist;
 
+        public void Timercheckingstock()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from Stock where stockweigth = '0' ", con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Stock zero is present");
+            }
+        }
+
         private void dgv1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             int qty;
@@ -234,6 +247,11 @@ namespace Foodies
         {
             SalesSummary sales = new SalesSummary();
             sales.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
