@@ -77,7 +77,17 @@ namespace Foodies
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Stock zero is present");
+                DialogResult result = MessageBox.Show("A stock item is ended you need to update it.\n" +
+                    "Do you want to update it now?", "Stock warning", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    updatestock updatestock = new updatestock();
+                    updatestock.Show();
+                }
+                if (result == DialogResult.No)
+                {
+                    //Do nothing
+                }
             }
         }
 
@@ -819,6 +829,7 @@ namespace Foodies
             InitializeComponent();
             CheckingUserStatus();
             _timer.Interval = 1800000; // 1800000 ms = 30 minutes
+            //_timer.Interval = 30000; // 30000 ms = 30 seconds
             _timer.Tick += timer1_Tick_2;
             _timer.Start();
         }

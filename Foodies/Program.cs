@@ -13,7 +13,7 @@ namespace Foodies
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new updatestock());
+            Application.Run(new Cashier2());
         }
     }
 }
