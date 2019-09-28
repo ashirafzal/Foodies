@@ -96,11 +96,6 @@ namespace Foodies
             }
         }
 
-        public void WatchMethod()
-        {
-            
-        }
-
         private void dgv1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             int qty;
