@@ -68,6 +68,8 @@ namespace Foodies
         string clubsandwich = "club sandwich";
         string chickensandwich = "chicken sandwich";
         string bbqsandwich = "bbq sandwich";
+        string chickenburger = "chicken burger";
+        string broast = "broast";
         // Boolean to check whether porudct is present in datagridview or not
         bool exist;
 
@@ -1624,7 +1626,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'white chilli' ", con, tran);
+                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'white mirch' ", con, tran);
                             cmd6.ExecuteNonQuery();
 
                             using (SqlDataReader dr4 = cmd6.ExecuteReader())
@@ -2382,7 +2384,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'white chilli' ", con, tran);
+                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'white mirch' ", con, tran);
                             cmd6.ExecuteNonQuery();
 
                             using (SqlDataReader dr4 = cmd6.ExecuteReader())
@@ -2421,7 +2423,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'black chilli' ", con, tran);
+                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'black mirch' ", con, tran);
                             cmd8.ExecuteNonQuery();
 
                             using (SqlDataReader dr5 = cmd8.ExecuteReader())
@@ -2617,7 +2619,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd18 = new SqlCommand("select * from Stock where stockname = 'Vinegar' ", con, tran);
+                            SqlCommand cmd18 = new SqlCommand("select * from Stock where stockname = 'sirka' ", con, tran);
                             cmd18.ExecuteNonQuery();
 
                             using (SqlDataReader dr10 = cmd18.ExecuteReader())
@@ -4083,7 +4085,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'white cayenne pepper' ", con, tran);
+                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'white red mirch' ", con, tran);
                             cmd4.ExecuteNonQuery();
 
                             using (SqlDataReader dr3 = cmd4.ExecuteReader())
@@ -4445,7 +4447,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd2 = new SqlCommand("select * from Stock where stockname = 'vinegar' ", con, tran);
+                            SqlCommand cmd2 = new SqlCommand("select * from Stock where stockname = 'sirka' ", con, tran);
                             cmd2.ExecuteNonQuery();
 
                             using (SqlDataReader dr2 = cmd2.ExecuteReader())
@@ -4484,7 +4486,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'diced celery' ", con, tran);
+                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'ajwain' ", con, tran);
                             cmd4.ExecuteNonQuery();
 
                             using (SqlDataReader dr3 = cmd4.ExecuteReader())
@@ -4523,7 +4525,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'chili powder' ", con, tran);
+                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'mirch powder' ", con, tran);
                             cmd6.ExecuteNonQuery();
 
                             using (SqlDataReader dr4 = cmd6.ExecuteReader())
@@ -4562,7 +4564,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'garlic clove' ", con, tran);
+                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'lahsan ki long' ", con, tran);
                             cmd8.ExecuteNonQuery();
 
                             using (SqlDataReader dr5 = cmd8.ExecuteReader())
@@ -4797,7 +4799,7 @@ namespace Foodies
                                 }
                             }
 
-                            SqlCommand cmd20 = new SqlCommand("select * from Stock where stockname = 'pepper' ", con, tran);
+                            SqlCommand cmd20 = new SqlCommand("select * from Stock where stockname = 'kali mirch' ", con, tran);
                             cmd20.ExecuteNonQuery();
 
                             using (SqlDataReader dr11 = cmd20.ExecuteReader())
@@ -4991,7 +4993,7 @@ namespace Foodies
                     }
                     // else if end
 
-                    //else if 3
+                    //else if 4
                     else if (Convert.ToString(Row.Cells[0].Value) == chickensandwich)
                     {
                         string gridname = Convert.ToString(Row.Cells[0].Value);
@@ -5390,7 +5392,1118 @@ namespace Foodies
                             }
                         }
                     }
-                    //else if end
+                    //else if 4 end
+
+                    //else if 5
+                    else if (Convert.ToString(Row.Cells[0].Value) == chickenburger)
+                    {
+                        string gridname = Convert.ToString(Row.Cells[0].Value);
+                        int quantity = Convert.ToInt32(Row.Cells[1].Value);
+                        exist = true;
+                        if (exist == true)
+                        {
+                            //MessageBox.Show("Found");
+                            SqlCommand cmd = new SqlCommand("select * from Stock where stockname = 'chicken qeema' ", con, tran);
+                            cmd.ExecuteNonQuery();
+
+                            using (SqlDataReader dr = cmd.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr["stockid"]);
+                                    stockname = Convert.ToString(dr["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr["stockcategory"]);
+                                    stockdate = Convert.ToString(dr["stockdate"]);
+                                    stocktime = Convert.ToString(dr["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 250 * quantity;
+
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd2 = new SqlCommand("select * from Stock where stockname = 'bread slice' ", con, tran);
+                            cmd2.ExecuteNonQuery();
+
+                            using (SqlDataReader dr2 = cmd2.ExecuteReader())
+                            {
+                                while (dr2.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr2["stockid"]);
+                                    stockname = Convert.ToString(dr2["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr2["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr2["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr2["stockcategory"]);
+                                    stockdate = Convert.ToString(dr2["stockdate"]);
+                                    stocktime = Convert.ToString(dr2["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'egg' ", con, tran);
+                            cmd4.ExecuteNonQuery();
+
+                            using (SqlDataReader dr3 = cmd4.ExecuteReader())
+                            {
+                                while (dr3.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr3["stockid"]);
+                                    stockname = Convert.ToString(dr3["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr3["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr3["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr3["stockcategory"]);
+                                    stockdate = Convert.ToString(dr3["stockdate"]);
+                                    stocktime = Convert.ToString(dr3["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'mastard paste' ", con, tran);
+                            cmd6.ExecuteNonQuery();
+
+                            using (SqlDataReader dr4 = cmd6.ExecuteReader())
+                            {
+                                while (dr4.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr4["stockid"]);
+                                    stockname = Convert.ToString(dr4["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr4["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr4["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr4["stockcategory"]);
+                                    stockdate = Convert.ToString(dr4["stockdate"]);
+                                    stocktime = Convert.ToString(dr4["stocktime"]);
+
+                                    newstockweigth = stockweigth - 3 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'black mirch' ", con, tran);
+                            cmd8.ExecuteNonQuery();
+
+                            using (SqlDataReader dr5 = cmd8.ExecuteReader())
+                            {
+                                while (dr5.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr5["stockid"]);
+                                    stockname = Convert.ToString(dr5["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr5["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr5["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr5["stockcategory"]);
+                                    stockdate = Convert.ToString(dr5["stockdate"]);
+                                    stocktime = Convert.ToString(dr5["stocktime"]);
+
+                                    newstockweigth = stockweigth - 3 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                }
+                            }
+
+                            SqlCommand cmd10 = new SqlCommand("select * from Stock where stockname = 'salt' ", con, tran);
+                            cmd10.ExecuteNonQuery();
+
+                            using (SqlDataReader dr6 = cmd10.ExecuteReader())
+                            {
+                                while (dr6.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr6["stockid"]);
+                                    stockname = Convert.ToString(dr6["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr6["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr6["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr6["stockcategory"]);
+                                    stockdate = Convert.ToString(dr6["stockdate"]);
+                                    stocktime = Convert.ToString(dr6["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd12 = new SqlCommand("select * from Stock where stockname = 'mayoneze' ", con, tran);
+                            cmd12.ExecuteNonQuery();
+
+                            using (SqlDataReader dr7 = cmd12.ExecuteReader())
+                            {
+                                while (dr7.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr7["stockid"]);
+                                    stockname = Convert.ToString(dr7["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr7["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr7["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr7["stockcategory"]);
+                                    stockdate = Convert.ToString(dr7["stockdate"]);
+                                    stocktime = Convert.ToString(dr7["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd14 = new SqlCommand("select * from Stock where stockname = 'oil' ", con, tran);
+                            cmd14.ExecuteNonQuery();
+
+                            using (SqlDataReader dr8 = cmd14.ExecuteReader())
+                            {
+                                while (dr8.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr8["stockid"]);
+                                    stockname = Convert.ToString(dr8["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr8["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr8["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr8["stockcategory"]);
+                                    stockdate = Convert.ToString(dr8["stockdate"]);
+                                    stocktime = Convert.ToString(dr8["stocktime"]);
+
+                                    newstockweigth = stockweigth - 6 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd16 = new SqlCommand("select * from Stock where stockname = 'cheddar cheese slice' ", con, tran);
+                            cmd16.ExecuteNonQuery();
+
+                            using (SqlDataReader dr9 = cmd16.ExecuteReader())
+                            {
+                                while (dr9.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr9["stockid"]);
+                                    stockname = Convert.ToString(dr9["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr9["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr9["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr9["stockcategory"]);
+                                    stockdate = Convert.ToString(dr9["stockdate"]);
+                                    stocktime = Convert.ToString(dr9["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd18 = new SqlCommand("select * from Stock where stockname = 'butter' ", con, tran);
+                            cmd18.ExecuteNonQuery();
+
+                            using (SqlDataReader dr10 = cmd18.ExecuteReader())
+                            {
+                                while (dr10.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr10["stockid"]);
+                                    stockname = Convert.ToString(dr10["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr10["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr10["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr10["stockcategory"]);
+                                    stockdate = Convert.ToString(dr10["stockdate"]);
+                                    stocktime = Convert.ToString(dr10["stocktime"]);
+
+                                    newstockweigth = stockweigth - 2 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd20 = new SqlCommand("select * from Stock where stockname = 'salad' ", con, tran);
+                            cmd20.ExecuteNonQuery();
+
+                            using (SqlDataReader dr11 = cmd20.ExecuteReader())
+                            {
+                                while (dr11.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr11["stockid"]);
+                                    stockname = Convert.ToString(dr11["stockname"]);
+                                    double stockweigth2 = Convert.ToDouble(dr11["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr11["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr11["stockcategory"]);
+                                    stockdate = Convert.ToString(dr11["stockdate"]);
+                                    stocktime = Convert.ToString(dr11["stocktime"]);
+
+                                    double newstockweigth2 = stockweigth2 - 1 * quantity;
+
+                                    if (stockweigth2 > 0)
+                                    {
+                                        if (newstockweigth2 > 0)
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd34 = new SqlCommand("select * from Stock where stockname = 'bun' ", con, tran);
+                            cmd34.ExecuteNonQuery();
+
+                            using (SqlDataReader dr18 = cmd34.ExecuteReader())
+                            {
+                                while (dr18.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr18["stockid"]);
+                                    stockname = Convert.ToString(dr18["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr18["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr18["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr18["stockcategory"]);
+                                    stockdate = Convert.ToString(dr18["stockdate"]);
+                                    stocktime = Convert.ToString(dr18["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
+
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+                                }
+                            }
+
+                            SqlCommand cmd36 = new SqlCommand("select * from Stock where stockname = 'box' ", con, tran);
+                            cmd36.ExecuteNonQuery();
+
+                            using (SqlDataReader dr19 = cmd36.ExecuteReader())
+                            {
+                                while (dr19.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr19["stockid"]);
+                                    stockname = Convert.ToString(dr19["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr19["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr19["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr19["stockcategory"]);
+                                    stockdate = Convert.ToString(dr19["stockdate"]);
+                                    stocktime = Convert.ToString(dr19["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
+
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd37 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd37.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd37 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd37.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // else if 5 end
+
+                    //else if 6
+                    else if (Convert.ToString(Row.Cells[0].Value) == broast)
+                    {
+                        string gridname = Convert.ToString(Row.Cells[0].Value);
+                        int quantity = Convert.ToInt32(Row.Cells[1].Value);
+                        exist = true;
+                        if (exist == true)
+                        {
+                            //MessageBox.Show("Found");
+                            SqlCommand cmd = new SqlCommand("select * from Stock where stockname = 'chicken' ", con, tran);
+                            cmd.ExecuteNonQuery();
+
+                            using (SqlDataReader dr = cmd.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr["stockid"]);
+                                    stockname = Convert.ToString(dr["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr["stockcategory"]);
+                                    stockdate = Convert.ToString(dr["stockdate"]);
+                                    stocktime = Convert.ToString(dr["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 500 * quantity;
+
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd1 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd1.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd2 = new SqlCommand("select * from Stock where stockname = 'sirka' ", con, tran);
+                            cmd2.ExecuteNonQuery();
+
+                            using (SqlDataReader dr2 = cmd2.ExecuteReader())
+                            {
+                                while (dr2.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr2["stockid"]);
+                                    stockname = Convert.ToString(dr2["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr2["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr2["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr2["stockcategory"]);
+                                    stockdate = Convert.ToString(dr2["stockdate"]);
+                                    stocktime = Convert.ToString(dr2["stocktime"]);
+
+                                    newstockweigth = stockweigth - 50 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd3 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd3.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd4 = new SqlCommand("select * from Stock where stockname = 'soya sauce' ", con, tran);
+                            cmd4.ExecuteNonQuery();
+
+                            using (SqlDataReader dr3 = cmd4.ExecuteReader())
+                            {
+                                while (dr3.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr3["stockid"]);
+                                    stockname = Convert.ToString(dr3["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr3["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr3["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr3["stockcategory"]);
+                                    stockdate = Convert.ToString(dr3["stockdate"]);
+                                    stocktime = Convert.ToString(dr3["stocktime"]);
+
+                                    newstockweigth = stockweigth - 6 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd5 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd5.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd6 = new SqlCommand("select * from Stock where stockname = 'chinese salt' ", con, tran);
+                            cmd6.ExecuteNonQuery();
+
+                            using (SqlDataReader dr4 = cmd6.ExecuteReader())
+                            {
+                                while (dr4.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr4["stockid"]);
+                                    stockname = Convert.ToString(dr4["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr4["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr4["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr4["stockcategory"]);
+                                    stockdate = Convert.ToString(dr4["stockdate"]);
+                                    stocktime = Convert.ToString(dr4["stocktime"]);
+
+                                    newstockweigth = stockweigth - 2 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd7 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd7.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd8 = new SqlCommand("select * from Stock where stockname = 'black mirch' ", con, tran);
+                            cmd8.ExecuteNonQuery();
+
+                            using (SqlDataReader dr5 = cmd8.ExecuteReader())
+                            {
+                                while (dr5.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr5["stockid"]);
+                                    stockname = Convert.ToString(dr5["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr5["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr5["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr5["stockcategory"]);
+                                    stockdate = Convert.ToString(dr5["stockdate"]);
+                                    stocktime = Convert.ToString(dr5["stocktime"]);
+
+                                    newstockweigth = stockweigth - 1 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+
+                                            SqlCommand cmd9 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd9.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+                                }
+                            }
+
+                            SqlCommand cmd10 = new SqlCommand("select * from Stock where stockname = 'salt' ", con, tran);
+                            cmd10.ExecuteNonQuery();
+
+                            using (SqlDataReader dr6 = cmd10.ExecuteReader())
+                            {
+                                while (dr6.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr6["stockid"]);
+                                    stockname = Convert.ToString(dr6["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr6["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr6["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr6["stockcategory"]);
+                                    stockdate = Convert.ToString(dr6["stockdate"]);
+                                    stocktime = Convert.ToString(dr6["stocktime"]);
+
+                                    newstockweigth = stockweigth - 2 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd11 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd11.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd12 = new SqlCommand("select * from Stock where stockname = 'oil' ", con, tran);
+                            cmd12.ExecuteNonQuery();
+
+                            using (SqlDataReader dr7 = cmd12.ExecuteReader())
+                            {
+                                while (dr7.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr7["stockid"]);
+                                    stockname = Convert.ToString(dr7["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr7["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr7["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr7["stockcategory"]);
+                                    stockdate = Convert.ToString(dr7["stockdate"]);
+                                    stocktime = Convert.ToString(dr7["stocktime"]);
+
+                                    newstockweigth = stockweigth - 40 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd13 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd13.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd14 = new SqlCommand("select * from Stock where stockname = 'meda' ", con, tran);
+                            cmd14.ExecuteNonQuery();
+
+                            using (SqlDataReader dr8 = cmd14.ExecuteReader())
+                            {
+                                while (dr8.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr8["stockid"]);
+                                    stockname = Convert.ToString(dr8["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr8["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr8["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr8["stockcategory"]);
+                                    stockdate = Convert.ToString(dr8["stockdate"]);
+                                    stocktime = Convert.ToString(dr8["stocktime"]);
+
+                                    newstockweigth = stockweigth - 250 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd15 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd15.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd16 = new SqlCommand("select * from Stock where stockname = 'corn floor' ", con, tran);
+                            cmd16.ExecuteNonQuery();
+
+                            using (SqlDataReader dr9 = cmd16.ExecuteReader())
+                            {
+                                while (dr9.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr9["stockid"]);
+                                    stockname = Convert.ToString(dr9["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr9["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr9["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr9["stockcategory"]);
+                                    stockdate = Convert.ToString(dr9["stockdate"]);
+                                    stocktime = Convert.ToString(dr9["stocktime"]);
+
+                                    newstockweigth = stockweigth - 4 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd17 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd17.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd18 = new SqlCommand("select * from Stock where stockname = 'rice floor' ", con, tran);
+                            cmd18.ExecuteNonQuery();
+
+                            using (SqlDataReader dr10 = cmd18.ExecuteReader())
+                            {
+                                while (dr10.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr10["stockid"]);
+                                    stockname = Convert.ToString(dr10["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr10["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr10["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr10["stockcategory"]);
+                                    stockdate = Convert.ToString(dr10["stockdate"]);
+                                    stocktime = Convert.ToString(dr10["stocktime"]);
+
+                                    newstockweigth = stockweigth - 4 * quantity;
+
+                                    if (stockweigth > 0)
+                                    {
+                                        if (newstockweigth > 0)
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd19 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd19.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd20 = new SqlCommand("select * from Stock where stockname = 'white red mirch' ", con, tran);
+                            cmd20.ExecuteNonQuery();
+
+                            using (SqlDataReader dr11 = cmd20.ExecuteReader())
+                            {
+                                while (dr11.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr11["stockid"]);
+                                    stockname = Convert.ToString(dr11["stockname"]);
+                                    double stockweigth2 = Convert.ToDouble(dr11["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr11["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr11["stockcategory"]);
+                                    stockdate = Convert.ToString(dr11["stockdate"]);
+                                    stocktime = Convert.ToString(dr11["stocktime"]);
+
+                                    double newstockweigth2 = stockweigth2 - 2 * quantity;
+
+                                    if (stockweigth2 > 0)
+                                    {
+                                        if (newstockweigth2 > 0)
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd21 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd21.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd23 = new SqlCommand("select * from Stock where stockname = 'lahsan' ", con, tran);
+                            cmd23.ExecuteNonQuery();
+
+                            using (SqlDataReader dr12 = cmd23.ExecuteReader())
+                            {
+                                while (dr12.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr12["stockid"]);
+                                    stockname = Convert.ToString(dr12["stockname"]);
+                                    double stockweigth2 = Convert.ToDouble(dr12["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr12["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr12["stockcategory"]);
+                                    stockdate = Convert.ToString(dr12["stockdate"]);
+                                    stocktime = Convert.ToString(dr12["stocktime"]);
+
+                                    double newstockweigth2 = stockweigth2 - 2 * quantity;
+
+                                    if (stockweigth2 > 0)
+                                    {
+                                        if (newstockweigth2 > 0)
+                                        {
+                                            SqlCommand cmd24 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd24.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd24 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd24.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+                            SqlCommand cmd25 = new SqlCommand("select * from Stock where stockname = 'lahsan' ", con, tran);
+                            cmd25.ExecuteNonQuery();
+
+                            using (SqlDataReader dr13 = cmd25.ExecuteReader())
+                            {
+                                while (dr13.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr13["stockid"]);
+                                    stockname = Convert.ToString(dr13["stockname"]);
+                                    double stockweigth2 = Convert.ToDouble(dr13["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr13["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr13["stockcategory"]);
+                                    stockdate = Convert.ToString(dr13["stockdate"]);
+                                    stocktime = Convert.ToString(dr13["stocktime"]);
+
+                                    double newstockweigth2 = stockweigth2 - 2 * quantity;
+
+                                    if (stockweigth2 > 0)
+                                    {
+                                        if (newstockweigth2 > 0)
+                                        {
+                                            SqlCommand cmd26 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth2 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd26.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd26 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd26.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+
+
+                                }
+                            }
+
+
+                            SqlCommand cmd34 = new SqlCommand("select * from Stock where stockname = 'bun' ", con, tran);
+                            cmd34.ExecuteNonQuery();
+
+                            using (SqlDataReader dr18 = cmd34.ExecuteReader())
+                            {
+                                while (dr18.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr18["stockid"]);
+                                    stockname = Convert.ToString(dr18["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr18["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr18["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr18["stockcategory"]);
+                                    stockdate = Convert.ToString(dr18["stockdate"]);
+                                    stocktime = Convert.ToString(dr18["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
+
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd35 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd35.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+                                }
+                            }
+
+                            SqlCommand cmd36 = new SqlCommand("select * from Stock where stockname = 'box' ", con, tran);
+                            cmd36.ExecuteNonQuery();
+
+                            using (SqlDataReader dr19 = cmd36.ExecuteReader())
+                            {
+                                while (dr19.Read())
+                                {
+                                    stockid = Convert.ToInt32(dr19["stockid"]);
+                                    stockname = Convert.ToString(dr19["stockname"]);
+                                    stockweigth = Convert.ToInt32(dr19["stockweigth"]);
+                                    stockcompany = Convert.ToString(dr19["stockcompany"]);
+                                    stockcategory = Convert.ToString(dr19["stockcategory"]);
+                                    stockdate = Convert.ToString(dr19["stockdate"]);
+                                    stocktime = Convert.ToString(dr19["stocktime"]);
+
+                                    if (stockweigth > 0)
+                                    {
+                                        newstockweigth = stockweigth - 1 * quantity;
+
+                                        if (newstockweigth > -1)
+                                        {
+                                            SqlCommand cmd37 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + newstockweigth + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd37.ExecuteNonQuery();
+                                        }
+                                        else
+                                        {
+                                            SqlCommand cmd37 = new SqlCommand("update Stock set stockname = '" + stockname + "' , stockweigth = '" + 0 + "', stockcompany = '" + stockcompany + "', stockcategory = '" + stockcategory + "', stockdate = '" + stockdate + "', stocktime = '" + stocktime + "' where stockid = '" + stockid + "'  ", con, tran);
+                                            cmd37.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //Do nothing
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // else if 6 end
 
                     else
                     {

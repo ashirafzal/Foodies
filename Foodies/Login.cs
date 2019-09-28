@@ -2,6 +2,12 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Net;
+using System.Globalization;
+using System.Net.Sockets;
+using System.IO;
+using System.Net.Cache;
+using System.Text.RegularExpressions;
 
 namespace Foodies
 {
@@ -10,6 +16,7 @@ namespace Foodies
         string User_name = "ashirxyz",category = "admin";
         string druser, drcategory;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+
         public Login()
         {
             InitializeComponent();
