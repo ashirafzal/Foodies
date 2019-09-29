@@ -4,10 +4,6 @@ using System.Windows.Forms;
 using System.Data;
 using System.Net;
 using System.Globalization;
-using System.Net.Sockets;
-using System.IO;
-using System.Net.Cache;
-using System.Text.RegularExpressions;
 
 namespace Foodies
 {
@@ -112,7 +108,7 @@ namespace Foodies
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            Activation();
         }
 
         private void password_Enter(object sender, EventArgs e)
@@ -124,5 +120,38 @@ namespace Foodies
         {
 
         }
+
+        public void Activation()
+        {
+            try
+            {
+                var myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.microsoft.com");
+                var response = myHttpWebRequest.GetResponse();
+                string todaysDates = response.Headers["date"];
+                /*return*/
+                var date = DateTime.ParseExact(todaysDates,
+                                "ddd, dd MMM yyyy HH:mm:ss 'GMT'",
+                                CultureInfo.InvariantCulture.DateTimeFormat,
+                                DateTimeStyles.AssumeUniversal);
+
+                var timezonedate = date.ToShortDateString();
+                var currentdate = DateTime.Now.ToShortDateString();
+                var expirydate = DateTime.Now.AddDays(30);
+
+                if (timezonedate == currentdate)
+                {
+                    MessageBox.Show(expirydate.ToShortDateString());
+                }
+                else if (DateTime.Now > DateTime.Now.AddDays(30))
+                {
+
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Current date");
+            }
+        }
+
     }
 }
