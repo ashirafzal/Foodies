@@ -282,6 +282,12 @@ namespace Foodies
             Timercheckingstock();
         }
 
+        private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -1372,7 +1378,7 @@ namespace Foodies
                     decimal ActualAmount = labelActualAmount - discountAmountinPKR;
                     total_Amount.Text = Convert.ToInt32(ActualAmount).ToString();
                     decimal percentageForAmount = discountAmountinPKR / labelActualAmount * 100;
-                    per_discount.Text =  Convert.ToString(Convert.ToDouble(percentageForAmount));
+                    per_discount.Text =  Convert.ToString(Convert.ToInt32(percentageForAmount));
                     DiscountPKR.Text = "";
                     DiscountPercent.Text = "";
                 }

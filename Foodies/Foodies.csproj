@@ -72,6 +72,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnnualSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     <Compile Include="Weekly.Designer.cs">
       <DependentUpon>Weekly.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnnualSales.resx">
       <DependentUpon>AnnualSales.cs</DependentUpon>
     </EmbeddedResource>
