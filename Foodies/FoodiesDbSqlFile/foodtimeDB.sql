@@ -1,10 +1,31 @@
-			
-			
-			/*** DATABASE FOOFTIME DESIGNED FOR THE FOODTIME DESKTOP POINT OF SALE AND INVENTORY MANAGEMENT SYSTEM ***/
-												/*** CREATED BY ASHIR AFZAL ***/
-												/*** DATED : 28-AUGUST-2019 ***/
+/*** FoodTime Database 2019 ***/
+/*** Created by ashirafzal 8 Oct 2019 ***/
 
-CREATE DATABASE foodtime
+Create database foodtime
+
+CREATE TABLE [dbo].[Activation] (
+    [Appstatus] NVARCHAR (50) NOT NULL
+);
+
+CREATE TABLE [dbo].[Customer] (
+    [CustID]    INT           IDENTITY (1, 1) NOT NULL,
+    [CustName]  NVARCHAR (50) NULL,
+    [Contact]   NVARCHAR (50) NULL,
+    [OrderTime] TIME (7)      NOT NULL,
+    [OrderDate] DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([CustID] ASC)
+);
+
+CREATE TABLE [dbo].[Orders] (
+    [OrderID]       INT           IDENTITY (1, 1) NOT NULL,
+    [CustID]        INT           NOT NULL,
+    [OrderType]     NVARCHAR (50) NULL,
+    [OrderCategory] NVARCHAR (50) NULL,
+    [Ordertime]     TIME (7)      NOT NULL,
+    [OrderDate]     DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([OrderID] ASC),
+    CONSTRAINT [FK_Orders_custID] FOREIGN KEY ([CustID]) REFERENCES [dbo].[Customer] ([CustID])
+);
 
 CREATE TABLE [dbo].[Bill] (
     [InvioceID]            INT           NOT NULL,
@@ -25,7 +46,7 @@ CREATE TABLE [dbo].[Bill] (
     [DiscountInPercent]    NVARCHAR (50) NOT NULL,
     CONSTRAINT [FK_Bill_CustID] FOREIGN KEY ([CustID]) REFERENCES [dbo].[Customer] ([CustID]),
     CONSTRAINT [FK_Bill_OrderID] FOREIGN KEY ([OrderID]) REFERENCES [dbo].[Orders] ([OrderID])
-); 
+);
 
 CREATE TABLE [dbo].[Category] (
     [CategoryId]    INT           IDENTITY (1, 1) NOT NULL,
@@ -34,13 +55,9 @@ CREATE TABLE [dbo].[Category] (
     PRIMARY KEY CLUSTERED ([CategoryId] ASC)
 );
 
-CREATE TABLE [dbo].[Customer] (
-    [CustID]    INT           IDENTITY (1, 1) NOT NULL,
-    [CustName]  NVARCHAR (50) NULL,
-    [Contact]   NVARCHAR (50) NULL,
-    [OrderTime] TIME (7)      NOT NULL,
-    [OrderDate] DATE          NOT NULL,
-    PRIMARY KEY CLUSTERED ([CustID] ASC)
+CREATE TABLE [dbo].[Coupon] (
+    [CouponId] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([CouponId] ASC)
 );
 
 CREATE TABLE [dbo].[DeletedBill] (
@@ -62,15 +79,22 @@ CREATE TABLE [dbo].[DeletedBill] (
     [DiscountInPercent]    NVARCHAR (50) NOT NULL
 );
 
-CREATE TABLE [dbo].[Orders] (
-    [OrderID]       INT           IDENTITY (1, 1) NOT NULL,
-    [CustID]        INT           NOT NULL,
-    [OrderType]     NVARCHAR (50) NULL,
-    [OrderCategory] NVARCHAR (50) NULL,
-    [Ordertime]     TIME (7)      NOT NULL,
-    [OrderDate]     DATE          NOT NULL,
-    PRIMARY KEY CLUSTERED ([OrderID] ASC),
-    CONSTRAINT [FK_Orders_custID] FOREIGN KEY ([CustID]) REFERENCES [dbo].[Customer] ([CustID])
+CREATE TABLE [dbo].[EditedBill] (
+    [InvioceID2] INT NOT NULL
+);
+
+CREATE TABLE [dbo].[LoginDetails] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [Loginuser]    NVARCHAR (50) NOT NULL,
+    [usercategory] NVARCHAR (50) NOT NULL,
+    [time]         TIME (7)      NOT NULL,
+    [date]         DATE          NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[PcChecker] (
+    [Hostname]  NVARCHAR (50) NOT NULL,
+    [IpAddress] NVARCHAR (50) NOT NULL
 );
 
 CREATE TABLE [dbo].[Products] (
@@ -95,10 +119,28 @@ CREATE TABLE [dbo].[Sales] (
     CONSTRAINT [FK_Sales_CustID] FOREIGN KEY ([CustID]) REFERENCES [dbo].[Customer] ([CustID])
 );
 
-CREATE TABLE [dbo].[users] (
-    [Id]       INT           IDENTITY (1, 1) NOT NULL,
-    [username] NVARCHAR (50) NULL,
-    [password] NVARCHAR (50) NULL,
-    [category] NVARCHAR (50) NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+CREATE TABLE [dbo].[Stock] (
+    [stockid]       INT           IDENTITY (1, 1) NOT NULL,
+    [stockname]     NVARCHAR (50) NOT NULL,
+    [stockweigth]   INT           NOT NULL,
+    [stockcompany]  NVARCHAR (50) NULL,
+    [stockcategory] NVARCHAR (50) NOT NULL,
+    [stockdate]     DATE          NOT NULL,
+    [stocktime]     TIME (7)      NOT NULL,
+    PRIMARY KEY CLUSTERED ([stockid] ASC)
 );
+
+CREATE TABLE [dbo].[stockstatus] (
+    [id]                   INT           IDENTITY (1, 1) NOT NULL,
+    [stockatthestartofday] NVARCHAR (50) NOT NULL,
+    [stockdate]            NCHAR (10)    NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[TrailDays]
+(
+	[startingdate] DATETIME NOT NULL, 
+    [endingdate] DATETIME NOT NULL 
+);
+
+/*** Database SQL Codes End ***/

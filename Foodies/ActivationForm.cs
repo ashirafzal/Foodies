@@ -15,8 +15,8 @@ namespace Foodies
 
         IFirebaseConfig config = new FirebaseConfig
         {
-            AuthSecret = "",
-            BasePath = "",
+            AuthSecret = "uJgAuCnjXHkp1egiwoUwDdNazHszBH1S4KERuqas",
+            BasePath = "https://foodtime-3fae4.firebaseio.com/",
         };
 
         IFirebaseClient client;
