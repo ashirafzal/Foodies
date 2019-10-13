@@ -33,5 +33,16 @@ namespace Foodies.Properties {
                 return ((string)(this["foodtimeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-9CBGPDG\\ASHIRAFZAL;Initial Catalog=foodtime2;Integrated Secur" +
+            "ity=True")]
+        public string foodtime2ConnectionString {
+            get {
+                return ((string)(this["foodtime2ConnectionString"]));
+            }
+        }
     }
 }

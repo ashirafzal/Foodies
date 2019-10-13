@@ -24,9 +24,34 @@ namespace Foodies
 
         private void ManageProduct_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
+            LoadGridView1();
+        }
 
+        public void LoadGridView1()
+        {
+            dgv1.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Products";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "PRODUCT ID";
+            dgv1.Columns[1].HeaderText = "PRODUCT NAME";
+            dgv1.Columns[2].HeaderText = "PRODUCT PRICE";
+            dgv1.Columns[3].HeaderText = "PRODUCT CATEGORY";
+            dgv1.Columns[4].HeaderText = "PRODUCT IMAGE";
+
+            for (int i = 0; i < dgv1.Columns.Count; i++)
+                if (dgv1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         public void dgv_CashierRegister()
@@ -85,7 +110,7 @@ namespace Foodies
                 BinaryReader brs = new BinaryReader(Stream);
                 images = brs.ReadBytes((int)Stream.Length);
 
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -103,8 +128,7 @@ namespace Foodies
                 ProductCategory.Text = string.Empty;
                 ProductPrice.Text = string.Empty;
                 MessageBox.Show("Product updated");
-                this.productsTableAdapter.Fill(this.itemsDataSet.Products);
-
+                LoadGridView1();
             }
             catch (FormatException)
             {
@@ -151,7 +175,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -164,7 +188,7 @@ namespace Foodies
                 ProductName.Text = string.Empty;
                 ProductPrice.Text = string.Empty;
                 MessageBox.Show("Product Deleted");
-                this.productsTableAdapter.Fill(this.itemsDataSet.Products);
+                LoadGridView1();
             }
             catch (Exception)
             {

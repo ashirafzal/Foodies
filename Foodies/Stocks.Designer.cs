@@ -56,8 +56,6 @@
             this.stockdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocktimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockDataSet = new Foodies.StockDataSet();
-            this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,7 +64,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -398,18 +395,7 @@
             // stockBindingSource
             // 
             this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.stockDataSet;
             // 
-            // stockDataSet
-            // 
-            this.stockDataSet.DataSetName = "StockDataSet";
-            this.stockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockTableAdapter
-            // 
-            this.stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -433,7 +419,6 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,9 +431,7 @@
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private StockDataSet stockDataSet;
         private System.Windows.Forms.BindingSource stockBindingSource;
-        private StockDataSetTableAdapters.StockTableAdapter stockTableAdapter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -57,8 +57,36 @@ namespace Foodies
         {
             dgv_1();
             txtSearchPrice.Focus();
-            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.productsDataSet.Products);
+            LoadGridView1();
+        }
+
+        public void LoadGridView1()
+        {
+            dgv1.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Products";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "PRODUCT ID";
+            dgv1.Columns[1].HeaderText = "PRODUCT NAME";
+            dgv1.Columns[2].HeaderText = "PRODUCT PRICE";
+            dgv1.Columns[3].HeaderText = "PRODUCT CATEGORY";
+            dgv1.Columns[4].HeaderText = "PRODUCT IMAGE";
+            dgv1.Columns[3].Visible = false;
+            dgv1.Columns[4].Visible = false;
+
+            for (int i = 0; i < dgv1.Columns.Count; i++)
+                if (dgv1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         private void SearchPrice_Click(object sender, EventArgs e)
@@ -73,7 +101,7 @@ namespace Foodies
                 }
                 else
                 {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                    SqlConnection con = new SqlConnection(Helper.con);
                     con.Open();
                     string query = "select * from Products where ProductName = '" + txtSearchPrice.Text + "' ";
                     SqlCommand cmd = new SqlCommand(query, con);

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier2));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -61,6 +61,7 @@
             this.eXPORTTOEXCELToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oTHERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALESSUMMARYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -103,7 +104,7 @@
             this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.DVPrintDocument = new System.Drawing.Printing.PrintDocument();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -348,9 +349,16 @@
             // sALESSUMMARYToolStripMenuItem
             // 
             this.sALESSUMMARYToolStripMenuItem.Name = "sALESSUMMARYToolStripMenuItem";
-            this.sALESSUMMARYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sALESSUMMARYToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.sALESSUMMARYToolStripMenuItem.Text = "SALES SUMMARY";
             this.sALESSUMMARYToolStripMenuItem.Click += new System.EventHandler(this.sALESSUMMARYToolStripMenuItem_Click);
+            // 
+            // aBOUTToolStripMenuItem
+            // 
+            this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
+            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.aBOUTToolStripMenuItem.Text = "ABOUT";
+            this.aBOUTToolStripMenuItem.Click += new System.EventHandler(this.aBOUTToolStripMenuItem_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -490,12 +498,12 @@
             // 
             // add
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.add.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.add.DefaultCellStyle = dataGridViewCellStyle7;
             this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add.HeaderText = "ADD";
             this.add.Name = "add";
@@ -505,13 +513,13 @@
             // 
             // minus
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.minus.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.minus.DefaultCellStyle = dataGridViewCellStyle8;
             this.minus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minus.HeaderText = "MINUS";
             this.minus.Name = "minus";
@@ -521,13 +529,13 @@
             // 
             // delete
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle9;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.HeaderText = "DELETE";
             this.delete.Name = "delete";
@@ -926,12 +934,9 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_2);
             // 
-            // aBOUTToolStripMenuItem
+            // timer2
             // 
-            this.aBOUTToolStripMenuItem.Name = "aBOUTToolStripMenuItem";
-            this.aBOUTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aBOUTToolStripMenuItem.Text = "ABOUT";
-            this.aBOUTToolStripMenuItem.Click += new System.EventHandler(this.aBOUTToolStripMenuItem_Click);
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick_1);
             // 
             // Cashier2
             // 
@@ -1043,5 +1048,6 @@
         private System.Windows.Forms.ToolStripMenuItem sALESSUMMARYToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem aBOUTToolStripMenuItem;
+        private System.Windows.Forms.Timer timer2;
     }
 }

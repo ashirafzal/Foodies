@@ -61,7 +61,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 int b = Convert.ToInt32(txtPrice.Text);
 
                 byte[] images = null;

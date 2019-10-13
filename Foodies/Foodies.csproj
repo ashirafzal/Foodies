@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,14 +63,30 @@
     <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
     </Reference>
+    <Reference Include="FireSharp, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.1.1.0\lib\net45\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +109,14 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivationConfirmation.cs" />
+    <Compile Include="ActivationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivationForm.Designer.cs">
+      <DependentUpon>ActivationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activeinfo.cs" />
     <Compile Include="AnnualSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,21 +135,11 @@
     <Compile Include="Cashier2.Designer.cs">
       <DependentUpon>Cashier2.cs</DependentUpon>
     </Compile>
-    <Compile Include="CategoryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoryDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="CancelInvioce.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CancelInvioce.Designer.cs">
       <DependentUpon>CancelInvioce.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CategoryYDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="ClassInvoiceDetails.cs" />
     <Compile Include="CrystalReport1.cs">
@@ -125,32 +154,18 @@
     <Compile Include="Current_Invoice_Print.Designer.cs">
       <DependentUpon>Current_Invoice_Print.cs</DependentUpon>
     </Compile>
-    <Compile Include="CutomerDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Data.cs" />
     <Compile Include="DeletedInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeletedInvoice.Designer.cs">
       <DependentUpon>DeletedInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="DeletedInvoiceDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Edit Inovice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Edit Inovice.Designer.cs">
       <DependentUpon>Edit Inovice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditedBillDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Edit_Invoice_Print.cs">
       <SubType>Form</SubType>
@@ -164,27 +179,18 @@
     <Compile Include="ExportToExcel.Designer.cs">
       <DependentUpon>ExportToExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="InvoiceDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InvoiceDetails.Designer.cs">
       <DependentUpon>InvoiceDetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ItemsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -216,21 +222,11 @@
     <Compile Include="MonthlySales.Designer.cs">
       <DependentUpon>MonthlySales.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrderDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ProductPrice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductPrice.Designer.cs">
       <DependentUpon>ProductPrice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -246,32 +242,17 @@
     <Compile Include="DailySales.Designer.cs">
       <DependentUpon>DailySales.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SalesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SalesSummary.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesSummary.Designer.cs">
       <DependentUpon>SalesSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StockDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Stocks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StocksDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StocksDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="updatestock.cs">
       <SubType>Form</SubType>
@@ -285,11 +266,6 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UsersDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Weekly.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +274,9 @@
     </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActivationForm.resx">
+      <DependentUpon>ActivationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnnualSales.resx">
       <DependentUpon>AnnualSales.cs</DependentUpon>
@@ -384,106 +363,7 @@
     <EmbeddedResource Include="Weekly.resx">
       <DependentUpon>Weekly.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CategoryDataSet.xsc">
-      <DependentUpon>CategoryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CategoryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CategoryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CategoryDataSet.xss">
-      <DependentUpon>CategoryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CategoryYDataSet2.xsc">
-      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="CategoryYDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CategoryYDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CategoryYDataSet2.xss">
-      <DependentUpon>CategoryYDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="CutomerDataSet.xsc">
-      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CutomerDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CutomerDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CutomerDataSet.xss">
-      <DependentUpon>CutomerDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DeletedInvoiceDataSet.xsc">
-      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DeletedInvoiceDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DeletedInvoiceDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DeletedInvoiceDataSet.xss">
-      <DependentUpon>DeletedInvoiceDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EditedBillDataSet.xsc">
-      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EditedBillDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EditedBillDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EditedBillDataSet.xss">
-      <DependentUpon>EditedBillDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InvoiceDataSet.xsc">
-      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InvoiceDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InvoiceDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InvoiceDataSet.xss">
-      <DependentUpon>InvoiceDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ItemsDataSet.xsc">
-      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ItemsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ItemsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ItemsDataSet.xss">
-      <DependentUpon>ItemsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="OrderDataSet.xsc">
-      <DependentUpon>OrderDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="OrderDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OrderDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="OrderDataSet.xss">
-      <DependentUpon>OrderDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
-    <None Include="ProductsDataSet.xsc">
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ProductsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProductsDataSet.xss">
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -493,50 +373,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SalesDataSet.xsc">
-      <DependentUpon>SalesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SalesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SalesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SalesDataSet.xss">
-      <DependentUpon>SalesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StockDataSet.xsc">
-      <DependentUpon>StockDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StockDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StockDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StockDataSet.xss">
-      <DependentUpon>StockDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StocksDataSet.xsc">
-      <DependentUpon>StocksDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StocksDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StocksDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StocksDataSet.xss">
-      <DependentUpon>StocksDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UsersDataSet.xsc">
-      <DependentUpon>UsersDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="UsersDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UsersDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="UsersDataSet.xss">
-      <DependentUpon>UsersDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -587,6 +423,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\foodtime.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

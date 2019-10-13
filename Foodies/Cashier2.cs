@@ -3,7 +3,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.IO;
+using System.Net;
+using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
 namespace Foodies
@@ -12,6 +15,7 @@ namespace Foodies
     {
         /*Timer for counting minutes*/
         System.Windows.Forms.Timer _timer = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer _timer2 = new System.Windows.Forms.Timer();
 
         /*Declaring product and cashier string,integerandimage type variable to be read by the dr and then saved in these
          declarations*/
@@ -75,7 +79,7 @@ namespace Foodies
 
         public void Timercheckingstock()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * from Stock where stockweigth = '0' ", con);
             DataTable table = new DataTable();
@@ -226,7 +230,7 @@ namespace Foodies
 
         public void CheckingUserStatus()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -259,7 +263,7 @@ namespace Foodies
         }
 
         // Connection String //
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(Helper.con);
 
         private void sALESSUMMARYToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -522,7 +526,7 @@ namespace Foodies
                         or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
                         condition me aik se sql queries ki queires ko implement kara jasakai*/
 
-                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        SqlConnection con = new SqlConnection(Helper.con);
                         con.Open();
                         SqlTransaction tran = con.BeginTransaction();
 
@@ -647,7 +651,7 @@ namespace Foodies
                          or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
                          condition me aik se sql queries ki queires ko implement kara jasakai*/
 
-                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        SqlConnection con = new SqlConnection(Helper.con);
                         con.Open();
                         SqlTransaction tran = con.BeginTransaction();
 
@@ -746,9 +750,19 @@ namespace Foodies
             }
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick_1(object sender, EventArgs e)
+        {
+            Appstatus();
+        }
+
         private void DVPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -834,10 +848,16 @@ namespace Foodies
         {
             InitializeComponent();
             CheckingUserStatus();
+            /*Timer 1 time*/
             _timer.Interval = 1800000; // 1800000 ms = 30 minutes
             //_timer.Interval = 30000; // 30000 ms = 30 seconds
             _timer.Tick += timer1_Tick_2;
             _timer.Start();
+            /*Timer 2 time*/
+            //_timer2.Interval = 7200000; // 7,200,000 ms = 2 hours
+            _timer2.Interval = 30000; // 30000 ms = 30 seconds
+            _timer2.Tick += timer2_Tick_1;
+            _timer2.Start();
         }
 
         private void Cashier2_Load(object sender, EventArgs e)
@@ -845,6 +865,184 @@ namespace Foodies
             Loadproducts();
             Loadcategory();
             Dgv_1();
+            CheckInternetavaibility();
+            TrailPeriod();
+            //Appstatus();
+            //CheckingTrailPeriod();
+        }
+
+        public void Appstatus()
+        {
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("select top 1 Appstatus from Activation", con);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    //Do Nothing
+                    _timer2.Dispose();
+                    _timer2.Stop();
+                }
+                else
+                {
+                    _timer2.Dispose();
+                    _timer2.Stop();
+                    _timer2.Interval = 30000; // 30000 ms = 30 seconds
+                    _timer2.Tick += timer2_Tick_1;
+                    _timer2.Start();
+                    CheckingTrailPeriod();
+                }
+            }
+            catch (Exception)
+            {
+                //Do nothing it means table is empty
+            }
+        }
+
+        public void CheckingTrailPeriod()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(Helper.con);
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+
+                SqlCommand cmd = new SqlCommand("select top 1 startingdate,endingdate from TrailDays", con, tran);
+                cmd.ExecuteNonQuery();
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        DateTime startingdate = Convert.ToDateTime(dr["startingdate"]);
+                        DateTime endingdate = Convert.ToDateTime(dr["endingdate"]);
+
+                        DateTime currentdate = DateTime.Today;
+
+                        if (currentdate < startingdate)
+                        {
+                            MessageBox.Show("Set the current date and time to use the application otherwise it will not perform");
+                        }
+                        else if (currentdate < endingdate)
+                        {
+                            //Do nothing all set.
+                        }
+                        else if (currentdate > endingdate)
+                        {                           
+                            ActivationForm activationForm = new ActivationForm();
+                            activationForm.Show();
+                            this.Hide();
+                        }
+                    }
+                }
+                tran.Commit();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+
+        }
+
+        public void TrailPeriod()
+        {
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter("select top 1 startingdate,endingdate from TrailDays", con);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                if (table.Rows.Count > 0)
+                {
+                    //Do nothing
+                }
+                else
+                {
+                    try
+                    {
+                        Ping myPing = new Ping();
+                        string host = "google.com";
+                        byte[] buffer = new byte[32];
+                        int timeout = 1000;
+                        PingOptions pingOptions = new PingOptions();
+                        PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                        if (reply.Status == IPStatus.Success)
+                        {
+                            var myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.microsoft.com");
+                            var response = myHttpWebRequest.GetResponse();
+                            string todaysDates = response.Headers["date"];
+                            /*return*/
+                            var date = DateTime.ParseExact(todaysDates,
+                                            "ddd, dd MMM yyyy HH:mm:ss 'GMT'",
+                                            CultureInfo.InvariantCulture.DateTimeFormat,
+                                            DateTimeStyles.AssumeUniversal);
+
+                            var timezonedate = date.ToShortDateString();
+                            var currentdate = DateTime.Now.ToShortDateString();
+                            var expirydate = DateTime.Now.AddDays(1).ToShortDateString();
+
+                            if (timezonedate.Equals(currentdate))
+                            {
+                                con.Open();
+                                SqlCommand cmd = con.CreateCommand();
+                                cmd.CommandType = CommandType.Text;
+                                string sqlQuery = "insert into TrailDays(startingdate,endingdate) values ('" + currentdate + "','" + expirydate + "')";
+                                cmd = new SqlCommand(sqlQuery, con);
+                                cmd.ExecuteNonQuery();
+                                con.Close();
+                            }
+                            else
+                            {
+                                con.Open();
+                                SqlCommand cmd = con.CreateCommand();
+                                cmd.CommandType = CommandType.Text;
+                                string sqlQuery = "insert into TrailDays(startingdate,endingdate) values ('" + currentdate + "','" + expirydate + "')";
+                                cmd = new SqlCommand(sqlQuery, con);
+                                cmd.ExecuteNonQuery();
+                                con.Close();
+                            }
+                        }
+                    }
+                    catch (PingException)
+                    {
+                        var currentdate = DateTime.Now.ToShortDateString();
+                        var expirydate = DateTime.Now.AddDays(1).ToShortDateString();
+
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        string sqlQuery = "insert into TrailDays(startingdate,endingdate) values ('" + currentdate + "','" + expirydate + "')";
+                        cmd = new SqlCommand(sqlQuery, con);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                MessageBox.Show("Error Message : " + ex.Message.ToString());
+            }
+        }
+
+        public static bool CheckInternetavaibility()
+        {
+            try
+            {
+                Ping myPing = new Ping();
+                string host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                return (reply.Status == IPStatus.Success);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please make sure you are connected to internet \n" +
+                    "otherwise some of the app features will not work properly");
+                return false;
+            }
         }
 
         public void Dgv_1()
@@ -872,9 +1070,9 @@ namespace Foodies
 
         public void Loadcategory()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True"))
+            using (SqlConnection con = new SqlConnection(Helper.con))
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection conn = new SqlConnection(Helper.con);
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
 
@@ -955,9 +1153,9 @@ namespace Foodies
         {
             currentlable = (Label)sender;
             flowLayoutPanel1.Controls.Clear();
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True"))
+            using (SqlConnection con = new SqlConnection(Helper.con))
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection conn = new SqlConnection(Helper.con);
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
 
@@ -1057,9 +1255,9 @@ namespace Foodies
 
         public void Loadproducts()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True"))
+            using (SqlConnection con = new SqlConnection(Helper.con))
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection conn = new SqlConnection(Helper.con);
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
 
@@ -1160,7 +1358,7 @@ namespace Foodies
             {
                 currentlable2 = (Label)sender;
 
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlTransaction tran = con.BeginTransaction();
 
@@ -1400,7 +1598,7 @@ namespace Foodies
                 DialogResult result = MessageBox.Show("Are you sure you want to cancel the last transaction ?", "Delete Last Transaction ?", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                    SqlConnection con = new SqlConnection(Helper.con);
                     con.Open();
                     SqlTransaction tran = con.BeginTransaction();
 
@@ -1498,7 +1696,7 @@ namespace Foodies
             int stockid, stockweigth, newstockweigth;
             string stockname, stockcompany, stockcategory, stockdate, stocktime;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 

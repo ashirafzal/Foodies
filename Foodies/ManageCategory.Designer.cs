@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCategory));
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,19 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryDataSet = new Foodies.CategoryDataSet();
-            this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel5
@@ -241,16 +232,10 @@
             this.dgv1.AllowUserToDeleteRows = false;
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
-            this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn,
-            this.categoryImageDataGridViewImageColumn});
-            this.dgv1.DataSource = this.categoryBindingSource;
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv1.GridColor = System.Drawing.Color.DarkGray;
@@ -267,42 +252,6 @@
             this.dgv1.TabIndex = 1;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             this.dgv1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv1_DataError);
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CATEGORY ID";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryNameDataGridViewTextBoxColumn
-            // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CATEGORY NAME";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
-            this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryImageDataGridViewImageColumn
-            // 
-            this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
-            this.categoryImageDataGridViewImageColumn.HeaderText = "CATEGORY IMAGE";
-            this.categoryImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
-            this.categoryImageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.categoryDataSet;
-            // 
-            // categoryDataSet
-            // 
-            this.categoryDataSet.DataSetName = "CategoryDataSet";
-            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryTableAdapter
-            // 
-            this.categoryTableAdapter.ClearBeforeFill = true;
             // 
             // ManageCategory
             // 
@@ -323,8 +272,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,9 +291,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgv1;
-        private CategoryDataSet categoryDataSet;
-        private System.Windows.Forms.BindingSource categoryBindingSource;
-        private CategoryDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn categoryImageDataGridViewImageColumn;

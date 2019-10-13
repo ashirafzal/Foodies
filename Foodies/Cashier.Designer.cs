@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cashier));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,19 +105,10 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.categoryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryDataSet = new Foodies.CategoryDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemsDataSet = new Foodies.ItemsDataSet();
-            this.productsTableAdapter = new Foodies.ItemsDataSetTableAdapters.ProductsTableAdapter();
-            this.categoryTableAdapter = new Foodies.CategoryDataSetTableAdapters.CategoryTableAdapter();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
@@ -143,12 +133,8 @@
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -313,28 +299,28 @@
             // dailySalesToolStripMenuItem
             // 
             this.dailySalesToolStripMenuItem.Name = "dailySalesToolStripMenuItem";
-            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dailySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.dailySalesToolStripMenuItem.Text = "DAILY SALES";
             this.dailySalesToolStripMenuItem.Click += new System.EventHandler(this.dailySalesToolStripMenuItem_Click);
             // 
             // weeklySalesToolStripMenuItem
             // 
             this.weeklySalesToolStripMenuItem.Name = "weeklySalesToolStripMenuItem";
-            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weeklySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.weeklySalesToolStripMenuItem.Text = "WEEKLY SALES";
             this.weeklySalesToolStripMenuItem.Click += new System.EventHandler(this.weeklySalesToolStripMenuItem_Click);
             // 
             // monthlySalesToolStripMenuItem
             // 
             this.monthlySalesToolStripMenuItem.Name = "monthlySalesToolStripMenuItem";
-            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monthlySalesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.monthlySalesToolStripMenuItem.Text = "MONTHLY SALES";
             this.monthlySalesToolStripMenuItem.Click += new System.EventHandler(this.monthlySalesToolStripMenuItem_Click);
             // 
             // annualSaleslToolStripMenuItem
             // 
             this.annualSaleslToolStripMenuItem.Name = "annualSaleslToolStripMenuItem";
-            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.annualSaleslToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.annualSaleslToolStripMenuItem.Text = "ANNUAL SALES";
             this.annualSaleslToolStripMenuItem.Click += new System.EventHandler(this.annualSaleslToolStripMenuItem_Click);
             // 
@@ -349,7 +335,7 @@
             // exportToExcelToolStripMenuItem
             // 
             this.exportToExcelToolStripMenuItem.Name = "exportToExcelToolStripMenuItem";
-            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToExcelToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.exportToExcelToolStripMenuItem.Text = "EXPORT TO EXCEL";
             this.exportToExcelToolStripMenuItem.Click += new System.EventHandler(this.exportToExcelToolStripMenuItem_Click);
             // 
@@ -364,7 +350,7 @@
             // viewSummaryToolStripMenuItem
             // 
             this.viewSummaryToolStripMenuItem.Name = "viewSummaryToolStripMenuItem";
-            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewSummaryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.viewSummaryToolStripMenuItem.Text = "VIEW SUMMARY";
             // 
             // tableLayoutPanel1
@@ -471,12 +457,12 @@
             // 
             // addbtn
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Green;
-            this.addbtn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Green;
+            this.addbtn.DefaultCellStyle = dataGridViewCellStyle1;
             this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addbtn.HeaderText = "ADD";
             this.addbtn.Name = "addbtn";
@@ -487,12 +473,12 @@
             // 
             // minusbtn
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.minusbtn.DefaultCellStyle = dataGridViewCellStyle2;
             this.minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minusbtn.HeaderText = "MINUS";
             this.minusbtn.Name = "minusbtn";
@@ -502,12 +488,12 @@
             // 
             // btnDelete
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Navy;
-            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Navy;
+            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.HeaderText = "DELETE";
             this.btnDelete.Name = "btnDelete";
@@ -1035,17 +1021,11 @@
             this.dgv1.AllowUserToOrderColumns = true;
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
-            this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.ColumnHeadersVisible = false;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.categoryIdDataGridViewTextBoxColumn,
-            this.categoryNameDataGridViewTextBoxColumn,
-            this.categoryImageDataGridViewImageColumn});
-            this.dgv1.DataSource = this.categoryBindingSource;
             this.dgv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv1.GridColor = System.Drawing.Color.DarkGray;
             this.dgv1.Location = new System.Drawing.Point(0, 81);
@@ -1060,40 +1040,6 @@
             this.dgv1.Size = new System.Drawing.Size(384, 730);
             this.dgv1.TabIndex = 2;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
-            // 
-            // categoryIdDataGridViewTextBoxColumn
-            // 
-            this.categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
-            this.categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
-            this.categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.categoryIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // categoryNameDataGridViewTextBoxColumn
-            // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
-            this.categoryNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.categoryNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // categoryImageDataGridViewImageColumn
-            // 
-            this.categoryImageDataGridViewImageColumn.DataPropertyName = "CategoryImage";
-            this.categoryImageDataGridViewImageColumn.HeaderText = "CategoryImage";
-            this.categoryImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.categoryImageDataGridViewImageColumn.Name = "categoryImageDataGridViewImageColumn";
-            this.categoryImageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "Category";
-            this.categoryBindingSource.DataSource = this.categoryDataSet;
-            // 
-            // categoryDataSet
-            // 
-            this.categoryDataSet.DataSetName = "CategoryDataSet";
-            this.categoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -1163,24 +1109,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "ITEMS";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.itemsDataSet;
-            // 
-            // itemsDataSet
-            // 
-            this.itemsDataSet.DataSetName = "ItemsDataSet";
-            this.itemsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoryTableAdapter
-            // 
-            this.categoryTableAdapter.ClearBeforeFill = true;
             // 
             // ProductName
             // 
@@ -1256,13 +1184,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataSet)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1327,20 +1251,11 @@
         private System.Windows.Forms.Label per_discount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private ItemsDataSet itemsDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private ItemsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.Label act_price;
         private System.Windows.Forms.Label label12;
-        private CategoryDataSet categoryDataSet;
-        private System.Windows.Forms.BindingSource categoryBindingSource;
-        private CategoryDataSetTableAdapters.CategoryTableAdapter categoryTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn categoryImageDataGridViewImageColumn;
         private System.Windows.Forms.ToolStripMenuItem manageItemsToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;

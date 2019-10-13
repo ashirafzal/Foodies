@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -356,21 +357,172 @@ namespace Foodies
             dgv_6();
             dgv_7();
 
-            // TODO: This line of code loads data into the 'stocksDataSet.Stock' table. You can move, or remove it, as needed.
-            this.stockTableAdapter.Fill(this.stocksDataSet.Stock);
-            // TODO: This line of code loads data into the 'salesDataSet.Sales' table. You can move, or remove it, as needed.
-            this.salesTableAdapter.Fill(this.salesDataSet.Sales);
-            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.productsDataSet.Products);
-            // TODO: This line of code loads data into the 'orderDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.orderDataSet.Orders);
-            // TODO: This line of code loads data into the 'cutomerDataSet.Customer' table. You can move, or remove it, as needed.
-            this.customerTableAdapter.Fill(this.cutomerDataSet.Customer);
-            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
-            // TODO: This line of code loads data into the 'invoiceDataSet.Bill' table. You can move, or remove it, as needed.
-            this.billTableAdapter.Fill(this.invoiceDataSet.Bill);
+            /* LOADING ALL THE GRIDVIEWS DATA*/
+            LoadGridView1();
+            LoadGridView2();
+            LoadGridView3();
+            LoadGridView4();
+            LoadGridView5();
+            LoadGridView6();
+            LoadGridView7();
+        }
 
+        public void LoadGridView1()
+        {
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Bill";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "INVOICE ID";
+            dgv1.Columns[1].HeaderText = "CUST ID";
+            dgv1.Columns[2].HeaderText = "ORDER ID";
+            dgv1.Columns[3].HeaderText = "CUST NAME";
+            dgv1.Columns[4].HeaderText = "PRODUCT NAME";
+            dgv1.Columns[5].HeaderText = "PRODUCT QTY";
+            dgv1.Columns[6].HeaderText = "PRODUCT RATE";
+            dgv1.Columns[7].HeaderText = "PRODUCT AMOUNT";
+            dgv1.Columns[8].HeaderText = "GST AMOUNT";
+            dgv1.Columns[8].Visible = false;
+            dgv1.Columns[9].HeaderText = "ORDER TIME";
+            dgv1.Columns[10].HeaderText = "ORDER DATE";
+            dgv1.Columns[11].HeaderText = "TOTAL QTY";
+            dgv1.Columns[11].Visible = false;
+            dgv1.Columns[12].HeaderText = "ACTUAL AMOUNT";
+            dgv1.Columns[12].Visible = false;
+            dgv1.Columns[13].HeaderText = "TOTAL AMOUNT";
+            dgv1.Columns[13].Visible = false;
+            dgv1.Columns[14].HeaderText = "TOTAL GST AMOUNT";
+            dgv1.Columns[14].Visible = false;
+            dgv1.Columns[15].HeaderText = "DISCOUNT";
+            dgv1.Columns[15].Visible = false;
+        }
+
+        public void LoadGridView2()
+        {
+            dgv2.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select CategoryId,CategoryName from Category";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv2.DataSource = dt;
+            con.Close();
+
+            dgv2.Columns[0].HeaderText = "CATGEORY ID";
+            dgv2.Columns[1].HeaderText = "CATGEORY NAME";
+        }
+
+        public void LoadGridView3()
+        {
+            dgv3.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Customer";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv3.DataSource = dt;
+            con.Close();
+
+            dgv3.Columns[0].HeaderText = "CUST ID";
+            dgv3.Columns[1].HeaderText = "CUST NAME";
+            dgv3.Columns[2].HeaderText = "CUST CONTACT";
+            dgv3.Columns[3].HeaderText = "ORDER TIME";
+            dgv3.Columns[4].HeaderText = "ORDER DATE";
+        }
+
+        public void LoadGridView4()
+        {
+            dgv4.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Orders";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv4.DataSource = dt;
+            con.Close();
+
+            dgv4.Columns[0].HeaderText = "ORDER ID";
+            dgv4.Columns[1].HeaderText = "CUST ID";
+            dgv4.Columns[2].HeaderText = "ORDER TYPE";
+            dgv4.Columns[3].HeaderText = "ORDER CATEGORY";
+            dgv4.Columns[4].HeaderText = "ORDER TIME";
+            dgv4.Columns[5].HeaderText = "ORDER DATE";
+        }
+
+        public void LoadGridView5()
+        {
+            dgv5.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select ProductId,ProductName,ProductPrice,ProductCategory from Products";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv5.DataSource = dt;
+            con.Close();
+
+            dgv5.Columns[0].HeaderText = "PRODUCT ID";
+            dgv5.Columns[1].HeaderText = "PRODUCT NAME";
+            dgv5.Columns[2].HeaderText = "PRODUCT PRICE";
+            dgv5.Columns[3].HeaderText = "PRODUCT CATEGORY";
+        }
+
+        public void LoadGridView6()
+        {
+            dgv6.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Sales";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv6.DataSource = dt;
+            con.Close();
+
+            dgv6.Columns[0].HeaderText = "ORDER ID";
+            dgv6.Columns[1].HeaderText = "CUST ID";
+            dgv6.Columns[2].HeaderText = "CUST NAME";
+            dgv6.Columns[3].HeaderText = "CONTACT";
+            dgv6.Columns[4].HeaderText = "ORDER TYPE";
+            dgv6.Columns[5].HeaderText = "ORDER CATEGORY";
+            dgv6.Columns[6].HeaderText = "ORDER TIME";
+            dgv6.Columns[6].HeaderText = "ORDER DATE";
+        }
+
+        public void LoadGridView7()
+        {
+            dgv7.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Stock";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv7.DataSource = dt;
+            con.Close();
+
+            dgv7.Columns[0].HeaderText = "STOCK ID";
+            dgv7.Columns[1].HeaderText = "STOCK NAME";
+            dgv7.Columns[2].HeaderText = "STOCK WEIGTH";
+            dgv7.Columns[3].HeaderText = "STOCK COMPANY";
+            dgv7.Columns[4].HeaderText = "STOCK CATEGORY";
+            dgv7.Columns[5].HeaderText = "STOCK DATE";
+            dgv7.Columns[6].HeaderText = "STOCK TIME";
         }
 
         public void dgv_1()

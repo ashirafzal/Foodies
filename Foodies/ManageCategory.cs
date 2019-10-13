@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Foodies
@@ -24,8 +19,32 @@ namespace Foodies
         private void ManageCategory_Load(object sender, EventArgs e)
         {
             dgv_1();
-            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            LoadGridView1();
+        }
+
+        public void LoadGridView1()
+        {
+            dgv1.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Category";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "CATEGORY ID";
+            dgv1.Columns[1].HeaderText = "CATEGORY NAME";
+            dgv1.Columns[2].HeaderText = "CATEGORY IMAGE";
+
+            for (int i = 0; i < dgv1.Columns.Count; i++)
+                if (dgv1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         public void dgv_1()
@@ -77,7 +96,7 @@ namespace Foodies
                 BinaryReader brs = new BinaryReader(Stream);
                 images = brs.ReadBytes((int)Stream.Length);
 
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -92,8 +111,6 @@ namespace Foodies
                 CategoryID.Text = string.Empty;
                 CategoryName.Text = string.Empty;
                 MessageBox.Show("Category updated");
-                // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-                this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
             }
             catch (Exception)
             {
@@ -114,7 +131,7 @@ namespace Foodies
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlDataAdapter adapter = new SqlDataAdapter("select * from Products where ProductCategory = '" + CategoryName.Text.ToLower() + "'  ", con);
             DataTable table = new DataTable();
@@ -136,9 +153,6 @@ namespace Foodies
 
                 CategoryID.Text = string.Empty;
                 CategoryName.Text = string.Empty;
-
-                // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-                this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
 
                 MessageBox.Show("Category and products under this category deleted successfully");
             }

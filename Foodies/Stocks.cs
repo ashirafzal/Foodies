@@ -20,8 +20,29 @@ namespace Foodies
         private void Stocks_Load(object sender, EventArgs e)
         {
             dgv_1();
-            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+            LoadGridView1();
+        }
+
+        public void LoadGridView1()
+        {
+            dgv1.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Stock";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "STOCK ID";
+            dgv1.Columns[1].HeaderText = "STOCK NAME";
+            dgv1.Columns[2].HeaderText = "STOCK WEIGTH";
+            dgv1.Columns[3].HeaderText = "STOCK COMPANY";
+            dgv1.Columns[4].HeaderText = "STOCK CATEGORY";
+            dgv1.Columns[5].HeaderText = "STOCK DATE";
+            dgv1.Columns[6].HeaderText = "STOCK TIME";
         }
 
         public void dgv_1()
@@ -61,7 +82,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
 
                 if (StockName.Text == string.Empty)
@@ -115,8 +136,7 @@ namespace Foodies
                             StockWeight.Text = string.Empty;
                             MessageBox.Show("Stock updated successfully");
                             tran.Commit();
-                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                            LoadGridView1();
                         }
                         else if (result == DialogResult.No)
                         {
@@ -133,8 +153,7 @@ namespace Foodies
                             StockCategory.Text = string.Empty;
                             StockName.Text = string.Empty;
                             StockWeight.Text = string.Empty;
-                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                            LoadGridView1();
                             MessageBox.Show("Stock created successfully");
                         }
                     }
@@ -149,8 +168,7 @@ namespace Foodies
                         StockCategory.Text = string.Empty;
                         StockName.Text = string.Empty;
                         StockWeight.Text = string.Empty;
-                        // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                        this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                        LoadGridView1();
                         MessageBox.Show("Stock created successfully");
                     }
                 }
@@ -193,8 +211,7 @@ namespace Foodies
                             StockWeight.Text = string.Empty;
                             MessageBox.Show("Stock updated successfully");
                             tran.Commit();
-                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                            LoadGridView1();
                         }
                         else if (result == DialogResult.No)
                         {
@@ -210,8 +227,7 @@ namespace Foodies
                             StockCategory.Text = string.Empty;
                             StockName.Text = string.Empty;
                             StockWeight.Text = string.Empty;
-                            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                            LoadGridView1();
                             MessageBox.Show("Stock created successfully");
                         }
                     }
@@ -225,8 +241,7 @@ namespace Foodies
                         StockCategory.Text = string.Empty;
                         StockName.Text = string.Empty;
                         StockWeight.Text = string.Empty;
-                        // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                        this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                        LoadGridView1();
                         MessageBox.Show("Stock Created Successfully");
                     }
                 }
@@ -240,7 +255,7 @@ namespace Foodies
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
 
             try
@@ -272,8 +287,7 @@ namespace Foodies
                     StockCategory.Text = string.Empty;
                     StockName.Text = string.Empty;
                     StockWeight.Text = string.Empty;
-                    // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                    this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                    LoadGridView1();
                     MessageBox.Show("Stock updated");
                 }
 
@@ -317,7 +331,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -328,8 +342,7 @@ namespace Foodies
                 StockCategory.Text = string.Empty;
                 StockName.Text = string.Empty;
                 StockWeight.Text = string.Empty;
-                // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-                this.stockTableAdapter.Fill(this.stockDataSet.Stock);
+                LoadGridView1();
                 MessageBox.Show("Stock deleted");
                 
             }

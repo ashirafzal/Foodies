@@ -9,7 +9,7 @@ namespace Foodies
     public partial class SalesSummary : Form
     {
         /*Connection String*/
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(Helper.con);
 
         /*Declaring product and cashier string,integerandimage type variable to be read by the dr and then saved in these
          declarations*/
@@ -172,9 +172,9 @@ namespace Foodies
 
         public void Loadproducts()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True"))
+            using (SqlConnection con = new SqlConnection(Helper.con))
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection conn = new SqlConnection(Helper.con);
                 conn.Open();
                 SqlTransaction tran = conn.BeginTransaction();
 

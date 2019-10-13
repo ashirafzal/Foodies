@@ -36,7 +36,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
 
                 byte[] images = null;
                 FileStream Stream = new FileStream(imgLocation, FileMode.Open, FileAccess.Read);

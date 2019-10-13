@@ -2,22 +2,24 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Net.NetworkInformation;
 using System.Net;
-using System.Globalization;
+using System.Configuration;
 
 namespace Foodies
 {
+    [System.Serializable]
     public partial class Login : Form
     {
         string User_name = "ashirxyz",category = "admin";
         string druser, drcategory;
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-
+        SqlConnection con = new SqlConnection(Helper.con);
+        
         public Login()
         {
             InitializeComponent();
             username.Focus();
-        }
+        } 
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -108,7 +110,64 @@ namespace Foodies
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Activation();
+            CheckInternetavaibility();
+            PcChecking();
+        }
+
+        public void PcChecking()
+        {
+            string hostName = Dns.GetHostName(); // Retrive the Name of HOST  
+                                                 // Get the IP  
+#pragma warning disable CS0618 // Type or member is obsolete
+            string myIP = Dns.GetHostByName(hostName: hostName).AddressList[0].ToString();
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            SqlDataAdapter adapter = new SqlDataAdapter("select top 1 Hostname,IpAddress from PcChecker", con);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime2;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                con.Open();
+                SqlTransaction tran = con.BeginTransaction();
+
+                SqlCommand cmd1 = new SqlCommand("select top 1 Hostname,IpAddress from PcChecker", con, tran);
+                cmd1.ExecuteNonQuery();
+
+                using (SqlDataReader dr = cmd1.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        string drhostName = Convert.ToString(dr["Hostname"]);
+                        string drmyIP = Convert.ToString(dr["IpAddress"]);
+
+                        if (drhostName == hostName && drmyIP == myIP)
+                        {
+                            //IP and Host Matched
+                            //Need to do nothing
+                        }
+                        else
+                        {
+                            MessageBox.Show("This Application is registered on another PC.\n" +
+                                "you cannot use this app on another PC except the PC on which you first installed it.", 
+                                "Registration Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                tran.Commit();
+                con.Close();
+            }
+            else
+            {
+                //SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime2;Integrated Security=True;Pooling=False");
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into PcChecker(Hostname,IpAddress) values ('" + hostName + "','" + myIP + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
         }
 
         private void password_Enter(object sender, EventArgs e)
@@ -121,36 +180,34 @@ namespace Foodies
 
         }
 
-        public void Activation()
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        public static bool CheckInternetavaibility()
         {
             try
             {
-                var myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.microsoft.com");
-                var response = myHttpWebRequest.GetResponse();
-                string todaysDates = response.Headers["date"];
-                /*return*/
-                var date = DateTime.ParseExact(todaysDates,
-                                "ddd, dd MMM yyyy HH:mm:ss 'GMT'",
-                                CultureInfo.InvariantCulture.DateTimeFormat,
-                                DateTimeStyles.AssumeUniversal);
-
-                var timezonedate = date.ToShortDateString();
-                var currentdate = DateTime.Now.ToShortDateString();
-                var expirydate = DateTime.Now.AddDays(30);
-
-                if (timezonedate == currentdate)
-                {
-                    MessageBox.Show(expirydate.ToShortDateString());
-                }
-                else if (DateTime.Now > DateTime.Now.AddDays(30))
-                {
-
-                }
+                Ping myPing = new Ping();
+                string host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                return (reply.Status == IPStatus.Success);
             }
-            catch (WebException)
+            catch (Exception)
             {
-                MessageBox.Show("Current date");
+                MessageBox.Show("Please make sure you are connected to internet \n" +
+                    "otherwise some of the app features will not work properly");
+                return false;
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+
         }
 
     }

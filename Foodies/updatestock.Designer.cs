@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(updatestock));
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,21 +42,9 @@
             this.StockName = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.stockDataSet = new Foodies.StockDataSet();
-            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockTableAdapter = new Foodies.StockDataSetTableAdapters.StockTableAdapter();
-            this.stockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stocknameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockweigthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockcompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockcategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stocktimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv1
@@ -67,19 +54,9 @@
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
             this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stockidDataGridViewTextBoxColumn,
-            this.stocknameDataGridViewTextBoxColumn,
-            this.stockweigthDataGridViewTextBoxColumn,
-            this.stockcompanyDataGridViewTextBoxColumn,
-            this.stockcategoryDataGridViewTextBoxColumn,
-            this.stockdateDataGridViewTextBoxColumn,
-            this.stocktimeDataGridViewTextBoxColumn});
-            this.dgv1.DataSource = this.stockBindingSource;
             this.dgv1.GridColor = System.Drawing.Color.DarkGray;
             this.dgv1.Location = new System.Drawing.Point(34, 306);
             this.dgv1.Margin = new System.Windows.Forms.Padding(0);
@@ -247,69 +224,6 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // stockDataSet
-            // 
-            this.stockDataSet.DataSetName = "StockDataSet";
-            this.stockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockBindingSource
-            // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.stockDataSet;
-            // 
-            // stockTableAdapter
-            // 
-            this.stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // stockidDataGridViewTextBoxColumn
-            // 
-            this.stockidDataGridViewTextBoxColumn.DataPropertyName = "stockid";
-            this.stockidDataGridViewTextBoxColumn.HeaderText = "STOCK ID";
-            this.stockidDataGridViewTextBoxColumn.Name = "stockidDataGridViewTextBoxColumn";
-            this.stockidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stocknameDataGridViewTextBoxColumn
-            // 
-            this.stocknameDataGridViewTextBoxColumn.DataPropertyName = "stockname";
-            this.stocknameDataGridViewTextBoxColumn.HeaderText = "STOCK NAME";
-            this.stocknameDataGridViewTextBoxColumn.Name = "stocknameDataGridViewTextBoxColumn";
-            this.stocknameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockweigthDataGridViewTextBoxColumn
-            // 
-            this.stockweigthDataGridViewTextBoxColumn.DataPropertyName = "stockweigth";
-            this.stockweigthDataGridViewTextBoxColumn.HeaderText = "STOCK WEIGTH";
-            this.stockweigthDataGridViewTextBoxColumn.Name = "stockweigthDataGridViewTextBoxColumn";
-            this.stockweigthDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockcompanyDataGridViewTextBoxColumn
-            // 
-            this.stockcompanyDataGridViewTextBoxColumn.DataPropertyName = "stockcompany";
-            this.stockcompanyDataGridViewTextBoxColumn.HeaderText = "STOCK COMPANY";
-            this.stockcompanyDataGridViewTextBoxColumn.Name = "stockcompanyDataGridViewTextBoxColumn";
-            this.stockcompanyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockcategoryDataGridViewTextBoxColumn
-            // 
-            this.stockcategoryDataGridViewTextBoxColumn.DataPropertyName = "stockcategory";
-            this.stockcategoryDataGridViewTextBoxColumn.HeaderText = "STOCK CATEGORY";
-            this.stockcategoryDataGridViewTextBoxColumn.Name = "stockcategoryDataGridViewTextBoxColumn";
-            this.stockcategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stockdateDataGridViewTextBoxColumn
-            // 
-            this.stockdateDataGridViewTextBoxColumn.DataPropertyName = "stockdate";
-            this.stockdateDataGridViewTextBoxColumn.HeaderText = "STOCK DATE";
-            this.stockdateDataGridViewTextBoxColumn.Name = "stockdateDataGridViewTextBoxColumn";
-            this.stockdateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // stocktimeDataGridViewTextBoxColumn
-            // 
-            this.stocktimeDataGridViewTextBoxColumn.DataPropertyName = "stocktime";
-            this.stocktimeDataGridViewTextBoxColumn.HeaderText = "STOCK TIME";
-            this.stocktimeDataGridViewTextBoxColumn.Name = "stocktimeDataGridViewTextBoxColumn";
-            this.stocktimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // updatestock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,8 +246,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,15 +265,5 @@
         private System.Windows.Forms.TextBox StockName;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private StockDataSet stockDataSet;
-        private System.Windows.Forms.BindingSource stockBindingSource;
-        private StockDataSetTableAdapters.StockTableAdapter stockTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stocknameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockweigthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockcompanyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockcategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stocktimeDataGridViewTextBoxColumn;
     }
 }

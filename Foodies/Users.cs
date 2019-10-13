@@ -23,9 +23,28 @@ namespace Foodies
 
         private void Users_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.usersDataSet.users);
             dgv_1();
+            LoadGridView1();
+        }
+
+        public void LoadGridView1()
+        {
+            dgv1.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from users";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv1.DataSource = dt;
+            con.Close();
+
+            dgv1.Columns[0].HeaderText = "USER ID";
+            dgv1.Columns[1].HeaderText = "USER NAME";
+            dgv1.Columns[2].HeaderText = "PASSWORD";
+            dgv1.Columns[3].HeaderText = "ROLE / STATUS";
+
         }
 
         public void dgv_1()
@@ -53,7 +72,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -64,8 +83,7 @@ namespace Foodies
                 Username.Text = string.Empty;
                 Password.Text = string.Empty;
                 category.Text = string.Empty;
-                // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
-                this.usersTableAdapter.Fill(this.usersDataSet.users);
+                LoadGridView1();
             }
             catch (Exception)
             {
@@ -95,7 +113,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -106,8 +124,7 @@ namespace Foodies
                 Username.Text = string.Empty;
                 Password.Text = string.Empty;
                 category.Text = string.Empty;
-                // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
-                this.usersTableAdapter.Fill(this.usersDataSet.users);
+                LoadGridView1();
             }
             catch (Exception)
             {
@@ -119,7 +136,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -130,8 +147,7 @@ namespace Foodies
                 Username.Text = string.Empty;
                 Password.Text = string.Empty;
                 category.Text = string.Empty;
-                // TODO: This line of code loads data into the 'usersDataSet.users' table. You can move, or remove it, as needed.
-                this.usersTableAdapter.Fill(this.usersDataSet.users);
+                LoadGridView1();
             }
             catch (Exception)
             {

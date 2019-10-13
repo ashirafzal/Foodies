@@ -19,7 +19,7 @@ namespace Foodies
 
         public void LoadChart()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;

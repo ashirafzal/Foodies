@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPrice));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsDataSet = new Foodies.ProductsDataSet();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.SearchPrice = new System.Windows.Forms.Button();
             this.txtSearchPrice = new System.Windows.Forms.TextBox();
-            this.productsTableAdapter = new Foodies.ProductsDataSetTableAdapters.ProductsTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,70 +97,15 @@
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
             this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIdDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn,
-            this.productPriceDataGridViewTextBoxColumn,
-            this.productCategoryDataGridViewTextBoxColumn,
-            this.productImageDataGridViewImageColumn});
-            this.dgv1.DataSource = this.productsBindingSource;
             this.dgv1.Location = new System.Drawing.Point(29, 87);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
             this.dgv1.Size = new System.Drawing.Size(1541, 639);
             this.dgv1.TabIndex = 2;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "PRODUCT ID";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.productIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "PRODUCT NAME";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productPriceDataGridViewTextBoxColumn
-            // 
-            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "ProductPrice";
-            this.productPriceDataGridViewTextBoxColumn.HeaderText = "PRODUCT PRICE";
-            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
-            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productCategoryDataGridViewTextBoxColumn
-            // 
-            this.productCategoryDataGridViewTextBoxColumn.DataPropertyName = "ProductCategory";
-            this.productCategoryDataGridViewTextBoxColumn.HeaderText = "PRODUCT CATEGORY";
-            this.productCategoryDataGridViewTextBoxColumn.Name = "productCategoryDataGridViewTextBoxColumn";
-            this.productCategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productImageDataGridViewImageColumn
-            // 
-            this.productImageDataGridViewImageColumn.DataPropertyName = "ProductImage";
-            this.productImageDataGridViewImageColumn.HeaderText = "PRODUCT IMAGE";
-            this.productImageDataGridViewImageColumn.Name = "productImageDataGridViewImageColumn";
-            this.productImageDataGridViewImageColumn.ReadOnly = true;
-            this.productImageDataGridViewImageColumn.Visible = false;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.productsDataSet;
-            // 
-            // productsDataSet
-            // 
-            this.productsDataSet.DataSetName = "ProductsDataSet";
-            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel3
             // 
@@ -217,10 +151,6 @@
             this.txtSearchPrice.TabIndex = 1;
             this.txtSearchPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
             // ProductPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,8 +169,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
@@ -256,13 +184,5 @@
         private System.Windows.Forms.TextBox txtSearchPrice;
         private System.Windows.Forms.Button SearchPrice;
         private System.Windows.Forms.DataGridView dgv1;
-        private ProductsDataSet productsDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private ProductsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn productImageDataGridViewImageColumn;
     }
 }

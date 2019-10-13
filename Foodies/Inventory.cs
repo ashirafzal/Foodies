@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Foodies
 {
     public partial class Inventory : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(Helper.con);
         int TotalSales; DateTime date;int currentStockStatus;int Stock_at_the_day_of_start;
-        string dr_stockatthestartofday;
+        string dr_stockatthestartofday;DateTime drStockDate;
 
         public Inventory()
         {
@@ -165,12 +160,9 @@ namespace Foodies
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stockDataSet.Stock' table. You can move, or remove it, as needed.
-            this.stockTableAdapter.Fill(this.stockDataSet.Stock);
-            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.productsDataSet.Products);
-            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            LoadGridView2();
+            LoadGridView3();
+            LoadGridView4();
             LoadChart2();
             LoadChart3();
             LoadChart4();
@@ -179,6 +171,74 @@ namespace Foodies
             dgv_3();
             dgv_4();
             FoucsTextBoxes();
+        }
+
+        public void LoadGridView2()
+        {
+            dgv2.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Stock";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv2.DataSource = dt;
+            con.Close();
+
+            dgv2.Columns[0].HeaderText = "STOCK ID";
+            dgv2.Columns[1].HeaderText = "STOCK NAME";
+            dgv2.Columns[2].HeaderText = "STOCK WEIGTH";
+            dgv2.Columns[3].HeaderText = "STOCK COMPANY";
+            dgv2.Columns[4].HeaderText = "STOCK CATEGORY";
+            dgv2.Columns[5].HeaderText = "STOCK DATE";
+            dgv2.Columns[6].HeaderText = "STOCK TIME";
+        }
+
+        public void LoadGridView3()
+        {
+            dgv3.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Products";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv3.DataSource = dt;
+            con.Close();
+
+            dgv3.Columns[0].HeaderText = "PRODUCT ID";
+            dgv3.Columns[1].HeaderText = "PRODUCT NAME";
+            dgv3.Columns[2].HeaderText = "PRODUCT PRICE";
+            dgv3.Columns[3].HeaderText = "PRODUCT CATEGORY";
+            dgv3.Columns[4].HeaderText = "PRODUCT IMAGE";
+            dgv3.Columns[4].Visible = false;
+        }
+
+        public void LoadGridView4()
+        {
+            dgv4.Refresh();
+            SqlConnection con = new SqlConnection(Helper.con);
+            con.Open();
+            string query = "select * from Category";
+            SqlCommand cmd = new SqlCommand(query, con);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgv4.DataSource = dt;
+            con.Close();
+
+            dgv4.Columns[0].HeaderText = "CATGEORY ID";
+            dgv4.Columns[1].HeaderText = "CATGEORY NAME";
+            dgv4.Columns[2].HeaderText = "CATGEORY IMAGE";
+
+            for (int i = 0; i < dgv4.Columns.Count; i++)
+                if (dgv4.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv4.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         public void InventoryHeaderInfo()
@@ -392,90 +452,152 @@ namespace Foodies
         {
             try
             {
-                if (DateTime.Now.ToShortDateString() == DateTime.Now.ToShortDateString())
+                SqlDataAdapter adapter1 = new SqlDataAdapter("SELECT * from stockstatus", con);
+                DataTable table1 = new DataTable();
+                adapter1.Fill(table1);
+                if (table1.Rows.Count > 0)
                 {
-                    SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
-                    DataTable table4 = new DataTable();
-                    adapter4.Fill(table4);
-                    if (table4.Rows.Count > 0)
+                    SqlTransaction tran = con.BeginTransaction();
+
+                    SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
+                    cmd10.ExecuteNonQuery();
+
+                    using (SqlDataReader dr = cmd10.ExecuteReader())
                     {
-                        string query = "select * from Stock";
-                        SqlCommand cmd = new SqlCommand(query, con);
-                        DataTable dt = new DataTable();
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        da.Fill(dt);
-                        dgv1.DataSource = dt;
-                        SqlTransaction tran = con.BeginTransaction();
-
-                        SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
-                        cmd10.ExecuteNonQuery();
-
-                        using (SqlDataReader dr = cmd10.ExecuteReader())
+                        while (dr.Read())
                         {
-                            while (dr.Read())
-                            {
-                                dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
-                            }
+                            drStockDate = Convert.ToDateTime(dr["stockdate"]);
                         }
-                        StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
-                        dgv1.Refresh();
-                        dgv1.DataSource = null;
                     }
-                    else
+
+                    if (drStockDate.ToShortDateString() == DateTime.Now.ToShortDateString())
                     {
-                        StockAtTheDayOfStart.Text = "0";
+                        SqlConnection con = new SqlConnection(Helper.con);
+                        con.Open();
+
+                        SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
+                        DataTable table4 = new DataTable();
+                        adapter4.Fill(table4);
+                        if (table4.Rows.Count > 0)
+                        {
+                            string query = "select * from Stock";
+                            SqlCommand cmd = new SqlCommand(query, con);
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            dgv1.DataSource = dt;
+                            SqlTransaction tran2 = con.BeginTransaction();
+
+                            SqlCommand cmd11 = new SqlCommand("select * from stockstatus", con, tran2);
+                            cmd11.ExecuteNonQuery();
+
+                            using (SqlDataReader dr = cmd11.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
+                                }
+                            }
+                            StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
+                            dgv1.Refresh();
+                            dgv1.DataSource = null;
+                        }
+                        else
+                        {
+                            StockAtTheDayOfStart.Text = "0";
+                        }
                     }
+                    else if (drStockDate.ToShortDateString() != DateTime.Now.ToShortDateString())
+                    {
+                        SqlConnection con = new SqlConnection(Helper.con);
+                        con.Open();
+
+                        SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
+                        DataTable table4 = new DataTable();
+                        adapter4.Fill(table4);
+                        if (table4.Rows.Count > 0)
+                        {
+                            SqlCommand cmd = con.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "delete from stockstatus";
+                            cmd.ExecuteNonQuery();
+
+                            string query = "select * from Stock";
+                            SqlCommand cmd2 = new SqlCommand(query, con);
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                            da.Fill(dt);
+                            dgv1.DataSource = dt;
+                            for (int i = 0; i < dgv1.Rows.Count; ++i)
+                            {
+                                Stock_at_the_day_of_start += Convert.ToInt32(dgv1.Rows[i].Cells[2].Value);
+                            }
+                            dgv1.Refresh();
+                            dgv1.DataSource = null;
+
+                            SqlCommand cmd3 = con.CreateCommand();
+                            cmd3.CommandType = CommandType.Text;
+                            cmd3.CommandText = "insert into stockstatus(stockatthestartofday,stockdate) values ('" + Stock_at_the_day_of_start + "','" + DateTime.Now.ToShortDateString() + "')";
+                            cmd3.ExecuteNonQuery();
+
+                            SqlTransaction tran3 = con.BeginTransaction();
+
+                            SqlCommand cmd12 = new SqlCommand("select * from stockstatus", con, tran3);
+                            cmd12.ExecuteNonQuery();
+
+                            using (SqlDataReader dr = cmd12.ExecuteReader())
+                            {
+                                while (dr.Read())
+                                {
+                                    dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
+                                }
+                            }
+
+                            StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
+                            tran.Commit();
+                        }
+                        else
+                        {
+                            StockAtTheDayOfStart.Text = "0";
+                        }
+                    }
+
                 }
-                else if (DateTime.Now.ToShortDateString() != DateTime.Now.ToShortDateString())
+                else
                 {
-                    SqlDataAdapter adapter4 = new SqlDataAdapter("SELECT * from Stock", con);
-                    DataTable table4 = new DataTable();
-                    adapter4.Fill(table4);
-                    if (table4.Rows.Count > 0)
+                    string query = "select * from Stock";
+                    SqlCommand cmd2 = new SqlCommand(query, con);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd2);
+                    da.Fill(dt);
+                    dgv1.DataSource = dt;
+                    for (int i = 0; i < dgv1.Rows.Count; ++i)
                     {
-                        SqlCommand cmd = con.CreateCommand();
-                        cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "delete * from stockstatus";
-                        cmd.ExecuteNonQuery();
-
-                        string query = "select * from Stock";
-                        SqlCommand cmd2 = new SqlCommand(query, con);
-                        DataTable dt = new DataTable();
-                        SqlDataAdapter da = new SqlDataAdapter(cmd2);
-                        da.Fill(dt);
-                        dgv1.DataSource = dt;
-                        for (int i = 0; i < dgv1.Rows.Count; ++i)
-                        {
-                            Stock_at_the_day_of_start += Convert.ToInt32(dgv1.Rows[i].Cells[2].Value);
-                        }
-                        dgv1.Refresh();
-                        dgv1.DataSource = null;
-
-                        SqlCommand cmd3 = con.CreateCommand();
-                        cmd3.CommandType = CommandType.Text;
-                        cmd3.CommandText = "insert into stockstatus(stockatthestartofday,stockdate) values ('" + Stock_at_the_day_of_start + "','" + DateTime.Now.ToShortDateString() + "')";
-                        cmd3.ExecuteNonQuery();
-
-                        SqlTransaction tran = con.BeginTransaction();
-
-                        SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
-                        cmd10.ExecuteNonQuery();
-
-                        using (SqlDataReader dr = cmd10.ExecuteReader())
-                        {
-                            while (dr.Read())
-                            {
-                                dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
-                            }
-                        }
-
-                        StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
-                        tran.Commit();
+                        Stock_at_the_day_of_start += Convert.ToInt32(dgv1.Rows[i].Cells[2].Value);
                     }
-                    else
+                    dgv1.Refresh();
+                    dgv1.DataSource = null;
+
+                    SqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "insert into stockstatus(stockatthestartofday,stockdate) values ('" + Stock_at_the_day_of_start + "','" + DateTime.Now.ToShortDateString() + "')";
+                    cmd3.ExecuteNonQuery();
+
+                    SqlTransaction tran = con.BeginTransaction();
+
+                    SqlCommand cmd10 = new SqlCommand("select * from stockstatus", con, tran);
+                    cmd10.ExecuteNonQuery();
+
+                    using (SqlDataReader dr = cmd10.ExecuteReader())
                     {
-                        StockAtTheDayOfStart.Text = "0";
+                        while (dr.Read())
+                        {
+                            dr_stockatthestartofday = Convert.ToString(dr["stockatthestartofday"]);
+                        }
                     }
+
+                    StockAtTheDayOfStart.Text = dr_stockatthestartofday.ToString() + " gm";
+                    tran.Commit();
                 }
             }
             catch (Exception)
@@ -545,7 +667,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 string query = "select * from Products where ProductName = '" + txtSearchProduct.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -567,7 +689,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 string query = "select * from Category where CategoryName = '" + txtSearchCategory.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -608,7 +730,7 @@ namespace Foodies
         private void button1_Click(object sender, EventArgs e)
         {
             dgv4.Refresh();
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             string query = "select * from Category";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -624,7 +746,7 @@ namespace Foodies
         private void button2_Click(object sender, EventArgs e)
         {
             dgv3.Refresh();
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             string query = "select * from Products";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -639,16 +761,7 @@ namespace Foodies
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dgv2.Refresh();
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
-            con.Open();
-            string query = "select * from Stock";
-            SqlCommand cmd = new SqlCommand(query, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgv2.DataSource = dt;
-            con.Close();
+            LoadGridView2();
             txtSearchStock.Text = string.Empty;
             txtSearchStock.Focus();
         }
@@ -657,7 +770,7 @@ namespace Foodies
         {
             try
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 string query = "select * from Stock where stockname = '" + txtSearchStock.Text.ToLower() + "' ";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -697,7 +810,7 @@ namespace Foodies
 
         public void LoadChart2()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;
@@ -722,7 +835,7 @@ namespace Foodies
             var firstdayofweek = DateTime.Now.AddDays(-6);
             var currentdate = DateTime.Now.Date;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;
@@ -750,7 +863,7 @@ namespace Foodies
             var firstdayofmonth = DateTime.Now.AddDays(-29);
             var currentdate = DateTime.Now.Date;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;
@@ -775,7 +888,7 @@ namespace Foodies
             var firstdayofyear = DateTime.Now.Year;
             var currentdate = DateTime.Now.Date;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;

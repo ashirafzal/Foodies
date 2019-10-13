@@ -18,7 +18,7 @@ namespace Foodies
 
         public void CheckingUserStatus()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -58,7 +58,7 @@ namespace Foodies
             int stockid, stockweigth, newstockweigth;
             string stockname, stockcompany, stockcategory, stockdate, stocktime;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -878,7 +878,7 @@ namespace Foodies
         string Total_Qty, Actual_Amount, Total_Amount, _TotalWithGST, _Discount;
 
         // Connection String //
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(Helper.con);
 
         public System.Windows.Forms.DataGridViewImageCellLayout ImageLayout { get; set; }
         public System.Drawing.Printing.PaperSize PaperSize { get; set; }
@@ -999,14 +999,31 @@ namespace Foodies
 
         private void Cashier_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
-            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
-            // TODO: This line of code loads data into the 'itemsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.itemsDataSet.Products);
-            // TODO: This line of code loads data into the 'categoryDataSet.Products' table. You can move, or remove it, as needed.
+            LoadCategory();
             this.dgv3.EditMode = DataGridViewEditMode.EditOnEnter; 
+        }
+
+        public void LoadCategory()
+        {
+                SqlConnection con = new SqlConnection(Helper.con);
+                con.Open();
+                string query = "select * from Category";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                con.Close();
+
+            this.dgv1.Columns[0].Visible = false;
+            this.dgv1.Columns[1].Visible = false;
+
+            for (int i = 0; i < dgv1.Columns.Count; i++)
+                if (dgv1.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgv1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1124,7 +1141,7 @@ namespace Foodies
                 DataGridViewRow row = this.dgv1.Rows[e.RowIndex];
                 string maincategory = row.Cells[1].Value.ToString();
 
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 string query = "select * from Products where ProductCategory = '"+ maincategory +"' ";
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -1339,8 +1356,7 @@ namespace Foodies
             act_price.Text = "0";
             totalQty.Text = "0";
             total_Amount.Text = "0";
-            // TODO: This line of code loads data into the 'categoryDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.categoryDataSet.Category);
+            LoadCategory();
         }
 
         private void dgv3_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -1558,7 +1574,7 @@ namespace Foodies
                         or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
                         condition me aik se sql queries ki queires ko implement kara jasakai*/
 
-                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        SqlConnection con = new SqlConnection(Helper.con);
                         con.Open();
                         SqlTransaction tran = con.BeginTransaction();
 
@@ -1683,7 +1699,7 @@ namespace Foodies
                          or phir MultipleActiveResultSets = True connection string me add karna hoga takai Sql Reader ke while
                          condition me aik se sql queries ki queires ko implement kara jasakai*/
 
-                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                        SqlConnection con = new SqlConnection(Helper.con);
                         con.Open();
                         SqlTransaction tran = con.BeginTransaction();
 
@@ -1784,7 +1800,7 @@ namespace Foodies
 
         private void DVPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+            SqlConnection con = new SqlConnection(Helper.con);
             con.Open();
             SqlTransaction tran = con.BeginTransaction();
 
@@ -1947,7 +1963,7 @@ namespace Foodies
             DialogResult result = MessageBox.Show("Are you sure you want to cancel the last transaction ?", "Delete Last Transaction ?", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=SSPI;MultipleActiveResultSets = True");
+                SqlConnection con = new SqlConnection(Helper.con);
                 con.Open();
                 SqlTransaction tran = con.BeginTransaction();
 

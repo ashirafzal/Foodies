@@ -34,7 +34,7 @@ namespace Foodies
             var firstdayofmonth = DateTime.Now.AddDays(-29);
             var currentdate = DateTime.Now.Date;
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-9CBGPDG\ASHIRAFZAL;Initial Catalog=foodtime;Integrated Security=True;Pooling=False");
+            SqlConnection con = new SqlConnection(Helper.con);
 
             SqlCommand cmd;
             SqlDataAdapter da;

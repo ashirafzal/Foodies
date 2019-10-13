@@ -28,42 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoiceDetails));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.InvoiceNumber = new System.Windows.Forms.TextBox();
             this.SearchInvoice = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.invioceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productAmountWithGSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalqtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.actualAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalAmountWithGSTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discountInPercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceDataSet = new Foodies.InvoiceDataSet();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.totalprice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.totalquantity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.billTableAdapter = new Foodies.InvoiceDataSetTableAdapters.BillTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,29 +116,10 @@
             this.dgv1.AllowUserToResizeColumns = false;
             this.dgv1.AllowUserToResizeRows = false;
             this.dgv1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgv1.AutoGenerateColumns = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv1.BackgroundColor = System.Drawing.Color.White;
             this.dgv1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.invioceIDDataGridViewTextBoxColumn,
-            this.custIDDataGridViewTextBoxColumn,
-            this.orderIDDataGridViewTextBoxColumn,
-            this.custNameDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn,
-            this.productQuantityDataGridViewTextBoxColumn,
-            this.productRateDataGridViewTextBoxColumn,
-            this.productAmountDataGridViewTextBoxColumn,
-            this.productAmountWithGSTDataGridViewTextBoxColumn,
-            this.orderTimeDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.totalqtyDataGridViewTextBoxColumn,
-            this.actualAmountDataGridViewTextBoxColumn,
-            this.totalAmountDataGridViewTextBoxColumn,
-            this.totalAmountWithGSTDataGridViewTextBoxColumn,
-            this.discountInPercentDataGridViewTextBoxColumn});
-            this.dgv1.DataSource = this.billBindingSource;
             this.dgv1.GridColor = System.Drawing.Color.DarkGray;
             this.dgv1.Location = new System.Drawing.Point(11, 78);
             this.dgv1.Name = "dgv1";
@@ -169,133 +128,6 @@
             this.dgv1.TabIndex = 1;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
-            // 
-            // invioceIDDataGridViewTextBoxColumn
-            // 
-            this.invioceIDDataGridViewTextBoxColumn.DataPropertyName = "InvioceID";
-            this.invioceIDDataGridViewTextBoxColumn.HeaderText = "INVOICE ID";
-            this.invioceIDDataGridViewTextBoxColumn.Name = "invioceIDDataGridViewTextBoxColumn";
-            this.invioceIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // custIDDataGridViewTextBoxColumn
-            // 
-            this.custIDDataGridViewTextBoxColumn.DataPropertyName = "CustID";
-            this.custIDDataGridViewTextBoxColumn.HeaderText = "CUST ID";
-            this.custIDDataGridViewTextBoxColumn.Name = "custIDDataGridViewTextBoxColumn";
-            this.custIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "OrderID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "ORDER ID";
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // custNameDataGridViewTextBoxColumn
-            // 
-            this.custNameDataGridViewTextBoxColumn.DataPropertyName = "CustName";
-            this.custNameDataGridViewTextBoxColumn.HeaderText = "CUST NAME";
-            this.custNameDataGridViewTextBoxColumn.Name = "custNameDataGridViewTextBoxColumn";
-            this.custNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "PRODUCT NAME";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productQuantityDataGridViewTextBoxColumn
-            // 
-            this.productQuantityDataGridViewTextBoxColumn.DataPropertyName = "ProductQuantity";
-            this.productQuantityDataGridViewTextBoxColumn.HeaderText = "PRODUCT QUANTITY";
-            this.productQuantityDataGridViewTextBoxColumn.Name = "productQuantityDataGridViewTextBoxColumn";
-            this.productQuantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productRateDataGridViewTextBoxColumn
-            // 
-            this.productRateDataGridViewTextBoxColumn.DataPropertyName = "ProductRate";
-            this.productRateDataGridViewTextBoxColumn.HeaderText = "PRODUCT RATE";
-            this.productRateDataGridViewTextBoxColumn.Name = "productRateDataGridViewTextBoxColumn";
-            this.productRateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productAmountDataGridViewTextBoxColumn
-            // 
-            this.productAmountDataGridViewTextBoxColumn.DataPropertyName = "ProductAmount";
-            this.productAmountDataGridViewTextBoxColumn.HeaderText = "PRODUCT AMOUNT";
-            this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
-            this.productAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productAmountWithGSTDataGridViewTextBoxColumn
-            // 
-            this.productAmountWithGSTDataGridViewTextBoxColumn.DataPropertyName = "ProductAmountWithGST";
-            this.productAmountWithGSTDataGridViewTextBoxColumn.HeaderText = "GST AMOUNT";
-            this.productAmountWithGSTDataGridViewTextBoxColumn.Name = "productAmountWithGSTDataGridViewTextBoxColumn";
-            this.productAmountWithGSTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderTimeDataGridViewTextBoxColumn
-            // 
-            this.orderTimeDataGridViewTextBoxColumn.DataPropertyName = "OrderTime";
-            this.orderTimeDataGridViewTextBoxColumn.HeaderText = "ORDER TIME";
-            this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
-            this.orderTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "ORDER DATE";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            this.orderDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalqtyDataGridViewTextBoxColumn
-            // 
-            this.totalqtyDataGridViewTextBoxColumn.DataPropertyName = "Totalqty";
-            this.totalqtyDataGridViewTextBoxColumn.HeaderText = "Totalqty";
-            this.totalqtyDataGridViewTextBoxColumn.Name = "totalqtyDataGridViewTextBoxColumn";
-            this.totalqtyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalqtyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // actualAmountDataGridViewTextBoxColumn
-            // 
-            this.actualAmountDataGridViewTextBoxColumn.DataPropertyName = "ActualAmount";
-            this.actualAmountDataGridViewTextBoxColumn.HeaderText = "ActualAmount";
-            this.actualAmountDataGridViewTextBoxColumn.Name = "actualAmountDataGridViewTextBoxColumn";
-            this.actualAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.actualAmountDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // totalAmountDataGridViewTextBoxColumn
-            // 
-            this.totalAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.HeaderText = "TotalAmount";
-            this.totalAmountDataGridViewTextBoxColumn.Name = "totalAmountDataGridViewTextBoxColumn";
-            this.totalAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalAmountDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // totalAmountWithGSTDataGridViewTextBoxColumn
-            // 
-            this.totalAmountWithGSTDataGridViewTextBoxColumn.DataPropertyName = "TotalAmountWithGST";
-            this.totalAmountWithGSTDataGridViewTextBoxColumn.HeaderText = "TotalAmountWithGST";
-            this.totalAmountWithGSTDataGridViewTextBoxColumn.Name = "totalAmountWithGSTDataGridViewTextBoxColumn";
-            this.totalAmountWithGSTDataGridViewTextBoxColumn.ReadOnly = true;
-            this.totalAmountWithGSTDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // discountInPercentDataGridViewTextBoxColumn
-            // 
-            this.discountInPercentDataGridViewTextBoxColumn.DataPropertyName = "DiscountInPercent";
-            this.discountInPercentDataGridViewTextBoxColumn.HeaderText = "DiscountInPercent";
-            this.discountInPercentDataGridViewTextBoxColumn.Name = "discountInPercentDataGridViewTextBoxColumn";
-            this.discountInPercentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.discountInPercentDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // billBindingSource
-            // 
-            this.billBindingSource.DataMember = "Bill";
-            this.billBindingSource.DataSource = this.invoiceDataSet;
-            // 
-            // invoiceDataSet
-            // 
-            this.invoiceDataSet.DataSetName = "InvoiceDataSet";
-            this.invoiceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel3
             // 
@@ -365,10 +197,6 @@
             this.label1.Text = "TOTAL QUANTITY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // billTableAdapter
-            // 
-            this.billTableAdapter.ClearBeforeFill = true;
-            // 
             // InvoiceDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,8 +215,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceDataSet)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
@@ -407,24 +233,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label totalquantity;
         private System.Windows.Forms.Label label1;
-        private InvoiceDataSet invoiceDataSet;
-        private System.Windows.Forms.BindingSource billBindingSource;
-        private InvoiceDataSetTableAdapters.BillTableAdapter billTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invioceIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn custIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn custNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productRateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productAmountWithGSTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalqtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn actualAmountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountWithGSTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discountInPercentDataGridViewTextBoxColumn;
     }
 }
