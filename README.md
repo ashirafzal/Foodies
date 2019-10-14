@@ -32,3 +32,130 @@ The app also includes timer for checking the stock if a stock is zero it will op
 The activation form in the app activates the app by entering unique key .The activation is done via firebase thorugh internet .you cannot used a single key for multiple Pcs because the app check the key whether its uses before in anotner pc or not ?.This is all done by geting the data from the firebase and then reading it .   
 
 More features will be added in the app in near future as it is still under development .
+
+
+The inventory deduct values like this mention below from the stock the items used in the product/dish .
+
+-zinger burger
+
+| Incredients                | Quantity 
+___________________________________________
+| chicken flay               | 125 gm   
+| salt                       | 1 gm     
+| chinese salt               | 1 gm     
+| white mirch (white chilli) | 1 gm     
+| mastard powder             | 1 gm     
+| sauce                      | 1 gm     
+| meda                       | 250 gm
+| bread crum                 | 250 gm
+| baking powder              | 1 gm
+| egg                        | 1
+| corn flour                 | 2 gm
+| milk                       | 8 gm
+| bun                        | 1
+| mayoneze                   | 1 gm
+| ketchup                    | 1 gm
+| salad                      | 1gm 
+
+-beef burger
+
+| Incredients                | Quantity
+___________________________________________
+| qeema (minced meat)        | 500 gm
+| salt 			     | 1 gm
+|lahsan (garlic) (pissa hua) | 2gm
+|white chilli                | 2gm
+|black chilli                | 2gm
+|tomato paste                | 4gm
+|ketchup                     | 4gm
+|mastard paste               | 2gm
+|chinese salt                | 2gm
+|sirka (Vinegar)             | 4gm
+|soya sauce                  | 4gm
+|butter                      | 4gm
+|egg                         | 2
+|milk                        | 8gm
+|double roti ka chora (bread crumb) | 1 bowl
+|cooking oil                 | 20gm
+
+-club sandwich
+
+|Incredients           | Quantity
+_________________________________________
+|salt 		       | 1gm
+|white pepper powder   | 1gm
+|black pepper powder   | 1gm
+|soya sauce 	       | 2 gm
+|Lemon juice 	       | 2 gm
+|Mustard paste 	       | 1gm
+|Ginger garlic paste   | 1gm
+|oil                   | 2 gm
+|bread slices          | 1
+|cheddar cheese slice  | 1
+|egg                   | 1
+
+-chicken sandwich
+
+|Incredients                            |Quantity
+______________________________________________________
+|chicken 				| 80 gm
+|salt 					| 1 gm
+|white cayenne pepper (white red mirch) | 2 gm
+|mastard powder 			| 1 gm
+|meda 					| 4 gm
+|butter 				| 2 gm
+|milk 					| 250 gm
+|bread slices 				| 1
+|ketchup 				| 10 gm
+
+-bbq sandwich
+
+|Incredients 			| Quantity
+__________________________________________________
+|onion 				| 65 gm
+|sirka (Vinegar) 		| 4gm
+|diced celery (ajwain) 		| 1 gm
+|chili powder (mirch powder) 	| 2 gm
+|garlic clove (lahsan ki long) 	| 1
+|butter 			| 2 gm
+|salt 				| 1 gm
+|ketchup 			| 1 gm
+|brown sugar 			|  4 gm
+|pepper (kali mirch) 		| 1 gm
+|chicken 			|  70 gm
+|bun 				| 1
+|salsa 				| 40 gm
+
+-chicken burger
+
+| Incredients			| Quantity
+______________________________________________
+|chicken qeema 			| 250 gm
+|bread slice 			| 1
+|egg 				| 1
+|mastard paste 			| 3 gm
+|black mirch 			| 3 gm
+|salt 				| 1 gm
+|mayoneze 			| 1 gm
+|oil 				| 40gm
+|cheddar cheese slice 		| 1
+|butter 			| 2 gm
+|salad 				| 1
+
+-broast
+
+| Incredients 			| Quantity
+|chicken 			| 500 gm
+|sirka 				| 50 gm
+|soya sauce 			| 6 gm
+|chinese salt 			| 2 gm
+|black mirch 			| 1 gm
+|salt 				| 2 gm
+|oil 				|  40 gm
+|meda 				| 250 gm
+|corn floor 			| 4 gm
+|rice floor 			| 4 gm
+|white red mirch 		| 2 gm
+|lahsan 			| 2 gm
+|egg 				| 1
+
