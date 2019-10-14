@@ -46,7 +46,7 @@ namespace Foodies
             con.Open();
             try
             {
-                if (username.Text == "ashirxyz" || password.Text == "foodies-ashir")
+                if (username.Text == "foodies" || password.Text == "foodies-m1316")
                 {
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;

@@ -29,22 +29,28 @@ namespace Foodies
 
         public void LoadGridView1()
         {
-            dgv1.Refresh();
-            SqlConnection con = new SqlConnection(Helper.con);
-            con.Open();
-            string query = "select * from users";
-            SqlCommand cmd = new SqlCommand(query, con);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgv1.DataSource = dt;
-            con.Close();
+            try
+            {
+                dgv1.Refresh();
+                SqlConnection con = new SqlConnection(Helper.con);
+                con.Open();
+                string query = "select * from users";
+                SqlCommand cmd = new SqlCommand(query, con);
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv1.DataSource = dt;
+                con.Close();
 
-            dgv1.Columns[0].HeaderText = "USER ID";
-            dgv1.Columns[1].HeaderText = "USER NAME";
-            dgv1.Columns[2].HeaderText = "PASSWORD";
-            dgv1.Columns[3].HeaderText = "ROLE / STATUS";
-
+                dgv1.Columns[0].HeaderText = "USER ID";
+                dgv1.Columns[1].HeaderText = "USER NAME";
+                dgv1.Columns[2].HeaderText = "PASSWORD";
+                dgv1.Columns[3].HeaderText = "ROLE / STATUS";
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(""+e.Message.ToString());
+            }
         }
 
         public void dgv_1()
