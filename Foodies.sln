@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodies", "Foodies\Foodies.csproj", "{241BDB9E-05D6-4A13-B5A3-ED9A15257F29}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FoodiesSetup", "FoodiesSetup\FoodiesSetup.vdproj", "{D713D5A1-1523-4B54-AB26-822E2AA319B6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FoodiesSetup2", "FoodiesSetup2\FoodiesSetup2.vdproj", "{978E09C5-D84B-4E47-B22C-0B1A5D5BEC19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{241BDB9E-05D6-4A13-B5A3-ED9A15257F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{241BDB9E-05D6-4A13-B5A3-ED9A15257F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{241BDB9E-05D6-4A13-B5A3-ED9A15257F29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D713D5A1-1523-4B54-AB26-822E2AA319B6}.Debug|Any CPU.ActiveCfg = Debug
-		{D713D5A1-1523-4B54-AB26-822E2AA319B6}.Release|Any CPU.ActiveCfg = Release
+		{978E09C5-D84B-4E47-B22C-0B1A5D5BEC19}.Debug|Any CPU.ActiveCfg = Debug
+		{978E09C5-D84B-4E47-B22C-0B1A5D5BEC19}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

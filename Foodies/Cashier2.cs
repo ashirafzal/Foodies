@@ -980,7 +980,7 @@ namespace Foodies
 
                             var timezonedate = date.ToShortDateString();
                             var currentdate = DateTime.Now.ToShortDateString();
-                            var expirydate = DateTime.Now.AddDays(1).ToShortDateString();
+                            var expirydate = DateTime.Now.AddDays(10).ToShortDateString();
 
                             if (timezonedate.Equals(currentdate))
                             {
